@@ -1,0 +1,283 @@
+{
+  "main": {
+    "id": "8007e589718d336f",
+    "type": "split",
+    "children": [
+      {
+        "id": "8b98dd938d9d80d4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a4b3633f5d06efe1",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "KDoMs/Book/Ghosh and Mallik.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "Ghosh and Mallik"
+            }
+          },
+          {
+            "id": "82735f50edba2a58",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "KDoMs/Tutorial-solutions/Tutorial-7-solution.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Tutorial-7-solution"
+            }
+          },
+          {
+            "id": "eabf7584dca5b952",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "KDoMs/Synthesis-Formula-Bank/Motion and Path Generation - Graphical Methods.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Motion and Path Generation - Graphical Methods"
+            }
+          },
+          {
+            "id": "32be4f232c83dfc4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "KDoMs/Velocity-Acceleration-Bank/Velocity and Acceleration - Analytical Method.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Velocity and Acceleration - Analytical Method"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "8f11e58f86632891",
+    "type": "split",
+    "children": [
+      {
+        "id": "e662a7fbab6dd914",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b0154bd95eb10029",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "44734aaeca6aa5f5",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "42f0b4dedb9af779",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "9764893094b8dfd2",
+    "type": "split",
+    "children": [
+      {
+        "id": "825e3751f197e1c0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1a4a3dd201ffb120",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "KDoMs/Book/Ghosh and Mallik.pdf",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "761b3e177a25b755",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Untitled 3.base",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Untitled 3"
+            }
+          },
+          {
+            "id": "e356378b30d18ec3",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "cd85905d56d2b413",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "c8630ae801223e48",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Untitled 3.base",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Untitled 3"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false,
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "pdf-plus:PDF++: Toggle auto-copy": false,
+      "pdf-plus:PDF++: Toggle auto-focus": false,
+      "pdf-plus:PDF++: Toggle auto-paste": false
+    }
+  },
+  "active": "a4b3633f5d06efe1",
+  "lastOpenFiles": [
+    "KDoMs/Problem-2.19-solution.md",
+    "KDoMs/Synthesis-Formula-Bank/Motion and Path Generation - Graphical Methods.md",
+    "KDoMs/Tutorial-solutions/Tutorial-7-solution.md",
+    "KDoMs/Velocity-Acceleration-Bank/Velocity and Acceleration - Graphical Methods (Polygons).md",
+    "KDoMs/Velocity-Acceleration-Bank/Velocity and Acceleration - Analytical Method.md",
+    "KDoMs/Velocity-Acceleration-Bank/Velocity and Acceleration - Graphical Methods (Polygons).md.tmp.18364.65bd530cf071",
+    "KDoMs/Velocity-Acceleration-Bank/Velocity and Acceleration - Graphical Methods (Polygons).md.tmp.18364.07d061216140",
+    "KDoMs/Velocity-Acceleration-Bank/Velocity and Acceleration - Graphical Methods (Polygons).md.tmp.18364.30bae44f8244",
+    "KDoMs/Velocity-Acceleration-Bank/_t.js",
+    "KDoMs/Velocity-Acceleration-Bank/va-polygons.html",
+    "KDoMs/Velocity-Acceleration-Bank/va-polygons.html.tmp.18364.b53b04cece3f",
+    "KDoMs/Velocity-Acceleration-Bank/sednUF5Io",
+    "KDoMs/Velocity-Acceleration-Bank/assets/VG-g5-circle-diagram.png",
+    "KDoMs/Velocity-Acceleration-Bank/assets/VG-g4-rprp.png",
+    "KDoMs/Velocity-Acceleration-Bank/assets/VG-g3-slotted-lever-polygons.png",
+    "KDoMs/Velocity-Acceleration-Bank/assets/VG-g2-fourbar-polygons-images.png",
+    "KDoMs/Velocity-Acceleration-Bank/assets/VG-g1-slider-crank-polygons.png",
+    "KDoMs/Velocity-Acceleration-Bank/va_polyviz.py",
+    "KDoMs/Velocity-Acceleration-Bank/va_polyviz.py.tmp.18364.e6b2daf286bc",
+    "KDoMs/Book/Ghosh and Mallik.pdf",
+    "KDoMs/Velocity-Acceleration-Bank/assets/VA-v5-coriolis.png",
+    "KDoMs/Velocity-Acceleration-Bank/assets/VA-v4-slotted-lever.png",
+    "KDoMs/Velocity-Acceleration-Bank/assets/VA-v3-slider-crank.png",
+    "KDoMs/Velocity-Acceleration-Bank/assets/VA-v2-vectors.png",
+    "KDoMs/Velocity-Acceleration-Bank/assets/VA-v1-fourbar-curves.png",
+    "KDoMs/Synthesis-Formula-Bank/Motion and Path Generation - Analytical Methods.md",
+    "KDoMs/Formula-Bank/Gear Formula Bank.md",
+    "KDoMs/Tutorial-solutions/Tutorial-6-solution.md",
+    "Excalidraw/Drawing 2026-10-05 23.00.07.excalidraw.md",
+    "Excalidraw/Drawing 2026-10-05 22.45.30.excalidraw.md",
+    "Excalidraw/Drawing 2026-10-06 00.10.38.excalidraw.md",
+    "MathFlow/Differential Equations/Problems/Assignment 3 - Cauchy-Euler and Higher Order ODEs - Solutions.md",
+    "MathFlow/Differential Equations/Problems/Assignment 4 - Series Solutions - Solutions.md",
+    "MathFlow/Differential Equations/Problems/Assignment 2 - Second Order ODEs - Solutions.md",
+    "MathFlow/Differential Equations/Problems/Assignment 1 - First Order ODEs - Solutions.md",
+    "KDoMs/Tutorial-solutions/Tutorial-5-solution.md",
+    "MathFlow/Differential Equations/Problems/Assignment 5 - Legendre Polynomials and Functions - Solutions.md",
+    "Untitled 1.canvas",
+    "Strength of materials/04 Shear Force and Bending Moment/Shear Force and Bending Moment Diagrams.md",
+    "Strength of materials/03 Torsion/Power Transmission by Shafts.md",
+    "MathFlow/Differential Equations/Differential Equations - MOC.md",
+    "Templates/Course MOC.md",
+    "LLM Wiki Guide.md",
+    "Wiki Maintenance Log.md",
+    "Templates/Atomic Concept Note.md",
+    "Fluid Mechanics/Fluid Mechanics - MOC.md",
+    "Untitled.canvas",
+    "Untitled 2.canvas"
+  ]
+}

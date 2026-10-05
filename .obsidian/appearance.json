@@ -1,0 +1,9 @@
+{
+  "theme": "obsidian",
+  "accentColor": "#0aff54",
+  "monospaceFontFamily": "Courier New,Source Code Pro",
+  "textFontFamily": "Arial",
+  "interfaceFontFamily": "Century Gothic",
+  "baseFontSizeAction": false,
+  "enabledCssSnippets": []
+}

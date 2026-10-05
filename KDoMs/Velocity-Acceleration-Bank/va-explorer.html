@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Velocity and Acceleration Explorer</title>
+<style>
+:root{--bg:#fafafa;--fg:#1c1c1e;--card:#fff;--line:#d9d9de;--b:#1f77b4;--o:#e8590c;--g:#2a9d4a;--r:#d6204a;--mut:#6b6b75}
+@media (prefers-color-scheme:dark){:root{--bg:#161618;--fg:#ececf0;--card:#202024;--line:#3a3a42;--mut:#9a9aa5}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.45 system-ui,Segoe UI,sans-serif}
+header{padding:14px 20px;border-bottom:1px solid var(--line)}h1{margin:0;font-size:18px}header p{margin:2px 0 0;color:var(--mut)}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;padding:12px 20px 0}button{padding:6px 12px;border:1px solid var(--line);background:var(--card);color:var(--fg);border-radius:6px;cursor:pointer}button.on{background:var(--b);color:#fff;border-color:var(--b)}
+main{display:grid;grid-template-columns:minmax(290px,350px) 1fr;gap:16px;padding:16px 20px;max-width:1300px;margin:auto}@media(max-width:900px){main{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}.card h2{margin:0 0 8px;font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--mut)}
+label{display:flex;justify-content:space-between;margin-top:7px}label b{font-variant-numeric:tabular-nums}input[type=range]{width:100%}select{width:100%;padding:3px 5px;background:var(--bg);color:var(--fg);border:1px solid var(--line);border-radius:6px}
+canvas{width:100%;height:auto;background:var(--card);border-radius:8px;display:block;margin-bottom:8px}table{width:100%;border-collapse:collapse;margin-top:10px}td{padding:3px 0;border-bottom:1px solid var(--line)}td:last-child{text-align:right;font-variant-numeric:tabular-nums}.eq{color:var(--mut);font-size:12px;margin-top:8px}.bad{color:var(--r)}
+</style></head><body>
+<header><h1>Velocity and Acceleration Explorer</h1><p>Ghosh &amp; Mallik, Sec. 2.9 – loop-closure equations differentiated once and twice. Computed live in your browser.</p></header>
+<div class="tabs" id="tabs"></div>
+<main><section class="card" id="ctl"></section><section class="card"><canvas id="cv" width="900" height="470"></canvas><canvas id="pl" width="900" height="250"></canvas></section></main>
+<script>
+const $=id=>document.getElementById(id),D=Math.PI/180,sin=Math.sin,cos=Math.cos;
+const css=()=>getComputedStyle(document.body).color;
+// ---------- kinematics (same formulas as va_core.py, verified against finite differences)
+function fb(l,t2,w2,a2,m){const[l1,l2,l3,l4]=l,a=sin(t2),b=cos(t2)-l1/l2,c=-(l1/l4)*cos(t2)+(l1*l1+l2*l2+l4*l4-l3*l3)/(2*l2*l4),dd=a*a+b*b-c*c;if(dd<0)return null;
+ const t4=2*Math.atan2(a+m*Math.sqrt(dd),b+c),t3=Math.atan2(l2*sin(t2)-l4*sin(t4),l2*cos(t2)-l1-l4*cos(t4)),s34=sin(t3-t4);
+ const w3=w2*l2*sin(t2-t4)/(l3*s34),w4=w2*l2*sin(t2-t3)/(l4*sin(t4-t3));
+ const a3=(l2*a2*sin(t2-t4)+l2*w2*w2*cos(t2-t4)-l4*w4*w4-l3*w3*w3*cos(t3-t4))/(l3*s34),a4=(l2*a2*sin(t2-t3)+l2*w2*w2*cos(t2-t3)-l3*w3*w3-l4*w4*w4*cos(t4-t3))/(l4*sin(t4-t3));
+ return{t3,t4,w3,w4,a3,a4}}
+function sc(l2,l3,e,t2,w2,a2,m){const s3=(e-l2*sin(t2))/l3;if(Math.abs(s3)>1)return null;const t3=m>0?Math.asin(s3):Math.PI-Math.asin(s3),c3=cos(t3);
+ const s=l2*cos(t2)+l3*c3,w3=-l2*w2*cos(t2)/(l3*c3),sd=-l2*w2*sin(t2)-l3*w3*sin(t3),a3=(-l2*a2*cos(t2)+l2*w2*w2*sin(t2)+l3*w3*w3*sin(t3))/(l3*c3),sdd=-l2*a2*sin(t2)-l2*w2*w2*cos(t2)-l3*a3*sin(t3)-l3*w3*w3*cos(t3);return{t3,s,w3,sd,a3,sdd}}
+function sl(l1,l2,t2,w2,a2){const s4=Math.sqrt(l1*l1+l2*l2+2*l1*l2*sin(t2)),t4=Math.atan2(l1+l2*sin(t2),l2*cos(t2)),w4=l2*w2*cos(t4-t2)/s4,sd=l2*w2*sin(t4-t2),a4=(l2*a2*cos(t4-t2)+l2*w2*w2*sin(t4-t2)-2*sd*w4)/s4,sdd=s4*w4*w4+l2*a2*sin(t4-t2)-l2*w2*w2*cos(t4-t2);return{s4,t4,w4,sd,a4,sdd}}
+// ---------- UI
+const sl_=(id,min,max,st,v,l)=>`<label>${l}<b id=v_${id}>${v}</b></label><input type=range id=${id} min=${min} max=${max} step=${st} value=${v}>`;
+const val=id=>+$(id).value;const M={};let cur,spin=false,raf;
+const common=`${sl_('t2',0,360,1,65,'crank angle θ₂ (°)')}${sl_('w2',-6,6,.1,2,'ω₂ (rad/s)')}${sl_('a2',-10,10,.1,1.5,'α₂ (rad/s²)')}`;
+M.fb={name:'Four-bar',html:()=>`<h2>Four-bar (Fig. 2.4)</h2>${common}${sl_('l1',1,10,.01,5.5,'frame l₁')}${sl_('l2',.5,6,.01,1.7,'crank l₂')}${sl_('l3',.5,10,.01,5.5,'coupler l₃')}${sl_('l4',.5,8,.01,4.08,'follower l₄')}<label>assembly mode</label><select id=md><option value=1>+</option><option value=-1>−</option></select><table id=tb></table><div class=eq>ω₃ = ω₂l₂ sin(θ₂−θ₄)/(l₃ sin(θ₃−θ₄)), ω₄ = ω₂l₂ sin(θ₂−θ₃)/(l₄ sin(θ₄−θ₃)) · α from (2.34)</div>`};
+M.sc={name:'Slider-crank',html:()=>`<h2>Offset slider-crank</h2>${common}${sl_('l2',.5,5,.01,2,'crank l₂')}${sl_('l3',1,12,.01,6,'rod l₃')}${sl_('e',-3,3,.01,.8,'offset e')}<table id=tb></table><div class=eq>ṡ = −l₂ω₂ sin(θ₂−θ₃)/cosθ₃, ω₃ = −l₂ω₂ cosθ₂/(l₃cosθ₃) (derived like Sec. 2.9)</div>`};
+M.sl={name:'Slotted lever',html:()=>`<h2>Slotted-lever quick-return (Prob. 2.19)</h2>${common}${sl_('l1',.5,8,.01,3,'l₁ (O₂O₄)')}${sl_('l2',.5,10,.01,5,'l₂ (crank)')}<table id=tb></table><div class=eq>θ̇₄ = (l₂θ̇₂/s₄)cos(θ₄−θ₂) · ṡ₄ = l₂θ̇₂ sin(θ₄−θ₂) · a_A = a_P4ⁿ + a_P4ᵗ + a_rel + 2ω₄ṡ₄ (Coriolis)</div>`};
+function setup(n){cur=n;cancelAnimationFrame(raf);document.querySelectorAll('#tabs button').forEach(b=>b.classList.toggle('on',b.dataset.n==n));$('ctl').innerHTML=M[n].html()+'<label style="margin-top:10px"><span>animate crank</span><input type=checkbox id=spin></label>';
+ $('ctl').querySelectorAll('input,select').forEach(e=>e.addEventListener('input',()=>{const v=$('v_'+e.id);if(v)v.textContent=e.value;draw()}));$('spin').addEventListener('input',()=>{spin=$('spin').checked;if(spin)loop()});draw()}
+function loop(){if(!spin)return;let t=(val('t2')+1)%360;$('t2').value=t;$('v_t2').textContent=t;draw();raf=requestAnimationFrame(loop)}
+// ---------- drawing
+let V;const P=p=>[V.ox+V.s*p[0],V.oy-V.s*p[1]];
+function view(pts,W,H,m=60){const x0=Math.min(...pts.map(p=>p[0])),x1=Math.max(...pts.map(p=>p[0])),y0=Math.min(...pts.map(p=>p[1])),y1=Math.max(...pts.map(p=>p[1])),s=Math.min((W-2*m)/Math.max(x1-x0,1e-6),(H-2*m)/Math.max(y1-y0,1e-6));V={s,ox:(W-s*(x0+x1))/2,oy:(H+s*(y0+y1))/2}}
+function seg(x,a,b,c,w=2){x.beginPath();x.moveTo(...P(a));x.lineTo(...P(b));x.strokeStyle=c;x.lineWidth=w;x.stroke()}
+function arr(x,p,v,k,c,lab){const a=P(p),b=P([p[0]+k*v[0],p[1]+k*v[1]]);x.beginPath();x.moveTo(...a);x.lineTo(...b);x.strokeStyle=c;x.lineWidth=2.2;x.stroke();const ang=Math.atan2(b[1]-a[1],b[0]-a[0]);x.beginPath();x.moveTo(...b);x.lineTo(b[0]-9*Math.cos(ang-.4),b[1]-9*Math.sin(ang-.4));x.lineTo(b[0]-9*Math.cos(ang+.4),b[1]-9*Math.sin(ang+.4));x.fillStyle=c;x.fill();if(lab){x.font='12px system-ui';x.fillText(lab,b[0]+5,b[1]-5)}}
+function dot(x,p,c,n){const q=P(p);x.beginPath();x.arc(q[0],q[1],4.5,0,7);x.fillStyle=c;x.fill();if(n){x.font='13px system-ui';x.fillText(n,q[0]+7,q[1]+16)}}
+const rot=(r,t)=>[r*cos(t),r*sin(t)],pp=v=>[-v[1],v[0]],add=(a,b)=>[a[0]+b[0],a[1]+b[1]],mul=(a,k)=>[a[0]*k,a[1]*k];
+function rows(r){$('tb').innerHTML=r.map(x=>`<tr><td>${x[0]}</td><td>${x[1]}</td></tr>`).join('')}
+function plot(fn,keys,names){const c=$('pl'),x=c.getContext('2d'),W=c.width,H=c.height;x.clearRect(0,0,W,H);const cols=['#1f77b4','#e8590c','#2a9d4a'];const N=360,data=keys.map(()=>[]);
+ for(let i=0;i<=N;i++){const s=fn(i*D);keys.forEach((k,j)=>data[j].push(s?s[k]:NaN))}
+ const all=data.flat().filter(isFinite);let lo=Math.min(...all),hi=Math.max(...all);if(hi-lo<1e-9){hi+=1;lo-=1}const pad=.08*(hi-lo);lo-=pad;hi+=pad;const X=i=>50+(W-70)*i/N,Y=v=>H-30-(H-50)*(v-lo)/(hi-lo);
+ x.strokeStyle='#8884';x.lineWidth=1;x.beginPath();x.moveTo(50,Y(0));x.lineTo(W-20,Y(0));x.stroke();x.fillStyle=css();x.font='12px system-ui';x.fillText(hi.toFixed(2),4,16);x.fillText(lo.toFixed(2),4,H-30);x.fillText('θ₂ → 0…360°',W-100,H-8);
+ data.forEach((d,j)=>{x.beginPath();let st=false;d.forEach((v,i)=>{if(!isFinite(v)){st=false;return}if(!st){x.moveTo(X(i),Y(v));st=true}else x.lineTo(X(i),Y(v))});x.strokeStyle=cols[j];x.lineWidth=1.8;x.stroke();x.fillStyle=cols[j];x.fillText(names[j],60+j*140,16)});
+ const t=val('t2');x.strokeStyle=css();x.setLineDash([4,4]);x.beginPath();x.moveTo(X(t),10);x.lineTo(X(t),H-30);x.stroke();x.setLineDash([])}
+function draw(){const c=$('cv'),x=c.getContext('2d'),W=c.width,H=c.height;x.clearRect(0,0,W,H);const k=css();const t2=val('t2')*D,w2=val('w2'),a2=val('a2');
+ if(cur=='fb'){const l=[val('l1'),val('l2'),val('l3'),val('l4')],m=+$('md').value,s=fb(l,t2,w2,a2,m);if(!s){rows([['','<span class=bad>cannot be assembled</span>']]);return}
+  const O2=[0,0],O4=[l[0],0],A=rot(l[1],t2),B=add(O4,rot(l[3],s.t4));view([O2,O4,A,B,[-1.5,-1.5],[l[0]+1.5,Math.max(l[1],l[3])+1.5],[-2.5,l[1]+2.2],[-2.5,-l[3]-1]],W,H,70);
+  seg(x,O2,O4,'#888',1);seg(x,O2,A,k);seg(x,A,B,k);seg(x,O4,B,k);dot(x,O2,k,'O₂');dot(x,O4,k,'O₄');dot(x,A,k,'A');dot(x,B,k,'B');
+  const vA=mul(pp(A),w2),aA=add(mul(pp(A),a2),mul(A,-w2*w2)),rB=rot(l[3],s.t4),vB=mul(pp(rB),s.w4),aB=add(mul(pp(rB),s.a4),mul(rB,-s.w4*s.w4));
+  const sv=1.6/Math.max(1e-6,Math.hypot(...vA),Math.hypot(...vB)),sa=1.6/Math.max(1e-6,Math.hypot(...aA),Math.hypot(...aB));
+  arr(x,A,vA,sv,'#1f77b4','V_A');arr(x,B,vB,sv,'#1f77b4','V_B');arr(x,A,aA,sa,'#e8590c','a_A');arr(x,B,aB,sa,'#e8590c','a_B');
+  rows([['θ₃, θ₄ (°)',(s.t3/D).toFixed(2)+', '+(s.t4/D).toFixed(2)],['ω₃ (rad/s)',s.w3.toFixed(4)],['ω₄ (rad/s)',s.w4.toFixed(4)],['α₃ (rad/s²)',s.a3.toFixed(4)],['α₄ (rad/s²)',s.a4.toFixed(4)],['|V_B| = |ω₄|l₄',Math.hypot(...vB).toFixed(4)],['|a_B|',Math.hypot(...aB).toFixed(4)]]);
+  plot(t=>fb(l,t,w2,a2,m),['w3','w4'],['ω₃','ω₄']);}
+ else if(cur=='sc'){const l2=val('l2'),l3=val('l3'),e=val('e'),s=sc(l2,l3,e,t2,w2,a2,1);if(!s){rows([['','<span class=bad>l₃ too short</span>']]);return}
+  const O2=[0,0],A=rot(l2,t2),B=[s.s,e];view([[-l2-1,-l2-1],[l2+l3+1,l2+1],B],W,H);x.setLineDash([5,4]);seg(x,[-l2-1,e],[l2+l3+1,e],'#888',1);x.setLineDash([]);seg(x,O2,A,k);seg(x,A,B,k);dot(x,O2,k,'O₂');dot(x,A,k,'A');dot(x,B,'#e8590c','B (slider)');
+  arr(x,B,[s.sd,0],.5/Math.max(.3,Math.abs(s.sd)),'#1f77b4','ṡ');arr(x,B,[s.sdd,0],.5/Math.max(.3,Math.abs(s.sdd)),'#e8590c','s̈');
+  rows([['s (slider)',s.s.toFixed(4)],['ṡ',s.sd.toFixed(4)],['s̈',s.sdd.toFixed(4)],['θ₃ (°)',(s.t3/D).toFixed(2)],['ω₃',s.w3.toFixed(4)],['α₃',s.a3.toFixed(4)]]);plot(t=>sc(l2,l3,e,t,w2,a2,1),['sd','sdd'],['ṡ','s̈']);}
+ else{const l1=val('l1'),l2=val('l2'),s=sl(l1,l2,t2,w2,a2),O2=[0,0],O4=[0,-l1],A=rot(l2,t2),e=[cos(s.t4),sin(s.t4)],r4=mul(e,s.s4);view([O2,O4,A,[-3,-l1-1],[l2+2,l2+2]],W,H,70);
+  seg(x,add(O4,mul(e,-1)),add(O4,mul(e,Math.max(s.s4,l1+l2)+1)),'rgba(136,136,136,.6)',6);seg(x,O2,A,k);dot(x,O2,k,'O₂');dot(x,O4,k,'O₄');dot(x,A,'#e8590c','A');
+  const aA=add(mul(pp(A),a2),mul(A,-w2*w2)),comps=[mul(r4,-s.w4*s.w4),mul(pp(r4),s.a4),mul(e,s.sdd),mul(pp(e),2*s.w4*s.sd)],cols=['#2a9d4a','#1f77b4','#9467bd','#d6204a'],labs=['aⁿ','aᵗ','a_rel','Coriolis'];
+  const sa=2.2/Math.max(1e-6,...comps.map(v=>Math.hypot(...v)),Math.hypot(...aA));let tip=add(O4,[0,0]);tip=A;comps.forEach((v,i)=>{arr(x,tip,v,sa,cols[i],labs[i]);tip=add(tip,mul(v,sa))});
+  rows([['s₄',s.s4.toFixed(4)],['θ₄ (°)',(s.t4/D).toFixed(2)],['ω₄',s.w4.toFixed(4)],['α₄',s.a4.toFixed(4)],['ṡ₄',s.sd.toFixed(4)],['s̈₄',s.sdd.toFixed(4)],['Coriolis 2ω₄ṡ₄',(2*s.w4*s.sd).toFixed(4)]]);plot(t=>sl(l1,l2,t,w2,a2),['w4','a4','sd'],['ω₄','α₄','ṡ₄'])}}
+for(const k in M){const b=document.createElement('button');b.textContent=M[k].name;b.dataset.n=k;b.onclick=()=>setup(k);$('tabs').appendChild(b)}setup('fb');
+</script></body></html>
