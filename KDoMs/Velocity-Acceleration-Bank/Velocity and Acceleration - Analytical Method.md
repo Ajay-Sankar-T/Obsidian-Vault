@@ -21,7 +21,7 @@ Source: [[Ghosh and Mallik.pdf]], Ch. 2 *Kinematic Analysis of Plane Mechanisms*
 Equation numbers in brackets are the book's. Relations marked **(derived)** are not printed in the book's Sec. 2.9 but follow by the same method; every formula in this note is checked against finite differences of the displacement solution in `va_core.py`.
 
 > [!abstract] Contents
-> [[#0. Conventions]] · [[#1. Principle]] · [[#2. Rigid-body and coincident-point relations]] · [[#3. Four-bar linkage]] · [[#4. Offset slider-crank]] · [[#5. Slotted-lever quick-return (Prob. 2.19)]] · [[#6. General recipe for any loop]] · [[#7. Instantaneous centre shortcut]] · [[#8. Checks and tools]] · [[#9. Notes on the book]]
+> [[#0. Conventions]] · [[#1. Principle]] · [[#2. Rigid-body and coincident-point relations]] · [[#3. Four-bar linkage]] · [[#4. Offset slider-crank]] · [[#5. Slotted-lever quick-return (Prob. 2.19)]] · [[#6. General recipe for any loop]] (incl. [[#6.1 Newton–Raphson method]]) · [[#7. Instantaneous centre shortcut]] · [[#8. Checks and tools]] · [[#9. Notes on the book]]
 
 > [!tip] The whole method in four lines
 > 1. Write each independent closed loop as a complex vector equation.
@@ -287,6 +287,73 @@ The same matrix $\Phi_{\mathbf q}$ appears at both levels; it is singular exactl
 | slider-crank | $\theta_3,s$ | 2 | $\cos\theta_3=0$ |
 | slotted lever | $\theta_4,s_4$ | 2 | $s_4=0$ |
 
+### 6.1 Newton–Raphson method
+
+For a four-bar or slider-crank, (2.4) solves the displacement exactly. For longer chains (several loops) the displacement equations cannot be solved in closed form, so solve $\Phi(\mathbf q,\theta_2)=0$ **numerically** with Newton–Raphson. The velocity and acceleration steps are unchanged, and they reuse the Jacobian $J=\Phi_{\mathbf q}$ that Newton already built.
+
+**Algorithm** (given $\theta_2$, a first guess $\mathbf q_0$):
+
+$$
+\mathbf q_{k+1}=\mathbf q_k-J(\mathbf q_k)^{-1}\,\Phi(\mathbf q_k,\theta_2)\quad\Longleftrightarrow\quad J\,\Delta\mathbf q=-\Phi,\ \ \mathbf q\leftarrow\mathbf q+\Delta\mathbf q
+$$
+
+Stop when $\lVert\Phi\rVert<\varepsilon$ (e.g. $10^{-12}$). Then, with $\mathbf q$ converged:
+
+$$
+J\,\dot{\mathbf q}=-\Phi_{\theta_2}\,\omega_2,\qquad J\,\ddot{\mathbf q}=-\Phi_{\theta_2}\,\alpha_2-\boldsymbol\gamma(\mathbf q,\dot{\mathbf q},\omega_2)
+$$
+
+where $\boldsymbol\gamma$ is every term of $\ddot\Phi$ that contains neither $\ddot{\mathbf q}$ nor $\alpha_2$ (the "velocity-squared" terms). These are the normal-acceleration and Coriolis terms.
+
+| Mechanism | $\mathbf q$ | $\Phi$ | $J=\Phi_{\mathbf q}$ | $\Phi_{\theta_2}$ | $\boldsymbol\gamma$ |
+|---|---|---|---|---|---|
+| 4R | $(\theta_3,\theta_4)$ | $\begin{pmatrix}l_1+l_4c_4+l_3c_3-l_2c_2\\ l_4s_4+l_3s_3-l_2s_2\end{pmatrix}$ | $\begin{pmatrix}-l_3s_3&-l_4s_4\\ l_3c_3&l_4c_4\end{pmatrix}$ | $\begin{pmatrix}l_2s_2\\-l_2c_2\end{pmatrix}$ | $\begin{pmatrix}-l_3c_3\omega_3^2-l_4c_4\omega_4^2+l_2c_2\omega_2^2\\ -l_3s_3\omega_3^2-l_4s_4\omega_4^2+l_2s_2\omega_2^2\end{pmatrix}$ |
+| slider-crank | $(\theta_3,s)$ | $\begin{pmatrix}l_2c_2+l_3c_3-s\\ l_2s_2+l_3s_3-e\end{pmatrix}$ | $\begin{pmatrix}-l_3s_3&-1\\ l_3c_3&0\end{pmatrix}$ | $\begin{pmatrix}-l_2s_2\\ l_2c_2\end{pmatrix}$ | $\begin{pmatrix}-l_2c_2\omega_2^2-l_3c_3\omega_3^2\\ -l_2s_2\omega_2^2-l_3s_3\omega_3^2\end{pmatrix}$ |
+| slotted lever | $(\theta_4,s_4)$ | $\begin{pmatrix}s_4\cos\theta_4-l_2c_2\\ s_4\sin\theta_4-l_1-l_2s_2\end{pmatrix}$ | $\begin{pmatrix}-s_4\sin\theta_4&\cos\theta_4\\ s_4\cos\theta_4&\sin\theta_4\end{pmatrix}$ | $\begin{pmatrix}l_2s_2\\-l_2c_2\end{pmatrix}$ | $\begin{pmatrix}-2\dot s_4\omega_4\sin\theta_4-s_4\omega_4^2\cos\theta_4+l_2c_2\omega_2^2\\ 2\dot s_4\omega_4\cos\theta_4-s_4\omega_4^2\sin\theta_4+l_2s_2\omega_2^2\end{pmatrix}$ |
+
+($c_i=\cos\theta_i,\ s_i=\sin\theta_i$ for the 4R and slider-crank rows; in the slotted-lever row $s_4$ is the slide length and $c_2,s_2$ are the crank's cosine and sine.)
+
+> [!example] One four-bar step, $l=(5.5,\,1.7,\,5.5,\,4.08)$, $\theta_2=65^\circ$
+> First guess: the solution at $\theta_2=60^\circ$, $\mathbf q_0=(2.0353,\,4.1469)$ rad.
+>
+> | $k$ | $\theta_3$ | $\theta_4$ | $\lVert\Phi\rVert$ |
+> |---|---|---|---|
+> | 0 | 2.03532 | 4.14695 | $1.5\times10^{-1}$ |
+> | 1 | 2.03800 | 4.11259 | $2.4\times10^{-3}$ |
+> | 2 | 2.03850 | 4.11293 | $6.0\times10^{-7}$ |
+> | 3 | 2.03850 | 4.11293 | $5\times10^{-14}$ |
+>
+> $\theta_3=116.80^\circ,\ \theta_4=235.65^\circ$. With $\omega_2=2,\ \alpha_2=1.5$: $\omega_3=0.1146,\ \omega_4=-0.7477$ rad/s; $\alpha_3=1.945,\ \alpha_4=0.904$ rad/s², identical to (3.2)/(3.3). The error roughly squares each step (quadratic convergence).
+
+**Practical rules**
+
+1. **Initial guess decides the assembly mode.** Newton lands on whichever root is nearest. For a sweep over $\theta_2$, **continuation**: use the converged $\mathbf q$ at the previous $\theta_2$ as the guess for the next. This follows one branch smoothly and converges in 2–4 iterations. For the first position take a guess from a sketch or (2.4).
+2. **A bad guess fails.** From $\mathbf q_0=(0.5,\,1.5)$ at the same $\theta_2$ the iteration wandered for 15 steps before converging, and the angle came out as $\theta_4=-8.45$ rad, which is $4.113-4\pi$: the right configuration with extra full turns. A worse guess can land on the other assembly mode instead. Angles are only defined mod $2\pi$, so wrap them (`atan2`) before using them.
+3. **Singular Jacobian = toggle / dead centre.** $\det J=l_3l_4\sin(\theta_4-\theta_3)$ for a 4R (the same quantity that appears in the denominators of (3.2), (3.3)). If it is near zero, $\dot{\mathbf q}$ is infinite or indeterminate; stop and treat the position separately.
+4. **Non-assemblable positions** never converge (e.g. $l=(6,1,2,2)$): cap the iterations (30 is plenty) and report failure.
+5. **Same $J$ for all three solves.** Factor it once (LU) and reuse it for Newton, velocity and acceleration.
+6. **Unwrapped angles in a sweep** may differ from the closed-form values by multiples of $2\pi$; velocities and accelerations are unaffected.
+
+**Code** (`va_newton.py`):
+
+```python
+def newton(M, q0, th2, tol=1e-12, itmax=30):
+    q = np.array(q0, float)
+    for _ in range(itmax):
+        F = M.phi(q, th2)
+        if np.linalg.norm(F) < tol: return q
+        q = q + np.linalg.solve(M.jac(q, th2), -F)        # q_{k+1} = q_k - J^-1 Phi
+    raise RuntimeError("no convergence")
+
+def vel_acc(M, q, th2, w2=1.0, a2=0.0):
+    J  = M.jac(q, th2)
+    qd = np.linalg.solve(J, -M.pth(q, th2)*w2)
+    qdd = np.linalg.solve(J, -M.pth(q, th2)*a2 - M.gam(q, qd, th2, w2))
+    return qd, qdd
+```
+
+`fourbar(l)`, `slidercrank(l2,l3,e)`, `slotted(l1,l2)` build the `M` objects; `sweep(M, q0, th2s, w2, a2)` does the continuation loop.
+
 ---
 
 ## 7. Instantaneous centre shortcut
@@ -311,6 +378,7 @@ A rigid body at the instant: $V_C=PC\cdot V_B/PB$ about its centre $P$ ($V_A/PA=
 | slider-crank, both modes: $\dot s,\ddot s,\omega_3,\alpha_3$ | ✓ |
 | slotted lever: $\dot\theta_4,\ddot\theta_4,\dot s_4,\ddot s_4$ | ✓ |
 | Coriolis closure $\mathbf a_A=\mathbf a_{P_4}+\mathbf a_{rel}+\mathbf a_c$ | ✓ to $10^{-9}$ |
+| Newton–Raphson (`va_newton.check()`): 4R both modes, slider-crank both modes, slotted lever, and a 361-point continuation sweep vs the closed forms; unassemblable linkage reports failure | agree to $10^{-9}$ (angles $10^{-10}$) |
 
 **Interactive:** [va-explorer.html](va-explorer.html) – sliders for link lengths, $\theta_2,\omega_2,\alpha_2$; live $\omega_3,\omega_4,\alpha_3,\alpha_4$ (or $\dot s,\ddot s$ / the Coriolis breakdown), velocity and acceleration arrows, an output-vs-$\theta_2$ plot with a marker, and an animate switch. Right-click → *Open in default app*.
 **Regenerate figures:** `python va_viz.py` (runs the checks first).
