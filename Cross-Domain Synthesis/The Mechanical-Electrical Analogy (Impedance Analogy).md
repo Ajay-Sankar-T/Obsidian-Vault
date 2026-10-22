@@ -9,7 +9,7 @@ up: "[[Cross-Domain Synthesis/Cross-Domain Synthesis - MOC]]"
 
 ## The dictionary
 
-[[EE1100 Basic Electrical Engineering/Tutorial 3 - AC Circuit Analysis/Impedance and Series-Parallel AC Circuits|Impedance and Series-Parallel AC Circuits]] defines $Z_R=R,\ Z_L=j\omega L,\ Z_C=-j/(\omega C)$. A structural spring-mass-damper system has the *literal same equation* if you substitute:
+[[Impedance and Series-Parallel AC Circuits|Impedance and Series-Parallel AC Circuits]] defines $Z_R=R,\ Z_L=j\omega L,\ Z_C=-j/(\omega C)$. A structural spring-mass-damper system has the *literal same equation* if you substitute:
 
 | Electrical (force-voltage analogy) | Mechanical | Where it lives in your vault |
 |---|---|---|
@@ -28,19 +28,19 @@ This isn't a loose metaphor — it's the same substitution that makes [[Cross-Do
 
 ## Impedance triangle ↔ mechanical impedance
 
-[[EE1100 Basic Electrical Engineering/Tutorial 3 - AC Circuit Analysis/Impedance and Series-Parallel AC Circuits|Impedance and Series-Parallel AC Circuits]]'s $Z=R+j(X_L-X_C)$ has a direct mechanical-impedance twin (force/velocity, in the frequency domain):
+[[Impedance and Series-Parallel AC Circuits|Impedance and Series-Parallel AC Circuits]]'s $Z=R+j(X_L-X_C)$ has a direct mechanical-impedance twin (force/velocity, in the frequency domain):
 
 $$Z_{\rm mech}(\omega) = c + j\!\left(\omega m - \frac{k}{\omega}\right)$$
 
-Both vanish their reactive part at the same kind of condition: electrical resonance $\omega_0=1/\sqrt{LC}$ corresponds exactly to mechanical resonance $\omega_n=\sqrt{k/m}$ — the frequency at which the mass's inertial reactance ($\omega m$) exactly cancels the spring's compliance reactance ($k/\omega$), just as $X_L=X_C$ cancels in [[EE1100 Basic Electrical Engineering/08 Resonance and Magnetically Coupled Circuits|Week 8's]] resonance condition.
+Both vanish their reactive part at the same kind of condition: electrical resonance $\omega_0=1/\sqrt{LC}$ corresponds exactly to mechanical resonance $\omega_n=\sqrt{k/m}$ — the frequency at which the mass's inertial reactance ($\omega m$) exactly cancels the spring's compliance reactance ($k/\omega$), just as $X_L=X_C$ cancels in [[08 Resonance and Magnetically Coupled Circuits|Week 8's]] resonance condition.
 
 ## A consequence you probably didn't have before
 
-Your [[Strength of materials/07 Transformation of Stress and Strain/Stress-Strain Transformation Analogy|Stress-Strain Transformation Analogy]] note already builds a "master substitution" mindset (τ↔γ/2) for relating stress and strain transformation. The impedance analogy is the *same habit of mind one level up*: instead of relating two tensor quantities within mechanics, it relates an entire **mechanics problem to an entire circuit problem**. Concretely, this means every AC network theorem in [[EE1100 Basic Electrical Engineering/Tutorial 3 - AC Circuit Analysis/Tutorial 3 - AC Circuit Analysis|Tutorial 3]] has a structural-vibration reading:
-- [[EE1100 Basic Electrical Engineering/Tutorial 3 - AC Circuit Analysis/Thevenin, Norton and Maximum Power Transfer (AC)|AC maximum power transfer]]'s $Z_L=Z_{\rm Th}^{*}$ becomes: a vibration absorber/damper attached to a structure extracts maximum energy from it when the absorber's mechanical impedance is the complex conjugate of the structure's — the founding idea behind **tuned mass dampers**, which are literally designed by conjugate-impedance matching in the mechanical domain.
-- [[EE1100 Basic Electrical Engineering/Tutorial 3 - AC Circuit Analysis/Power Factor Correction|Power factor correction]] (cancel a lagging reactance with a capacitor) becomes, mechanically, adding a compliant element to cancel excess inertial reactance in a vibrating machine mount — the same $\operatorname{Im}(Z)=0$ condition, achieved by adding "mechanical capacitance" (a softer spring) instead of an electrical one.
+Your [[Strength of materials/07 Transformation of Stress and Strain/Stress-Strain Transformation Analogy|Stress-Strain Transformation Analogy]] note already builds a "master substitution" mindset (τ↔γ/2) for relating stress and strain transformation. The impedance analogy is the *same habit of mind one level up*: instead of relating two tensor quantities within mechanics, it relates an entire **mechanics problem to an entire circuit problem**. Concretely, this means every AC network theorem in [[Tutorial 3 - AC Circuit Analysis|Tutorial 3]] has a structural-vibration reading:
+- [[Thevenin, Norton and Maximum Power Transfer (AC)|AC maximum power transfer]]'s $Z_L=Z_{\rm Th}^{*}$ becomes: a vibration absorber/damper attached to a structure extracts maximum energy from it when the absorber's mechanical impedance is the complex conjugate of the structure's — the founding idea behind **tuned mass dampers**, which are literally designed by conjugate-impedance matching in the mechanical domain.
+- [[Power Factor Correction|Power factor correction]] (cancel a lagging reactance with a capacitor) becomes, mechanically, adding a compliant element to cancel excess inertial reactance in a vibrating machine mount — the same $\operatorname{Im}(Z)=0$ condition, achieved by adding "mechanical capacitance" (a softer spring) instead of an electrical one.
 
 ## Related
 - [[Cross-Domain Synthesis/The Universal Second-Order Linear System|The Universal Second-Order Linear System]]
 - [[Strength of materials/10 Energy Methods/Strain Energy and Castigliano's Theorem|Strain Energy and Castigliano's Theorem]]
-- [[EE1100 Basic Electrical Engineering/08 Resonance and Magnetically Coupled Circuits|Week 8 — Resonance]]
+- [[08 Resonance and Magnetically Coupled Circuits|Week 8 — Resonance]]

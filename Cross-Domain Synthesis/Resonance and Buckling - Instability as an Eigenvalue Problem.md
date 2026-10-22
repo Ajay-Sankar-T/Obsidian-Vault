@@ -10,7 +10,7 @@ up: "[[Cross-Domain Synthesis/Cross-Domain Synthesis - MOC]]"
 ## Two "critical values" that are the same kind of object
 
 - [[Strength of materials/09 Columns and Buckling/Euler Buckling of Columns|Euler Buckling of Columns]]: below $P_{cr}=\pi^2EI/L^2$ the column is stable; at $P_{cr}$ a nontrivial deflected shape becomes possible "at no further load increase."
-- [[EE1100 Basic Electrical Engineering/08 Resonance and Magnetically Coupled Circuits|Week 8]] / [[EE1100 Basic Electrical Engineering/Tutorial 3 - AC Circuit Analysis/Impedance and Series-Parallel AC Circuits|Impedance and Series-Parallel AC Circuits]]: at $\omega_0=1/\sqrt{LC}$, $Z$ collapses to pure $R$ and current becomes maximal — a "trivial" tiny driving voltage produces a large circulating current/voltage (see the voltage-magnification section of [[Strength of materials/07 Transformation of Stress and Strain/Plane Stress Transformation|Impedance and Series-Parallel AC Circuits]]'s Q7 discussion).
+- [[08 Resonance and Magnetically Coupled Circuits|Week 8]] / [[Impedance and Series-Parallel AC Circuits|Impedance and Series-Parallel AC Circuits]]: at $\omega_0=1/\sqrt{LC}$, $Z$ collapses to pure $R$ and current becomes maximal — a "trivial" tiny driving voltage produces a large circulating current/voltage (see the voltage-magnification section of [[Strength of materials/07 Transformation of Stress and Strain/Plane Stress Transformation|Impedance and Series-Parallel AC Circuits]]'s Q7 discussion).
 
 Both are the point where a **linear operator's homogeneous problem stops having only the trivial solution**. Formally:
 
@@ -31,4 +31,4 @@ If you replace the *static* buckling load $P$ with a *time-varying* one and add 
 ## Related
 - [[Cross-Domain Synthesis/The Universal Second-Order Linear System|The Universal Second-Order Linear System]]
 - [[Strength of materials/09 Columns and Buckling/Euler Buckling of Columns|Euler Buckling of Columns]]
-- [[EE1100 Basic Electrical Engineering/08 Resonance and Magnetically Coupled Circuits|Week 8 — Resonance]]
+- [[08 Resonance and Magnetically Coupled Circuits|Week 8 — Resonance]]

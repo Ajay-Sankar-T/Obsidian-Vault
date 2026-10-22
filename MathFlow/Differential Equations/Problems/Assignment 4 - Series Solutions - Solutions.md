@@ -9,7 +9,13 @@ tags:
   - power-series
   - frobenius
   - legendre
+  - frobenius-indicial-cases
+  - bessel-type-equations
 source: "[[A4-2026.pdf]]"
+concepts:
+  - "[[Frobenius Method - Indicial Equation and Three Cases]]"
+  - "[[Frobenius Method - Worked Examples]]"
+  - "[[Legendre Polynomials and Rodrigues' Formula]]"
 aliases:
   - Assignment 4 solutions
 ---
@@ -20,6 +26,22 @@ Source: [[A4-2026.pdf]] · Theory: [[Series Solutions - MOC]] · [[Ordinary and 
 
 > [!abstract] Contents
 > [[#0. Theory toolkit]] · [[#Q1 Power series at ordinary points]] · [[#Q2 Power series IVPs]] · [[#Q3 Frobenius method]] · [[#Summary]]
+
+> [!info] Concept notes for this sheet
+> Q1–Q2 (ordinary points): [[Power Series Method]] · [[Radius of Convergence of Series Solutions]] · [[Series Solutions About x0 not equal to 0]]. Q1(b) is [[Legendre's Equation]] → [[Legendre Polynomials and Rodrigues' Formula]].
+> Q3 (Frobenius): [[Regular and Irregular Singular Points]] → [[Frobenius Method - Indicial Equation and Three Cases]] → [[Frobenius Method - Worked Examples]] (the same Bessel-type problems, solved in lecture).
+>
+> | Q3 part | Indicial roots | Case (see [[Frobenius Method - Indicial Equation and Three Cases]]) | Logarithm? |
+> |---|---|---|---|
+> | (a) $x=0$ / $x=1$ | $0,\frac73$ / $0,-\frac13$ | I | no |
+> | (b) | $0,1$ | III (difference 1) | **yes** |
+> | (c) | $\frac14,\frac34$ | I (Bessel of order $\frac14$, [[Bessel's Equation and Bessel Functions of the First Kind]]) | no |
+> | (d) | $-2,-3$ | III (difference 1) | no ($\cosh x/x^3,\ \sinh x/x^3$; compare Bessel order $\frac12$) |
+> | (e) at $x=2$ | $\frac{1\pm i\sqrt{11}}4$ | I (complex) | no |
+> | (f) | $1,-\frac12$ | I | no |
+> | (g) at $x=0$ | $\pm1$ | III (difference 2) | **yes** (like Bessel order 1, $Y_1$) |
+> | (h) | $0,0$ | II | **yes** ($e^x\ln x$) |
+> | (i) | $0,-1$ | III (difference 1) | no |
 
 > [!warning] Corrections and notes
 > Every series coefficient and every closed form below was computed exactly (SymPy) and compared with a numerical solution. Relative to the previous version:

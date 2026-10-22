@@ -34,5 +34,11 @@ A point $x_0$ is **singular** if it is not ordinary — at least one of $P(x),Q(
 
 The two arbitrary constants $a_0,a_1$ correspond to two linearly independent solutions (recall [[Linear Independence and the Wronskian]]). For simplicity, examples typically take the ordinary point $x_0=0$.
 
+
+## Visual
+
+![[DE-S2-radius-of-convergence.png]]
+**Figure:** Singular points of Legendre's equation ($x=\pm1$, red crosses) limit the series about an ordinary point to the disc reaching the nearest one: $R=1$ about $x_0=0$, $R=\frac{1}{2}$ about $x_0=\frac{1}{2}$.
+
 ---
 Next: [[Power Series Method]]

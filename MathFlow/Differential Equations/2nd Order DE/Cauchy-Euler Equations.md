@@ -60,5 +60,11 @@ $$y = x^2(C_1+C_2\ln x)$$
 **$x^2y''+xy'+y=0$, $x>0$:** AE $m^2+1=0$. Roots $\pm i$ ($\alpha=0,\beta=1$).
 $$y = C_1\cos(\ln x)+C_2\sin(\ln x)$$
 
+
+## Visual
+
+![[DE-E9-cauchy-euler.png]]
+**Figure:** The three root cases of $am(m-1)+bm+c=0$. Compare with the constant-coefficient case: powers of $x$ replace exponentials, and $\ln x$ replaces $x$ (so complex roots oscillate in $\ln x$).
+
 ---
 Next: [[Non-homogeneous Cauchy-Euler Equations]]

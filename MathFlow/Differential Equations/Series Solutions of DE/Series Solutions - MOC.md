@@ -1,4 +1,4 @@
-Map of content for the Series Solutions of ODEs lectures (Lecture-12 through Lecture-14). Builds on [[2nd Order ODEs - MOC]] in the "2nd Order DE" folder.
+Map of content for the Series Solutions of ODEs lectures (Lecture-12 through Lecture-17). Builds on [[2nd Order ODEs - MOC]] in the "2nd Order DE" folder.
 
 ## Foundations (Lecture 12)
 1. [[Ordinary and Singular Points]]
@@ -18,3 +18,10 @@ Map of content for the Series Solutions of ODEs lectures (Lecture-12 through Lec
 ## Regular and Irregular Singular Points (Lecture 14)
 10. [[Regular and Irregular Singular Points]]
 11. [[Frobenius Theorem]]
+
+## Frobenius Method (Lectures 15–17)
+12. [[Frobenius Method - Indicial Equation and Three Cases]] — derivation of the indicial equation, Case I/II/III, when a logarithm appears
+13. [[Frobenius Method - Worked Examples]] — eight problems (Bessel 0, ½, 1; $\cos\sqrt x$; Euler)
+
+## Continues in
+[[Special Functions - MOC]] — Legendre polynomials (Lectures 18–22), Gamma and Bessel functions (Lectures 23–25).

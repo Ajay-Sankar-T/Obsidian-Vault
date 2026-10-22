@@ -16,5 +16,13 @@ If $n$ is a non-negative integer, one of the two series **terminates** (since th
 
 Series converges for $|x|<1$ (radius of convergence $=1$, matching the distance to the nearest singular point $x=\pm1$, consistent with [[Radius of Convergence of Series Solutions]]).
 
+
+## Visual
+
+![[DE-S5-legendre-equation.png]]
+**Figure:** Integer $p=n$: a polynomial solution $P_n$ (left) plus a second solution $Q_n$ that is log-singular at $\pm1$ (middle). Non-integer $p$: neither series terminates (right). Continued in [[Legendre Polynomials and Rodrigues' Formula]].
+
 ---
 Related: [[Series Solutions - Homogeneous Examples]]
+
+**Continues in Special Functions:** [[Legendre Polynomials and Rodrigues' Formula]] · [[Generating Function of Legendre Polynomials]] · [[Orthogonality and Norm of Legendre Polynomials]] · [[Legendre Series and Fourier-Legendre Expansions]] · [[Legendre Recurrence Relations and Integrals]]. Problems: [[Assignment 5 - Legendre Polynomials and Functions - Solutions]].

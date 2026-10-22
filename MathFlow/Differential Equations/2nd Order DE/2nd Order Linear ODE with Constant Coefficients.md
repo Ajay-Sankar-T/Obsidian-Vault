@@ -30,5 +30,11 @@ $$y = 3e^{2x}-2e^{3x}$$
 **IVP $y''-6y'+9y=0$, $y(0)=2,y'(0)=5$:** $r=3,3$ (repeated). $y=(C_1+C_2x)e^{3x}$, $y'=e^{3x}(3C_1+C_2+3C_2x)$. From ICs: $C_1=2$, $3C_1+C_2=5\Rightarrow C_2=-1$.
 $$y_p(x) = (2-x)e^{3x}$$
 
+
+## Visual
+
+![[DE-E7-constant-coefficients.png]]
+**Figure:** Roots of $r^2+ar+b=0$ in the complex plane and the resulting behaviour: distinct real roots (overdamped), a repeated root (critically damped), complex roots (underdamped oscillation inside an $e^{\alpha x}$ envelope).
+
 ---
 Next: [[Undetermined Coefficients]]

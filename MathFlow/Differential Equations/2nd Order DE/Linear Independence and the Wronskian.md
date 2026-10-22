@@ -51,5 +51,11 @@ Suppose $W(x)\ne0$ for every $x\in I$. Assume, to the contrary, $y_1,y_2$ are li
 $$W(y_1,y_2) = y_1\left(-\tfrac{c_1}{c_2}y_1'\right) - \left(-\tfrac{c_1}{c_2}y_1\right)y_1' = 0,$$
 contradicting $W\ne0$. Hence $y_1,y_2$ are linearly independent. $\blacksquare$
 
+
+## Visual
+
+![[DE-E6-wronskian.png]]
+**Figure:** Independent solutions have $W\ne0$ everywhere; dependent ones have $W\equiv0$. The right panel is the warning in the note: $x^3$ and $|x|^3$ have $W\equiv0$ yet are independent, because they do not solve a common linear ODE with continuous coefficients.
+
 ---
 Next: [[Abel's Formula]]

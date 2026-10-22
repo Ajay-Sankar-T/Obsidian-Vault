@@ -5,5 +5,7 @@
   "textFontFamily": "Arial",
   "interfaceFontFamily": "Century Gothic",
   "baseFontSizeAction": false,
-  "enabledCssSnippets": []
+  "enabledCssSnippets": [],
+  "showViewHeader": true,
+  "showRibbon": true
 }

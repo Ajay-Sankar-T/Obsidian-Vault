@@ -1,6 +1,6 @@
-
-
-## tags: [llm, wiki, maintenance]
+---
+tags: [llm, wiki, maintenance]
+---
 
 # LLM Wiki Guide
 
@@ -330,7 +330,7 @@ Do **not** generate visuals merely to make every note look visually rich.
 
 Before making broad changes:
 
-1. Read [[00 Home]].
+1. Read [[Home]].
 2. Read the relevant subject MOC.
 3. Read two or three nearby notes to match notation and style.
 4. Preserve existing content unless it is clearly duplicated, broken, or empty.

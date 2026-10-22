@@ -1,7 +1,7 @@
-
+---
 tags: [concept]
-
-## status: draft
+status: draft
+---
 
 # {{title}}
 

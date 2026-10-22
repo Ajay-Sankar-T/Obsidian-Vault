@@ -67,5 +67,11 @@ $$y = e^{-x}(c_1\cos2x+c_2\sin2x)+\frac{x}{4}e^{-x}\sin2x$$
 **$y''-y'-2y=4x-5+6xe^{2x}$:** split $R=R_1+R_2$. For $R_1=4x-5$: $y_{p1}=Ax+B$, $A=-2,B=\tfrac72$. For $R_2=6xe^{2x}$ (2 is simple root, $s=1$): $y_{p2}=x(Cx+D)e^{2x}$, $C=1,D=-\tfrac23$.
 $$y = c_1e^{2x}+c_2e^{-x}-2x+\tfrac72+\left(x^2-\tfrac23x\right)e^{2x}$$
 
+
+## Visual
+
+![[DE-E8-resonance.png]]
+**Figure:** Left: when the forcing $\cos x$ already solves the homogeneous equation, the trial form must be multiplied by $x$, and the particular solution $\frac{1}{2}x\sin x$ grows linearly (resonance). Right: for a nearby frequency no extra factor is needed and the response is bounded (beats).
+
 ---
 Next: [[Variation of Parameters]]

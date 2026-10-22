@@ -1,2 +1,15 @@
 ﻿
 KDoMs/Book/Ghosh and Mallik.pdf
+__pycache__/
+*.pyc
+
+graphify-out/
+.claude/
+
+# heavy reference books / large PDFs (>10 MB)
+mech stuff/KDoMs/Book/
+mech stuff/Engineering Mechanics/*.pdf
+mech stuff/Fluid Mechanics/Book/
+mech stuff/Strength of materials/Book/
+mech stuff/Physics Lab/Grating_Mercury_Wavelengths.pdf
+Chemistry/atkins-physical-chemistry.pdf

@@ -33,5 +33,11 @@ so the Lipschitz condition **fails** near $y = 0$. Consequently this IVP has inf
 
 This demonstrates that continuity alone is insufficient for uniqueness; the Lipschitz condition is essential.
 
+
+## Visual
+
+![[DE-E3-uniqueness.png]]
+**Figure:** Left: $y'=y$ satisfies the Lipschitz condition, one solution through each point. Right: $y'=y^{1/3}$ is only continuous at $y=0$; a solution can sit at $y=0$ for any time $c$ and then leave along $(2(x-c)/3)^{3/2}$, giving infinitely many solutions.
+
 ---
 Next: [[Exact Differential Equations]]

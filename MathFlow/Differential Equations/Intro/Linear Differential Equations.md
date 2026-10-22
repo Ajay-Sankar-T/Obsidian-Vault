@@ -48,5 +48,11 @@ $$e^{2x}\frac{dy}{dx} + 2e^{2x}y = 1 \implies \frac{d}{dx}(e^{2x}y) = 1$$
 - Solve $\sin y\,\dfrac{dy}{dx} = \cos x\,(2\cos y - \sin^2 x)$ (put $\cos y = z$).
 - Solve $x^3y' + 4x^2\tan y = e^x\sec y$, $y(1)=0$ (put $\sin y = z$).
 
+
+## Visual
+
+![[DE-E5-linear-bernoulli.png]]
+**Figure:** Left panel: the solution family of $y'+2y=e^{-2x}$; the integrating factor $e^{2x}$ turns the equation into $(e^{2x}y)'=1$, so every solution decays. The other two panels show the Bernoulli examples from the next note.
+
 ---
 Next: [[Bernoulli Differential Equations]]

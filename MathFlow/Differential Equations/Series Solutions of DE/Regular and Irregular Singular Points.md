@@ -39,5 +39,19 @@ Multiplying the ODE by $x^2$:
 $$x^2y'' + x[xP(x)]y' + [x^2Q(x)]y = 0.$$
 This makes the regular singular structure explicit — the equation resembles a Cauchy-Euler equation (recall $ax^2y''+bxy'+cy=0$ from [[Cauchy-Euler Equations]]) but with variable coefficients. This motivates seeking solutions of Euler-type ($x^r$) times a power series — exactly the trial solution Frobenius proposed.
 
+## Visual: classifying a point
+
+```mermaid
+flowchart TD
+    A["y'' + P y' + Q y = 0,  point x0"] --> B{"P and Q analytic at x0?"}
+    B -- yes --> C["ORDINARY point<br/>y = Σ a_n (x−x0)^n"]
+    B -- no --> D{"(x−x0)P and (x−x0)²Q<br/>both analytic at x0?"}
+    D -- yes --> E["REGULAR singular point<br/>Frobenius y = (x−x0)^r Σ a_n (x−x0)^n"]
+    D -- no --> F["IRREGULAR singular point<br/>no Frobenius series in general"]
+    E --> G["indicial equation r(r−1) + p0 r + q0 = 0"]
+```
+
+Examples: $x=0$ for $y''+xy'+y=0$ is ordinary; $x=0$ for Bessel's $x^2y''+xy'+(x^2-\nu^2)y=0$ is regular; $x=0$ for $x^3y''+y'+xy=0$ is irregular. The indicial equation and its three cases are in [[Frobenius Method - Indicial Equation and Three Cases]].
+
 ---
 Next: [[Frobenius Theorem]]

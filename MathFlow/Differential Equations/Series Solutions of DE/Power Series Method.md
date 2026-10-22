@@ -21,5 +21,11 @@ This shifted form is essential before comparing coefficients. The resulting recu
 
 **Note on index shifting** (used repeatedly, e.g. for $xy'$, $(t+1)y'$, etc.): a series $\sum_{n=n_0}^\infty c\cdot a_{n+k}x^{n+m}$ is re-indexed by setting the new index equal to the current power of $x$, so that every series in the sum is expressed with the same power $x^k$ before coefficients are compared. Getting the starting index right (some series only start contributing from $k=1$, requiring $k=0$ to be treated as a separate case) is the most common source of error — see the $x_0\ne0$ examples in [[Series Solutions About x0 not equal to 0]].
 
+
+## Visual
+
+![[DE-S1-power-series.png]]
+**Figure:** For $y''-y=0$ the recurrence $a_{n+2}=a_n/((n+1)(n+2))$ splits into an even chain ($\cosh x$) and an odd chain ($\sinh x$). Partial sums approximate the exact solution on a window that grows with the number of terms; here $R=\infty$.
+
 ---
 Next: [[Series Solutions - Homogeneous Examples]]

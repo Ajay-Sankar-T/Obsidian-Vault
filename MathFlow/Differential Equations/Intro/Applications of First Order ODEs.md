@@ -23,5 +23,11 @@ $$\frac{dT}{dt} = -k(T - T_s),$$
 where $T_s$ denotes the surrounding temperature. The solution is
 $$T(t) = T_s + (T_0 - T_s)e^{-kt}.$$
 
+
+## Visual
+
+![[DE-E4-applications.png]]
+**Figure:** Exponential growth, radioactive decay (with its half-life $\ln2/\lambda$), and Newton's cooling, where every temperature curve relaxes to the ambient $T_s$ with the same time constant $1/k$.
+
 ---
 Next: [[Isoclines]]

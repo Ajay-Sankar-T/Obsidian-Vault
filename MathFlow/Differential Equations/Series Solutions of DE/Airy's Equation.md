@@ -29,5 +29,11 @@ Substituting back $t=x-2$:
 $$y = C_1\left[1+(x-2)^2+\tfrac16(x-2)^3+\cdots\right] + C_2\left[(x-2)+\tfrac13(x-2)^3+\cdots\right]$$
 Since Airy's equation has no singular points anywhere, this series converges for all $x$ — this worked example illustrates the general method in [[Series Solutions About x0 not equal to 0]].
 
+
+## Visual
+
+![[DE-S3-airy.png]]
+**Figure:** The Airy functions $\mathrm{Ai},\mathrm{Bi}$ oscillate for $x<0$ and grow/decay exponentially for $x>0$. Right: $\mathrm{Ai}$ is the specific combination $\mathrm{Ai}(0)y_1+\mathrm{Ai}'(0)y_2$ of the two power series.
+
 ---
 Related: [[Series Solutions - Homogeneous Examples]] · [[Radius of Convergence of Series Solutions]]

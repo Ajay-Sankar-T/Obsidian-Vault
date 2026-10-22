@@ -15,7 +15,7 @@ $$a\ddot x + b\dot x + cx = f(t)\qquad\Longleftrightarrow\qquad s^2+2\alpha s+\o
 
 | Domain | Note | Physical variable $x$ | $a$ | $b$ | $c$ |
 |---|---|---|---|---|---|
-| Circuits | [[EE1100 Basic Electrical Engineering/AC Transients/Second-Order AC Transients (Series and Parallel RLC)\|Second-Order AC Transients]] | current $i$ (series RLC) | $L$ | $R$ | $1/C$ |
+| Circuits | [[Second-Order AC Transients (Series and Parallel RLC)\|Second-Order AC Transients]] | current $i$ (series RLC) | $L$ | $R$ | $1/C$ |
 | Structures | [[Strength of materials/09 Columns and Buckling/Euler Buckling of Columns\|Euler Buckling of Columns]] | lateral deflection $v$ | $EI$ | $0$ | $P$ |
 | Pure math | [[2nd Order Linear ODE with Constant Coefficients\|2nd Order Linear ODE with Constant Coefficients]] | abstract $y$ | any | any | any |
 
@@ -31,7 +31,7 @@ $$\zeta = \frac{\alpha}{\omega_n}$$
 
 reappears with the *same three qualitative regimes* everywhere this equation shows up:
 
-| $\zeta$ | RLC ([[EE1100 Basic Electrical Engineering/AC Transients/Second-Order AC Transients (Series and Parallel RLC)\|link]]) | Would-be mechanical analogue |
+| $\zeta$ | RLC ([[Second-Order AC Transients (Series and Parallel RLC)\|link]]) | Would-be mechanical analogue |
 |---|---|---|
 | $\zeta>1$ | overdamped — current creeps back with no oscillation | overdamped spring-mass-damper (heavy damper) |
 | $\zeta=1$ | critically damped — fastest non-oscillatory return | critical damping (shock absorbers are tuned here) |

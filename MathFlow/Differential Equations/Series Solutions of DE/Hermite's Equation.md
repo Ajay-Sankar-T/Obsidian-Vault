@@ -13,5 +13,11 @@ When $n$ is a non-negative integer, one series terminates into a polynomial — 
 
 Since there are no singular points, the series converges for **all** $x\in\mathbb{R}$ — contrast with [[Legendre's Equation]], whose singularities at $x=\pm1$ limit convergence to $|x|<1$.
 
+
+## Visual
+
+![[DE-S4-hermite.png]]
+**Figure:** When $n$ is a non-negative integer the series terminates and gives the Hermite polynomials $H_n$ (left). Multiplied by $e^{-x^2/2}$ they become the quantum-oscillator wave functions (right).
+
 ---
 Related: [[Series Solutions - Homogeneous Examples]]

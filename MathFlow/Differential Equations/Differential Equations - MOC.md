@@ -10,8 +10,9 @@ This is the top-level index for the Differential Equations part of the vault. Th
 
 1. [[First Order ODEs - MOC|First Order ODEs]]
 2. [[2nd Order ODEs - MOC|Second Order and Higher Order ODEs]]
-3. [[Series Solutions - MOC|Series Solutions of Differential Equations]]
-4. [[Problems - MOC|Problem Sets and Solutions]]
+3. [[Series Solutions - MOC|Series Solutions of Differential Equations]] (including the Frobenius method, Lectures 12–17)
+4. [[Special Functions - MOC|Special Functions: Legendre, Gamma and Bessel]] (Lectures 18–25)
+5. [[Problems - MOC|Problem Sets and Solutions]]
 
 ## Lecture Slides (MA2102)
 - [[Lecture-1.pdf]]
@@ -34,6 +35,12 @@ This is the top-level index for the Differential Equations part of the vault. Th
 - [[Lecture-19.pdf]]
 - [[Lecture-20.pdf]]
 - [[Lecture-21.pdf]]
+- [[Lecture-22.pdf]]
+- [[Lecture-23.pdf]]
+- [[Lecture-24.pdf]]
+- [[Lecture-25.pdf]]
+
+Lecture → note map: Lectures 1–3 [[First Order ODEs - MOC]] · 4–11 [[2nd Order ODEs - MOC]] · 12–17 [[Series Solutions - MOC]] · 18–25 [[Special Functions - MOC]].
 
 ## Core Concepts
 
@@ -42,6 +49,9 @@ This is the top-level index for the Differential Equations part of the vault. Th
 - [[Linear Independence and the Wronskian|Linear Independence and the Wronskian]]
 - [[General Solution Structure Theorem|General Solution Structure Theorem]]
 - [[Frobenius Theorem|Frobenius Theorem]]
+- [[Frobenius Method - Indicial Equation and Three Cases|Indicial equation and the three cases]]
+- [[Legendre Polynomials and Rodrigues' Formula|Legendre polynomials]], [[Orthogonality and Norm of Legendre Polynomials|orthogonality]]
+- [[Bessel's Equation and Bessel Functions of the First Kind|Bessel functions]], [[Gamma Function|Gamma function]]
 
 ## Cross-Domain Synthesis
 

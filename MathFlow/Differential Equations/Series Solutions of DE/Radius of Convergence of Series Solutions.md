@@ -9,5 +9,11 @@ This estimate is obtained **without solving the equation explicitly** — just f
 - [[Legendre's Equation]] $(1-x^2)y''-2xy'+n(n+1)y=0$ has singular points $x=\pm1$. Series about $x_0=0$ converges for $|x|<1$.
 - [[Airy's Equation]] $y''-xy=0$ has **no** singular points at all. So the series solution converges for every real $x$ — matching [[Hermite's Equation]], which similarly has no singular points.
 
+
+## Visual
+
+![[DE-S2-radius-of-convergence.png]]
+**Figure:** Left: the radius is the distance (in the complex plane) to the nearest singular point. Middle: a Legendre series ($p=\frac{1}{2}$) is trustworthy only inside $|x|<1$. Right: Airy's equation has no singular point, and its series is good everywhere (more terms extend the window).
+
 ---
 Next: [[Regular and Irregular Singular Points]]

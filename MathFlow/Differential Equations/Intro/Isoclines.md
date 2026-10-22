@@ -35,5 +35,11 @@ This is a linear ODE, $y' + y = x$ (see [[Linear Differential Equations]]), with
 $$y = x - 1 + Ke^{-x}.$$
 As $x \to \infty$, all solution curves approach the line $y = x - 1$.
 
+
+## Visual
+
+![[DE-E1-isoclines.png]]
+**Figure:** Dashed orange lines are isoclines (constant slope $c$); blue curves are the actual solutions. The three examples above: vertical isoclines for $y'=x$, radial isoclines for $y'=-x/y$ (solutions are circles, *not* the isoclines), parallel isoclines for $y'=x-y$ (all solutions approach $y=x-1$).
+
 ---
 Next: [[Existence and Uniqueness (Picard-Lindelof Theorem)]]

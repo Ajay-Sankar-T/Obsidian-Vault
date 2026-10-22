@@ -1,9 +1,8 @@
-
-
+---
 tags: [MOC, course]
-
 course: "{{course}}"
 status: active
+---
 
 # {{course}} — Map of Content
 

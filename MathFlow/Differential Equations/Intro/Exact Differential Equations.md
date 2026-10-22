@@ -52,5 +52,11 @@ $$F = \int e^y\,dx = xe^y + g(y), \qquad F_y = xe^y + g'(y) = xe^y + 2y \implies
 
 > **Caution:** Don't write two constants in the final solution — absorb them into one.
 
+
+## Visual
+
+![[DE-E2-exact-level-curves.png]]
+**Figure:** The solution of an exact equation is a level curve $F(x,y)=C$ of the potential. The gradient $\nabla F=(M,N)$ is perpendicular to every level curve, which is why $M\,dx+N\,dy=dF=0$ along a solution.
+
 ---
 Next: [[Integrating Factors]]

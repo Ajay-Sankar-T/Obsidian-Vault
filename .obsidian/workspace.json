@@ -4,63 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "8b98dd938d9d80d4",
+        "id": "ee38b403e9fde5dd",
         "type": "tabs",
         "children": [
           {
-            "id": "a4b3633f5d06efe1",
+            "id": "0264ca24df4a3801",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Fluid Mechanics/Fluid Mechanics - MOC.md",
+                "file": "mech stuff/Strength of materials/Tutorial 7 - Bending and Shear Stresses/Tutorial 7 - Bending and Shear Stresses.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Fluid Mechanics - MOC"
-            }
-          },
-          {
-            "id": "82735f50edba2a58",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "KDoMs/Tutorial-solutions/Tutorial-7-solution.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Tutorial-7-solution"
-            }
-          },
-          {
-            "id": "eabf7584dca5b952",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "KDoMs/Synthesis-Formula-Bank/Motion and Path Generation - Graphical Methods.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Motion and Path Generation - Graphical Methods"
-            }
-          },
-          {
-            "id": "32be4f232c83dfc4",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "KDoMs/Velocity-Acceleration-Bank/Velocity and Acceleration - Analytical Method.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Velocity and Acceleration - Analytical Method"
+              "title": "Tutorial 7 - Bending and Shear Stresses"
             }
           }
         ]
@@ -83,7 +41,7 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false,
+                "autoReveal": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
@@ -109,11 +67,24 @@
             }
           },
           {
+            "id": "0a24276db870480b",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
+          },
+          {
             "id": "42f0b4dedb9af779",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {},
+              "state": {
+                "showSearch": false,
+                "searchQuery": ""
+              },
               "icon": "lucide-bookmark",
               "title": "Bookmarks"
             }
@@ -122,7 +93,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "9764893094b8dfd2",
@@ -138,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Fluid Mechanics/Fluid Mechanics - MOC.md",
+                "file": "EE1100 Basic Electrical Engineering/EE1100 Lecture notes/Lecture 14 Single Phase AC Circuits.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -221,65 +193,63 @@
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
-      "daily-notes:Open today's daily note": false,
-      "templates:Insert template": false,
-      "command-palette:Open command palette": false,
-      "bases:Create new base": false,
-      "obsidian-excalidraw-plugin:New drawing": false,
-      "pdf-plus:PDF++: Toggle auto-copy": false,
-      "pdf-plus:PDF++: Toggle auto-focus": false,
-      "pdf-plus:PDF++: Toggle auto-paste": false
+      "daily-notes:Open today's daily note": true,
+      "templates:Insert template": true,
+      "command-palette:Open command palette": true,
+      "bases:Create new base": true,
+      "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "a4b3633f5d06efe1",
+  "active": "0264ca24df4a3801",
   "lastOpenFiles": [
-    "Fluid Mechanics/06 Dimensional Analysis and Similitude/Dimensional Analysis and Similitude - Formula Bank.md",
-    "Fluid Mechanics/06 Dimensional Analysis and Similitude/Dimensional Analysis and Similitude - Solved Problems.md",
-    "Fluid Mechanics/Book/white_frank_m._-_fluid_mechanics_4th_ed_mcgraw_hill.pdf",
-    "Fluid Mechanics/06 Dimensional Analysis and Similitude",
-    "Fluid Mechanics/Tools/__pycache__/fm_pitot.cpython-314.pyc",
-    "Fluid Mechanics/Tools/fm_pitot.py",
-    "Fluid Mechanics/assets/FM-B4-pitot-compressibility.png",
-    "Fluid Mechanics/assets/FM-B3-alternate-depths.png",
-    "Fluid Mechanics/assets/FM-B2-venturi-EGL-HGL.png",
-    "Fluid Mechanics/assets/FM-B1-pitot-static.png",
-    "Fluid Mechanics/assets/FM-K4-p459-element.png",
-    "Fluid Mechanics/assets/FM-K3-vortices.png",
-    "Fluid Mechanics/assets/FM-K2-shear-decomposition.png",
-    "Fluid Mechanics/assets/FM-K1-element-motion.png",
-    "Fluid Mechanics/assets/FM-D1-scaling.png",
-    "Fluid Mechanics/assets",
-    "Fluid Mechanics/Tools/fm_viz.py",
-    "Fluid Mechanics/Tools/__pycache__/fm_core.cpython-314.pyc",
-    "Fluid Mechanics/Tools/__pycache__",
-    "Fluid Mechanics/Tools/fm_core.py",
-    "Fluid Mechanics/Tools",
-    "Fluid Mechanics/Fluid Mechanics - MOC.md",
-    "Fluid Mechanics/00 Introduction and Fundamental Concepts/Continuum Concept.md",
-    "KDoMs/Velocity-Acceleration-Bank/Velocity and Acceleration - Graphical Methods (Polygons).md",
-    "KDoMs/Velocity-Acceleration-Bank/Velocity and Acceleration - Analytical Method.md",
-    "KDoMs/Synthesis-Formula-Bank/Motion and Path Generation - Graphical Methods.md",
-    "KDoMs/Synthesis-Formula-Bank/Motion and Path Generation - Analytical Methods.md",
-    "KDoMs/Formula-Bank/Gear Formula Bank.md",
-    "KDoMs/Problem-2.19-solution.md",
-    "KDoMs/Tutorial-solutions/Tutorial-7-solution.md",
-    "KDoMs/Velocity-Acceleration-Bank/assets/VG-g5-circle-diagram.png",
-    "KDoMs/Tutorial-solutions/Tutorial-6-solution.md",
-    "Excalidraw/Drawing 2026-10-05 23.00.07.excalidraw.md",
-    "Excalidraw/Drawing 2026-10-05 22.45.30.excalidraw.md",
-    "Excalidraw/Drawing 2026-10-06 00.10.38.excalidraw.md",
-    "MathFlow/Differential Equations/Problems/Assignment 3 - Cauchy-Euler and Higher Order ODEs - Solutions.md",
-    "MathFlow/Differential Equations/Problems/Assignment 4 - Series Solutions - Solutions.md",
-    "MathFlow/Differential Equations/Problems/Assignment 2 - Second Order ODEs - Solutions.md",
-    "MathFlow/Differential Equations/Problems/Assignment 1 - First Order ODEs - Solutions.md",
-    "KDoMs/Tutorial-solutions/Tutorial-5-solution.md",
-    "MathFlow/Differential Equations/Problems/Assignment 5 - Legendre Polynomials and Functions - Solutions.md",
-    "Untitled 1.canvas",
-    "Strength of materials/04 Shear Force and Bending Moment/Shear Force and Bending Moment Diagrams.md",
-    "Strength of materials/03 Torsion/Power Transmission by Shafts.md",
-    "MathFlow/Differential Equations/Differential Equations - MOC.md",
-    "Templates/Course MOC.md",
+    "graphify-out/manifest.json",
+    "graphify-out/graph.html",
+    "graphify-out/GRAPH_REPORT.md",
+    "graphify-out/graph.json",
+    "graphify-out/cache/semantic/pab7e20a8ed94/2a46e0ed3cdd86900f87b7beef2759b97ef1be770314afbf432e2f781c3f016a.json",
+    "graphify-out/cache/ast/v0.9.93-s20-g7154a062ba57/c3c3d69dcbbf8d768032cf813336859139c09cc49732c763cce6781aa936426f.json",
+    "graphify-out/cache/ast/v0.9.93-s20-g7154a062ba57/588d5f4a471309c0819d3965f664b46ef427a02427d250cfdfe8c8240ed6c484.json",
+    "graphify-out/cache/ast/v0.9.93-s20-g7154a062ba57/5883bf9da5e333491eeec27630ed50d12f2b38f703c847664570ae8b2ef95808.json",
+    "graphify-out/cache/ast/v0.9.93-s20-g7154a062ba57/0d1c1068c077509f2dbfafcdbc682115b387325046a54cf25bc51a1e69273be4.json",
+    "mech stuff/Strength of materials/Tutorial 7 - Bending and Shear Stresses/Tutorial 7 - Bending and Shear Stresses.md",
+    "graphify-out/cache/semantic/pab7e20a8ed94",
+    "graphify-out/cache/semantic",
+    "graphify-out/cache/ast/v0.9.93-s20-g7154a062ba57/20a63967d5329217369081fb60bcb4e9dcc26ef71e8accc83416a700cdb9faca.json",
+    "mech stuff/Strength of materials/assets/SM-T7-Q8-notched-section.png",
+    "mech stuff/Strength of materials/assets/SM-T7-Q2-na-shift.png",
+    "mech stuff/Strength of materials/assets/SM-T7-Q7-composite-beam.png",
+    "mech stuff/Strength of materials/assets/SM-T7-Q2-bimodular.png",
+    "mech stuff/Strength of materials/assets/SM-T7-Q1-rod.png",
+    "Clubs & Projects/Saathi/e96b2915-02e8-4d89-a152-d558dc9c5bd0-removebg-preview.png",
+    "Clubs & Projects/Saathi/c094834e-a7d5-4223-879a-2d350007dd46-removebg-preview.png",
+    "Clubs & Projects/Saathi/a32cdc97-63c4-4162-a71b-830a46cd2014-removebg-preview.png",
+    "Clubs & Projects/Saathi/16f15615-0844-4502-87f8-b3a43f9314e7-removebg-preview.png",
+    "Clubs & Projects/Saathi/02f8bb3a-cb2f-4d5c-943e-4e2f7577d357-removebg-preview.png",
+    "mech stuff/Computer Aided Machine Drawing/Course Details.md",
+    "mech stuff/Manufacturing Technology/Course Details.md",
+    "mech stuff/Introduction to Machine Design/Course Details.md",
+    "mech stuff/Heat transfer/Course Details.md",
+    "mech stuff/Foundations of Thermal Engineering/Desc.md",
+    "Life sciences/Course Details.md",
+    "mech stuff/Measurements and instrumentation/Course Details.md",
+    "mech stuff/Materials and design/Course Details.md",
+    "mech stuff/Strength of materials/Tutorial 6 - Torsional Members/Tutorial 6 - Torsional Members.md",
+    "MathFlow/Differential Equations/Problems/Problems - MOC.md",
     "Untitled.canvas",
+    "CS stuff/ML/ML_Formula_Theory_Obsidian.md",
+    "CS stuff/WebOps/HTML/HTML.md",
+    "mech stuff/Strength of materials/Tutorial 5 - Axial Loading/Q7 - Massive Bar with Thermal Expansion.md",
+    "mech stuff/Strength of materials/10 Energy Methods/Strain Energy and Castigliano's Theorem.md",
+    "mech stuff/Strength of materials/Tutorial 5 - Axial Loading/Q8 - Elastically Supported Bar.md",
+    "mech stuff/Strength of materials/Tutorial 5 - Axial Loading/Q6 - Bolt and Tube Assembly.md",
+    "mech stuff/Strength of materials/Tutorial 5 - Axial Loading/Q5 - Self-Weight Pyramid.md",
+    "mech stuff/Strength of materials/Tutorial 5 - Axial Loading/Q3 - Four-Wire Support System.md",
+    "mech stuff/Strength of materials/Tutorial 5 - Axial Loading/Q1 - Axially Loaded Member.md",
+    "mech stuff/Strength of materials/Tutorial 4 - Stress-Strain Relationship/Two Dissimilar Plates in a Rigid Opening.md",
+    "mech stuff/Strength of materials/Tutorial 4 - Stress-Strain Relationship/Tutorial 4 - Stress-Strain Relationship.md",
+    "mech stuff/Strength of materials/03 Torsion/Torsion of Circular Shafts.md",
+    "mech stuff/Strength of materials/Tutorial 4 - Stress-Strain Relationship/Thermal Strain in Restrained Plates.md",
+    "Untitled 1.canvas",
     "Untitled 2.canvas"
   ]
 }

@@ -8,7 +8,20 @@ tags:
   - legendre
   - orthogonal-polynomials
   - series-solutions
+  - rodrigues
+  - generating-function
+  - orthogonality
+  - fourier-legendre
+  - recurrence-relations
+  - gamma-function
 source: "[[Assignment-5.pdf]]"
+concepts:
+  - "[[Legendre Polynomials and Rodrigues' Formula]]"
+  - "[[Generating Function of Legendre Polynomials]]"
+  - "[[Orthogonality and Norm of Legendre Polynomials]]"
+  - "[[Legendre Series and Fourier-Legendre Expansions]]"
+  - "[[Legendre Recurrence Relations and Integrals]]"
+  - "[[Gamma Function]]"
 aliases:
   - Legendre assignment solutions
   - Assignment 5 solutions
@@ -21,6 +34,17 @@ Source: [[Assignment-5.pdf]] · Related theory: [[Legendre's Equation]] · [[Ser
 > [!abstract] Contents
 > [[#0. Theory toolkit]] · [[#Q1]] · [[#Q2]] · [[#Q3]] · [[#Q4]] · [[#Q5]] · [[#Q6]] · [[#Q7]] · [[#Q8]] · [[#Q9]] · [[#Q10]] · [[#Q11]] · [[#Summary]]
 
+> [!info] Concept notes for this sheet
+> | Questions | Concept note |
+> |---|---|
+> | toolkit §0.1–0.2, Q1, Q2 | [[Legendre Polynomials and Rodrigues' Formula]] (series solution, $P_n(1)=1$, Rodrigues, roots by Rolle) |
+> | toolkit §0.3–0.4, Q1, Q8, Q9, Q10 | [[Generating Function of Legendre Polynomials]] |
+> | toolkit §0.5, Q7 (orthogonality integrals) | [[Orthogonality and Norm of Legendre Polynomials]] · [[Inner Product Spaces and Orthogonal Functions]] |
+> | toolkit §0.6, Q3, Q5, Q6 | [[Legendre Series and Fourier-Legendre Expansions]] |
+> | Q4, Q7 (recurrence-based integrals), toolkit R1–R5 | [[Legendre Recurrence Relations and Integrals]] |
+> | Q7(e) (Gamma / Beta functions); Q7(h) uses the generating function | [[Gamma Function]] · [[Generating Function of Legendre Polynomials]] |
+> | Q11 (associated Legendre) | [[Legendre Polynomials and Rodrigues' Formula]] + [[Special Functions - MOC]] |
+
 > [!warning] Two statements in the sheet need correction
 > Both were confirmed symbolically (SymPy) **and** numerically.
 > - **Q4(c)** as printed has the wrong sign. The true identity is $(2n+1)(1-x^2)P_n'=n(n+1)\,[P_{n-1}-P_{n+1}]$. (Test $n=1$: LHS $=3-3x^2$, printed RHS $=2[P_2-P_0]=3x^2-3$.)
@@ -32,8 +56,9 @@ Source: [[Assignment-5.pdf]] · Related theory: [[Legendre's Equation]] · [[Ser
 
 ### 0.1 Legendre's equation and polynomials
 $$(1-x^2)y''-2xy'+n(n+1)y=0$$
-For $n=0,1,2,\dots$ it has a polynomial solution $P_n$ of degree $n$, normalised by $P_n(1)=1$ (see [[Legendre's Equation]]). Explicit form:
+For $n=0,1,2,\dots$ it has a polynomial solution $P_n$ of degree $n$, normalised by $P_n(1)=1$ (see [[Legendre's Equation]]). 
 
+Explicit form:
 $$
 P_n(x)=\sum_{k=0}^{\lfloor n/2\rfloor}\frac{(-1)^k(2n-2k)!}{2^n\,k!\,(n-k)!\,(n-2k)!}\,x^{n-2k},\qquad
 \text{leading coeff. }\ \frac{(2n)!}{2^n(n!)^2}

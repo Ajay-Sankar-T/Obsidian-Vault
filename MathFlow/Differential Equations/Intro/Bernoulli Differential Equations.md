@@ -48,5 +48,11 @@ $$\frac{d}{dx}\left(x^{3/2}v\right) = \frac12 x^{5/2} \implies x^{3/2}v = \frac{
 Since $v = \sqrt{y}$:
 $$y = \left(\frac{x^2}{7} + \frac{C}{x^{3/2}}\right)^2$$
 
+
+## Visual
+
+![[DE-E5-linear-bernoulli.png]]
+**Figure:** Middle: $3y^2y'+y^3=e^{-x}$ ($v=y^3$ makes it linear). Right: $y'=y(xy^3-1)$ with $y=[x+\frac{1}{3}+Ce^{3x}]^{-1/3}$; the nonlinear term lets solutions blow up at finite $x$, which a linear equation never does.
+
 ---
 Related earlier: [[Linear Differential Equations]] · [[Integrating Factors]] · [[Exact Differential Equations]]
