@@ -33,3 +33,6 @@ Since the governing equation is linear, deflections and slopes from several simu
 
 ---
 Next: [[Moment-Area Method]]
+
+## Worked examples
+[[Tutorial 8 - Deflection of Beams/Tutorial 8 - Deflection of Beams|Tutorial 8 — Deflection of Beams]]: stepped cantilever, couple on a simple beam, singularity-function beams and Castigliano problems, worked with figures.

@@ -47,3 +47,6 @@ The energy stored during buckling ([[Euler Buckling of Columns]]) can also be an
 Cross-domain: [[Cross-Domain Synthesis/Energy Methods - A Unified View|strain energy and circuit energy storage (½LI², ½CV²) are the same integral]] · [[Cross-Domain Synthesis/The Mechanical-Electrical Analogy (Impedance Analogy)|mechanical stiffness ↔ electrical elastance 1/C]]
 
 Next: [[Thin Cylindrical and Spherical Pressure Vessels]]
+
+## Worked examples
+[[Tutorial 8 - Deflection of Beams/Tutorial 8 - Deflection of Beams|Tutorial 8 — Deflection of Beams]]: stepped cantilever, couple on a simple beam, singularity-function beams and Castigliano problems, worked with figures.

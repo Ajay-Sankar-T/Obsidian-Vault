@@ -74,6 +74,8 @@ Map of content for a standard Strength of Materials / Mechanics of Solids course
 
 - [[Tutorial 7 - Bending and Shear Stresses/Tutorial 7 - Bending and Shear Stresses|Tutorial 7 — Bending and Shear Stresses]] (theory + Q1–Q8 in one note: self-weight rod, bimodular beam, diving board, box beam, plywood/pine composite, glued cantilever shear, concrete–steel composite, notched section with unequal allowables; figures `assets/SM-T7-*.png`, check script `Tools/sm_t7.py`). Tests [[Flexure Formula]], [[Shear Stress Formula for Beams]], [[Shear Force and Bending Moment Diagrams]], [[Unsymmetric and Combined Bending]].
 
+- [[Tutorial 8 - Deflection of Beams/Tutorial 8 - Deflection of Beams|Tutorial 8 — Deflection of Beams]] (theory + Q1–Q8 in one note: two-rod cantilever, couple on a simple beam, singularity-function beams, triangular load by Castigliano, beam on a post with a gap, continuous beam by Castigliano, frame by modified Castigliano; figures `assets/SM-T8-*.png`, check script `Tools/sm_t8.py`). Tests [[Double Integration and Macaulay's Method]], [[Moment-Area Method]], [[Strain Energy and Castigliano's Theorem]].
+
 
 ## Lab manuals (AM2540)
 

@@ -61,7 +61,7 @@ All four were confirmed numerically on sample intervals.
 The recurrences can be obtained from the generating function: [[Bessel Generating Function]]. For the Legendre analogue see [[Legendre Recurrence Relations and Integrals]].
 
 ## Problems using this
-[[Assignment-6.pdf]] (*Bessel Functions*, in `Tutorials/`; no solution note yet) applies exactly these tools:
+[[Assignment 6 - Bessel Functions - Solutions]] (source [[Assignment-6.pdf]]) applies exactly these tools:
 - Q1: $J_{-n}=(-1)^nJ_n$, $J_n(-x)=(-1)^nJ_n(x)$.
 - Q2: $J_{3/2}$ and the identities (b)–(h) (derivative and recurrence relations, $J_{1/2}J_{-1/2}=\frac{\sin2x}{\pi x}$).
 - Q3: reduction integrals such as $\int x^4J_0$, $\int J_5$, $\int x^{-2}J_5$, and the general $\int x^pJ_\nu$ by parts.

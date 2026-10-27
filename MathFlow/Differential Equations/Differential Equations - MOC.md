@@ -11,7 +11,7 @@ This is the top-level index for the Differential Equations part of the vault. Th
 1. [[First Order ODEs - MOC|First Order ODEs]]
 2. [[2nd Order ODEs - MOC|Second Order and Higher Order ODEs]]
 3. [[Series Solutions - MOC|Series Solutions of Differential Equations]] (including the Frobenius method, Lectures 12–17)
-4. [[Special Functions - MOC|Special Functions: Legendre, Gamma and Bessel]] (Lectures 18–25)
+4. [[Special Functions - MOC|Special Functions: Legendre, Gamma, Bessel and Sturm–Liouville]] (Lectures 18–28)
 5. [[Problems - MOC|Problem Sets and Solutions]]
 
 ## Lecture Slides (MA2102)
@@ -40,7 +40,7 @@ This is the top-level index for the Differential Equations part of the vault. Th
 - [[Lecture-24.pdf]]
 - [[Lecture-25.pdf]]
 
-Lecture → note map: Lectures 1–3 [[First Order ODEs - MOC]] · 4–11 [[2nd Order ODEs - MOC]] · 12–17 [[Series Solutions - MOC]] · 18–25 [[Special Functions - MOC]].
+Lecture → note map: Lectures 1–3 [[First Order ODEs - MOC]] · 4–11 [[2nd Order ODEs - MOC]] · 12–17 [[Series Solutions - MOC]] · 18–28 [[Special Functions - MOC]].
 
 ## Core Concepts
 

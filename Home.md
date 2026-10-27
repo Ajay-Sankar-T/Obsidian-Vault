@@ -13,6 +13,7 @@ This vault is a linked technical wiki for engineering math, mechanics, fluids, c
 - [[Strength of materials/Strength of Materials - MOC|Strength of Materials]]
 - [[Fluid Mechanics/Fluid Mechanics - MOC|Fluid Mechanics]]
 - [[KDoMs/KDoMs - MOC|KDoMs — Kinematics & Dynamics of Machinery]]
+- [[Mechanical Engineering Curriculum - MOC|Mechanical Engineering Curriculum]] (semester map) and upcoming courses: [[Foundations of Thermal Engineering - MOC|Foundations of Thermal Engineering]] · [[Heat Transfer - MOC|Heat Transfer]] · [[Materials and Design - MOC|Materials and Design]] · [[Manufacturing Technology - MOC|Manufacturing Technology]] · [[Measurements, Instrumentation and Control - MOC|Measurements, Instrumentation and Control]] · [[Introduction to Machine Design - MOC|Introduction to Machine Design]] · [[Computer Aided Machine Drawing - MOC|Computer Aided Machine Drawing]]
 - [[Cross-Domain Synthesis/Cross-Domain Synthesis - MOC|Cross-Domain Synthesis]]
 
 ## Other

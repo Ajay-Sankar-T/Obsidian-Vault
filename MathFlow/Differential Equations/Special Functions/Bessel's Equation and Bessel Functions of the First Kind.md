@@ -53,7 +53,7 @@ Series for $\nu=0,1,2,\tfrac12,-\tfrac12,\tfrac14,1.7$ agree with library values
 
 ## Problems using this
 - Bessel-type reduction inside a Frobenius problem: [[Assignment 4 - Series Solutions - Solutions#Q3 Frobenius method|Assignment 4, Q3(c)]] (the equation $16x^2y''+(x^2+3)y=0$ becomes a Bessel equation of order $	frac14$) and the Frobenius problems of [[Frobenius Method - Worked Examples]].
-- [[Assignment-6.pdf]] (*Bessel Functions*, `Tutorials/`; no solution note yet): Q1 ($J_{-n}=(-1)^nJ_n$), Q6 (equations reduced to Bessel form by a substitution, e.g. $y''+4xy=0$ with $y=u\sqrt x$), Q4 (Wronskian of two Bessel solutions $=c/x$, by [[Abel's Formula]] with $P=\frac1x$).
+- [[Assignment 6 - Bessel Functions - Solutions]] (source [[Assignment-6.pdf]]): Q1 ($J_{-n}=(-1)^nJ_n$), Q6 (equations reduced to Bessel form by a substitution, e.g. $y''+4xy=0$ with $y=u\sqrt x$), Q4 (Wronskian of two Bessel solutions $=c/x$, by [[Abel's Formula]] with $P=\frac1x$).
 
 ## Next
 [[Bessel Functions of the Second Kind and General Solution]] → [[Bessel Function Properties and Recurrence Relations]] → [[Bessel Generating Function]]

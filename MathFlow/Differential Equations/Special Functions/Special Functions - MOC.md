@@ -2,7 +2,7 @@
 tags: [differential-equations, MOC, special-functions]
 ---
 
-Map of content for the **Special Functions** lectures of MA 2102 (Lecture-18 through Lecture-25). Builds on [[Series Solutions - MOC]] (power series and Frobenius method) and ends where the tutorial sheets (Assignments 5–7) continue. Part of [[Differential Equations - MOC]].
+Map of content for the **Special Functions** lectures of MA 2102 (Lecture-18 through Lecture-28). Builds on [[Series Solutions - MOC]] (power series and Frobenius method) and ends where the tutorial sheets (Assignments 5–7) continue. Part of [[Differential Equations - MOC]].
 
 ```mermaid
 flowchart TD
@@ -37,7 +37,12 @@ flowchart TD
 10. [[Bessel Function Properties and Recurrence Relations]] — derivative identities, recurrences, spherical Bessel, integrals · *L24–25*
 11. [[Bessel Generating Function]] — $e^{\frac x2(t-1/t)}=\sum J_nt^n$ · *L25*
 
-## Lecture-to-note map (Lectures 15–25)
+## Bessel transformations and Sturm–Liouville (Lectures 26–28)
+12. [[Reducing Equations to Bessel Form]] — the template $y=x^au(bx^c)$, Airy as order $1/3$ · *L26*
+13. [[Fourier-Bessel Series]] — orthogonality with weight $x$, coefficients, convergence · *L27*
+14. [[Sturm-Liouville Problems]] — self-adjoint form, Lagrange identity, orthogonality, eigenfunction expansions · *L27–28*
+
+## Lecture-to-note map (Lectures 15–28)
 
 | Lecture | Topic | Note |
 |---|---|---|
@@ -50,11 +55,15 @@ flowchart TD
 | 23 | Gamma function, Bessel equation | [[Gamma Function]], [[Bessel's Equation and Bessel Functions of the First Kind]] |
 | 24 | second solutions, $Y_\nu$, properties | [[Bessel's Equation and Bessel Functions of the First Kind]], [[Bessel Functions of the Second Kind and General Solution]] |
 | 25 | recurrences, spherical Bessel, generating function | [[Bessel Function Properties and Recurrence Relations]], [[Bessel Generating Function]] |
+| 26 | converting equations to Bessel form, normal form | [[Reducing Equations to Bessel Form]] |
+| 27 | zeros of Bessel functions, Bessel SL form, orthogonality, Fourier–Bessel series | [[Fourier-Bessel Series]], [[Bessel Function Properties and Recurrence Relations]] |
+| 28 | Sturm–Liouville problems | [[Sturm-Liouville Problems]] |
 
 ## Problem sets
 - [[Assignment 5 - Legendre Polynomials and Functions - Solutions]] ← Legendre notes (items 1–6)
 - [[Assignment 4 - Series Solutions - Solutions]] ← Frobenius notes and Legendre equation
-- `Tutorials/Assignment-6.pdf` (*Bessel Functions*) ← items 7–11; `Tutorials/Assignment-7.pdf` (*Sturm–Liouville Problems*) continues the orthogonality theme of [[Inner Product Spaces and Orthogonal Functions]]. No solution notes exist yet for these two.
+- [[Assignment 6 - Bessel Functions - Solutions]] ← Bessel notes (items 7–11) plus items 12–14
+- [[Assignment 7 - Sturm-Liouville Problems - Solutions]] ← [[Sturm-Liouville Problems]] and the orthogonality theme of [[Inner Product Spaces and Orthogonal Functions]]
 
 ## Corrections to the lecture slides
 The checks in `Tools/de_core.py` found these slide errors (details in each note):
