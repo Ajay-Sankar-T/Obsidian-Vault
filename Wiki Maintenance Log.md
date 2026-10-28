@@ -68,3 +68,8 @@ Use this note to record structural changes that affect navigation, naming, templ
 - Added [[Mechanical Engineering Curriculum - MOC]] (semester map from `ME25B_curriculum.pdf`, credits, status of each course in the vault) and linked all of them from [[Home]].
 - These are **syllabus-based maps**, not lecture notes: topics are listed from each `Course Details.md`; problem-type tables and cross-domain links are written from standard course content and the existing vault notes. Atomic concept notes will be added when the courses start. Empty folders (Thermodynamics, Computing for Mechanical Engineers, Mechanical engineering lab) have no syllabus yet, so they are listed in the curriculum map but have no MOC.
 - The syllabus file for Foundations of Thermal Engineering (`Desc.md` → `Course Details.md`) contains both FTE-1 and FTE-2 text; the split was inferred from content (the second block refers back to "Foundations of Thermal Engg-1").
+
+## 2026-10-28
+
+- Added `Entrepreneurship/Solution/Assignment_9_Batch_B_group_14.pdf` and its source note [[Entrepreneurship/Solution/Assignment 9 - Sponsored Search Market (VCG and GSP)|Assignment 9 — Sponsored Search Market (VCG and GSP)]]: social optimum, VCG prices, GSP truthful bidding, equilibria and revenue for the slide-57 market of `Pricing-1.pdf` (slide 57 shows only the market, so the task was read from slides 54–56 and cross-checked against slides 58–59).
+- Added `Solution/Tools/assignment9_check.py` (brute-force VCG, GSP and equilibrium checks; figure `A9-fig2`). All slide numbers (VCG 44, GSP equilibria 48 and 34, payoffs 10 and 24) are reproduced.

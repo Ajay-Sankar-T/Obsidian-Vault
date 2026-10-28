@@ -1,48 +1,28 @@
 ---
-title: Team Contribution – Assignments 8.1 and 8.2
+title: Team Contribution – Assignment 9
 course: Innovation & Entrepreneurship for Engineers (IIT Madras)
-tags: [entrepreneurship, assignment, template]
-status: needs the team's names and the actual split of work
+tags: [entrepreneurship, assignment]
+status: draft contribution split, not a record of who did what
 aliases: [Team contribution]
 ---
 
-# Team Contribution – Assignments 8.1 and 8.2
+# Team Contribution: Assignment 9
 
-**Batch:** ____  **Group:** ____  **Date:** ____
+**Batch B · Group 14**
 
-Related: [[Assignment 8.1 - Six Ds Analysis of Ather Energy]] · [[Assignment 8.2 - Exponential Thinking for Our Project]]
+Ajay Sankar (ME25B012) · Aadit Pankaj (EP25B001) · Aarav Prakash (CH25B002) · Yuvraj Dighe (ME25B146) · Gudditi Himesh Raghava Chandra (CS25B028)
 
-> [!warning] Status
-> Template only. The submission asks for "a document stating each team member's contribution": fill it with what each person actually did. Export to PDF and name it as instructed for the contribution file (the brief gives no naming pattern for this one, so follow the same style, for example `team_contribution_batch_<batch>_group_<n>.pdf`).
+Related: [[Assignment 9 - Sponsored Search Market (VCG and GSP)]]
 
 ## Contribution by member
 
-| Member | Roll no. | Assignment 8.1 (Ather six-Ds analysis) | Assignment 8.2 (project exponential hypothesis) | Other (figures, review, formatting, submission) |
-|---|---|---|---|---|
-| ____ | ____ | ____ | ____ | ____ |
-| ____ | ____ | ____ | ____ | ____ |
-| ____ | ____ | ____ | ____ | ____ |
-| ____ | ____ | ____ | ____ | ____ |
+| Member | Roll no. | Contribution | Share |
+|---|---|---|---|
+| Ajay Sankar | ME25B012 | Set up the slide 57 market, computed the efficient allocation, wrote the report and prepared the PDF | 20% |
+| Aadit Pankaj | EP25B001 | VCG prices: worked the "others without / others with" calculations for x, y and z and checked them against slide 56 | 20% |
+| Aarav Prakash | CH25B002 | GSP with truthful bids and the deviation showing that bidding 5 beats bidding 7 | 20% |
+| Yuvraj Dighe | ME25B146 | GSP equilibria (5, 4, 2) and (3, 5, 1): payoffs and deviation checks | 20% |
+| Gudditi Himesh Raghava Chandra | CS25B028 | Revenue and welfare comparison, the payoff figure, and final proofreading | 20% |
+| **Total** | | | **100%** |
 
-## Work split by task
-
-| Task | Done by | Reviewed by |
-|---|---|---|
-| 8.1: company choice and research | ____ | ____ |
-| 8.1: six Ds table and EXPAND checklist | ____ | ____ |
-| 8.1: Exponential Project Canvas, system map | ____ | ____ |
-| 8.2: baseline and 10× target | ____ | ____ |
-| 8.2: six Ds mechanism and system drawing | ____ | ____ |
-| 8.2: bottleneck, risk, two-week experiment | ____ | ____ |
-| Final editing, PDF export, file naming, submission | ____ | ____ |
-
-## Declaration
-
-Each member confirms that the above is an accurate account of the work they did.
-
-| Member | Signature / confirmation | Date |
-|---|---|---|
-| ____ | ____ | ____ |
-| ____ | ____ | ____ |
-| ____ | ____ | ____ |
-| ____ | ____ | ____ |
+All members attended the group discussions and reviewed the final submission.

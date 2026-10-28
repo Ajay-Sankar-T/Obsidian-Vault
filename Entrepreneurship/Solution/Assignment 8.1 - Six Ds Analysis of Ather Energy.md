@@ -9,7 +9,9 @@ aliases: [Assignment 8.1, Ather six Ds]
 
 # Assignment 8.1 – Six Ds Analysis of a Company: Ather Energy
 
-**Batch:** ____  **Group:** ____  **Team members:** ____
+**Batch B · Group 14**
+
+Ajay Sankar (ME25B012) · Aadit Pankaj (EP25B001) · Aarav Prakash (CH25B002) · Yuvraj Dighe (ME25B146) · Gudditi Himesh Raghava Chandra (CS25B028)
 
 Framework: Peter Diamandis' **6 Ds**, the **EXPAND checklist** and the **Exponential Project Canvas** from the Session 8 deck.
 

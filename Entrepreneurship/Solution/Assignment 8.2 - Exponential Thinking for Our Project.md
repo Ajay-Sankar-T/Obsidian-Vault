@@ -10,12 +10,14 @@ aliases: [Assignment 8.2]
 
 # Assignment 8.2 – Exponential Thinking for Our Project
 
-**Batch:** ____  **Group:** ____  **Project title:** ____  **Team members:** ____
+**Batch B · Group 14** · **Project title:** ____
+
+Ajay Sankar (ME25B012) · Aadit Pankaj (EP25B001) · Aarav Prakash (CH25B002) · Yuvraj Dighe (ME25B146) · Gudditi Himesh Raghava Chandra (CS25B028)
 
 Related: [[Assignment 8.1 - Six Ds Analysis of Ather Energy]] (a completed example of the same canvas) · [[Team Contribution]]
 
 > [!warning] Status
-> This is a **ready-to-fill worksheet**, not a finished answer: the team's project is not recorded anywhere in the vault. Fill every `____`, delete the guidance in *italics*, and export to `assignment_8_2_batch_<batch>_group_<n>.pdf` with `Tools/md2pdf.py`.
+> This is a **ready-to-fill worksheet**, not a finished answer: the team's project is not recorded anywhere in the vault. Fill every `____`, delete the guidance in *italics*, and export to `assignment_8_2_batch_B_group_14.pdf` with `Tools/md2pdf.py`.
 
 ## 0. The one-sentence hypothesis (deck slide 23)
 
@@ -105,4 +107,4 @@ Pick **one or more of the six laws** as the enabling curve (deck slides 12–20)
 - [ ] A 10× target with a time horizon, and a baseline measured or cited
 - [ ] A real failure criterion (an outcome that would make us drop or change the idea)
 - [ ] The bottleneck is something that does *not* scale exponentially
-- [ ] File named `assignment_8_2_batch_<batch>_group_<n>.pdf`
+- [ ] File named `assignment_8_2_batch_B_group_14.pdf`

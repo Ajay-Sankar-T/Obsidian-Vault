@@ -4,21 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "1a0956a630e29dab",
+        "id": "4ef65aa4f2ed15a7",
         "type": "tabs",
         "children": [
           {
-            "id": "aad1d08483721256",
+            "id": "153817388f017eb4",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "mech stuff/Manufacturing Technology/Manufacturing Technology - MOC.md",
-                "mode": "source",
-                "source": false
+                "file": "Entrepreneurship/Solution/Team_Contribution_Assignment_9_Batch_B_group_14.pdf"
               },
-              "icon": "lucide-file",
-              "title": "Manufacturing Technology - MOC"
+              "icon": "lucide-file-text",
+              "title": "Team_Contribution_Assignment_9_Batch_B_group_14"
             }
           }
         ]
@@ -189,6 +187,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "publish:Publish changes...": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -199,22 +198,35 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "aad1d08483721256",
+  "active": "153817388f017eb4",
   "lastOpenFiles": [
+    "Entrepreneurship/Solution/Assignment_9_Batch_B_group_14.pdf",
+    "Entrepreneurship/Solution/team_contribution_batch_B_group_14.pdf",
+    "Entrepreneurship/Solution/Team_Contribution_Assignment_9_Batch_B_group_14.pdf",
+    "Entrepreneurship/Solution/_tmp_render.html",
+    "Entrepreneurship/Solution/Team Contribution.md",
+    "Entrepreneurship/Solution/Tools/md2pdf.py.tmp.10012.cdccc61059d6",
+    "Entrepreneurship/Solution/assignment_8_1_batch_B_group_14.pdf",
+    "sedEmyekK",
+    "Entrepreneurship/Class Notes/Pricing-1.pdf",
+    "Entrepreneurship/Solution/Assignment 9 - Sponsored Search Market (VCG and GSP).md",
+    "Entrepreneurship/Solution/assets/A9-fig3-revenue-welfare.png",
+    "Entrepreneurship/Solution/assets/A9-fig2-payoff-vs-bid.png",
+    "Entrepreneurship/Solution/assets/A9-fig1-market.png",
+    "Entrepreneurship/Solution/Tools/assignment9_check.py",
+    "MathFlow/Differential Equations/MA2102-Lecture-Slides/Lecture-3.pdf",
+    "MathFlow/Differential Equations/MA2102-Lecture-Slides/Lecture-2.pdf",
+    "Untitled.canvas",
+    "mech stuff/Manufacturing Technology/Manufacturing Technology - MOC.md",
     "mech stuff/Materials and design/Materials and Design - MOC.md",
     "mech stuff/Materials and design/Course Details.md",
     "mech stuff/Mechanical Engineering Curriculum - MOC.md",
     "mech stuff/Strength of materials/Tutorial 8 - Deflection of Beams/Tutorial 8 - Deflection of Beams.md",
     "mech stuff/Computer Aided Machine Drawing/Computer Aided Machine Drawing - MOC.md",
     "mech stuff/Measurements and instrumentation/Measurements, Instrumentation and Control - MOC.md",
-    "mech stuff/Manufacturing Technology/Manufacturing Technology - MOC.md",
     "mech stuff/Introduction to Machine Design/Introduction to Machine Design - MOC.md",
     "mech stuff/Heat transfer/Heat Transfer - MOC.md",
     "mech stuff/Foundations of Thermal Engineering/Foundations of Thermal Engineering - MOC.md",
-    "mech stuff/Strength of materials/Tutorial 8 - Deflection of Beams/Tutorial 8 - Deflection of Beams.md.tmp.11680.679250b13a81",
-    "mech stuff/Strength of materials/Tutorial 8 - Deflection of Beams/Tutorial 8 - Deflection of Beams.md.tmp.11680.e4166b5db676",
-    "mech stuff/Strength of materials/Tutorial 8 - Deflection of Beams/Tutorial 8 - Deflection of Beams.md.tmp.11680.8d684088a180",
-    "mech stuff/Strength of materials/Tutorial 8 - Deflection of Beams",
     "mech stuff/Measurements and instrumentation/Course Details.md",
     "mech stuff/Introduction to Machine Design/Course Details.md",
     "mech stuff/Heat transfer/Course Details.md",
@@ -229,25 +241,12 @@
     "mech stuff/Strength of materials/assets/SM-T8-Q4-cantilever.png",
     "mech stuff/Strength of materials/assets/SM-T8-Q3-singularity-beam.png",
     "mech stuff/Strength of materials/assets/SM-T8-Q2-couple.png",
-    "mech stuff/Strength of materials/assets/SM-T8-Q1-stepped-cantilever.png",
-    "mech stuff/Strength of materials/Tools/sedM8YOGs",
-    "mech stuff/Strength of materials/Tools/sedoAUCFs",
-    "mech stuff/Strength of materials/Tools/sedJTkmQh",
-    "mech stuff/Strength of materials/Tools/sm_t8.py",
-    "mech stuff/Strength of materials/Tutorials/AM2200_2026_Tutorial 8.pdf",
     "Entrepreneurship/Solution/Assignment 8.1 - Six Ds Analysis of Ather Energy.md",
-    "Entrepreneurship/Solution/assignment_8_1_batch_XX_group_YY.pdf",
-    "Entrepreneurship/Solution/Team Contribution.md",
-    "Entrepreneurship/Solution/assets/E8-fig1-evidence.png",
-    "Entrepreneurship/Solution/assets/E8-fig3-system-map.png",
-    "Untitled.canvas",
     "Basic Electrical Engineering/EE1100 MOC.md",
     "Basic Electrical Engineering/Filter Theory.md",
     "Basic Electrical Engineering/Series-Parallel Resistance Reduction.md",
     "CLAUDE.md",
     "Wiki Maintenance Log.md",
-    "Home.md",
-    "CS stuff/ML/ML_Formula_Theory_Obsidian.md",
     "Untitled 1.canvas",
     "Untitled 2.canvas"
   ]
