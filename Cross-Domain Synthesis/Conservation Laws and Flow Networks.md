@@ -44,3 +44,7 @@ KVL, Bernoulli and compatibility all hide an energy balance, which is why [[Cros
 - [[Fluid Mechanics/Fluid Mechanics - MOC|Fluid Mechanics MOC]]
 - [[EE1100 MOC|EE1100 MOC]]
 - [[Strength of materials/Strength of Materials - MOC|Strength of Materials MOC]]
+
+## Cross-domain links
+- [[Foundations of Thermal Engineering - MOC]] — a power cycle or refrigeration plant is a network of components, each obeying mass and energy balance.
+- [[Heat Transfer - MOC]] — thermal resistance networks are solved like KCL/KVL networks, with temperature in place of voltage.

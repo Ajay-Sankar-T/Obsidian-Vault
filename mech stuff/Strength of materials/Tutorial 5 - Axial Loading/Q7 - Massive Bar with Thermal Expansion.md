@@ -30,3 +30,6 @@ $$ \frac{W_0}{2A} - E\alpha_T \Delta T \leq 0 \Rightarrow \boxed{\Delta T_{\min}
 - [[Strength of Materials - MOC]]
 - [[Strength of Materials - MOC#02 Axial Loading|02 Axial Loading]]
 - [[Q5 - Self-Weight Pyramid]]
+
+## See also
+- [[Q1 - Axially Loaded Member]] — both ends fixed means zero total elongation.

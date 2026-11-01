@@ -11,8 +11,9 @@ This is the top-level index for the Differential Equations part of the vault. Th
 1. [[First Order ODEs - MOC|First Order ODEs]]
 2. [[2nd Order ODEs - MOC|Second Order and Higher Order ODEs]]
 3. [[Series Solutions - MOC|Series Solutions of Differential Equations]] (including the Frobenius method, Lectures 12–17)
-4. [[Special Functions - MOC|Special Functions: Legendre, Gamma, Bessel and Sturm–Liouville]] (Lectures 18–28)
-5. [[Problems - MOC|Problem Sets and Solutions]]
+4. [[Special Functions - MOC|Special Functions: Legendre, Gamma, Bessel and Sturm–Liouville]] (Lectures 18–29)
+5. [[PDEs - MOC|Partial Differential Equations: first-order PDEs, wave, heat and Laplace equations]] (Lectures 30–37)
+6. [[Problems - MOC|Problem Sets and Solutions]]
 
 ## Lecture Slides (MA2102)
 - [[Lecture-1.pdf]]
@@ -39,8 +40,20 @@ This is the top-level index for the Differential Equations part of the vault. Th
 - [[Lecture-23.pdf]]
 - [[Lecture-24.pdf]]
 - [[Lecture-25.pdf]]
+- [[Lecture-26.pdf]]
+- [[Lecture-27.pdf]]
+- [[Lecture-28.pdf]]
+- [[Lecture-29.pdf]]
+- [[Lecture-30.pdf]]
+- [[Lecture-31.pdf]]
+- [[Lecture-32.pdf]]
+- [[Lecture-33.pdf]]
+- [[Lecture-34.pdf]]
+- [[Lecture-35.pdf]]
+- [[Lecture-36.pdf]]
+- [[Lecture-37.pdf]]
 
-Lecture → note map: Lectures 1–3 [[First Order ODEs - MOC]] · 4–11 [[2nd Order ODEs - MOC]] · 12–17 [[Series Solutions - MOC]] · 18–28 [[Special Functions - MOC]].
+Lecture → note map: Lectures 1–3 [[First Order ODEs - MOC]] · 4–11 [[2nd Order ODEs - MOC]] · 12–17 [[Series Solutions - MOC]] · 18–29 [[Special Functions - MOC]] · 30–37 [[PDEs - MOC]].
 
 ## Core Concepts
 
@@ -64,5 +77,9 @@ Differential equations provide the shared language behind RLC circuits, beam def
 - [ ] Cauchy-Euler equations
 - [ ] Series solutions
 - [ ] Frobenius method
+- [ ] Partial differential equations
 - [ ] Assignments and problem sets
 
+## Continues in
+- [[Heat Transfer - MOC]] — heat equation, separation of variables, fins and lumped capacitance.
+- [[Measurements, Instrumentation and Control - MOC]] — system models, first- and second-order response, transfer functions.

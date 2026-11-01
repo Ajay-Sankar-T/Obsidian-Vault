@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#58cc02"><meta name="description" content="Interactive lessons, practice problems and solved tutorials from engineering course notes"><link rel="icon" href="../assets/Favicons/Alya.png" type="image/png"><link rel="apple-touch-icon" href="../assets/Favicons/Alya.png"><link rel="manifest" href="../manifest.webmanifest">
+<title>A-Q5 - Applications of Diodes · Wiki</title>
+<script>try{var t=localStorage.getItem('wiki.theme');if(!t&&matchMedia('(prefers-color-scheme: dark)').matches)t='dark';if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="../assets/style.css"><link rel="stylesheet" href="../assets/vendor/katex.min.css">
+</head><body data-root="../" data-page="note" data-slug="a-q5-applications-of-diodes" data-course="ee">
+<div class="app">
+<aside class="side"><a class="logo" href="../index.html"><span class="logo-mark">W</span><span class="logo-t">wiki</span></a><nav><a class="nav-i" href="../index.html"><svg viewBox="0 0 24 24"><path d="M12 3 2 8l10 5 8-4v6h2V8L12 3Zm-6 9.6V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-3.4l-6 3-6-3Z"/></svg><span>Learn</span></a><a class="nav-i" href="../practice.html"><svg viewBox="0 0 24 24"><path d="M7 4h2v16H7V4Zm8 0h2v16h-2V4ZM3 9h2v6H3V9Zm16 0h2v6h-2V9ZM9 11h6v2H9v-2Z"/></svg><span>Practice</span></a><a class="nav-i" href="../solve.html"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm3.8 6.2-2.1 5.5-5.5 2.1 2.1-5.5 5.5-2.1ZM12 11a1 1 0 1 0 0 2 1 1 0 0 0 0-2Z"/></svg><span>How to solve</span></a><a class="nav-i" href="../graph.html"><svg viewBox="0 0 24 24"><path d="M6 3a3 3 0 0 0-1 5.8v6.4a3 3 0 1 0 2 0V13l6-2.2A3 3 0 1 0 12.4 9 3 3 0 0 0 9 11.3L7 12V8.8A3 3 0 0 0 6 3Zm0 2a1 1 0 1 1 0 2 1 1 0 0 1 0-2Zm12 2a1 1 0 1 1 0 2 1 1 0 0 1 0-2ZM6 17a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/></svg><span>Graph</span></a><button class="nav-i" id="openSearch" type="button"><svg viewBox="0 0 24 24"><path d="M10 3a7 7 0 1 0 4.4 12.4l4.6 4.6 1.4-1.4-4.6-4.6A7 7 0 0 0 10 3Zm0 2a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z"/></svg><span>Search</span><kbd>/</kbd></button></nav>
+<div class="side-card" id="sideStats"></div></aside>
+<div class="main"><header class="top"><div class="top-l" id="crumbTop"></div><div class="top-r"><span class="pill pill-streak" id="streak" title="Day streak"></span><span class="pill pill-xp" id="xp" title="Experience points"></span><button class="icon-btn" id="themeBtn" type="button" aria-label="Toggle dark mode"></button></div></header>
+<main class="content"><article class="note" data-kind="problem" style="--c:#ffc800;--cd:#d4a700">
+<div class="crumbs"><a href="../course/ee.html">Basic Electrical Engineering</a> <i>›</i> Tutorial 5 on Diode Circuits and Applications</div><h1>A-Q5 — Applications of Diodes</h1><div class="chips"><span class="chip">EE1100</span><span class="chip">diodes</span><span class="chip">tutorial-solution</span></div>
+<div class="actions"></div>
+<div class="body" id="body"><section class="step intro"><p>Hub: <a href="../n/tutorial-5-on-diode-circuits-and-applications.html">Tutorial 5 on Diode Circuits and Applications</a> · Previous: <a href="../n/a-q4-bias-cut-in-voltage-saturation-current-and-resistance.html">A-Q4 - Bias, Cut-in Voltage, Saturation Current and Resistance</a> · Next: <a href="../n/a-q6-rectifier-circuits-and-waveforms.html">A-Q6 - Rectifier Circuits and Waveforms</a></p>
+<div class="callout callout-question">
+<div class="callout-title">Write down the important applications of diodes.</div>
+</div>
+</section><section class="step" data-title="1. List of applications"><h2 id="1-list-of-applications">1. List of applications</h2>
+<table>
+<thead>
+<tr>
+<th>Application</th>
+<th>Principle</th>
+<th>Where it appears in this tutorial</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Rectification</strong> (AC → DC) in power supplies and chargers</td>
+<td>one-way conduction</td>
+<td><a href="../n/a-q6-rectifier-circuits-and-waveforms.html">A-Q6 - Rectifier Circuits and Waveforms</a>, <a href="../n/b-q8-half-wave-rectifier-with-series-resistor.html">B-Q8 - Half-Wave Rectifier with Series Resistor</a>, <a href="../n/b-q11-full-wave-rectifier-with-battery.html">B-Q11 - Full-Wave Rectifier with Battery</a></td>
+</tr>
+<tr>
+<td><strong>Filtered DC supplies</strong></td>
+<td>rectifier + capacitor</td>
+<td><a href="../n/a-q8-half-wave-rectifier-filter-capacitor.html">A-Q8 - Half-Wave Rectifier Filter Capacitor</a>, <a href="../n/a-q9-full-wave-rectifier-filter-capacitor.html">A-Q9 - Full-Wave Rectifier Filter Capacitor</a></td>
+</tr>
+<tr>
+<td><strong>Clipping / limiting</strong> (waveform shaping, signal protection)</td>
+<td>diode + reference turns ON above a threshold</td>
+<td><a href="../n/b-q3-series-battery-rectifier.html">B-Q3 - Series Battery Rectifier</a>, <a href="../n/b-q10-two-level-clipper.html">B-Q10 - Two-Level Clipper</a>, <a href="../n/b-q9-battery-charging-rectifier-circuit.html">B-Q9 - Battery Charging Rectifier Circuit</a></td>
+</tr>
+<tr>
+<td><strong>Clamping / DC restoration</strong></td>
+<td>capacitor charged by a diode shifts the DC level</td>
+<td><a href="../n/b-q6-diode-clamper.html">B-Q6 - Diode Clamper</a></td>
+</tr>
+<tr>
+<td><strong>Voltage multipliers</strong></td>
+<td>diodes steer charge onto capacitors in turn</td>
+<td><a href="../n/b-q12-voltage-doubler.html">B-Q12 - Voltage Doubler</a></td>
+</tr>
+<tr>
+<td><strong>Logic gates</strong> (diode AND/OR)</td>
+<td>highest / lowest input dominates</td>
+<td><a href="../n/b-q2-diode-or-gate.html">B-Q2 - Diode OR Gate</a>, <a href="../n/b-q4-diode-and-gate.html">B-Q4 - Diode AND Gate</a>, <a href="../n/b-q5-ideal-diodes-with-negative-reference.html">B-Q5 - Ideal Diodes with Negative Reference</a></td>
+</tr>
+<tr>
+<td><strong>Voltage regulation</strong></td>
+<td>Zener diode in breakdown holds a constant voltage</td>
+<td>see <a href="../n/a-q3-v-i-characteristics-of-a-p-n-diode.html">A-Q3 - V-I Characteristics of a p-n Diode</a></td>
+</tr>
+<tr>
+<td><strong>Reverse-polarity and over-voltage protection</strong></td>
+<td>a diode blocks reversed supply; a diode across a relay coil absorbs the inductive kick (freewheeling)</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>Demodulation (detector)</strong> of AM signals</td>
+<td>envelope detector = rectifier + RC</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>Light emitting diodes, photodiodes, solar cells</strong></td>
+<td>recombination emits light; absorbed photons create <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9694em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.0785em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">p</span><span class="mord mathnormal mtight">h</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span></td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>Switching, mixers, varactor tuning, temperature sensing</strong></td>
+<td><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mclose">)</span></span></span></span> of a reverse-biased junction; <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6331em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">D</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≈</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">−</span><span class="mord">2</span></span></span></span> mV/°C</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+</section><section class="step" data-title="2. Examples of the waveform operations"><h2 id="2-examples-of-the-waveform-operations">2. Examples of the waveform operations</h2>
+<p><img src="../assets/img/A5-applications.png" alt="A5-applications" loading="lazy"></p>
+<div class="callout callout-note">
+<div class="callout-title">Why diodes are so widely used</div>
+<p>A p-n junction is a cheap, small, robust, voltage-controlled one-way valve: very low resistance in the forward direction, very high in the reverse direction, and a fixed voltage drop of about 0.7 V (Si) when conducting.</p>
+</div></section></div><section class="related"><h2>Related notes</h2><h3>Links to</h3><div class="rels"><a class="rel" href="a-q3-v-i-characteristics-of-a-p-n-diode.html" style="--c:#ffc800"><span class="dot"></span><span>A-Q3 - V-I Characteristics of a p-n Diode<small>Basic Electrical Engineering</small></span></a><a class="rel" href="a-q4-bias-cut-in-voltage-saturation-current-and-resistance.html" style="--c:#ffc800"><span class="dot"></span><span>A-Q4 - Bias, Cut-in Voltage, Saturation Current and Resistance<small>Basic Electrical Engineering</small></span></a><a class="rel" href="a-q6-rectifier-circuits-and-waveforms.html" style="--c:#ffc800"><span class="dot"></span><span>A-Q6 - Rectifier Circuits and Waveforms<small>Basic Electrical Engineering</small></span></a><a class="rel" href="a-q8-half-wave-rectifier-filter-capacitor.html" style="--c:#ffc800"><span class="dot"></span><span>A-Q8 - Half-Wave Rectifier Filter Capacitor<small>Basic Electrical Engineering</small></span></a><a class="rel" href="a-q9-full-wave-rectifier-filter-capacitor.html" style="--c:#ffc800"><span class="dot"></span><span>A-Q9 - Full-Wave Rectifier Filter Capacitor<small>Basic Electrical Engineering</small></span></a><a class="rel" href="b-q10-two-level-clipper.html" style="--c:#ffc800"><span class="dot"></span><span>B-Q10 - Two-Level Clipper<small>Basic Electrical Engineering</small></span></a><a class="rel" href="b-q11-full-wave-rectifier-with-battery.html" style="--c:#ffc800"><span class="dot"></span><span>B-Q11 - Full-Wave Rectifier with Battery<small>Basic Electrical Engineering</small></span></a><a class="rel" href="b-q12-voltage-doubler.html" style="--c:#ffc800"><span class="dot"></span><span>B-Q12 - Voltage Doubler<small>Basic Electrical Engineering</small></span></a><a class="rel" href="b-q2-diode-or-gate.html" style="--c:#ffc800"><span class="dot"></span><span>B-Q2 - Diode OR Gate<small>Basic Electrical Engineering</small></span></a><a class="rel" href="b-q3-series-battery-rectifier.html" style="--c:#ffc800"><span class="dot"></span><span>B-Q3 - Series Battery Rectifier<small>Basic Electrical Engineering</small></span></a><a class="rel" href="b-q4-diode-and-gate.html" style="--c:#ffc800"><span class="dot"></span><span>B-Q4 - Diode AND Gate<small>Basic Electrical Engineering</small></span></a><a class="rel" href="b-q5-ideal-diodes-with-negative-reference.html" style="--c:#ffc800"><span class="dot"></span><span>B-Q5 - Ideal Diodes with Negative Reference<small>Basic Electrical Engineering</small></span></a><a class="rel" href="b-q6-diode-clamper.html" style="--c:#ffc800"><span class="dot"></span><span>B-Q6 - Diode Clamper<small>Basic Electrical Engineering</small></span></a><a class="rel" href="b-q8-half-wave-rectifier-with-series-resistor.html" style="--c:#ffc800"><span class="dot"></span><span>B-Q8 - Half-Wave Rectifier with Series Resistor<small>Basic Electrical Engineering</small></span></a><a class="rel" href="b-q9-battery-charging-rectifier-circuit.html" style="--c:#ffc800"><span class="dot"></span><span>B-Q9 - Battery Charging Rectifier Circuit<small>Basic Electrical Engineering</small></span></a><a class="rel" href="tutorial-5-on-diode-circuits-and-applications.html" style="--c:#ffc800"><span class="dot"></span><span>Tutorial 5 on Diode Circuits and Applications<small>Basic Electrical Engineering</small></span></a></div><canvas id="miniGraph" width="640" height="320" aria-label="Connections"></canvas></section></article></main></div></div>
+<div class="search" id="search" hidden><div class="search-box"><input id="q" type="search" placeholder="Search notes…" autocomplete="off"><div id="results"></div></div></div>
+<script src="../assets/data.js"></script>
+<script src="../assets/app.js"></script>
+</body></html>

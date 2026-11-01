@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#58cc02"><meta name="description" content="Interactive lessons, practice problems and solved tutorials from engineering course notes"><link rel="icon" href="../assets/Favicons/Alya.png" type="image/png"><link rel="apple-touch-icon" href="../assets/Favicons/Alya.png"><link rel="manifest" href="../manifest.webmanifest">
+<title>05 Sinusoids and Phasors · Wiki</title>
+<script>try{var t=localStorage.getItem('wiki.theme');if(!t&&matchMedia('(prefers-color-scheme: dark)').matches)t='dark';if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="../assets/style.css">
+</head><body data-root="../" data-page="note" data-slug="05-sinusoids-and-phasors" data-course="ee">
+<div class="app">
+<aside class="side"><a class="logo" href="../index.html"><span class="logo-mark">W</span><span class="logo-t">wiki</span></a><nav><a class="nav-i" href="../index.html"><svg viewBox="0 0 24 24"><path d="M12 3 2 8l10 5 8-4v6h2V8L12 3Zm-6 9.6V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-3.4l-6 3-6-3Z"/></svg><span>Learn</span></a><a class="nav-i" href="../practice.html"><svg viewBox="0 0 24 24"><path d="M7 4h2v16H7V4Zm8 0h2v16h-2V4ZM3 9h2v6H3V9Zm16 0h2v6h-2V9ZM9 11h6v2H9v-2Z"/></svg><span>Practice</span></a><a class="nav-i" href="../solve.html"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm3.8 6.2-2.1 5.5-5.5 2.1 2.1-5.5 5.5-2.1ZM12 11a1 1 0 1 0 0 2 1 1 0 0 0 0-2Z"/></svg><span>How to solve</span></a><a class="nav-i" href="../graph.html"><svg viewBox="0 0 24 24"><path d="M6 3a3 3 0 0 0-1 5.8v6.4a3 3 0 1 0 2 0V13l6-2.2A3 3 0 1 0 12.4 9 3 3 0 0 0 9 11.3L7 12V8.8A3 3 0 0 0 6 3Zm0 2a1 1 0 1 1 0 2 1 1 0 0 1 0-2Zm12 2a1 1 0 1 1 0 2 1 1 0 0 1 0-2ZM6 17a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/></svg><span>Graph</span></a><button class="nav-i" id="openSearch" type="button"><svg viewBox="0 0 24 24"><path d="M10 3a7 7 0 1 0 4.4 12.4l4.6 4.6 1.4-1.4-4.6-4.6A7 7 0 0 0 10 3Zm0 2a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z"/></svg><span>Search</span><kbd>/</kbd></button></nav>
+<div class="side-card" id="sideStats"></div></aside>
+<div class="main"><header class="top"><div class="top-l" id="crumbTop"></div><div class="top-r"><span class="pill pill-streak" id="streak" title="Day streak"></span><span class="pill pill-xp" id="xp" title="Experience points"></span><button class="icon-btn" id="themeBtn" type="button" aria-label="Toggle dark mode"></button></div></header>
+<main class="content"><article class="note" data-kind="concept" style="--c:#ffc800;--cd:#d4a700">
+<div class="crumbs"><a href="../course/ee.html">Basic Electrical Engineering</a> <i>›</i> Weekly lessons</div><h1>Week 5 — Sinusoids and Phasors</h1><div class="chips"><span class="chip">EE1100</span><span class="chip">week5</span><span class="chip">AC-circuits</span></div>
+<div class="actions"><button class="btn" id="startLesson" type="button">Start lesson</button><button class="btn btn-ghost" id="markDone" type="button" data-xp="10">Mark as learned</button></div>
+<div class="body" id="body"><section class="step intro"><p>← prev: <a href="../n/04-capacitors-inductors-and-first-order-circuits.html">Week 4</a> · up: <a href="../n/ee1100-moc.html">MOC</a> · next: <a href="../n/06-sinusoidal-steady-state-analysis.html">Week 6 →</a></p>
+<p>Playlist: lectures covering sinusoids/phasors in <a href="https://www.youtube.com/playlist?list=PLbRMhDVUMngfdEXVcdf_ijj2Eub-UHs_y">Fundamentals of Electrical Engineering</a>.</p>
+</section><section class="step" data-title="Overview"><h2 id="overview">Overview</h2>
+<p>This week is the pivot of the whole course: everything before it was DC (constant sources); everything after assumes a sinusoidal source. The tool that makes that transition tractable is the <a href="../n/concepts.html#phasors">phasor</a> — full definition and diagram there.</p>
+</section><section class="step" data-title="Describing a sinusoid"><h2 id="describing-a-sinusoid">Describing a sinusoid</h2>
+<p>x(t) = X_m·cos(ωt + φ)</p>
+<ul>
+<li><strong>X_m:</strong> amplitude (peak value)</li>
+<li><strong>ω = 2πf:</strong> angular frequency (rad/s), f in Hz, related to period T by ω = 2π/T</li>
+<li><strong>φ:</strong> phase angle — where in the cycle the wave sits at t = 0</li>
+</ul>
+<p>Two sinusoids of the <em>same frequency</em> can be compared by their phase difference: if φ_1 &gt; φ_2, waveform 1 <strong>leads</strong> waveform 2 (reaches its peak earlier).</p>
+</section><section class="step" data-title="RMS and average value"><h2 id="rms-and-average-value">RMS and average value</h2>
+<p>See <a href="../n/concepts.html#phasors">Phasors</a> for the RMS definition (X_rms = X_m/√2) — this is the value used everywhere from here on for power calculations, and what's meant by quoted AC "voltage" values (e.g. 230 V mains is an RMS value, not the peak).</p>
+</section><section class="step" data-title="From time domain to phasor and back"><h2 id="from-time-domain-to-phasor-and-back">From time domain to phasor and back</h2>
+<ol>
+<li>Write the sinusoid in cosine form: X_m·cos(ωt + φ). (Convert sin to cos first if needed: sin(θ) = cos(θ − 90°).)</li>
+<li>Drop the ωt (it's implicit — same for every quantity in a fixed-frequency circuit) and the time dependence: phasor = X_m∠φ, or in rectangular form X_m cos φ + jX_m sin φ.</li>
+<li>Do all circuit algebra with these complex numbers.</li>
+<li>To go back to the time domain: take the resulting complex answer's magnitude as X_m and its angle as φ, and write X_m·cos(ωt + φ).</li>
+</ol>
+</section><section class="step" data-title="Phasor relationships for R, L, C"><h2 id="phasor-relationships-for-r-l-c">Phasor relationships for R, L, C</h2>
+<p>The full impedance relationships are in <a href="../n/concepts.html#impedance-and-admittance">Impedance and Admittance</a> (next week) — this week establishes the <em>phase</em> behavior specifically:</p>
+<ul>
+<li><strong>Resistor:</strong> V and I are in phase (φ = 0).</li>
+<li><strong>Inductor:</strong> V <strong>leads</strong> I by 90° (equivalently, I lags V) — "ELI": in an inductor, E (voltage) before I.</li>
+<li><strong>Capacitor:</strong> I <strong>leads</strong> V by 90° — "ICE": in a capacitor, I before E (voltage).</li>
+</ul>
+<p>The mnemonic <strong>"ELI the ICE man"</strong> ties both together in one line.</p>
+<pre class="mermaid">flowchart LR
+    R[&quot;Resistor:\nV, I in phase&quot;] --- L[&quot;Inductor (ELI):\nV leads I by 90°&quot;] --- C[&quot;Capacitor (ICE):\nI leads V by 90°&quot;]</pre>
+</section><section class="step" data-title="Related"><h2 id="related">Related</h2>
+<ul>
+<li><a href="../n/concepts.html">Concepts glossary</a></li>
+<li><a href="../n/06-sinusoidal-steady-state-analysis.html">Week 6 — Sinusoidal Steady-State Analysis</a></li>
+<li>Elaborated further in <a href="../n/sinusoidal-waveforms-rms-and-average-value.html">Sinusoidal Waveforms, RMS and Average Value</a> and <a href="../n/phasors-and-complex-algebra.html">Phasors and Complex Algebra</a> (Tutorial 3)</li>
+</ul>
+</section><section class="step" data-title="Cross-domain links"><h2 id="cross-domain-links">Cross-domain links</h2>
+<ul>
+<li><a href="../n/rotating-vectors-phasors-velocity-polygons-and-complex-kinematics.html">Rotating Vectors</a> — the same rotating-vector construction as velocity polygons in KDoMs.</li>
+</ul></section></div><nav class="pager"><a class="pg" href="04-capacitors-inductors-and-first-order-circuits.html"><small>Previous</small>04 Capacitors, Inductors and First Order Circuits</a><a class="pg pg-next" href="06-sinusoidal-steady-state-analysis.html"><small>Next lesson</small>06 Sinusoidal Steady-State Analysis</a></nav><section class="related"><h2>Related notes</h2><h3>Links to</h3><div class="rels"><a class="rel" href="04-capacitors-inductors-and-first-order-circuits.html" style="--c:#ffc800"><span class="dot"></span><span>04 Capacitors, Inductors and First Order Circuits<small>Basic Electrical Engineering</small></span></a><a class="rel" href="06-sinusoidal-steady-state-analysis.html" style="--c:#ffc800"><span class="dot"></span><span>06 Sinusoidal Steady-State Analysis<small>Basic Electrical Engineering</small></span></a><a class="rel" href="concepts.html" style="--c:#ffc800"><span class="dot"></span><span>Concepts<small>Basic Electrical Engineering</small></span></a><a class="rel" href="ee1100-moc.html" style="--c:#ffc800"><span class="dot"></span><span>EE1100 MOC<small>Basic Electrical Engineering</small></span></a><a class="rel" href="phasors-and-complex-algebra.html" style="--c:#ffc800"><span class="dot"></span><span>Phasors and Complex Algebra<small>Basic Electrical Engineering</small></span></a><a class="rel" href="rotating-vectors-phasors-velocity-polygons-and-complex-kinematics.html" style="--c:#ff4b4b"><span class="dot"></span><span>Rotating Vectors - Phasors, Velocity Polygons and Complex Kinematics<small>Cross-Domain Connections</small></span></a><a class="rel" href="sinusoidal-waveforms-rms-and-average-value.html" style="--c:#ffc800"><span class="dot"></span><span>Sinusoidal Waveforms, RMS and Average Value<small>Basic Electrical Engineering</small></span></a></div><h3>Linked from</h3><div class="rels"><a class="rel" href="impedance-and-series-parallel-ac-circuits.html" style="--c:#ffc800"><span class="dot"></span><span>Impedance and Series-Parallel AC Circuits<small>Basic Electrical Engineering</small></span></a><a class="rel" href="tutorial-3-ac-circuit-analysis.html" style="--c:#ffc800"><span class="dot"></span><span>Tutorial 3 - AC Circuit Analysis<small>Basic Electrical Engineering</small></span></a></div><canvas id="miniGraph" width="640" height="320" aria-label="Connections"></canvas></section></article><aside class="toc"><b>On this page</b><a href="#overview">Overview</a><a href="#describing-a-sinusoid">Describing a sinusoid</a><a href="#rms-and-average-value">RMS and average value</a><a href="#from-time-domain-to-phasor-and-back">From time domain to phasor and back</a><a href="#phasor-relationships-for-r-l-c">Phasor relationships for R, L, C</a><a href="#related">Related</a><a href="#cross-domain-links">Cross-domain links</a></aside></main></div></div>
+<div class="search" id="search" hidden><div class="search-box"><input id="q" type="search" placeholder="Search notes…" autocomplete="off"><div id="results"></div></div></div>
+<script src="../assets/data.js"></script><script src="../assets/vendor/mermaid.min.js"></script>
+<script src="../assets/app.js"></script>
+</body></html>

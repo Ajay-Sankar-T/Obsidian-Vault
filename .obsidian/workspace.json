@@ -13,13 +13,38 @@
             "state": {
               "type": "pdf",
               "state": {
-                "file": "Entrepreneurship/Solution/Team_Contribution_Assignment_9_Batch_B_group_14.pdf"
+                "file": "MathFlow/Differential Equations/MA2102-Lecture-Slides/Lecture-4.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "Team_Contribution_Assignment_9_Batch_B_group_14"
+              "title": "Lecture-4"
+            }
+          },
+          {
+            "id": "46526471a4825a80",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "MathFlow/Differential Equations/MA2102-Lecture-Slides/Lecture-8.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "Lecture-8"
+            }
+          },
+          {
+            "id": "74d6ab9cb0ae0c3f",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "mech stuff/Fluid Mechanics/GPS/GPS_7_8.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "GPS_7_8"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -198,24 +223,36 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "153817388f017eb4",
+  "active": "74d6ab9cb0ae0c3f",
   "lastOpenFiles": [
-    "Entrepreneurship/Solution/Assignment_9_Batch_B_group_14.pdf",
-    "Entrepreneurship/Solution/team_contribution_batch_B_group_14.pdf",
-    "Entrepreneurship/Solution/Team_Contribution_Assignment_9_Batch_B_group_14.pdf",
-    "Entrepreneurship/Solution/_tmp_render.html",
+    "MathFlow/Differential Equations/MA2102-Lecture-Slides/Lecture-4.pdf",
+    "MathFlow/Differential Equations/MA2102-Lecture-Slides/Lecture-8.pdf",
+    "MathFlow/Differential Equations/MA2102-Lecture-Slides/Lecture-10.pdf",
+    "MathFlow/Differential Equations/MA2102-Lecture-Slides/Lecture-13.pdf",
+    "MathFlow/Differential Equations/MA2102-Lecture-Slides/Lecture-18.pdf",
+    "MathFlow/Differential Equations/MA2102-Lecture-Slides/Lecture-15.pdf",
+    "MathFlow/Differential Equations/MA2102-Lecture-Slides/Lecture-14.pdf",
+    "MathFlow/Differential Equations/MA2102-Lecture-Slides/Lecture-12.pdf",
+    "MathFlow/Differential Equations/MA2102-Lecture-Slides/Lecture-11.pdf",
+    "MathFlow/Differential Equations/MA2102-Lecture-Slides/Lecture-9.pdf",
+    "MathFlow/Differential Equations/MA2102-Lecture-Slides/Lecture-7.pdf",
+    "wiki/README.md",
+    "mech stuff/Heat transfer/Heat Transfer - MOC.md",
+    "Wiki Maintenance Log.md",
+    "Entrepreneurship/Entrepreneurship - MOC.md",
+    "Home.md",
+    "Templates/Course MOC.md",
+    "Life sciences/Course Details.md",
+    "mech stuff/Foundations of Thermal Engineering/Course Details.md",
+    "mech stuff/Foundations of Thermal Engineering/Foundations of Thermal Engineering - MOC.md",
+    "MathFlow/Differential Equations/Problems/Assignment 7 - Sturm-Liouville Problems - Solutions.md",
+    "MathFlow/Differential Equations/Series Solutions of DE/Airy's Equation.md",
+    "MathFlow/Differential Equations/Series Solutions of DE/Frobenius Method - Indicial Equation and Three Cases.md",
     "Entrepreneurship/Solution/Team Contribution.md",
-    "Entrepreneurship/Solution/Tools/md2pdf.py.tmp.10012.cdccc61059d6",
-    "Entrepreneurship/Solution/assignment_8_1_batch_B_group_14.pdf",
-    "sedEmyekK",
-    "Entrepreneurship/Class Notes/Pricing-1.pdf",
     "Entrepreneurship/Solution/Assignment 9 - Sponsored Search Market (VCG and GSP).md",
     "Entrepreneurship/Solution/assets/A9-fig3-revenue-welfare.png",
     "Entrepreneurship/Solution/assets/A9-fig2-payoff-vs-bid.png",
     "Entrepreneurship/Solution/assets/A9-fig1-market.png",
-    "Entrepreneurship/Solution/Tools/assignment9_check.py",
-    "MathFlow/Differential Equations/MA2102-Lecture-Slides/Lecture-3.pdf",
-    "MathFlow/Differential Equations/MA2102-Lecture-Slides/Lecture-2.pdf",
     "Untitled.canvas",
     "mech stuff/Manufacturing Technology/Manufacturing Technology - MOC.md",
     "mech stuff/Materials and design/Materials and Design - MOC.md",
@@ -225,15 +262,9 @@
     "mech stuff/Computer Aided Machine Drawing/Computer Aided Machine Drawing - MOC.md",
     "mech stuff/Measurements and instrumentation/Measurements, Instrumentation and Control - MOC.md",
     "mech stuff/Introduction to Machine Design/Introduction to Machine Design - MOC.md",
-    "mech stuff/Heat transfer/Heat Transfer - MOC.md",
-    "mech stuff/Foundations of Thermal Engineering/Foundations of Thermal Engineering - MOC.md",
     "mech stuff/Measurements and instrumentation/Course Details.md",
     "mech stuff/Introduction to Machine Design/Course Details.md",
     "mech stuff/Heat transfer/Course Details.md",
-    "mech stuff/Foundations of Thermal Engineering/Course Details.md",
-    "mech stuff/Computer Aided Machine Drawing/Course Details.md",
-    "Life sciences/Course Details.md",
-    "Entrepreneurship/Solution/Assignment 8.2 - Exponential Thinking for Our Project.md",
     "mech stuff/Strength of materials/assets/SM-T8-Q8-frame.png",
     "mech stuff/Strength of materials/assets/SM-T8-Q7-continuous-beam.png",
     "mech stuff/Strength of materials/assets/SM-T8-Q6-post-and-gap.png",
@@ -241,12 +272,6 @@
     "mech stuff/Strength of materials/assets/SM-T8-Q4-cantilever.png",
     "mech stuff/Strength of materials/assets/SM-T8-Q3-singularity-beam.png",
     "mech stuff/Strength of materials/assets/SM-T8-Q2-couple.png",
-    "Entrepreneurship/Solution/Assignment 8.1 - Six Ds Analysis of Ather Energy.md",
-    "Basic Electrical Engineering/EE1100 MOC.md",
-    "Basic Electrical Engineering/Filter Theory.md",
-    "Basic Electrical Engineering/Series-Parallel Resistance Reduction.md",
-    "CLAUDE.md",
-    "Wiki Maintenance Log.md",
     "Untitled 1.canvas",
     "Untitled 2.canvas"
   ]

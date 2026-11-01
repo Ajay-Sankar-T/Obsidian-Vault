@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#58cc02"><meta name="description" content="Interactive lessons, practice problems and solved tutorials from engineering course notes"><link rel="icon" href="../assets/Favicons/Alya.png" type="image/png"><link rel="apple-touch-icon" href="../assets/Favicons/Alya.png"><link rel="manifest" href="../manifest.webmanifest">
+<title>Concepts · Wiki</title>
+<script>try{var t=localStorage.getItem('wiki.theme');if(!t&&matchMedia('(prefers-color-scheme: dark)').matches)t='dark';if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="../assets/style.css">
+</head><body data-root="../" data-page="note" data-slug="concepts" data-course="ee">
+<div class="app">
+<aside class="side"><a class="logo" href="../index.html"><span class="logo-mark">W</span><span class="logo-t">wiki</span></a><nav><a class="nav-i" href="../index.html"><svg viewBox="0 0 24 24"><path d="M12 3 2 8l10 5 8-4v6h2V8L12 3Zm-6 9.6V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-3.4l-6 3-6-3Z"/></svg><span>Learn</span></a><a class="nav-i" href="../practice.html"><svg viewBox="0 0 24 24"><path d="M7 4h2v16H7V4Zm8 0h2v16h-2V4ZM3 9h2v6H3V9Zm16 0h2v6h-2V9ZM9 11h6v2H9v-2Z"/></svg><span>Practice</span></a><a class="nav-i" href="../solve.html"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm3.8 6.2-2.1 5.5-5.5 2.1 2.1-5.5 5.5-2.1ZM12 11a1 1 0 1 0 0 2 1 1 0 0 0 0-2Z"/></svg><span>How to solve</span></a><a class="nav-i" href="../graph.html"><svg viewBox="0 0 24 24"><path d="M6 3a3 3 0 0 0-1 5.8v6.4a3 3 0 1 0 2 0V13l6-2.2A3 3 0 1 0 12.4 9 3 3 0 0 0 9 11.3L7 12V8.8A3 3 0 0 0 6 3Zm0 2a1 1 0 1 1 0 2 1 1 0 0 1 0-2Zm12 2a1 1 0 1 1 0 2 1 1 0 0 1 0-2ZM6 17a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/></svg><span>Graph</span></a><button class="nav-i" id="openSearch" type="button"><svg viewBox="0 0 24 24"><path d="M10 3a7 7 0 1 0 4.4 12.4l4.6 4.6 1.4-1.4-4.6-4.6A7 7 0 0 0 10 3Zm0 2a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z"/></svg><span>Search</span><kbd>/</kbd></button></nav>
+<div class="side-card" id="sideStats"></div></aside>
+<div class="main"><header class="top"><div class="top-l" id="crumbTop"></div><div class="top-r"><span class="pill pill-streak" id="streak" title="Day streak"></span><span class="pill pill-xp" id="xp" title="Experience points"></span><button class="icon-btn" id="themeBtn" type="button" aria-label="Toggle dark mode"></button></div></header>
+<main class="content"><article class="note" data-kind="concept" style="--c:#ffc800;--cd:#d4a700">
+<div class="crumbs"><a href="../course/ee.html">Basic Electrical Engineering</a> <i>›</i> Weekly lessons</div><h1>EE1100 — Core Concepts Glossary</h1><div class="chips"><span class="chip">EE1100</span><span class="chip">concepts</span><span class="chip">glossary</span></div>
+<div class="actions"><button class="btn" id="startLesson" type="button">Start lesson</button><button class="btn btn-ghost" id="markDone" type="button" data-xp="10">Mark as learned</button></div>
+<div class="body" id="body"><section class="step intro"><p>← up: <a href="../n/ee1100-moc.html">MOC</a></p>
+<p>Hub note for every recurring law, theorem, and quantity in the course. Each heading below is linked <em>from</em> the week note that introduces it and links <em>back</em> to every week that reuses it — that two-way linking is what turns the <a href="../n/ee1100-moc.html">MOC</a> graph into a real web instead of a flat chain. See also the standalone atomic notes built while solving tutorials: <a href="../n/voltage-divider-rule.html">Voltage Divider Rule</a>, <a href="../n/series-parallel-resistance-reduction.html">Series-Parallel Resistance Reduction</a>.</p>
+<hr />
+</section><section class="step" data-title="Ohm&#x27;s Law"><h2 id="ohms-law">Ohm's Law</h2>
+<p><strong>V = IR</strong>. For a linear resistor, voltage across it is directly proportional to the current through it; R (in ohms, Ω) is the constant of proportionality.</p>
+<ul>
+<li>Power dissipated: P = VI = I²R = V²/R</li>
+<li>Only holds for <em>linear</em> elements (resistors) — sources and reactive elements (capacitors, inductors) need their own v-i relations, see <a href="../n/concepts.html#capacitors-and-inductors">Capacitors and Inductors</a>.</li>
+<li>Generalizes to AC circuits as <strong>V = IZ</strong>, replacing resistance with complex impedance — see <a href="../n/concepts.html#impedance-and-admittance">Impedance and Admittance</a>.</li>
+</ul>
+<p>Introduced in <a href="../n/01-basic-concepts-and-basic-laws.html">Week 1</a>; the base relation for every resistive-circuit problem from there on, e.g. <a href="../n/tutorial-1-circuit-laws-and-theorems.html">Tutorial 1</a>.</p>
+<pre class="mermaid">flowchart LR
+    V[&quot;Voltage V (volts)&quot;] --&gt;|&quot;V = I × R&quot;| R[&quot;Resistance R (ohms)&quot;]
+    R --&gt;|&quot;I = V / R&quot;| I[&quot;Current I (amps)&quot;]
+    I --&gt;|&quot;R = V / I&quot;| V</pre>
+<hr />
+</section><section class="step" data-title="Kirchhoff&#x27;s Laws"><h2 id="kirchhoffs-laws">Kirchhoff's Laws</h2>
+<p>Two conservation laws that hold in <em>every</em> lumped circuit, DC or AC, regardless of what's inside it.</p>
+<ul>
+<li><strong>KCL (Current Law):</strong> the sum of currents <em>entering</em> a node equals the sum <em>leaving</em> it — charge can't pile up at a node. ΣI_in = ΣI_out.</li>
+<li><strong>KVL (Voltage Law):</strong> the sum of voltage drops around any closed loop is zero — energy is conserved going around a loop. ΣV = 0.</li>
+</ul>
+<pre class="mermaid">flowchart TD
+    subgraph KCL[&quot;KCL at a node&quot;]
+        A[&quot;I1 in&quot;] --&gt; N((node))
+        B[&quot;I2 in&quot;] --&gt; N
+        N --&gt; C[&quot;I3 out&quot;]
+    end
+    subgraph KVL[&quot;KVL around a loop&quot;]
+        S[&quot;Source rise&quot;] --&gt; D1[&quot;Drop across R1&quot;] --&gt; D2[&quot;Drop across R2&quot;] --&gt; S
+    end</pre>
+<p>Introduced in <a href="../n/01-basic-concepts-and-basic-laws.html">Week 1</a>. These two laws <em>are</em> the derivation behind <a href="../n/concepts.html#nodal-and-mesh-analysis">nodal/mesh analysis</a> (<a href="../n/02-methods-of-circuit-analysis.html">Week 2</a>), every <a href="../n/concepts.html#network-theorems">network theorem</a> (<a href="../n/03-dc-network-theorems.html">Week 3</a>), and reappear unchanged (just with complex numbers) in AC phasor analysis (<a href="../n/07-ac-circuit-analysis-and-network-theorems.html">Week 7</a>).</p>
+<hr />
+</section><section class="step" data-title="Nodal and Mesh Analysis"><h2 id="nodal-and-mesh-analysis">Nodal and Mesh Analysis</h2>
+<p>Two systematic, opposite ways to reduce "solve this messy circuit" to "solve a linear system."</p>
+<ul>
+<li><strong>Nodal analysis:</strong> unknowns are node voltages. Write one KCL equation per non-reference node (express each branch current via Ohm's law in terms of node voltages), solve the resulting linear system. A <strong>supernode</strong> is used when a voltage source connects two non-reference nodes directly (its internal current is unknown, so you merge the two nodes' KCL equations and add the source's constraint equation).</li>
+<li><strong>Mesh analysis:</strong> unknowns are loop (mesh) currents. Write one KVL equation per independent mesh. A <strong>supermesh</strong> is the dual trick, used when a current source sits on the boundary shared by two meshes.</li>
+</ul>
+<pre class="mermaid">flowchart LR
+    subgraph Nodal[&quot;Nodal analysis&quot;]
+        n1[&quot;Pick reference node (ground)&quot;] --&gt; n2[&quot;Label unknown node voltages&quot;] --&gt; n3[&quot;Apply KCL at each node&quot;] --&gt; n4[&quot;Solve linear system&quot;]
+    end
+    subgraph Mesh[&quot;Mesh analysis&quot;]
+        m1[&quot;Identify independent meshes&quot;] --&gt; m2[&quot;Assign mesh currents&quot;] --&gt; m3[&quot;Apply KVL around each mesh&quot;] --&gt; m4[&quot;Solve linear system&quot;]
+    end</pre>
+<p>Choosing between them: nodal is usually faster when a circuit has many parallel branches / few nodes; mesh is faster when it has many series loops / is planar with few meshes.</p>
+<p>Covered in <a href="../n/02-methods-of-circuit-analysis.html">Week 2</a> with worked supernode/supermesh problems in <a href="../n/tutorial-1-circuit-laws-and-theorems.html">Tutorial 1</a> (Q11, Q12, Q14). Reapplied directly in the phasor domain in <a href="../n/07-ac-circuit-analysis-and-network-theorems.html">Week 7</a> — same procedure, complex arithmetic instead of real.</p>
+<hr />
+</section><section class="step" data-title="Network Theorems"><h2 id="network-theorems">Network Theorems</h2>
+<p>Four shortcuts that avoid solving the <em>whole</em> circuit when you only care about one part of it. All require <strong>linearity</strong> (only resistors/impedances and independent sources whose values don't depend on circuit variables — dependent sources are still fine).</p>
+<ul>
+<li><strong>Superposition:</strong> the response (voltage or current) due to several independent sources acting together equals the sum of the responses to each source acting alone (all <em>other</em> independent sources killed — voltage sources shorted, current sources opened).</li>
+<li><strong>Thevenin's theorem:</strong> any linear two-terminal network reduces to a single voltage source V_th in series with a resistance R_th. V_th = open-circuit voltage at the terminals; R_th = resistance seen at the terminals with all independent sources killed (or R_th = V_th / I_sc if dependent sources are present).</li>
+<li><strong>Norton's theorem:</strong> the dual of Thevenin — a current source I_N in parallel with R_N. I_N = short-circuit current at the terminals; R_N = R_th (they're the same resistance, just a different equivalent form). V_th = I_N × R_N always.</li>
+<li><strong>Maximum power transfer theorem:</strong> a load draws maximum power from a network when R_load = R_th (DC), or Z_load = Z_th* — the complex conjugate — in AC. Under this condition P_max = V_th² / (4·R_th).</li>
+</ul>
+<pre class="mermaid">flowchart LR
+    N[&quot;Any linear\ntwo-terminal network&quot;] --&gt;|&quot;open-circuit voltage&quot;| Vth[&quot;V_th&quot;]
+    N --&gt;|&quot;short-circuit current&quot;| IN[&quot;I_N&quot;]
+    Vth --&gt;|&quot;R_th = V_th / I_N&quot;| Rth[&quot;R_th = R_N&quot;]
+    Vth === Th[&quot;Thevenin: V_th in series with R_th&quot;]
+    IN === No[&quot;Norton: I_N in parallel with R_N&quot;]</pre>
+<p>Covered for DC in <a href="../n/03-dc-network-theorems.html">Week 3</a> (worked in <a href="../n/tutorial-1-circuit-laws-and-theorems.html">Tutorial 1</a> Q6, Q8, Q9, Q10), extended to AC/phasor form in <a href="../n/07-ac-circuit-analysis-and-network-theorems.html">Week 7</a>.</p>
+<hr />
+</section><section class="step" data-title="Series-Parallel Resistance Reduction"><h2 id="series-parallel-resistance-reduction">Series-Parallel Resistance Reduction</h2>
+<p>See the standalone note: <a href="../n/series-parallel-resistance-reduction.html">Series-Parallel Resistance Reduction</a>. Used constantly wherever a Thevenin/Norton resistance, ladder network, or bridge circuit needs to be collapsed to a single equivalent — <a href="../n/01-basic-concepts-and-basic-laws.html">Week 1</a> onward, and central to <a href="../n/tutorial-1-circuit-laws-and-theorems.html">Tutorial 1</a> Q1 (R-2R ladder) and Q13 (star-delta bridge).</p>
+<hr />
+</section><section class="step" data-title="Capacitors and Inductors"><h2 id="capacitors-and-inductors">Capacitors and Inductors</h2>
+<p>Energy-<em>storage</em> elements — unlike a resistor, they don't dissipate energy, they hold it in an electric or magnetic field.</p>
+<ul>
+<li><strong>Capacitor:</strong> i = C·(dv/dt). Voltage cannot change instantaneously (would need infinite current). Energy stored: W = ½CV².</li>
+<li><strong>Inductor:</strong> v = L·(di/dt). Current cannot change instantaneously (would need infinite voltage). Energy stored: W = ½LI².</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Capacitor</th>
+<th>Inductor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Blocks (DC steady state)</td>
+<td>acts as <strong>open circuit</strong></td>
+<td>acts as <strong>short circuit</strong></td>
+</tr>
+<tr>
+<td>Continuous variable</td>
+<td>voltage</td>
+<td>current</td>
+</tr>
+<tr>
+<td>Series combination</td>
+<td>1/C_eq = Σ(1/C_i)</td>
+<td>L_eq = ΣL_i</td>
+</tr>
+<tr>
+<td>Parallel combination</td>
+<td>C_eq = ΣC_i</td>
+<td>1/L_eq = Σ(1/L_i)</td>
+</tr>
+</tbody>
+</table>
+<p>Note the combination rules are the <em>opposite</em> of resistors' — a useful memory check.</p>
+<p>Covered in <a href="../n/04-capacitors-inductors-and-first-order-circuits.html">Week 4</a>, practiced extensively in <a href="../n/tutorial-2-transient-analysis-of-dc-circuits.html">Tutorial 2</a>. Their AC steady-state behavior becomes complex impedance in <a href="../n/06-sinusoidal-steady-state-analysis.html">Week 6</a>.</p>
+<hr />
+</section><section class="step" data-title="RC/RL Transients and Time Constant"><h2 id="rcrl-transients-and-time-constant">RC/RL Transients and Time Constant</h2>
+<p>When a circuit with one capacitor or inductor is disturbed (switch opens/closes), the response has the form:</p>
+<p><strong>x(t) = x_∞ + (x_0 − x_∞)·e^(−t/τ)</strong></p>
+<p>where x_0 is the initial value, x_∞ is the final (steady-state) value, and τ is the <strong>time constant</strong>: τ = RC for an RC circuit, τ = L/R for an RL circuit (R being the Thevenin resistance seen by the capacitor/inductor).</p>
+<pre class="mermaid">flowchart LR
+    A[&quot;Find x(0): initial condition\n(capacitor V or inductor I just before switching)&quot;] --&gt; B[&quot;Find x(∞): steady state\n(cap → open, ind → short)&quot;] --&gt; C[&quot;Find τ = R_th·C or L/R_th&quot;] --&gt; D[&quot;Write x(t) = x∞ + (x0−x∞)e^(−t/τ)&quot;]</pre>
+<p>τ is the time to cover 63.2% of the total change; after 5τ the response is &gt;99% settled — the standard "steady state reached" rule of thumb used throughout <a href="../n/tutorial-2-transient-analysis-of-dc-circuits.html">Tutorial 2</a>.</p>
+<p><strong>Second-order (RLC) circuits</strong> add a capacitor <em>and</em> inductor together, giving a differential equation with damping factor ζ and natural frequency ω_n:</p>
+<ul>
+<li>ζ &gt; 1 → <strong>overdamped</strong> (slow, no oscillation)</li>
+<li>ζ = 1 → <strong>critically damped</strong> (fastest non-oscillatory return)</li>
+<li>ζ &lt; 1 → <strong>underdamped</strong> (oscillates while decaying, at damped frequency ω_d = ω_n√(1−ζ²))</li>
+<li>ζ = 0 → <strong>undamped</strong> (oscillates forever)</li>
+</ul>
+<p>Covered in <a href="../n/04-capacitors-inductors-and-first-order-circuits.html">Week 4</a> and extended to second-order circuits in <a href="../n/tutorial-2-transient-analysis-of-dc-circuits.html">Tutorial 2</a> Q10–12; conceptually the DC-transient cousin of AC <a href="../n/concepts.html#resonance">resonance</a> in <a href="../n/08-resonance-and-magnetically-coupled-circuits.html">Week 8</a> — same ζ and ω_n show up in both.</p>
+<hr />
+</section><section class="step" data-title="Phasors"><h2 id="phasors">Phasors</h2>
+<p>A <strong>phasor</strong> is a complex number that packages a sinusoid's amplitude and phase, freezing out the (known, common) frequency and time dependence. For x(t) = X_m·cos(ωt + φ), the phasor is <strong>X = X_m∠φ</strong>.</p>
+<p>Why bother: differentiating/integrating a sinusoid in the time domain becomes simple multiplication in the phasor domain (d/dt → multiply by jω), turning differential equations into algebra.</p>
+<pre class="mermaid">flowchart LR
+    T[&quot;Time domain:\nx(t) = Xm·cos(ωt + φ)&quot;] --&gt;|&quot;freeze at t=0,\ndrop ω (common to all)&quot;| P[&quot;Phasor domain:\nX = Xm∠φ (complex number)&quot;]
+    P --&gt;|&quot;solve circuit with\nalgebra, not calculus&quot;| S[&quot;Solved phasor answer&quot;]
+    S --&gt;|&quot;convert back&quot;| T2[&quot;Time-domain answer&quot;]</pre>
+<p>Two related quantities:</p>
+<ul>
+<li><strong>RMS (root-mean-square) value:</strong> X_rms = X_m/√2 for a sinusoid — the DC-equivalent value that delivers the same average power. This is what a multimeter reads and what "230 V mains" means.</li>
+<li><strong>Average value</strong> over a full cycle of a pure sinusoid is zero (equal positive/negative area) — RMS, not average, is the meaningful AC magnitude for power calculations.</li>
+</ul>
+<p>Introduced in <a href="../n/05-sinusoids-and-phasors.html">Week 5</a>; used throughout <a href="../n/06-sinusoidal-steady-state-analysis.html">Week 6</a>–<a href="../n/09-three-phase-circuits-and-power-measurement.html">Week 9</a>.</p>
+<hr />
+</section><section class="step" data-title="Impedance and Admittance"><h2 id="impedance-and-admittance">Impedance and Admittance</h2>
+<p><strong>Impedance Z = R + jX</strong> (ohms) generalizes resistance to AC: it relates phasor voltage to phasor current, <strong>V = IZ</strong>, the AC form of <a href="../n/concepts.html#ohms-law">Ohm&#x27;s Law</a>.</p>
+<ul>
+<li>Resistor: Z_R = R (real, no phase shift between V and I)</li>
+<li>Inductor: Z_L = jωL = jX_L (current <em>lags</em> voltage by 90°)</li>
+<li>Capacitor: Z_C = 1/(jωC) = −jX_C (current <em>leads</em> voltage by 90°)</li>
+</ul>
+<p><strong>Admittance Y = 1/Z = G + jB</strong> (siemens) is the reciprocal — convenient for parallel combinations, exactly as conductance is for parallel resistors.</p>
+<pre class="mermaid">flowchart TD
+    Z[&quot;Impedance Z = R + jX&quot;] --&gt; R[&quot;Real part R:\nresistance (dissipates energy)&quot;]
+    Z --&gt; X[&quot;Imaginary part X:\nreactance (stores energy, no dissipation)&quot;]
+    X --&gt; XL[&quot;X_L = ωL &gt; 0\ninductive: I lags V&quot;]
+    X --&gt; XC[&quot;X_C = 1/(ωC) &gt; 0\ncapacitive: I leads V (as −jX_C)&quot;]</pre>
+<p>Defined and used to redo series/parallel AC circuits in <a href="../n/06-sinusoidal-steady-state-analysis.html">Week 6</a> — the exact same <a href="../n/concepts.html#series-parallel-resistance-reduction">series-parallel reduction</a> techniques from DC apply, just with complex numbers. Central to <a href="../n/concepts.html#resonance">resonance</a> in <a href="../n/08-resonance-and-magnetically-coupled-circuits.html">Week 8</a>.</p>
+<hr />
+</section><section class="step" data-title="Power in AC Circuits"><h2 id="power-in-ac-circuits">Power in AC Circuits</h2>
+<p>Three related quantities, all connected by the <strong>power triangle</strong>:</p>
+<ul>
+<li><strong>Real (active) power P</strong> (watts): the power actually converted to useful work/heat. P = V_rms·I_rms·cos φ</li>
+<li><strong>Reactive power Q</strong> (VAR): power that sloshes back and forth into/out of L and C, doing no net work. Q = V_rms·I_rms·sin φ</li>
+<li><strong>Apparent power S</strong> (VA): what the source "feels" it's supplying. S = V_rms·I_rms = P + jQ (as a complex quantity), |S| = √(P² + Q²)</li>
+<li><strong>Power factor</strong> cos φ = P/S — how effectively the apparent power is being converted to real power. φ is the angle of Z (or equivalently, the phase difference between V and I).</li>
+</ul>
+<pre class="mermaid">flowchart LR
+    subgraph Triangle[&quot;Power triangle (right triangle)&quot;]
+        direction LR
+        Pbase[&quot;P (real power, base)&quot;] --- angle[&quot;angle φ&quot;] --- Qside[&quot;Q (reactive power, height)&quot;]
+        Pbase -.-&gt;|&quot;hypotenuse&quot;| Shyp[&quot;S (apparent power)&quot;]
+    end</pre>
+<ul>
+<li>Inductive load: φ &gt; 0, "lagging" power factor (current lags voltage)</li>
+<li>Capacitive load: φ &lt; 0, "leading" power factor</li>
+<li>Power-factor correction adds capacitance in parallel to cancel inductive Q, cutting S (and hence current/losses) for the same P.</li>
+</ul>
+<p>Single-phase power in <a href="../n/06-sinusoidal-steady-state-analysis.html">Week 6</a>; three-phase power and its measurement (two-wattmeter method) in <a href="../n/09-three-phase-circuits-and-power-measurement.html">Week 9</a>.</p>
+<hr />
+</section><section class="step" data-title="Resonance"><h2 id="resonance">Resonance</h2>
+<p>In a circuit with both L and C, <strong>resonance</strong> occurs at the frequency where X_L = X_C, so the reactive parts cancel and the circuit behaves purely resistively.</p>
+<p>Resonant angular frequency: <strong>ω_0 = 1/√(LC)</strong></p>
+<ul>
+<li><strong>Series RLC:</strong> at resonance, Z is at its <strong>minimum</strong> (=R), so current is at its <strong>maximum</strong> — a series resonant circuit is a band-<em>pass</em> for current.</li>
+<li><strong>Parallel RLC:</strong> at resonance, Z is at its <strong>maximum</strong>, so line current is at its <strong>minimum</strong> — a band-<em>stop</em> (rejector) behavior for line current, while the L/C loop current can be large (circulating current).</li>
+<li><strong>Q-factor</strong> measures how sharp the resonance peak is: Q = ω_0L/R (series) — higher Q means a narrower bandwidth BW = ω_0/Q and a "sharper" filter.</li>
+</ul>
+<pre class="mermaid">flowchart LR
+    f1[&quot;f &lt; f0:\nX_C dominates,\ncircuit capacitive&quot;] --&gt; f2[&quot;f = f0:\nX_L = X_C,\npurely resistive,\n|Z| min (series) / max (parallel)&quot;] --&gt; f3[&quot;f &gt; f0:\nX_L dominates,\ncircuit inductive&quot;]</pre>
+<p>This is the AC-steady-state twin of the <a href="../n/concepts.html#rcrl-transients-and-time-constant">second-order transient damping</a> discussed above — same ω_n, and Q relates directly to damping ratio ζ (Q = 1/2ζ). Covered in <a href="../n/08-resonance-and-magnetically-coupled-circuits.html">Week 8</a>.</p>
+<hr />
+</section><section class="step" data-title="Magnetic Coupling"><h2 id="magnetic-coupling">Magnetic Coupling</h2>
+<p>Two coils sharing a common magnetic flux exhibit <strong>mutual inductance M</strong>: a changing current in coil 1 induces an EMF in coil 2 (and vice versa), on top of each coil's own self-inductance.</p>
+<ul>
+<li>Induced voltage: v_2 = M·(di_1/dt) (mutual term) added to each coil's self-inductance term.</li>
+<li><strong>Dot convention:</strong> dots mark terminals with the same instantaneous polarity — current entering the dotted terminal of one coil induces a voltage that is <em>positive</em> at the dotted terminal of the other.</li>
+<li><strong>Coefficient of coupling</strong> k = M/√(L_1L_2), 0 ≤ k ≤ 1. k = 1 is "perfect" coupling (all flux from coil 1 links coil 2) — the ideal-transformer assumption.</li>
+</ul>
+<pre class="mermaid">flowchart LR
+    subgraph Coil1[&quot;Coil 1 (N1 turns)&quot;]
+        i1[&quot;i1 →&quot;]
+    end
+    subgraph Coil2[&quot;Coil 2 (N2 turns)&quot;]
+        i2[&quot;← i2 induced&quot;]
+    end
+    Coil1 -. &quot;shared flux Φ,\nmutual inductance M&quot; .-&gt; Coil2</pre>
+<p>This is the physical mechanism behind a transformer. Introduced in <a href="../n/08-resonance-and-magnetically-coupled-circuits.html">Week 8</a>; applied directly (with near-unity k) in <a href="../n/10-single-phase-transformers.html">Week 10</a>.</p>
+<hr />
+</section><section class="step" data-title="Three-Phase Systems"><h2 id="three-phase-systems">Three-Phase Systems</h2>
+<p>Three sinusoidal sources 120° apart in phase, feeding a balanced load, connected either:</p>
+<ul>
+<li><strong>Star (Y):</strong> each phase winding has one end tied to a common neutral. Line voltage V_L = √3·V_phase (line voltage leads the corresponding phase voltage by 30°); line current = phase current.</li>
+<li><strong>Delta (Δ):</strong> phase windings connected end-to-end in a loop, lines tapped at the corners. Line current I_L = √3·I_phase; line voltage = phase voltage.</li>
+</ul>
+<pre class="mermaid">flowchart LR
+    subgraph Star[&quot;Star (Y) connection&quot;]
+        N((Neutral)) --- A1[Phase A] &amp; B1[Phase B] &amp; C1[Phase C]
+    end
+    subgraph Delta[&quot;Delta (Δ) connection&quot;]
+        A2[Phase A] --- B2[Phase B] --- C2[Phase C] --- A2
+    end</pre>
+<p>Balanced three-phase power (same formula regardless of connection, using <em>line</em> quantities): <strong>P = √3·V_L·I_L·cos φ</strong>.</p>
+<p><strong>Two-wattmeter method</strong> measures total power in a 3-phase 3-wire system with only two wattmeters: P_total = W1 + W2, and additionally reveals the power factor from W1, W2 individually (tan φ = √3(W1−W2)/(W1+W2)).</p>
+<p>Covered in <a href="../n/09-three-phase-circuits-and-power-measurement.html">Week 9</a>; the supply configuration assumed for <a href="../n/11-three-phase-induction-machines.html">Week 11</a> machines. Star-delta <em>transformation</em> (the resistive-network technique, different from this three-phase supply topology but same underlying Y-Δ geometry) is used in <a href="../n/tutorial-1-circuit-laws-and-theorems.html">Tutorial 1</a> Q13/Q14 — see <a href="../n/series-parallel-resistance-reduction.html">Series-Parallel Resistance Reduction</a>.</p>
+<hr />
+</section><section class="step" data-title="Rotating Magnetic Field"><h2 id="rotating-magnetic-field">Rotating Magnetic Field</h2>
+<p>A three-phase stator winding, fed by three currents 120° apart in <em>time</em> from three windings 120° apart in <em>space</em>, produces a magnetic field of <strong>constant magnitude that rotates</strong> at synchronous speed — this is the entire working principle of the induction motor, requiring no commutator or external field excitation.</p>
+<p><strong>Synchronous speed: N_s = 120f/P</strong> (rpm), where f = supply frequency, P = number of poles.</p>
+<pre class="mermaid">flowchart LR
+    subgraph Stator[&quot;3-phase stator, 120° apart in space&quot;]
+        A[&quot;Winding A&quot;]
+        B[&quot;Winding B&quot;]
+        C[&quot;Winding C&quot;]
+    end
+    IA[&quot;I_A: 0°&quot;] --&gt; A
+    IB[&quot;I_B: −120°&quot;] --&gt; B
+    IC[&quot;I_C: −240°&quot;] --&gt; C
+    A &amp; B &amp; C --&gt; RMF[&quot;Resultant field:\nconstant magnitude,\nrotates at N_s = 120f/P&quot;]</pre>
+<p><strong>Slip</strong> s = (N_s − N_r)/N_s describes how far the rotor lags the field; the rotor can never reach N_s (zero relative speed → zero induced torque). See <a href="../n/11-three-phase-induction-machines.html">Week 11</a>. Built directly on balanced <a href="../n/concepts.html#three-phase-systems">three-phase currents</a> from <a href="../n/09-three-phase-circuits-and-power-measurement.html">Week 9</a>.</p>
+<hr />
+</section><section class="step" data-title="Back EMF"><h2 id="back-emf">Back EMF</h2>
+<p>In a DC motor, as the armature rotates in the field's flux, it generates its <em>own</em> EMF (E_b) by the same generator action — but wired to <em>oppose</em> the applied terminal voltage (Lenz's law).</p>
+<p><strong>V = E_b + I_a·R_a</strong>, and E_b ∝ N (speed) × Φ (flux).</p>
+<ul>
+<li>At start (N = 0), E_b = 0, so the only thing limiting current is the small armature resistance R_a → very high starting current, hence the need for a starting rheostat.</li>
+<li>As speed rises, E_b rises, current falls, until equilibrium torque = load torque.</li>
+<li>Torque: T ∝ Φ·I_a.</li>
+</ul>
+<pre class="mermaid">flowchart LR
+    V[&quot;Applied V&quot;] --&gt; Loop[&quot;Ia = (V − Eb) / Ra&quot;]
+    Eb[&quot;Back EMF Eb ∝ N·Φ\n(rises with speed)&quot;] -.opposes.-&gt; Loop
+    Loop --&gt; N[&quot;Speed N rises&quot;] --&gt; Eb</pre>
+<p>This self-regulating feedback loop is why DC motors are naturally speed-stabilizing. See <a href="../n/12-dc-machines.html">Week 12</a>.</p></section></div><nav class="pager"><span></span><a class="pg pg-next" href="01-basic-concepts-and-basic-laws.html"><small>Next lesson</small>01 Basic Concepts and Basic Laws</a></nav><section class="related"><h2>Related notes</h2><h3>Links to</h3><div class="rels"><a class="rel" href="01-basic-concepts-and-basic-laws.html" style="--c:#ffc800"><span class="dot"></span><span>01 Basic Concepts and Basic Laws<small>Basic Electrical Engineering</small></span></a><a class="rel" href="02-methods-of-circuit-analysis.html" style="--c:#ffc800"><span class="dot"></span><span>02 Methods of Circuit Analysis<small>Basic Electrical Engineering</small></span></a><a class="rel" href="03-dc-network-theorems.html" style="--c:#ffc800"><span class="dot"></span><span>03 DC Network Theorems<small>Basic Electrical Engineering</small></span></a><a class="rel" href="04-capacitors-inductors-and-first-order-circuits.html" style="--c:#ffc800"><span class="dot"></span><span>04 Capacitors, Inductors and First Order Circuits<small>Basic Electrical Engineering</small></span></a><a class="rel" href="05-sinusoids-and-phasors.html" style="--c:#ffc800"><span class="dot"></span><span>05 Sinusoids and Phasors<small>Basic Electrical Engineering</small></span></a><a class="rel" href="06-sinusoidal-steady-state-analysis.html" style="--c:#ffc800"><span class="dot"></span><span>06 Sinusoidal Steady-State Analysis<small>Basic Electrical Engineering</small></span></a><a class="rel" href="07-ac-circuit-analysis-and-network-theorems.html" style="--c:#ffc800"><span class="dot"></span><span>07 AC Circuit Analysis and Network Theorems<small>Basic Electrical Engineering</small></span></a><a class="rel" href="08-resonance-and-magnetically-coupled-circuits.html" style="--c:#ffc800"><span class="dot"></span><span>08 Resonance and Magnetically Coupled Circuits<small>Basic Electrical Engineering</small></span></a><a class="rel" href="09-three-phase-circuits-and-power-measurement.html" style="--c:#ffc800"><span class="dot"></span><span>09 Three Phase Circuits and Power Measurement<small>Basic Electrical Engineering</small></span></a><a class="rel" href="10-single-phase-transformers.html" style="--c:#ffc800"><span class="dot"></span><span>10 Single Phase Transformers<small>Basic Electrical Engineering</small></span></a><a class="rel" href="11-three-phase-induction-machines.html" style="--c:#ffc800"><span class="dot"></span><span>11 Three Phase Induction Machines<small>Basic Electrical Engineering</small></span></a><a class="rel" href="12-dc-machines.html" style="--c:#ffc800"><span class="dot"></span><span>12 DC Machines<small>Basic Electrical Engineering</small></span></a><a class="rel" href="ee1100-moc.html" style="--c:#ffc800"><span class="dot"></span><span>EE1100 MOC<small>Basic Electrical Engineering</small></span></a><a class="rel" href="series-parallel-resistance-reduction.html" style="--c:#ffc800"><span class="dot"></span><span>Series-Parallel Resistance Reduction<small>Basic Electrical Engineering</small></span></a><a class="rel" href="tutorial-1-circuit-laws-and-theorems.html" style="--c:#ffc800"><span class="dot"></span><span>Tutorial 1 - Circuit Laws and Theorems<small>Basic Electrical Engineering</small></span></a><a class="rel" href="tutorial-2-transient-analysis-of-dc-circuits.html" style="--c:#ffc800"><span class="dot"></span><span>Tutorial 2 - Transient Analysis of DC Circuits<small>Basic Electrical Engineering</small></span></a><a class="rel" href="voltage-divider-rule.html" style="--c:#ffc800"><span class="dot"></span><span>Voltage Divider Rule<small>Basic Electrical Engineering</small></span></a></div><h3>Linked from</h3><div class="rels"><a class="rel" href="first-order-ac-transients-rc-and-rl.html" style="--c:#ffc800"><span class="dot"></span><span>First-Order AC Transients (RC and RL)<small>Basic Electrical Engineering</small></span></a><a class="rel" href="nodal-and-mesh-analysis-ac.html" style="--c:#ffc800"><span class="dot"></span><span>Nodal and Mesh Analysis (AC)<small>Basic Electrical Engineering</small></span></a><a class="rel" href="revolving-magnetic-field-and-synchronous-speed.html" style="--c:#ffc800"><span class="dot"></span><span>Revolving Magnetic Field and Synchronous Speed<small>Basic Electrical Engineering</small></span></a><a class="rel" href="second-order-ac-transients-series-and-parallel-rlc.html" style="--c:#ffc800"><span class="dot"></span><span>Second-Order AC Transients (Series and Parallel RLC)<small>Basic Electrical Engineering</small></span></a><a class="rel" href="thevenin-norton-and-maximum-power-transfer-ac.html" style="--c:#ffc800"><span class="dot"></span><span>Thevenin, Norton and Maximum Power Transfer (AC)<small>Basic Electrical Engineering</small></span></a><a class="rel" href="tutorial-3-ac-circuit-analysis.html" style="--c:#ffc800"><span class="dot"></span><span>Tutorial 3 - AC Circuit Analysis<small>Basic Electrical Engineering</small></span></a></div><canvas id="miniGraph" width="640" height="320" aria-label="Connections"></canvas></section></article><aside class="toc"><b>On this page</b><a href="#ohms-law">Ohm&#x27;s Law</a><a href="#kirchhoffs-laws">Kirchhoff&#x27;s Laws</a><a href="#nodal-and-mesh-analysis">Nodal and Mesh Analysis</a><a href="#network-theorems">Network Theorems</a><a href="#series-parallel-resistance-reduction">Series-Parallel Resistance Reduction</a><a href="#capacitors-and-inductors">Capacitors and Inductors</a><a href="#rcrl-transients-and-time-constant">RC/RL Transients and Time Constant</a><a href="#phasors">Phasors</a><a href="#impedance-and-admittance">Impedance and Admittance</a><a href="#power-in-ac-circuits">Power in AC Circuits</a><a href="#resonance">Resonance</a><a href="#magnetic-coupling">Magnetic Coupling</a><a href="#three-phase-systems">Three-Phase Systems</a><a href="#rotating-magnetic-field">Rotating Magnetic Field</a></aside></main></div></div>
+<div class="search" id="search" hidden><div class="search-box"><input id="q" type="search" placeholder="Search notes…" autocomplete="off"><div id="results"></div></div></div>
+<script src="../assets/data.js"></script><script src="../assets/vendor/mermaid.min.js"></script>
+<script src="../assets/app.js"></script>
+</body></html>

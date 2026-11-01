@@ -49,3 +49,6 @@ These are **not** interchangeable, and confusing them is the single most common 
 - [[Strength of materials/01 Stress and Strain/Generalized Hooke's Law and Poisson's Ratio|Generalized Hooke's Law and Poisson's Ratio]]
 - [[Strength of materials/02 Axial Loading/Statically Indeterminate Axial Members|Statically Indeterminate Axial Members]] (the same equilibrium+compatibility+Hooke procedure, one level simpler)
 - [[Strength of materials/02 Axial Loading/Thermal Stresses|Thermal Stresses]]
+
+## See also
+- [[Q1 - Axially Loaded Member]] — equilibrium + compatibility + constitutive law in the axial sheet.

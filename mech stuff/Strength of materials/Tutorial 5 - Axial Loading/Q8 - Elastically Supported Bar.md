@@ -33,3 +33,8 @@ $$ \boxed{ N(x) = n\left(\frac{9a}{14} - x\right) } $$
 **Backlinks**:
 - [[Strength of Materials - MOC]]
 - [[Strength of Materials - MOC#02 Axial Loading|02 Axial Loading]]
+
+## See also
+- [[Relations Between Load, Shear, and Moment]] — $dN/dx=-n$ is the axial twin of $dV/dx=-w$.
+- [[Double Integration and Macaulay's Method]] — $EA\,u''=-n$ is the axial twin of $EI\,v''''=-w$.
+- [[Statically Indeterminate Axial Members]] — the spring supports add compatibility conditions.

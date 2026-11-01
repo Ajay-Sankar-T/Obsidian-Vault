@@ -32,3 +32,9 @@ Push the analogy one step further: [[AC Power and Power Factor|AC Power and Powe
 - [[Strength of materials/07 Transformation of Stress and Strain/Mohr's Circle for Stress|Mohr's Circle for Stress]]
 - [[Phasors and Complex Algebra|Phasors and Complex Algebra]]
 - [[AC Power and Power Factor|AC Power and Power Factor]]
+
+## Cross-domain links
+- [[Sturm-Liouville Problems]] — the infinite-dimensional version: a self-adjoint operator has real eigenvalues and orthogonal eigenfunctions, as a symmetric matrix does.
+- [[Heat Transfer - MOC]] — separation of variables in conduction problems produces these eigenfunctions.
+- [[Measurements, Instrumentation and Control - MOC]] — poles of a transfer function are the eigenvalues of the system matrix; they decide stability.
+- [[ML_Formula_Theory_Obsidian]] — a covariance matrix (item 4) is symmetric, so its principal axes are found by the same rotation as principal stresses.

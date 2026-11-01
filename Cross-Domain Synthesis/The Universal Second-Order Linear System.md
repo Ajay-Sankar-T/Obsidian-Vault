@@ -47,3 +47,7 @@ Because $P_{cr}=\pi^2EI/L^2$ and $\omega_0=1/\sqrt{LC}$ are computed by the *sam
 - [[Cross-Domain Synthesis/Resonance and Buckling - Instability as an Eigenvalue Problem|Resonance and Buckling — Instability as an Eigenvalue Problem]]
 - [[Cross-Domain Synthesis/Exponential Decay - Time Constants, Damping and Spatial Relaxation|Exponential Decay — Time Constants, Damping and Spatial Relaxation]]
 - [[2nd Order Linear ODE with Constant Coefficients|2nd Order Linear ODE with Constant Coefficients]]
+
+## Cross-domain links
+- [[Measurements, Instrumentation and Control - MOC]] — natural frequency and damping ratio of sensors and servo loops; transfer functions are this system in the Laplace domain.
+- [[ML_Formula_Theory_Obsidian]] — momentum in gradient descent (item 48) is a discretised damped oscillator: step size and momentum set $\zeta$.

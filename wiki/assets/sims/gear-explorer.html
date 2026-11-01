@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gear Explorer</title>
+<style>
+:root{--bg:#fafafa;--fg:#1c1c1e;--card:#fff;--line:#d9d9de;--b:#1f77b4;--o:#e8590c;--r:#d6204a;--ok:#1a7f37;--mut:#6b6b75}
+@media (prefers-color-scheme:dark){:root{--bg:#161618;--fg:#ececf0;--card:#202024;--line:#3a3a42;--mut:#9a9aa5;--ok:#4cc26a}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.45 system-ui,Segoe UI,sans-serif}
+header{padding:14px 20px;border-bottom:1px solid var(--line)}h1{margin:0;font-size:18px}header p{margin:2px 0 0;color:var(--mut)}
+main{display:grid;grid-template-columns:minmax(300px,380px) 1fr;gap:16px;padding:16px 20px;max-width:1300px;margin:auto}
+@media(max-width:900px){main{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}
+.card h2{margin:0 0 8px;font-size:14px;text-transform:uppercase;letter-spacing:.04em;color:var(--mut)}
+label{display:flex;justify-content:space-between;margin-top:8px}label b{font-variant-numeric:tabular-nums}
+input[type=range]{width:100%}input[type=number],select{width:100%;padding:4px 6px;background:var(--bg);color:var(--fg);border:1px solid var(--line);border-radius:6px}
+table{width:100%;border-collapse:collapse}td{padding:3px 0;border-bottom:1px solid var(--line)}td:last-child{text-align:right;font-variant-numeric:tabular-nums}
+.eq{color:var(--mut);font-size:12px}.verdict{margin-top:8px;padding:8px 10px;border-radius:8px;font-weight:600}
+.good{background:color-mix(in srgb,var(--ok) 15%,transparent);color:var(--ok)}.bad{background:color-mix(in srgb,var(--r) 15%,transparent);color:var(--r)}
+canvas{width:100%;height:auto;background:var(--card);border-radius:8px;display:block}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:8px}.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+button{padding:5px 10px;border:1px solid var(--line);background:var(--bg);color:var(--fg);border-radius:6px;cursor:pointer}button.on{background:var(--b);color:#fff;border-color:var(--b)}
+.res{margin-top:8px;font-variant-numeric:tabular-nums}.wide{grid-column:1/-1}
+</style></head><body>
+<header><h1>Gear Explorer</h1><p>Ghosh &amp; Mallik, Chapter 9 – equation numbers in brackets. Everything is computed live in your browser.</p></header>
+<main>
+<section class="card"><h2>Spur gear pair</h2>
+<label>N₁ (pinion) <b id="vN1"></b></label><input type="range" id="N1" min="6" max="60" value="20">
+<label>N₂ (wheel) <b id="vN2"></b></label><input type="range" id="N2" min="6" max="100" value="30">
+<label>module m (mm) <b id="vm"></b></label><input type="range" id="m" min="1" max="12" step="0.5" value="10">
+<label>pressure angle α (°) <b id="va"></b></label><input type="range" id="a" min="14.5" max="30" step="0.5" value="20">
+<label>addendum f·m, f = <b id="vf"></b></label><input type="range" id="f" min="0.6" max="1.4" step="0.05" value="1">
+<table style="margin-top:10px" id="out"></table><div id="verdict" class="verdict"></div>
+</section>
+<section class="card"><h2>Mesh – line of action E→F</h2><canvas id="cv" width="900" height="520"></canvas>
+<div class="tabs" style="margin-top:8px"><button id="play" class="on">pause</button><span class="eq" id="pairs"></span></div></section>
+<section class="card wide"><h2>Other gear types and trains</h2>
+<div class="tabs" id="tabs"></div><div id="panel"></div></section>
+</main>
+<script>
+const $=id=>document.getElementById(id),D=Math.PI/180,inv=a=>Math.tan(a)-a;
+const S={N1:20,N2:30,m:10,a:20,f:1};let phi=0,playing=true;
+function calc(){const a=S.a*D,m=S.m,rp1=m*S.N1/2,rp2=m*S.N2/2,ad=S.f*m,ro1=rp1+ad,ro2=rp2+ad,rb1=rp1*Math.cos(a),rb2=rp2*Math.cos(a),C=rp1+rp2;
+ const l1=Math.sqrt(Math.max(ro1*ro1-rb1*rb1,0)),l2=Math.sqrt(Math.max(ro2*ro2-rb2*rb2,0)),tA=C*Math.sin(a),EF=l1+l2-tA,pb=2*Math.PI*rb2/S.N2;
+ const lam=S.N1/S.N2,nmin=2*S.f*lam/(Math.sqrt(1+lam*(lam+2)*Math.sin(a)**2)-1),nrack=2*S.f/Math.sin(a)**2;
+ // E beyond A or F beyond B  <=>  l2 or l1 exceeds AB = C sin(alpha)
+ const AP=rp1*Math.sin(a),BP=rp2*Math.sin(a);
+ const pinionHit=(l2-BP)>AP+1e-9,wheelHit=(l1-AP)>BP+1e-9; // E beyond A / F beyond B
+ return{a,m,rp1,rp2,ro1,ro2,rb1,rb2,C,EF,pb,mc:EF/pb,nmin,nrack,AP,BP,l1,l2,pinionHit,wheelHit,p:Math.PI*m,hb1:Math.PI/(2*S.N1)+inv(a)}}
+function fmt(x,d=3){return Number(x).toFixed(d)}
+function update(){for(const k of['N1','N2','m','a','f']){S[k]=+$(k).value;$('v'+k).textContent=k=='a'?S[k]+'°':S[k]}
+ const g=calc();window.G=g;
+ const rows=[['pitch radii r<sub>p1</sub>, r<sub>p2</sub>',fmt(g.rp1,2)+', '+fmt(g.rp2,2)+' mm'],['base radii r<sub>b</sub> = r<sub>p</sub>cosα',fmt(g.rb1,2)+', '+fmt(g.rb2,2)+' mm'],['outer radii r<sub>o</sub>',fmt(g.ro1,2)+', '+fmt(g.ro2,2)+' mm'],
+ ['centre distance C',fmt(g.C,2)+' mm'],['circular pitch p = πm (9.1)',fmt(g.p,2)+' mm'],['base pitch p<sub>b</sub> = p cosα',fmt(g.pb,2)+' mm'],
+ ['length of action EF (9.11)',fmt(g.EF,2)+' mm'],['contact ratio m<sub>c</sub> (9.12)',fmt(g.mc,3)],['N<sub>1,min</sub> with this wheel (9.17)',fmt(g.nmin,2)],['N<sub>1,min</sub> with rack (9.18)',fmt(g.nrack,2)],['dedendum b = 1.25m / clearance',fmt(1.25*g.m,2)+' / '+fmt(.25*g.m,2)+' mm']];
+ $('out').innerHTML=rows.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td></tr>`).join('');
+ let v=$('verdict');const bad=g.pinionHit||g.wheelHit||g.EF<=0;
+ v.className='verdict '+(bad?'bad':'good');
+ v.textContent=g.EF<=0?'No contact: addendum circles do not reach the line of action':bad?(g.pinionHit?'Interference: wheel tip digs into the pinion below its base circle (N₁ < '+Math.ceil(g.nmin)+')':'Interference: pinion tip digs into the wheel below its base circle')+(g.mc<1?' · m_c < 1':''):(g.mc<1?'No interference, but m_c < 1 – motion not continuous':g.mc<1.4?'No interference · m_c below the recommended 1.4':'No interference · m_c ≥ 1.4 – good')}
+for(const k of['N1','N2','m','a','f'])$(k).addEventListener('input',update);
+// ---------- drawing
+function gearPath(N,m,a,f,c0,cx,cy,scale){const rp=m*N/2,rb=rp*Math.cos(a),ra=rp+f*m,rf=rp-1.25*m,hb=Math.PI/(2*N)+inv(a),pts=[];
+ const flank=(c,sgn,r)=>{const ar=Math.acos(Math.min(1,rb/Math.max(r,rb)));return c+sgn*(hb-(Math.tan(ar)-ar))};
+ for(let k=0;k<N;k++){const c=c0+2*Math.PI*k/N;const rs=[];const n=10;for(let i=0;i<=n;i++)rs.push(Math.max(rb,rf)+(ra-Math.max(rb,rf))*i/n);
+  if(rf<rb)pts.push([c-hb,rf]);for(const r of rs)pts.push([flank(c,-1,r),r]);for(const r of rs.slice().reverse())pts.push([flank(c,1,r),r]);if(rf<rb)pts.push([c+hb,rf]);pts.push([c+hb,rf],[c+2*Math.PI/N-hb,rf])}
+ return pts.map(p=>[cx+scale*p[1]*Math.cos(p[0]),cy-scale*p[1]*Math.sin(p[0])])}
+function draw(){const cv=$('cv'),x=cv.getContext('2d'),g=G,W=cv.width,H=cv.height;x.clearRect(0,0,W,H);
+ const sc=Math.min((W-40)/(g.C+g.ro1+g.ro2),(H-40)/(2*Math.max(g.ro1,g.ro2)));const cx1=20+g.ro1*sc,cy=H/2,cx2=cx1+g.C*sc;
+ const css=getComputedStyle(document.body),fg=css.color;
+ const poly=(pts,fill,stroke)=>{x.beginPath();pts.forEach((p,i)=>i?x.lineTo(p[0],p[1]):x.moveTo(p[0],p[1]));x.closePath();x.fillStyle=fill;x.fill();x.strokeStyle=stroke;x.lineWidth=1.4;x.stroke()};
+ poly(gearPath(S.N1,g.m,g.a,S.f,phi,cx1,cy,sc),'rgba(31,119,180,.18)','#1f77b4');
+ poly(gearPath(S.N2,g.m,g.a,S.f,Math.PI+Math.PI/S.N2-phi*S.N1/S.N2,cx2,cy,sc).map(p=>[p[0],p[1]]),'rgba(232,89,12,.18)','#e8590c');
+ // geometry in canvas coords
+ const P=[cx1+g.rp1*sc,cy],d=[Math.sin(g.a),-Math.cos(g.a)],n=[Math.cos(g.a),Math.sin(g.a)];
+ const A=[cx1+g.rb1*sc*n[0],cy+g.rb1*sc*n[1]],B=[cx2-g.rb2*sc*n[0],cy-g.rb2*sc*n[1]];
+ x.strokeStyle=fg;x.lineWidth=1.2;x.beginPath();x.moveTo(...A);x.lineTo(...B);x.stroke();
+ const AB=Math.hypot(B[0]-A[0],B[1]-A[1])/sc;// positions along d from A in mm
+ const sE=AB-g.l2,sF=g.l1;
+ x.strokeStyle='rgba(214,32,74,.55)';x.lineWidth=6;x.beginPath();x.moveTo(A[0]+d[0]*sE*sc,A[1]+d[1]*sE*sc);x.lineTo(A[0]+d[0]*sF*sc,A[1]+d[1]*sF*sc);x.stroke();
+ x.fillStyle=fg;for(const [p,t] of [[A,'A'],[B,'B'],[P,'P']]){x.beginPath();x.arc(p[0],p[1],3.5,0,7);x.fill();x.fillText(t,p[0]+6,p[1]-6)}
+ x.setLineDash([4,4]);x.lineWidth=1;x.strokeStyle='#888';for(const [c,r] of [[cx1,g.rp1],[cx2,g.rp2]]){x.beginPath();x.arc(c,cy,r*sc,0,7);x.stroke()}x.setLineDash([]);
+ // contact points: tooth k flank start = phi+2πk/N1+hb1 ; rho=rb1*(g0+a)
+ let cnt=0;x.fillStyle='#d6204a';
+ for(let k=0;k<S.N1;k++){let g0=(phi+2*Math.PI*k/S.N1+g.hb1+g.a)%(2*Math.PI);for(const gg of[g0,g0-2*Math.PI]){const rho=g.rb1*gg;if(rho>=sE-1e-9&&rho<=sF+1e-9){cnt++;x.beginPath();x.arc(A[0]+d[0]*rho*sc,A[1]+d[1]*rho*sc,5,0,7);x.fill()}}}
+ $('pairs').textContent='tooth pairs in contact: '+cnt+'   (average = m_c = '+g.mc.toFixed(2)+')'}
+function tick(){if(playing){phi+=0.004*(20/S.N1)*3}draw();requestAnimationFrame(tick)}
+$('play').onclick=e=>{playing=!playing;e.target.textContent=playing?'pause':'play';e.target.classList.toggle('on',playing)};
+// ---------- calculators
+const T={
+'Helical':`<div class=row><div><label>circular pitch p (mm)</label><input type=number id=h1 value=10></div><div><label>helix angle ψ (°)</label><input type=number id=h2 value=25></div></div><div class=res id=hr></div><div class=eq>p<sub>n</sub> = p cosψ (9.36) · P<sub>n</sub> = P/cosψ (9.37) · b<sub>min</sub> = p/tanψ (9.38) · AGMA 1.15 p/tanψ (9.39)</div>`,
+'Spiral':`<div class=row><div><label>helix angle α (°)</label><input type=number id=s1 value=25></div><div><label>helix angle β (°)</label><input type=number id=s2 value=10></div></div><label>hands</label><select id=s3><option value=same>same hand</option><option value=opp selected>opposite hands</option></select><div class=res id=sr></div><div class=eq>θ = α + β (9.40) same hand · θ = α − β (9.41) opposite hands</div>`,
+'Worm':`<div class=row><div><label>threads N₁</label><input type=number id=w1 value=2></div><div><label>wheel teeth N₂</label><input type=number id=w2 value=40></div><div><label>axial pitch p<sub>x</sub> (mm)</label><input type=number id=w3 value=12.566></div><div><label>wheel input ω₁ rpm (worm)</label><input type=number id=w4 value=1440></div></div><div class=res id=wr></div><div class=eq>l = p<sub>x</sub>N₁ (9.42) · ω₁/ω₂ = N₂/N₁ (9.43) · ω₁/ω₂ = πD<sub>p2</sub>/l (9.44)</div>`,
+'Planetary':`<div class=row><div><label>sun teeth N<sub>S</sub></label><input type=number id=p1 value=20></div><div><label>ring teeth N<sub>R</sub></label><input type=number id=p2 value=60></div></div><div class=row><div><label>sun speed n<sub>S</sub> (rpm, blank = unknown)</label><input type=number id=p3 value=1000></div><div><label>arm speed n<sub>A</sub> (blank = unknown)</label><input type=number id=p4></div><div><label>ring speed n<sub>R</sub> (blank = unknown)</label><input type=number id=p5 value=0></div></div><div class=res id=pr></div><div class=eq>Willis (9.48): (n<sub>R</sub> − n<sub>A</sub>)/(n<sub>S</sub> − n<sub>A</sub>) = −N<sub>S</sub>/N<sub>R</sub> · planet teeth N<sub>P</sub> = (N<sub>R</sub> − N<sub>S</sub>)/2 · give any two speeds</div>`,
+'Torque':`<div class=row><div><label>power (kW)</label><input type=number id=t1 value=7.5></div><div><label>input speed n₁ (rpm)</label><input type=number id=t2 value=1000></div><div><label>output speed n₂ (rpm)</label><input type=number id=t3 value=-50></div></div><div class=res id=tr></div><div class=eq>M₁ = P·60/(2πn₁) · M₂ = −M₁ω₁/ω₂ (9.50, ω₃ = 0) · M₃ = −(M₁+M₂) (9.49) – defaults are Problem 9.10</div>`,
+'Differential':`<div class=row><div><label>ring gear speed n<sub>B</sub></label><input type=number id=d1 value=300></div><div><label>left wheel n<sub>D</sub></label><input type=number id=d2 value=280></div></div><div class=res id=dr></div><div class=eq>n<sub>B</sub> = (n<sub>D</sub> + n<sub>E</sub>)/2</div>`};
+const R={Helical(){const p=+$('h1').value,s=+$('h2').value*D;$('hr').innerHTML=`p<sub>n</sub> = <b>${fmt(p*Math.cos(s),3)}</b> mm · P<sub>n</sub>/P = <b>${fmt(1/Math.cos(s),4)}</b> · b<sub>min</sub> = <b>${fmt(p/Math.tan(s),2)}</b> mm · with AGMA 15 % = <b>${fmt(1.15*p/Math.tan(s),2)}</b> mm · lead angle = <b>${fmt(90-s/D,1)}°</b>`},
+Spiral(){const a=+$('s1').value,b=+$('s2').value,same=$('s3').value=='same';$('sr').innerHTML=`shaft angle θ = <b>${fmt(same?a+b:Math.abs(a-b),2)}°</b>`},
+Worm(){const N1=+$('w1').value,N2=+$('w2').value,px=+$('w3').value,w1=+$('w4').value;$('wr').innerHTML=`lead l = <b>${fmt(px*N1,3)}</b> mm · ratio ω₁/ω₂ = <b>${fmt(N2/N1,3)}</b> · wheel speed = <b>${fmt(w1*N1/N2,2)}</b> rpm · D<sub>p2</sub> = N₂p/π = <b>${fmt(N2*px/Math.PI,2)}</b> mm (right-angle shafts, p<sub>x</sub> = p)`},
+Planetary(){const Ns=+$('p1').value,Nr=+$('p2').value,k=-Ns/Nr,v=['p3','p4','p5'].map(i=>$(i).value===''?null:+$(i).value);const [s,a,r]=v;const un=v.filter(x=>x===null).length;
+ if(un!=1){$('pr').textContent='Leave exactly one speed blank.';return}
+ // r - a = k (s - a)  ->  r = k s + (1-k) a
+ let res;if(r===null)res=['n_R',k*s+(1-k)*a];else if(s===null)res=['n_S',(r-(1-k)*a)/k];else res=['n_A',(r-k*s)/(1-k)];
+ $('pr').innerHTML=`${res[0]} = <b>${fmt(res[1],3)}</b> rpm · planet teeth N<sub>P</sub> = <b>${(Nr-Ns)/2}</b> · ring fixed: n<sub>A</sub>/n<sub>S</sub> = ${fmt(Ns/(Ns+Nr),4)} · sun fixed: n<sub>A</sub>/n<sub>R</sub> = ${fmt(Nr/(Ns+Nr),4)}`},
+Torque(){const P=+$('t1').value*1e3,n1=+$('t2').value,n2=+$('t3').value,M1=P*60/(2*Math.PI*n1),M2=-M1*n1/n2,M3=-(M1+M2);$('tr').innerHTML=`M₁ = <b>${fmt(M1,2)}</b> N·m · M₂ = <b>${fmt(M2,1)}</b> N·m · holding torque M₃ = <b>${fmt(M3,1)}</b> N·m`},
+Differential(){const B=+$('d1').value,D1=+$('d2').value;$('dr').innerHTML=`right wheel n<sub>E</sub> = 2n<sub>B</sub> − n<sub>D</sub> = <b>${fmt(2*B-D1,2)}</b> rpm`}};
+let cur='Helical';function tab(n){cur=n;$('panel').innerHTML=T[n];for(const b of document.querySelectorAll('#tabs button'))b.classList.toggle('on',b.dataset.n==n);
+ $('panel').querySelectorAll('input,select').forEach(e=>e.addEventListener('input',R[n]));R[n]()}
+for(const n of Object.keys(T)){const b=document.createElement('button');b.textContent=n;b.dataset.n=n;b.onclick=()=>tab(n);$('tabs').appendChild(b)}
+update();tab('Helical');tick();
+</script></body></html>

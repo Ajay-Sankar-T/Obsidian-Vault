@@ -35,3 +35,6 @@ Voltage across capacitor $V_{C,max} = I_{max} \times \frac{1}{\omega_0 C} = 0.1 
 - [[EE1100 MOC]]
 - [[08 Resonance and Magnetically Coupled Circuits]]
 - [[Frequency Response and Resonance Curves]]
+
+## See also
+- [[Q2 - Parallel RLC Resonance]] — the dual case.

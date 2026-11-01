@@ -28,3 +28,6 @@ $$ C = \frac{1}{1.2566 \times 10^8} \approx 7.957 \times 10^{-9}\,\text{F} = \bo
 **Backlinks**:
 - [[EE1100 MOC]]
 - [[Filter Theory]]
+
+## See also
+- [[A-Q6 - Rectifier Circuits and Waveforms]] — the smoothing capacitor is a low-pass RC filter.

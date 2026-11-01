@@ -97,3 +97,7 @@ Buckling, resonance, energy methods, and stress/strain transformation all turn o
 |     |     |
 | --- | --- |
 |     |     |
+
+## Continues in
+- [[Materials and Design - MOC]] — failure theories, fatigue and fracture build on stress transformation.
+- [[Introduction to Machine Design - MOC]] — shafts, springs, bolts and gears sized with these formulas.

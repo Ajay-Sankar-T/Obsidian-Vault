@@ -1,0 +1,11 @@
+{
+  "name": "Engineering Wiki",
+  "short_name": "Wiki",
+  "description": "Interactive lessons, practice problems and solved tutorials from my engineering notes",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#131f24",
+  "theme_color": "#58cc02",
+  "icons": [{ "src": "assets/Favicons/Alya.png", "sizes": "320x320", "type": "image/png", "purpose": "any" }]
+}

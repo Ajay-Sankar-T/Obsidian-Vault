@@ -33,3 +33,10 @@ Both your circuits vault and your structures vault teach "find $\tau$ (or $\ell$
 - [[Cross-Domain Synthesis/The Universal Second-Order Linear System|The Universal Second-Order Linear System]]
 - [[AC Transients|AC Transients]]
 - [[Strength of materials/09 Columns and Buckling/Euler Buckling of Columns|Euler Buckling of Columns]]
+
+## Cross-domain links
+- [[Heat Transfer - MOC]] — lumped-capacitance cooling $T-T_\infty\propto e^{-t/\tau}$ with $\tau=\rho Vc/hA$ is the RC discharge again; the Biot number says when one time constant is enough.
+- [[Measurements, Instrumentation and Control - MOC]] — sensor lag (thermocouple, RC filter) is first-order response with the same $\tau$.
+- [[Applications of First Order ODEs]] — growth is the same equation with $k>0$: $dy/dt=ky$.
+- [[Assignment 8.1 - Six Ds Analysis of Ather Energy]] — 'exponential' technology curves (Moore, Wright) are constant-relative-rate growth; the *deceptive* phase is the flat start of $e^{kt}$.
+- [[ML_Formula_Theory_Obsidian]] — exponential learning-rate decay (item 47) is this decay applied to a step size.

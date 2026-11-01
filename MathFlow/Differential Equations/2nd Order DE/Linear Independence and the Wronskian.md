@@ -59,3 +59,7 @@ contradicting $W\ne0$. Hence $y_1,y_2$ are linearly independent. $\blacksquare$
 
 ---
 Next: [[Abel's Formula]]
+
+## See also
+- [[Reduction of Order]] — the second solution $y_2=vy_1$.
+- [[Non-homogeneous Cauchy-Euler Equations]] — variation of parameters uses the Wronskian.

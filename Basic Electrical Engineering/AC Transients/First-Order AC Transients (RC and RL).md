@@ -70,3 +70,7 @@ with $A$ fixed once $i(0^+)$ is known from the pre-switch condition.
 ## Related
 - [[04 Capacitors, Inductors and First Order Circuits|Week 4 — DC first-order transients]] (the $\tau$-finding procedure is identical)
 - [[Second-Order AC Transients (Series and Parallel RLC)|Second-Order AC Transients (Series and Parallel RLC)]]
+
+## See also
+- [[Tutorial 2 - Transient Analysis of DC Circuits]] — the same $x_\infty+(x_0-x_\infty)e^{-t/\tau}$ form for DC.
+- [[AC Transient and Steady-State Response of RLC Circuits]] — the RLC extension.

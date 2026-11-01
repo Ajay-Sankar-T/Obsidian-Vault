@@ -356,3 +356,6 @@ In every panel the closed form (line) coincides with the numerical solution of t
 
 ### Figure index
 `A2-fig1` Wronskian basics · `fig2` Q7 · `fig3` Abel · `fig4` inspection · `fig5` reduction of order · `fig6` roots · `fig7` IVPs · `fig8` UC · `fig9` VOP · `fig10` operators · `fig11` resonance. All in the `assets` folder.
+
+## See also
+- [[Assignment 4 - Series Solutions - Solutions]] — reduction of order gives the logarithmic second solution there.

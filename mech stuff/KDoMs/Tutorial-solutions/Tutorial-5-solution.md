@@ -248,3 +248,7 @@ rhs = np.r_[w[0]**2*rA + w[1]**2*rBA - w[2]**2*rBO,
             np.array([450, 0]) + w[0]**2*rA + w[1]**2*rCA + w[3]**2*rDC]
 alpha = np.linalg.solve(M, rhs)                                # a2, a3, a4, a5
 ```
+
+## See also
+- [[Velocity and Acceleration - Graphical Methods (Polygons)]] — instant-centre and polygon methods.
+- [[Velocity and Acceleration - Analytical Method]] — rigid-body and coincident-point relations.

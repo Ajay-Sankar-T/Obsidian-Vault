@@ -70,3 +70,7 @@ The shaft in the middle is a torsional spring of stiffness $GJ/L$ ([[Strength of
 - [[10 Single Phase Transformers|Week 10 — Single Phase Transformers]]
 - [[12 DC Machines|Week 12 — DC Machines]]
 - [[Cross-Domain Synthesis/The Mechanical-Electrical Analogy (Impedance Analogy)|The Mechanical-Electrical Analogy]]
+
+## Cross-domain links
+- [[Introduction to Machine Design - MOC]] — spur-gear design uses the torque-speed relations through the gear train.
+- [[Manufacturing Technology - MOC]] — machine-tool drive trains and motor drives apply the same reflected-inertia idea.

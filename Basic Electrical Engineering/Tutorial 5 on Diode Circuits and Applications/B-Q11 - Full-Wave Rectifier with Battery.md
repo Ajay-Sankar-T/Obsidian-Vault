@@ -45,3 +45,6 @@ Simulation of the circuit (all diode states, 3601 points over a period) gives th
 | conduction angle per pulse | $120^\circ$ (30°→150°) |
 | peak current | 49.0 mA |
 | average battery current | **0.0214 A** |
+
+## See also
+- [[B-Q9 - Battery Charging Rectifier Circuit]] — battery as a reverse-bias threshold.

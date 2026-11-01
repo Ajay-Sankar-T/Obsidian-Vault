@@ -32,3 +32,6 @@ If you replace the *static* buckling load $P$ with a *time-varying* one and add 
 - [[Cross-Domain Synthesis/The Universal Second-Order Linear System|The Universal Second-Order Linear System]]
 - [[Strength of materials/09 Columns and Buckling/Euler Buckling of Columns|Euler Buckling of Columns]]
 - [[08 Resonance and Magnetically Coupled Circuits|Week 8 — Resonance]]
+
+## Cross-domain links
+- [[Measurements, Instrumentation and Control - MOC]] — the resonance of a sensor sets its usable bandwidth; Bode and Nyquist plots read the same resonance peak.

@@ -14,3 +14,6 @@ mech stuff/Strength of materials/Book/
 mech stuff/Physics Lab/Grating_Mercury_Wavelengths.pdf
 Chemistry/atkins-physical-chemistry.pdf
 Entrepreneurship/Class Notes/inclusive innovations iitm aug 2026.pdf
+
+# wiki site build tools
+wiki/_build/node_modules/

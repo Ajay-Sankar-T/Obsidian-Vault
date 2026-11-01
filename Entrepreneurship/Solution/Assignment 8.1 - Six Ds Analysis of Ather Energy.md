@@ -137,3 +137,9 @@ External (accessed 27 Oct 2026; figures differ across outlets, so each is attrib
 - [BNEF: Li-ion pack price survey 2025](https://about.bnef.com/insights/clean-transport/lithium-ion-battery-pack-prices-fall-to-108-per-kilowatt-hour) · [ESS News on the same survey (−93 % vs 2010)](https://www.ess-news.com/?p=7552)
 
 *Limits of this analysis:* software-revenue share, AtherStack Pro attach and some capacity figures come from press analysis and may not match company filings; the running-cost comparison and the 10× delivery target are my own illustrative calculations with stated assumptions. Reproduce the figures with `Solution/Tools/ather_figs.py`.
+
+## Cross-domain links
+- [[Applications of First Order ODEs]] — constant-rate growth $dy/dt=ky$ behind the exponential-growth framing.
+- [[Exponential Decay - Time Constants, Damping and Spatial Relaxation]] — the decay counterpart and the idea of a characteristic time.
+- [[Systems thinking and Systems Engineering_v2.pdf]] — the system map (user, product, infrastructure, value) with feedback loops.
+- [[Measurements, Instrumentation and Control - MOC]] — feedback loops (learning, data, network) are closed loops in the control sense.

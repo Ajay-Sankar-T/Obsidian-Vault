@@ -28,3 +28,6 @@ These relations are exactly what makes [[Double Integration and Macaulay's Metho
 
 ---
 Next: [[Flexure Formula]]
+
+## See also
+- [[Q8 - Elastically Supported Bar]] — the same differential-equilibrium structure for axial load.

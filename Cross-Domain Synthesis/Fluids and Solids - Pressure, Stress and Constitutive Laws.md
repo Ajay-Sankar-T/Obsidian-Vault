@@ -50,3 +50,8 @@ $$\lambda=\frac{\mu}{G}\quad\leftrightarrow\quad\tau=RC.$$
 - [[Fluid Mechanics/Fluid Mechanics - MOC|Fluid Mechanics MOC]]
 - [[Strength of materials/Strength of Materials - MOC|Strength of Materials MOC]]
 - [[Strength of materials/07 Transformation of Stress and Strain/Stress-Strain Transformation Analogy|Stress-Strain Transformation Analogy]]
+
+## Cross-domain links
+- [[Heat Transfer - MOC]] — Fourier's law $q=-k\nabla T$ is a third linear flux–gradient constitutive law next to Newton's viscosity and Hooke's law; Ohm's law ([[01 Basic Concepts and Basic Laws]]) has the same form.
+- [[Eigenvalues, Rotation and Diagonalization Everywhere]] — principal stresses are eigenvalues of the stress tensor.
+- [[Materials and Design - MOC]] — yield and fracture criteria (Tresca, von Mises) are statements about the principal stresses of this tensor.

@@ -58,3 +58,6 @@ At $t\to\infty$ you **cannot** use the DC shortcuts "capacitor → open, inducto
 - [[Tutorial 2 - Transient Analysis of DC Circuits|Tutorial 2 — Transient Analysis of DC Circuits]]
 - [[Tutorial 3 - AC Circuit Analysis|Tutorial 3 — AC Circuit Analysis]]
 - [[08 Resonance and Magnetically Coupled Circuits|Week 8 — Resonance]] (the RLC natural frequency $\omega_n=1/\sqrt{LC}$ reappears here as the transient's own oscillation frequency)
+
+## See also
+- [[DC Step Response of RLC Circuits]] — DC step procedure and its caveat for AC.

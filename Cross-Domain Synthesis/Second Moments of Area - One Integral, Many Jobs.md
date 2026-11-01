@@ -39,3 +39,6 @@ The "stiffness × deformation = load" family $AE,\ GJ,\ EI$ ([[Strength of mater
 - [[Fluid Mechanics/05 Centroids and Centre of Mass/Second Moments of Area|Second Moments of Area (Fluid Mechanics)]]
 - [[Strength of materials/05 Bending Stresses/Flexure Formula|Flexure Formula]]
 - [[Fluid Mechanics/02 Fluid Statics/Hydrostatic Force on Plane Surfaces and Centre of Pressure|Hydrostatic Force on Plane Surfaces and Centre of Pressure]]
+
+## Cross-domain links
+- [[Introduction to Machine Design - MOC]] — shaft sizing uses $I$ for bending and $J$ for torsion.

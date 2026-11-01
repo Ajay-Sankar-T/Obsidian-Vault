@@ -50,3 +50,6 @@ In physical problems on a disc (centre included) the solution must be bounded at
 - Bessel-type problems from the series assignment: [[Assignment 4 - Series Solutions - Solutions#Q3 Frobenius method|Assignment 4, Q3]].
 - [[Assignment-6.pdf]] Q4: for any two solutions of Bessel's equation $y_1y_2'-y_1'y_2=c/x$ (Abel's formula, $P=1/x$); for $J_\nu,Y_\nu$ the constant is $c=\frac2\pi$, i.e. $W(J_\nu,Y_\nu)=\frac{2}{\pi x}$ (standard value). Q6 and Q11 (Fourier–Bessel series) need $J_\nu$ and $Y_\nu$ as well.
 - No solution note exists yet for Assignments 6–7.
+
+## See also
+- [[Abel's Formula]] — the Wronskian $W(J,Y)=2/(\pi x)$ follows from Abel's formula.

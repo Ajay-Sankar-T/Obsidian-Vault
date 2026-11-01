@@ -47,7 +47,7 @@ Speed ratio required ──► Gears ──► train value ──► torques
 | [[KDoMs/Tutorial-solutions/Tutorial-6-solution|Tutorial 6 — tipper-dumper]] | three-position rigid-body guidance, inversion | `Tutorial 6.pdf` |
 | [[KDoMs/Tutorial-solutions/Tutorial-7-solution|Tutorial 7 — involute gears]] | interference, centre distance, tooth data | `Tutorial 7.pdf` |
 
-The statements are in `Tutorial 2.pdf`–`Tutorial 7.pdf` in this folder; Tutorials 2–4 are not yet solved in the vault.
+The statements are in the `Tutorials/` folder (`Tutorial 1.pdf`–`Tutorial 8.pdf`). Tutorials 5–7 are solved above; Tutorials 1–4 and 8 are not yet solved in the vault.
 
 ## Tools
 
@@ -66,3 +66,8 @@ Verification scripts and browser explorers sit beside each bank: `va_core.py`, `
 - [x] Synthesis banks
 - [x] Gear bank
 - [ ] Tutorials 2–4 solved
+
+## Continues in
+- [[Introduction to Machine Design - MOC]] — gear design and mechanism loads.
+- [[Manufacturing Technology - MOC]] — machine-tool kinematics, CNC and robotics.
+- [[Computer Aided Machine Drawing - MOC]] — drawing the mechanisms and assemblies.

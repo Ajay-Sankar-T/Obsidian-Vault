@@ -241,3 +241,6 @@ Every construction here is also computed numerically in [[synth_core.py]] (circl
 - Peaucellier: $Q$ stays on $x=(OA^2-AP^2)/(2r)$.
 
 An **interactive** version (drag numbers, see the linkage and the coupler curve): [synthesis-explorer.html](synthesis-explorer.html) – right-click → *Open in default app*. Regenerate figures: `python synth_viz.py`.
+
+## See also
+- [[Tutorial-6-solution]] — Burmester points and four-position synthesis worked in the tutorial.

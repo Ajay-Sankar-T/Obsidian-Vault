@@ -40,3 +40,6 @@ The ratio of output voltage to input voltage: $H(\omega) = \frac{V_{out}(\omega)
 - [[EE1100 MOC]]
 - [[08 Resonance and Magnetically Coupled Circuits]]
 - [[Frequency Response and Resonance Curves]]
+
+## See also
+- [[Series vs Parallel RLC - Key Distinctions]] — parallel tank as a band-stop filter.

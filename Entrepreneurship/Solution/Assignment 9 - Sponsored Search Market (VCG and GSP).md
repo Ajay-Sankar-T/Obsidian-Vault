@@ -69,3 +69,6 @@ In the second equilibrium y (value 6) holds slot a while x (value 7) holds b, so
 - VCG is truthful and efficient, with revenue 44.
 - GSP is not truthful and has several equilibria, some inefficient.
 - GSP revenue can be above (48) or below (34) VCG, depending on the equilibrium.
+
+## See also
+- [[Primitives, Markets with Power and Auctions]] — elasticity and marginal revenue from the pricing material.

@@ -49,3 +49,7 @@ Parallel RLC's $|Z(\omega)|$ **peaks** at $\omega_0$ instead of dipping — see 
 - [[08 Resonance and Magnetically Coupled Circuits|Week 8 — Resonance]]
 - [[Series vs Parallel RLC - Key Distinctions|Series vs Parallel RLC — Key Distinctions]]
 - [[Series RLC Natural Response - Damping Cases|Series RLC Natural Response — Damping Cases]]
+
+## See also
+- [[Second-Order AC Transients (Series and Parallel RLC)]] — time-domain ringing.
+- [[Impedance and Series-Parallel AC Circuits]] — impedance minimum or maximum at resonance.

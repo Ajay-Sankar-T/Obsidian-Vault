@@ -31,3 +31,7 @@ $U_C=q^2/(2C)$ is *literally* the same shape as $U=N^2L/(2AE)$ — a "flow-like"
 - [[Strength of materials/10 Energy Methods/Strain Energy and Castigliano's Theorem|Strain Energy and Castigliano's Theorem]]
 - [[Cross-Domain Synthesis/The Mechanical-Electrical Analogy (Impedance Analogy)|The Mechanical-Electrical Analogy]]
 - [[Thevenin, Norton and Maximum Power Transfer (AC)|Thevenin, Norton and Maximum Power Transfer (AC)]]
+
+## Cross-domain links
+- [[Foundations of Thermal Engineering - MOC]] — exergy is the available-work form of the second law: the most useful work obtainable relative to the dead state.
+- [[Tutorial 8 - Deflection of Beams]] — Castigliano's theorem worked on beams, a frame and a continuous beam.

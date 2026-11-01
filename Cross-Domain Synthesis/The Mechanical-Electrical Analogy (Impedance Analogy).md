@@ -44,3 +44,6 @@ Your [[Strength of materials/07 Transformation of Stress and Strain/Stress-Strai
 - [[Cross-Domain Synthesis/The Universal Second-Order Linear System|The Universal Second-Order Linear System]]
 - [[Strength of materials/10 Energy Methods/Strain Energy and Castigliano's Theorem|Strain Energy and Castigliano's Theorem]]
 - [[08 Resonance and Magnetically Coupled Circuits|Week 8 — Resonance]]
+
+## Cross-domain links
+- [[Heat Transfer - MOC]] — the thermal analogy: temperature as voltage, heat flow as current, thermal resistance $1/hA$ and capacitance $\rho Vc$.

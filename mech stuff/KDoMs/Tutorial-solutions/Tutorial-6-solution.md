@@ -441,3 +441,8 @@ B, rocker = circumcentre(*inv(O4))
 ### 8.3 Figure index
 
 `T6-fig1` given poses · `fig2` inversion · `fig3` three poses · `fig4` paths · `fig5` transmission angle · `fig6` link lengths · `fig7` poles · `fig8` construction steps · `fig9` velocity ratio · `fig10` bin tilt · `fig11` design space · `fig12` Monte Carlo · `fig13` Grashof map · `T6-anim.gif` animation. All are in the `assets` folder.
+
+## See also
+- [[Motion and Path Generation - Graphical Methods]] — graphical synthesis methods used here.
+- [[Motion and Path Generation - Analytical Methods]] — analytical circumcentre and pole formulas.
+- [[Velocity and Acceleration - Analytical Method]] — four-bar velocity and transmission angle.

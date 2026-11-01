@@ -1,0 +1,1 @@
+{"name":"wiki-build","private":true,"version":"1.0.0","description":"Build-time tools for the wiki site (KaTeX server-side rendering, vendored mermaid and font).","dependencies":{"@fontsource-variable/nunito":"^5.1.0","katex":"^0.16.11","mermaid":"^10.9.3"}}

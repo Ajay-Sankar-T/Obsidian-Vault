@@ -62,6 +62,8 @@ graph TD
 - **Frequency response and resonance** ↔ [[Frequency Response and Resonance Curves]] and [[Resonance and Buckling - Instability as an Eigenvalue Problem]]: Bode/Nyquist plots are the same curves as in EE1100.
 - **Strain gauges** ↔ [[Strain Transformation and Rosettes]]: the rosette equations are how gauge readings become principal strains.
 - **Signal filtering** ↔ [[Filter Theory]].
+- [[Lecture 32 Introduction to Operational Amplifiers.pdf]] — signal conditioning (amplifiers, filters, bridges) is the op-amp material of EE1100.
+- [[Manufacturing Technology - MOC]] — metrology uses the same accuracy, resolution and error-source vocabulary when choosing a gauge or instrument.
 
 ## Study Progress
 - [ ] Measurement performance · [ ] Sensors and conditioning · [ ] Actuators · [ ] Block diagrams · [ ] P/PI/PID · [ ] Transfer functions · [ ] Frequency response and Nyquist · [ ] Group project

@@ -38,3 +38,6 @@ $I_{C,max} = \frac{V_{max}}{\frac{1}{\omega_0 C}} = V_{max} \omega_0 C = 10 \tim
 - [[EE1100 MOC]]
 - [[08 Resonance and Magnetically Coupled Circuits]]
 - [[Series vs Parallel RLC - Key Distinctions]]
+
+## See also
+- [[Q1 - Series RLC Resonance]] — the dual case.

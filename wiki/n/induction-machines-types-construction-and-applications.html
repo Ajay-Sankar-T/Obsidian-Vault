@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#58cc02"><meta name="description" content="Interactive lessons, practice problems and solved tutorials from engineering course notes"><link rel="icon" href="../assets/Favicons/Alya.png" type="image/png"><link rel="apple-touch-icon" href="../assets/Favicons/Alya.png"><link rel="manifest" href="../manifest.webmanifest">
+<title>Induction Machines - Types, Construction and Applications · Wiki</title>
+<script>try{var t=localStorage.getItem('wiki.theme');if(!t&&matchMedia('(prefers-color-scheme: dark)').matches)t='dark';if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="../assets/style.css"><link rel="stylesheet" href="../assets/vendor/katex.min.css">
+</head><body data-root="../" data-page="note" data-slug="induction-machines-types-construction-and-applications" data-course="ee">
+<div class="app">
+<aside class="side"><a class="logo" href="../index.html"><span class="logo-mark">W</span><span class="logo-t">wiki</span></a><nav><a class="nav-i" href="../index.html"><svg viewBox="0 0 24 24"><path d="M12 3 2 8l10 5 8-4v6h2V8L12 3Zm-6 9.6V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-3.4l-6 3-6-3Z"/></svg><span>Learn</span></a><a class="nav-i" href="../practice.html"><svg viewBox="0 0 24 24"><path d="M7 4h2v16H7V4Zm8 0h2v16h-2V4ZM3 9h2v6H3V9Zm16 0h2v6h-2V9ZM9 11h6v2H9v-2Z"/></svg><span>Practice</span></a><a class="nav-i" href="../solve.html"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm3.8 6.2-2.1 5.5-5.5 2.1 2.1-5.5 5.5-2.1ZM12 11a1 1 0 1 0 0 2 1 1 0 0 0 0-2Z"/></svg><span>How to solve</span></a><a class="nav-i" href="../graph.html"><svg viewBox="0 0 24 24"><path d="M6 3a3 3 0 0 0-1 5.8v6.4a3 3 0 1 0 2 0V13l6-2.2A3 3 0 1 0 12.4 9 3 3 0 0 0 9 11.3L7 12V8.8A3 3 0 0 0 6 3Zm0 2a1 1 0 1 1 0 2 1 1 0 0 1 0-2Zm12 2a1 1 0 1 1 0 2 1 1 0 0 1 0-2ZM6 17a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/></svg><span>Graph</span></a><button class="nav-i" id="openSearch" type="button"><svg viewBox="0 0 24 24"><path d="M10 3a7 7 0 1 0 4.4 12.4l4.6 4.6 1.4-1.4-4.6-4.6A7 7 0 0 0 10 3Zm0 2a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z"/></svg><span>Search</span><kbd>/</kbd></button></nav>
+<div class="side-card" id="sideStats"></div></aside>
+<div class="main"><header class="top"><div class="top-l" id="crumbTop"></div><div class="top-r"><span class="pill pill-streak" id="streak" title="Day streak"></span><span class="pill pill-xp" id="xp" title="Experience points"></span><button class="icon-btn" id="themeBtn" type="button" aria-label="Toggle dark mode"></button></div></header>
+<main class="content"><article class="note" data-kind="concept" style="--c:#ffc800;--cd:#d4a700">
+<div class="crumbs"><a href="../course/ee.html">Basic Electrical Engineering</a> <i>›</i> Transformers and Induction Machines</div><h1>Induction Machines – Types, Construction and Applications</h1><div class="chips"><span class="chip">EE1100</span><span class="chip">concept</span><span class="chip">induction-machine</span><span class="chip">squirrel-cage</span><span class="chip">slip-ring</span></div>
+<div class="actions"><button class="btn" id="startLesson" type="button">Start lesson</button><button class="btn btn-ghost" id="markDone" type="button" data-xp="10">Mark as learned</button></div>
+<div class="body" id="body"><section class="step intro"><p>Related: <a href="../n/11-three-phase-induction-machines.html">11 Three Phase Induction Machines</a> · <a href="../n/12-dc-machines.html">12 DC Machines</a> · <a href="../n/revolving-magnetic-field-and-synchronous-speed.html">Revolving Magnetic Field and Synchronous Speed</a> · <a href="../n/induction-motor-slip-rotor-circuit-and-power-flow.html">Induction Motor - Slip, Rotor Circuit and Power Flow</a> · animation: <a class="file" href="../assets/sims/revolving%20field%20animation.html" target="_blank" rel="noopener">Three-phase revolving field</a></p>
+</section><section class="step" data-title="Classification of electric machines"><h2 id="classification-of-electric-machines">Classification of electric machines</h2>
+<pre class="mermaid">flowchart TD
+    EM[&quot;Electric machines&quot;] --&gt; DC[&quot;DC machines&quot;]
+    EM --&gt; AC[&quot;AC machines&quot;]
+    DC --&gt; DCG[&quot;DC generator&quot;]
+    DC --&gt; DCM[&quot;DC motor&quot;]
+    AC --&gt; SYN[&quot;Synchronous&quot;]
+    AC --&gt; ASY[&quot;Asynchronous (induction)&quot;]
+    SYN --&gt; SG[&quot;Synchronous generator&quot;]
+    SYN --&gt; SM[&quot;Synchronous motor&quot;]
+    ASY --&gt; IM[&quot;Induction motor&quot;]
+    ASY --&gt; IG[&quot;Induction generator&quot;]
+    IM --&gt; I1[&quot;1-phase&quot;]
+    IM --&gt; I3[&quot;3-phase&quot;]</pre>
+<table>
+<thead>
+<tr>
+<th>Machine</th>
+<th>Typical use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DC generator</td>
+<td>electroplating, battery charging, DC welding, excitation of synchronous machines</td>
+</tr>
+<tr>
+<td>DC motor</td>
+<td>traction (trains, trolleys), rolling mills, cranes, elevators, variable-speed drives</td>
+</tr>
+<tr>
+<td>synchronous generator</td>
+<td>main source of power in thermal, hydro and nuclear stations</td>
+</tr>
+<tr>
+<td>synchronous motor</td>
+<td>constant-speed loads (compressors, pumps, conveyors), power-factor correction</td>
+</tr>
+<tr>
+<td>induction motor, 1-phase</td>
+<td>fans, mixers, washing machines, blowers</td>
+</tr>
+<tr>
+<td>induction motor, 3-phase</td>
+<td>pumps, compressors, conveyors, lathes, fans in power plants, EV traction</td>
+</tr>
+<tr>
+<td>induction generator</td>
+<td>wind turbines, micro-hydel, regenerative braking</td>
+</tr>
+</tbody>
+</table>
+</section><section class="step" data-title="Induction motor types"><h2 id="induction-motor-types">Induction motor types</h2>
+<ul>
+<li><strong>3-phase:</strong> squirrel cage; slip-ring (wound rotor).</li>
+<li><strong>1-phase:</strong> split-phase; capacitor start.</li>
+</ul>
+</section><section class="step" data-title="Construction"><h2 id="construction">Construction</h2>
+<ul>
+<li><strong>Stator:</strong> laminated <strong>silicon-steel</strong> core (laminations cut eddy-current loss, silicon steel cuts hysteresis loss) with slots carrying the distributed winding.</li>
+<li><strong>Squirrel-cage rotor:</strong> bars short-circuited by end rings, no external connection. The bars are <strong>skewed</strong> slightly to prevent <em>cogging</em> (locking of rotor and stator teeth when slot numbers are equal or integer multiples) and to quieten the motor.</li>
+<li><strong>Slip-ring (wound) rotor:</strong> a three-phase winding for the same number of poles as the stator (fewer slots, fewer turns per phase), brought out through <strong>slip rings and brushes</strong> so that external resistance or other circuits can be added for starting and speed control.</li>
+</ul>
+</section><section class="step" data-title="Merits and demerits"><h2 id="merits-and-demerits">Merits and demerits</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Squirrel cage</th>
+<th>Slip ring</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Pros</strong></td>
+<td>cheaper and rugged; no brushes or slip rings to wear; no sparking (safe in mines); self-starting (unlike synchronous motors)</td>
+<td>external rotor resistance cuts starting current and raises starting torque; speed control by rotor resistance or slip-power recovery; suits wind-turbine generators</td>
+</tr>
+<tr>
+<td><strong>Cons</strong></td>
+<td>low starting torque, high starting current (needs star–delta or auto-transformer starting); lagging power factor, poor at light load; poor speed control compared with DC</td>
+<td>brushes and rings need maintenance and can spark; more sensitive to supply-voltage fluctuations</td>
+</tr>
+</tbody>
+</table>
+</section><section class="step" data-title="NEMA / IEC design classes (squirrel cage)"><h2 id="nema-iec-design-classes-squirrel-cage">NEMA / IEC design classes (squirrel cage)</h2>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Starting torque</th>
+<th>Starting current</th>
+<th>Slip at rated speed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>normal</td>
+<td>normal</td>
+<td>normal (popular: fans, compressors, conveyors, low-inertia loads)</td>
+</tr>
+<tr>
+<td>B</td>
+<td>normal</td>
+<td>low</td>
+<td>normal</td>
+</tr>
+<tr>
+<td>C</td>
+<td>high</td>
+<td>low</td>
+<td>normal</td>
+</tr>
+<tr>
+<td>D</td>
+<td>high</td>
+<td>low</td>
+<td>high</td>
+</tr>
+<tr>
+<td>E</td>
+<td>low</td>
+<td>normal</td>
+<td>low</td>
+</tr>
+</tbody>
+</table>
+</section><section class="step" data-title="Efficiency and power factor"><h2 id="efficiency-and-power-factor">Efficiency and power factor</h2>
+<p>Efficiency and power factor are the two parameters that matter when choosing a motor. Both rise with load and then flatten; at light load the power factor is poor. Squirrel-cage motors are more efficient than slip-ring motors, and higher-speed motors more than lower-speed ones. <strong>Energy-efficient</strong> motors use low-loss silicon steel, thinner laminations, a smaller air gap, copper in place of aluminium rotor bars and better ventilation, at higher cost.</p>
+</section><section class="step" data-title="Single-phase split-phase motor"><h2 id="single-phase-split-phase-motor">Single-phase split-phase motor</h2>
+<p>A main winding (high <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.0785em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.10903em;">M</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">/</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.0077em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.10903em;">M</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>) and an auxiliary winding (higher resistance, <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.0077em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">A</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">/</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.0785em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">A</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.0077em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.10903em;">M</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">/</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.0785em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.10903em;">M</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>) carry currents that differ in phase by <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6741em;"></span><span class="mord">2</span><span class="mord"><span class="mord">5</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6741em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">∘</span></span></span></span></span></span></span></span></span></span></span>–<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6741em;"></span><span class="mord">3</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6741em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">∘</span></span></span></span></span></span></span></span></span></span></span>, so the machine behaves like a two-phase motor, produces a revolving flux and is self-starting. A centrifugal switch cuts the auxiliary winding out near rated speed.</p>
+</section><section class="step" data-title="Cross-domain links"><h2 id="cross-domain-links">Cross-domain links</h2>
+<ul>
+<li><a href="../n/gears-transformers-and-reflected-impedance.html">Gears, Transformers and Reflected Impedance</a> — squirrel-cage versus slip-ring is the question of <em>where the rotor resistance sits</em>: fixed inside the cage, or adjustable outside through the rings (like choosing a gear ratio at start-up).</li>
+<li><a href="../n/rotating-vectors-phasors-velocity-polygons-and-complex-kinematics.html">Rotating Vectors - Phasors, Velocity Polygons and Complex Kinematics</a> — the two-winding split-phase starter is the minimal way to turn a pulsating phasor into a rotating one.</li>
+</ul></section></div><nav class="pager"><a class="pg" href="transformer-voltage-regulation-and-efficiency.html"><small>Previous</small>Transformer Voltage Regulation and Efficiency</a><a class="pg pg-next" href="revolving-magnetic-field-and-synchronous-speed.html"><small>Next lesson</small>Revolving Magnetic Field and Synchronous Speed</a></nav><section class="related"><h2>Related notes</h2><h3>Links to</h3><div class="rels"><a class="rel" href="11-three-phase-induction-machines.html" style="--c:#ffc800"><span class="dot"></span><span>11 Three Phase Induction Machines<small>Basic Electrical Engineering</small></span></a><a class="rel" href="12-dc-machines.html" style="--c:#ffc800"><span class="dot"></span><span>12 DC Machines<small>Basic Electrical Engineering</small></span></a><a class="rel" href="gears-transformers-and-reflected-impedance.html" style="--c:#ff4b4b"><span class="dot"></span><span>Gears, Transformers and Reflected Impedance<small>Cross-Domain Connections</small></span></a><a class="rel" href="induction-motor-slip-rotor-circuit-and-power-flow.html" style="--c:#ffc800"><span class="dot"></span><span>Induction Motor - Slip, Rotor Circuit and Power Flow<small>Basic Electrical Engineering</small></span></a><a class="rel" href="revolving-magnetic-field-and-synchronous-speed.html" style="--c:#ffc800"><span class="dot"></span><span>Revolving Magnetic Field and Synchronous Speed<small>Basic Electrical Engineering</small></span></a><a class="rel" href="rotating-vectors-phasors-velocity-polygons-and-complex-kinematics.html" style="--c:#ff4b4b"><span class="dot"></span><span>Rotating Vectors - Phasors, Velocity Polygons and Complex Kinematics<small>Cross-Domain Connections</small></span></a></div><h3>Linked from</h3><div class="rels"><a class="rel" href="ee1100-moc.html" style="--c:#ffc800"><span class="dot"></span><span>EE1100 MOC<small>Basic Electrical Engineering</small></span></a></div><canvas id="miniGraph" width="640" height="320" aria-label="Connections"></canvas></section></article><aside class="toc"><b>On this page</b><a href="#classification-of-electric-machines">Classification of electric machines</a><a href="#induction-motor-types">Induction motor types</a><a href="#construction">Construction</a><a href="#merits-and-demerits">Merits and demerits</a><a href="#nema-iec-design-classes-squirrel-cage">NEMA / IEC design classes (squirrel cage)</a><a href="#efficiency-and-power-factor">Efficiency and power factor</a><a href="#single-phase-split-phase-motor">Single-phase split-phase motor</a><a href="#cross-domain-links">Cross-domain links</a></aside></main></div></div>
+<div class="search" id="search" hidden><div class="search-box"><input id="q" type="search" placeholder="Search notes…" autocomplete="off"><div id="results"></div></div></div>
+<script src="../assets/data.js"></script><script src="../assets/vendor/mermaid.min.js"></script>
+<script src="../assets/app.js"></script>
+</body></html>

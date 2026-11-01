@@ -50,3 +50,6 @@ from the link, with magnitude $AB\sqrt{\omega^4+\alpha^2}$. That is exactly $|Z|
 - [[KDoMs/KDoMs - MOC|KDoMs MOC]]
 - [[05 Sinusoids and Phasors|Week 5 — Sinusoids and Phasors]]
 - [[Cross-Domain Synthesis/Eigenvalues, Rotation and Diagonalization Everywhere|Eigenvalues, Rotation and Diagonalization Everywhere]]
+
+## Cross-domain links
+- [[Measurements, Instrumentation and Control - MOC]] — frequency response and Nyquist plots trace a phasor as the frequency changes.

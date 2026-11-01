@@ -65,7 +65,11 @@ This is the index note for the course, reorganized into topic folders (previousl
 - [[Fluid Mechanics/08 Incompressible Inviscid Flow/Incompressible Inviscid Flow and Bernoulli - Formula Bank|Incompressible Inviscid Flow and Bernoulli — Formula Bank]] — Euler's equations, Bernoulli (derivation, restrictions), static/stagnation/dynamic pressure, Pitot, wall tap
 - [[Fluid Mechanics/08 Incompressible Inviscid Flow/Incompressible Inviscid Flow and Bernoulli - Solved Problems|Solved Problems]] — fire hose, venturi, blimp, wind tunnel, Pitot readings, tank draining, unsteady pipe start-up, channel step
 
-*Tools:* `Tools/fm_core.py` (checks every number and Π group), `Tools/fm_viz.py` (figures in `assets/`).
+## 09 Pipe Flow and Losses
+- [[Fluid Mechanics/09 Pipe Flow and Losses/Pipe Flow and Losses - Formula Bank|Pipe Flow and Losses — Formula Bank]] — energy equation with losses, Darcy–Weisbach, friction factor (laminar, Colebrook, Haaland, fully rough), Moody chart, minor losses and equivalent lengths, the three pipe problems
+- [[Fluid Mechanics/09 Pipe Flow and Losses/Pipe Flow and Losses - Solved Problems|Solved Problems (GPS 7 & 8)]] — house water supply with booster or larger pipe, gravity drainpipes, industrial supply line, Roman nozzle with diffuser, scaled water main, laminar tube from a tank
+
+*Tools:* `Tools/fm_core.py` (checks every number and Π group), `Tools/fm_viz.py` (figures in `assets/`), `Tools/fm_pipe.py` (pipe-flow solutions and Moody-chart figures).
 
 ## The four biggest problem-solving ideas
 
@@ -85,3 +89,7 @@ Continuity ↔ KCL, momentum/RTT ↔ Reynolds Transport bookkeeping shared with 
 - [ ] Fluid Kinematics
 - [ ] Control Volume Analysis
 - [ ] Centroids and Centre of Mass
+
+## Continues in
+- [[Heat Transfer - MOC]] — boundary layers and convection reuse the dimensionless-number method.
+- [[Foundations of Thermal Engineering - MOC]] — turbomachines and compressible flow extend control-volume analysis.

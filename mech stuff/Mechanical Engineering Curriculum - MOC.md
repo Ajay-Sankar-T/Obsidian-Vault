@@ -34,7 +34,7 @@ Semester-by-semester map of the core programme, taken from `ME25B_curriculum.pdf
 | EE1100 | Basic Electrical Engineering | 3-1-0-0-6 → 10 | ✅ [[EE1100 MOC]] |
 | MA2020 | Differential Equations | 3-0-0-0-6 → 9 | ✅ [[Differential Equations - MOC]] |
 | ME2201 | Kinematics and Dynamics of Machinery | 3-1-0-0-6 → 10 | ✅ [[KDoMs - MOC]] |
-| — | Entrepreneurship | 3-0-0-0-6 → 9 | class notes in `Entrepreneurship/` |
+| — | Entrepreneurship | 3-0-0-0-6 → 9 | ✅ [[Entrepreneurship - MOC]] |
 
 ## Semester 4
 | Code | Course | L-T-E-P-O → C | Vault |
@@ -44,7 +44,7 @@ Semester-by-semester map of the core programme, taken from `ME25B_curriculum.pdf
 | ME2302 | Manufacturing Technology-I | 3-1-0-1-6 → 11 | 🔜 [[Manufacturing Technology - MOC]] |
 | ME2400 | Measurements and Instrumentation | 3-0-0-2-6 → 11 | 🔜 [[Measurements, Instrumentation and Control - MOC]] |
 | ME3481 | Mechanical Engineering Lab 1 | 0-0-0-3-0 → 3 | ⬜ folder `Mechanical engineering lab/` is empty |
-| MA, BT1010 | Mathematics elective; Life Sciences | | `Life sciences/` folder |
+| MA, BT1010 | Mathematics elective; Life Sciences | | [[Life sciences/Course Details|BT1010 syllabus]] |
 
 ## Semester 5
 | Code | Course | L-T-E-P-O → C | Vault |

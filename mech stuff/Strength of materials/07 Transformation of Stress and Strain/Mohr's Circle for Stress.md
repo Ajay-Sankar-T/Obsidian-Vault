@@ -51,3 +51,6 @@ The identical construction applies to strain (with $\tau\to\gamma/2$) — see [[
 
 ---
 Next: [[Strain Transformation and Rosettes]]
+
+## See also
+- [[Materials and Design - MOC]] — static failure theories (Tresca, von Mises, Mohr–Coulomb) applied to these stress states.

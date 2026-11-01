@@ -61,3 +61,6 @@ This equal-stress ("series") vs the composite member's equal-strain ("parallel")
 ## Related
 - [[Strength of materials/Tutorial 4 - Stress-Strain Relationship/Composite Members under Axial Load|Composite Members under Axial Load]]
 - [[Cross-Domain Synthesis/The Mechanical-Electrical Analogy (Impedance Analogy)|Cross-Domain: The Mechanical-Electrical Analogy]]
+
+## See also
+- [[Tutorial 6 - Torsional Members]] — series and parallel statically indeterminate torsion.

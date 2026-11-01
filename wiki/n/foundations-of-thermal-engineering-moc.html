@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#58cc02"><meta name="description" content="Interactive lessons, practice problems and solved tutorials from engineering course notes"><link rel="icon" href="../assets/Favicons/Alya.png" type="image/png"><link rel="apple-touch-icon" href="../assets/Favicons/Alya.png"><link rel="manifest" href="../manifest.webmanifest">
+<title>Foundations of Thermal Engineering - MOC · Wiki</title>
+<script>try{var t=localStorage.getItem('wiki.theme');if(!t&&matchMedia('(prefers-color-scheme: dark)').matches)t='dark';if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="../assets/style.css"><link rel="stylesheet" href="../assets/vendor/katex.min.css">
+</head><body data-root="../" data-page="note" data-slug="foundations-of-thermal-engineering-moc" data-course="fte">
+<div class="app">
+<aside class="side"><a class="logo" href="../index.html"><span class="logo-mark">W</span><span class="logo-t">wiki</span></a><nav><a class="nav-i" href="../index.html"><svg viewBox="0 0 24 24"><path d="M12 3 2 8l10 5 8-4v6h2V8L12 3Zm-6 9.6V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-3.4l-6 3-6-3Z"/></svg><span>Learn</span></a><a class="nav-i" href="../practice.html"><svg viewBox="0 0 24 24"><path d="M7 4h2v16H7V4Zm8 0h2v16h-2V4ZM3 9h2v6H3V9Zm16 0h2v6h-2V9ZM9 11h6v2H9v-2Z"/></svg><span>Practice</span></a><a class="nav-i" href="../solve.html"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm3.8 6.2-2.1 5.5-5.5 2.1 2.1-5.5 5.5-2.1ZM12 11a1 1 0 1 0 0 2 1 1 0 0 0 0-2Z"/></svg><span>How to solve</span></a><a class="nav-i" href="../graph.html"><svg viewBox="0 0 24 24"><path d="M6 3a3 3 0 0 0-1 5.8v6.4a3 3 0 1 0 2 0V13l6-2.2A3 3 0 1 0 12.4 9 3 3 0 0 0 9 11.3L7 12V8.8A3 3 0 0 0 6 3Zm0 2a1 1 0 1 1 0 2 1 1 0 0 1 0-2Zm12 2a1 1 0 1 1 0 2 1 1 0 0 1 0-2ZM6 17a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/></svg><span>Graph</span></a><button class="nav-i" id="openSearch" type="button"><svg viewBox="0 0 24 24"><path d="M10 3a7 7 0 1 0 4.4 12.4l4.6 4.6 1.4-1.4-4.6-4.6A7 7 0 0 0 10 3Zm0 2a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z"/></svg><span>Search</span><kbd>/</kbd></button></nav>
+<div class="side-card" id="sideStats"></div></aside>
+<div class="main"><header class="top"><div class="top-l" id="crumbTop"></div><div class="top-r"><span class="pill pill-streak" id="streak" title="Day streak"></span><span class="pill pill-xp" id="xp" title="Experience points"></span><button class="icon-btn" id="themeBtn" type="button" aria-label="Toggle dark mode"></button></div></header>
+<main class="content"><article class="note" data-kind="concept" style="--c:#00cd9c;--cd:#00a47d">
+<div class="crumbs"><a href="../course/fte.html">Foundations of Thermal Engineering</a></div><h1>Foundations of Thermal Engineering — Map of Content</h1><div class="chips"><span class="chip">thermal-engineering</span><span class="chip">upcoming</span></div>
+<div class="actions"><button class="btn" id="startLesson" type="button">Start lesson</button><button class="btn btn-ghost" id="markDone" type="button" data-xp="10">Mark as learned</button></div>
+<div class="body" id="body"><section class="step intro"><p>Navigation spine for the two-part thermal sequence that follows Thermodynamics (ME1100). Part of <a href="../n/mechanical-engineering-curriculum-moc.html">Mechanical Engineering Curriculum - MOC</a>. The official syllabus is in <a href="../n/foundations-of-thermal-engineering-course-details.html">Course Details</a>; this page re-organises it into a study map and will gain concept notes as the lectures arrive. Explanations belong in atomic notes (<code>/wiki-concept-note</code>), not here.</p>
+</section><section class="step" data-title="Course Overview"><h2 id="course-overview">Course Overview</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>FTE-1</th>
+<th>FTE-2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Code</td>
+<td>ME2102</td>
+<td>ME3105</td>
+</tr>
+<tr>
+<td>Semester</td>
+<td>4</td>
+<td>5</td>
+</tr>
+<tr>
+<td>L-T-E-P-O / credits</td>
+<td>2-1-0-0-4 / 7</td>
+<td>2-1-0-0-4 / 7</td>
+</tr>
+<tr>
+<td>Purpose</td>
+<td>go deeper into the <strong>second law</strong>: exergy, power cycles, refrigeration, air conditioning</td>
+<td><strong>combustion, IC engines, turbomachines</strong>, compressible flow</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Textbooks:</strong> V. Babu, <em>Fundamentals of Engineering Thermodynamics</em> (Ane); Moran, Shapiro, Boettner &amp; Bailey, <em>Fundamentals of Engineering Thermodynamics</em> (Wiley, 7th ed). For FTE-2 also: Gopalakrishna &amp; Prithvi Raj, <em>A Treatise on Turbomachinery</em>; Heywood, <em>Internal Combustion Engine Fundamentals</em>; Dixon &amp; Hall, <em>Fluid Mechanics and Thermodynamics of Turbomachines</em>; V. Babu, <em>Fundamentals of Gas Dynamics</em>.</p>
+<p><strong>Prerequisite:</strong> Thermodynamics (ME1100, folder <code>mech stuff/Thermodynamics/</code> is still empty).</p>
+<h3 id="prepare-from-the-existing-vault">Prepare from the existing vault</h3>
+<ul>
+<li>Control-volume and momentum tools used by turbomachines: <a href="../n/system-and-control-volume.html">System and Control Volume</a>, <a href="../n/reynolds-transport-theorem.html">Reynolds Transport Theorem</a>, <a href="../n/linear-momentum-equation.html">Linear Momentum Equation</a>, <a href="../n/momentum-equation-applications-jets-vanes-bends.html">Momentum Equation Applications - Jets, Vanes, Bends</a> (the velocity-triangle and Euler-turbine ideas are these applied to rotors).</li>
+<li>Dimensionless groups for turbomachines: <a href="../n/buckingham-pi-theorem.html">Buckingham Pi Theorem</a>, <a href="../n/dimensional-analysis-and-similitude-formula-bank.html">Dimensional Analysis and Similitude - Formula Bank</a>.</li>
+<li>Incompressible limit of 1-D flow: <a href="../n/incompressible-inviscid-flow-and-bernoulli-formula-bank.html">Incompressible Inviscid Flow and Bernoulli - Formula Bank</a> (compressible nozzle flow is the generalisation).</li>
+</ul>
+</section><section class="step" data-title="Syllabus Map"><h2 id="syllabus-map">Syllabus Map</h2>
+<h3 id="fte-1-me2102">FTE-1 (ME2102)</h3>
+<ol>
+<li><strong>Energy sources and utilisation:</strong> different energy sources; major processes involving energy utilisation.</li>
+<li><strong>Exergy:</strong> maximum (reversible) work, exergy balance, exergy analysis.</li>
+<li><strong>Power cycles:</strong> Rankine (basic, superheat, reheat, regenerative); air-standard Brayton (basic, two-stage, intercooling, reheat, regenerative); first- and second-law analysis of each.</li>
+<li><strong>Refrigeration:</strong> common refrigerants and properties; vapour-compression cycle and its analysis; actual cycles (superheating, sub-cooling, liquid-suction heat exchanger); multistage and cascade systems.</li>
+<li><strong>Psychrometrics and air conditioning:</strong> mass and energy balances for air-conditioning systems; wet- and dry-bulb temperatures; psychrometric chart; air-conditioning processes.</li>
+</ol>
+<h3 id="fte-2-me3105">FTE-2 (ME3105)</h3>
+<ol>
+<li><strong>Combustion:</strong> reactions and stoichiometry; first-law analysis and heat calculations; adiabatic flame temperature.</li>
+<li><strong>Air-standard engine cycles:</strong> Otto, Diesel, Dual.</li>
+<li><strong>IC engines:</strong> evolution and features, nomenclature, classification, construction and working of 2S/4S petrol and diesel engines, components, valve and port timing diagrams, p–v diagrams, test parameters, combustion and emissions, alternate fuels (bio-fuel, hydrogen), hybrid electric vehicles.</li>
+<li><strong>Turbomachines:</strong> turbo vs positive-displacement machines, types, velocity triangles, Euler equation, degree of reaction, non-dimensional groups, thermodynamics and efficiencies, performance characteristics.</li>
+<li><strong>Compressible flow:</strong> compressibility, speed of sound, one-dimensional flow in nozzles.</li>
+</ol>
+</section><section class="step" data-title="Concept Map"><h2 id="concept-map">Concept Map</h2>
+<pre class="mermaid">graph TD
+    T[&quot;Thermodynamics ME1100: 1st and 2nd law, properties&quot;] --&gt; EX[&quot;Exergy&quot;]
+    T --&gt; PC[&quot;Power cycles: Rankine, Brayton&quot;]
+    T --&gt; RF[&quot;Refrigeration cycles&quot;]
+    T --&gt; PSY[&quot;Psychrometrics&quot;]
+    EX --&gt; PC
+    EX --&gt; RF
+    PC --&gt; OT[&quot;Air-standard Otto, Diesel, Dual&quot;]
+    T --&gt; CB[&quot;Combustion: stoichiometry, flame temperature&quot;]
+    CB --&gt; IC[&quot;IC engines&quot;]
+    OT --&gt; IC
+    FM[&quot;Fluid mechanics: momentum, control volumes&quot;] --&gt; TM[&quot;Turbomachines: Euler equation, velocity triangles&quot;]
+    FM --&gt; CF[&quot;Compressible flow, nozzles&quot;]
+    PC --&gt; TM
+    CF --&gt; TM</pre>
+</section><section class="step" data-title="Methods &amp;amp; Problem Types"><h2 id="methods-problem-types">Methods &amp; Problem Types</h2>
+<table>
+<thead>
+<tr>
+<th>Problem type</th>
+<th>Method</th>
+<th>Part</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Work lost to irreversibility, exergy destroyed</td>
+<td>exergy balance <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0702em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9202em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span></span><span style="top:-3.2523em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.0556em;"><span class="mord">˙</span></span></span></span></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.0785em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">d</span><span class="mord mathnormal mtight">es</span><span class="mord mathnormal mtight">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.2063em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9202em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span></span><span style="top:-3.2523em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.0556em;"><span class="mord">˙</span></span></span></span></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0576em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.03588em;">g</span><span class="mord mathnormal mtight">e</span><span class="mord mathnormal mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span></td>
+<td>FTE-1</td>
+</tr>
+<tr>
+<td>Efficiency of a steam plant with reheat/regeneration</td>
+<td>state-point table from steam tables, energy balance per component</td>
+<td>FTE-1</td>
+</tr>
+<tr>
+<td>Gas-turbine cycle with intercooling and reheat</td>
+<td>air-standard analysis, pressure ratio optimisation</td>
+<td>FTE-1</td>
+</tr>
+<tr>
+<td>Refrigerator or heat-pump COP, multistage system</td>
+<td><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">p</span></span></span></span>–<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">h</span></span></span></span> diagram, energy balances, flash-chamber balances</td>
+<td>FTE-1</td>
+</tr>
+<tr>
+<td>Cooling/heating/humidifying of air</td>
+<td>psychrometric chart, mass and energy balance</td>
+<td>FTE-1</td>
+</tr>
+<tr>
+<td>Adiabatic flame temperature</td>
+<td>first law on the reaction, iterate on temperature</td>
+<td>FTE-2</td>
+</tr>
+<tr>
+<td>Otto/Diesel/Dual efficiency, mean effective pressure</td>
+<td>air-standard cycle, compression and cut-off ratios</td>
+<td>FTE-2</td>
+</tr>
+<tr>
+<td>Engine performance (brake power, bmep, efficiencies)</td>
+<td>test-parameter relations</td>
+<td>FTE-2</td>
+</tr>
+<tr>
+<td>Work of a rotor from inlet and outlet velocities</td>
+<td>Euler turbomachine equation with velocity triangles</td>
+<td>FTE-2</td>
+</tr>
+<tr>
+<td>Nozzle flow, choking</td>
+<td>1-D isentropic relations, speed of sound, Mach number</td>
+<td>FTE-2</td>
+</tr>
+</tbody>
+</table>
+</section><section class="step" data-title="Cross-Domain Links"><h2 id="cross-domain-links">Cross-Domain Links</h2>
+<ul>
+<li><strong>Exergy</strong> ↔ <a href="../n/energy-methods-a-unified-view.html">Energy Methods - A Unified View</a>: both turn an energy statement into a <em>quality</em> statement (what can still do work).</li>
+<li><strong>Euler turbomachine equation</strong> ↔ <a href="../n/linear-momentum-equation.html">Linear Momentum Equation</a>: it is angular momentum through a control volume, <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9202em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9202em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">W</span></span><span style="top:-3.2523em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.1389em;"><span class="mord">˙</span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6679em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal">m</span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.1389em;"><span class="mord">˙</span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">u</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">θ</span><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal">u</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">θ</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>.</li>
+<li><strong>Turbomachine non-dimensional groups</strong> ↔ <a href="../n/buckingham-pi-theorem.html">Buckingham Pi Theorem</a>: flow, head and power coefficients are <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">Π</span></span></span></span> groups.</li>
+<li><strong>Cycles</strong> ↔ <a href="../n/conservation-laws-and-flow-networks.html">Conservation Laws and Flow Networks</a>: each component is a node obeying mass and energy balance.</li>
+</ul>
+</section><section class="step" data-title="Study Progress"><h2 id="study-progress">Study Progress</h2>
+<ul>
+<li class="task"><label><input type="checkbox" data-task="foundations-of-thermal-engineering-moc:1"> <span>FTE-1: energy sources · exergy · Rankine · Brayton · refrigeration · psychrometrics</span></label></li>
+<li class="task"><label><input type="checkbox" data-task="foundations-of-thermal-engineering-moc:2"> <span>FTE-2: combustion · Otto/Diesel/Dual · IC engines · turbomachines · compressible flow</span></label></li>
+<li class="task"><label><input type="checkbox" data-task="foundations-of-thermal-engineering-moc:3"> <span>Tutorials · Past-paper patterns</span></label></li>
+</ul></section></div><nav class="pager"><span></span><span></span></nav><section class="related"><h2>Related notes</h2><h3>Links to</h3><div class="rels"><a class="rel" href="buckingham-pi-theorem.html" style="--c:#1cb0f6"><span class="dot"></span><span>Buckingham Pi Theorem<small>Fluid Mechanics</small></span></a><a class="rel" href="conservation-laws-and-flow-networks.html" style="--c:#ff4b4b"><span class="dot"></span><span>Conservation Laws and Flow Networks<small>Cross-Domain Connections</small></span></a><a class="rel" href="dimensional-analysis-and-similitude-formula-bank.html" style="--c:#1cb0f6"><span class="dot"></span><span>Dimensional Analysis and Similitude - Formula Bank<small>Fluid Mechanics</small></span></a><a class="rel" href="energy-methods-a-unified-view.html" style="--c:#ff4b4b"><span class="dot"></span><span>Energy Methods - A Unified View<small>Cross-Domain Connections</small></span></a><a class="rel" href="foundations-of-thermal-engineering-course-details.html" style="--c:#00cd9c"><span class="dot"></span><span>Foundations of Thermal Engineering — syllabus<small>Foundations of Thermal Engineering</small></span></a><a class="rel" href="incompressible-inviscid-flow-and-bernoulli-formula-bank.html" style="--c:#1cb0f6"><span class="dot"></span><span>Incompressible Inviscid Flow and Bernoulli - Formula Bank<small>Fluid Mechanics</small></span></a><a class="rel" href="linear-momentum-equation.html" style="--c:#1cb0f6"><span class="dot"></span><span>Linear Momentum Equation<small>Fluid Mechanics</small></span></a><a class="rel" href="mechanical-engineering-curriculum-moc.html" style="--c:#777777"><span class="dot"></span><span>Mechanical Engineering Curriculum - MOC<small>Mechanical Engineering Curriculum</small></span></a><a class="rel" href="momentum-equation-applications-jets-vanes-bends.html" style="--c:#1cb0f6"><span class="dot"></span><span>Momentum Equation Applications - Jets, Vanes, Bends<small>Fluid Mechanics</small></span></a><a class="rel" href="reynolds-transport-theorem.html" style="--c:#1cb0f6"><span class="dot"></span><span>Reynolds Transport Theorem<small>Fluid Mechanics</small></span></a><a class="rel" href="system-and-control-volume.html" style="--c:#1cb0f6"><span class="dot"></span><span>System and Control Volume<small>Fluid Mechanics</small></span></a></div><h3>Linked from</h3><div class="rels"><a class="rel" href="fluid-mechanics-moc.html" style="--c:#1cb0f6"><span class="dot"></span><span>Fluid Mechanics - MOC<small>Fluid Mechanics</small></span></a><a class="rel" href="heat-transfer-moc.html" style="--c:#ff6b3d"><span class="dot"></span><span>Heat Transfer - MOC<small>Heat Transfer</small></span></a></div><canvas id="miniGraph" width="640" height="320" aria-label="Connections"></canvas></section></article><aside class="toc"><b>On this page</b><a href="#course-overview">Course Overview</a><a href="#syllabus-map">Syllabus Map</a><a href="#concept-map">Concept Map</a><a href="#methods-problem-types">Methods &amp; Problem Types</a><a href="#cross-domain-links">Cross-Domain Links</a><a href="#study-progress">Study Progress</a></aside></main></div></div>
+<div class="search" id="search" hidden><div class="search-box"><input id="q" type="search" placeholder="Search notes…" autocomplete="off"><div id="results"></div></div></div>
+<script src="../assets/data.js"></script><script src="../assets/vendor/mermaid.min.js"></script>
+<script src="../assets/app.js"></script>
+</body></html>

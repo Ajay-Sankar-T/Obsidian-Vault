@@ -39,3 +39,6 @@ $$I_{avg}=\frac1{2\pi R}\Big[2V_m\cos\alpha-E(\pi-2\alpha)\Big]=\frac{18.33-9.28
 
 > [!success] Waveforms
 > $v_0$ follows the sine peaks above $E$ and sits at $E$ otherwise (a clipper at level $E$). The battery current is one pulse per cycle of the shape $(V_m\sin\omega t-E)/R$ (between $\alpha$ and $\pi-\alpha$), and the diode voltage is zero while conducting and the (negative) difference $V_m\sin\omega t-E$ while blocking.
+
+## See also
+- [[B-Q11 - Full-Wave Rectifier with Battery]] — the full-wave version.

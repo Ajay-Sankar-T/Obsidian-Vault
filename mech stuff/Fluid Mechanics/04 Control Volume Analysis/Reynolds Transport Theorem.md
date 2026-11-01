@@ -29,3 +29,6 @@ Compare the "Accumulation = Inflow − Outflow" structure with [[Nodal and Mesh 
 - [[Fluid Mechanics/04 Control Volume Analysis/Conservation of Mass (Continuity Equation)|Conservation of Mass (Continuity Equation)]]
 - [[Fluid Mechanics/04 Control Volume Analysis/Linear Momentum Equation|Linear Momentum Equation]]
 - [[Nodal and Mesh Analysis (AC)|Cross-domain: Nodal Analysis (AC) — the electrical version of the same bookkeeping]]
+
+## See also
+- [[Differential Mass Conservation and Fluid Kinematics - Formula Bank]] — shrinking the control volume gives the differential continuity equation.

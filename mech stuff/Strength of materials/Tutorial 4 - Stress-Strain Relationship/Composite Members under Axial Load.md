@@ -55,3 +55,7 @@ Compare with [[Impedance and Series-Parallel AC Circuits|Impedance and Series-Pa
 - [[Strength of materials/02 Axial Loading/Statically Indeterminate Axial Members|Statically Indeterminate Axial Members]]
 - [[Strength of materials/Tutorial 4 - Stress-Strain Relationship/Two Dissimilar Plates in a Rigid Opening|Two Dissimilar Plates in a Rigid Opening]] (the equal-*stress*, not equal-strain, counterpart)
 - [[Cross-Domain Synthesis/The Mechanical-Electrical Analogy (Impedance Analogy)|Cross-Domain: The Mechanical-Electrical Analogy]]
+
+## See also
+- [[Q6 - Bolt and Tube Assembly]] — rigid caps force equal strain.
+- [[Tutorial 7 - Bending and Shear Stresses]] — composite beams: $(EI)_{tot}=\sum E_iI_i$.

@@ -44,3 +44,6 @@ Fundamental set: $\{\cos x,\sin x\}$ — confirms the earlier example in [[Exist
 
 ---
 Next: [[2nd Order Linear ODE with Constant Coefficients]]
+
+## See also
+- [[Undetermined Coefficients]] — the modification rule (multiply by $x^s$) for repeated roots.

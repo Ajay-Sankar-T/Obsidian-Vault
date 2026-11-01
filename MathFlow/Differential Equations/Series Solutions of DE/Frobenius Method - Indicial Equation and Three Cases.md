@@ -80,3 +80,6 @@ The series converge for $0<x<R$ where $R$ is the distance to the next singular p
 
 ## Next
 [[Frobenius Method - Worked Examples]] → [[Bessel's Equation and Bessel Functions of the First Kind]] (the Frobenius method applied to $x^2y''+xy'+(x^2-\nu^2)y=0$).
+
+## See also
+- [[Bessel Functions of the Second Kind and General Solution]] — equal or integer-separated roots force the logarithmic $Y_\nu$.

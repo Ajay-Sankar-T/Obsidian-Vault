@@ -42,3 +42,6 @@ $a=\tfrac12$ from the missing $y'$ term and $c=\tfrac32$ from $x^{2c-2}=x$; then
 
 ## Worked examples
 [[Assignment 6 - Bessel Functions - Solutions]] Q6 (eight equations (a)–(h)).
+
+## See also
+- [[Sturm-Liouville Problems]] — the normal form and the Sturm–Liouville form both remove the first-derivative term by a change of variable.

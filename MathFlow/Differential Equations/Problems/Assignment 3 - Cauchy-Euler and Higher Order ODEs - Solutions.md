@@ -348,3 +348,6 @@ $$p=y'=C_1x+C_2x^{-2}+C_3x^{-4}\ \Longrightarrow\ \boxed{y=c_1x^2+\frac{c_2}x+\f
 
 ### Figure index
 `A3-fig1` Euler types · `fig2` Q1 · `fig3` IVPs (Q2, Q5) · `fig4` Q3 · `fig5` Wronskians (Q4, Q6, Q7) · `fig6` Q8 · `fig7` Q9 · `fig8` Q10–Q11 · `fig9` Q12 · `fig10` Q13. All in the `assets` folder.
+
+## See also
+- [[Frobenius Method - Indicial Equation and Three Cases]] — the indicial equation is a Cauchy–Euler equation at a regular singular point.

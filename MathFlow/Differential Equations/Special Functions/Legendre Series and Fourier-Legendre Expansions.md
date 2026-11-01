@@ -63,3 +63,6 @@ By Bessel's inequality/Parseval the remaining error after $N$ terms is $\int f^2
 ## Problems using this
 - Legendre series of $|x|$, a step function, $e^x$, $1-|x|$, $\cos\pi x$, and a quartic: [[Assignment 5 - Legendre Polynomials and Functions - Solutions#Q3|Assignment 5, Q3]].
 - Express polynomials in $P_n$ and $x^n=\sum a_mP_m$: [[Assignment 5 - Legendre Polynomials and Functions - Solutions#Q5|Q5]], [[Assignment 5 - Legendre Polynomials and Functions - Solutions#Q6|Q6]].
+
+## See also
+- [[Sturm-Liouville Problems]] — the general eigenfunction expansion $a_n=\int r f y_n/\int r y_n^2$.

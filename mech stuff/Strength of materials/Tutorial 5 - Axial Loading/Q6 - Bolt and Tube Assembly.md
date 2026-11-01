@@ -25,3 +25,6 @@ $$ \sigma = \frac{P}{A_b + A_t} = \frac{40000}{314.16 + 863.94} = \boxed{33.96\t
 - [[Strength of Materials - MOC#02 Axial Loading|02 Axial Loading]]
 - [[Q1 - Axially Loaded Member]]
 - [[Q3 - Four-Wire Support System]]
+
+## See also
+- [[Tutorial 6 - Torsional Members]] — the shrink-fit shaft has the same parallel-sharing structure.

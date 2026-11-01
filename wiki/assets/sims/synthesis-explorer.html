@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Synthesis Explorer</title>
+<style>
+:root{--bg:#fafafa;--fg:#1c1c1e;--card:#fff;--line:#d9d9de;--b:#1f77b4;--o:#e8590c;--g:#2a9d4a;--r:#d6204a;--mut:#6b6b75}
+@media (prefers-color-scheme:dark){:root{--bg:#161618;--fg:#ececf0;--card:#202024;--line:#3a3a42;--mut:#9a9aa5}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.45 system-ui,Segoe UI,sans-serif}
+header{padding:14px 20px;border-bottom:1px solid var(--line)}h1{margin:0;font-size:18px}header p{margin:2px 0 0;color:var(--mut)}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;padding:12px 20px 0}
+button{padding:6px 12px;border:1px solid var(--line);background:var(--card);color:var(--fg);border-radius:6px;cursor:pointer}button.on{background:var(--b);color:#fff;border-color:var(--b)}
+main{display:grid;grid-template-columns:minmax(300px,380px) 1fr;gap:16px;padding:16px 20px;max-width:1300px;margin:auto}
+@media(max-width:900px){main{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}.card h2{margin:0 0 8px;font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--mut)}
+label{display:flex;justify-content:space-between;margin-top:7px}label b{font-variant-numeric:tabular-nums}input[type=range]{width:100%}
+input[type=number],select{width:100%;padding:3px 5px;background:var(--bg);color:var(--fg);border:1px solid var(--line);border-radius:6px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}.grid label{display:block;margin:0;color:var(--mut);font-size:12px}
+canvas{width:100%;height:auto;background:var(--card);border-radius:8px;display:block}.res{margin-top:10px;font-variant-numeric:tabular-nums;font-size:13px}.eq{color:var(--mut);font-size:12px;margin-top:6px}
+.ok{color:#1a7f37}.bad{color:var(--r)}pre{margin:6px 0 0;white-space:pre-wrap;font:12px/1.4 ui-monospace,Consolas,monospace}
+</style></head><body>
+<header><h1>Synthesis Explorer</h1><p>Ghosh &amp; Mallik, Chapter 3 – motion generation, path generation, dyads, function generators. All maths runs in your browser.</p></header>
+<div class="tabs" id="tabs"></div>
+<main><section class="card" id="ctl"></section><section class="card"><canvas id="cv" width="900" height="640"></canvas><div class="res" id="res"></div></section></main>
+<script>
+const $=id=>document.getElementById(id),D=Math.PI/180;
+const css=()=>getComputedStyle(document.body);
+// ---------- maths
+const sub=(a,b)=>[a[0]-b[0],a[1]-b[1]],add=(a,b)=>[a[0]+b[0],a[1]+b[1]],mul=(a,k)=>[a[0]*k,a[1]*k],nrm=a=>Math.hypot(a[0],a[1]);
+const rot=(v,a)=>[Math.cos(a)*v[0]-Math.sin(a)*v[1],Math.sin(a)*v[0]+Math.cos(a)*v[1]];
+function circ3(p,q,r){const d=2*(p[0]*(q[1]-r[1])+q[0]*(r[1]-p[1])+r[0]*(p[1]-q[1]));if(Math.abs(d)<1e-12)return null;
+ const a=p[0]**2+p[1]**2,b=q[0]**2+q[1]**2,c=r[0]**2+r[1]**2;return[(a*(q[1]-r[1])+b*(r[1]-p[1])+c*(p[1]-q[1]))/d,(a*(r[0]-q[0])+b*(p[0]-r[0])+c*(q[0]-p[0]))/d]}
+const toW=(P,q)=>add(rot(q,P[2]),[P[0],P[1]]),toB=(P,w)=>rot(sub(w,[P[0],P[1]]),-P[2]);
+function fourbar(O2,O4,l2,l3,l4,t,br){const A=add(O2,[l2*Math.cos(t),l2*Math.sin(t)]),d=nrm(sub(O4,A));if(d>l3+l4||d<Math.abs(l3-l4)||d==0)return null;
+ const a=(l3*l3-l4*l4+d*d)/(2*d),h=Math.sqrt(Math.max(l3*l3-a*a,0)),u=mul(sub(O4,A),1/d),m=add(A,mul(u,a));return[A,add(m,mul([-u[1],u[0]],br*h))]}
+const cpt=(A,B,u,v)=>{const e=mul(sub(B,A),1/nrm(sub(B,A)));return add(add(A,mul(e,u)),mul([-e[1],e[0]],v))};
+function ccurve(O2,O4,l2,l3,l4,u,v,br){const o=[];for(let i=0;i<=720;i++){const r=fourbar(O2,O4,l2,l3,l4,i/720*2*Math.PI,br);o.push(r?cpt(r[0],r[1],u,v):null)}return o}
+function ccInt(c0,r0,c1,r1,near){const d=nrm(sub(c1,c0)),a=(r0*r0-r1*r1+d*d)/(2*d),h=Math.sqrt(r0*r0-a*a);if(!(h==h))return null;const u=mul(sub(c1,c0),1/d),m=add(c0,mul(u,a));
+ const p=[add(m,mul([-u[1],u[0]],h)),add(m,mul([-u[1],u[0]],-h))];return nrm(sub(p[0],near))<nrm(sub(p[1],near))?p[0]:p[1]}
+function solve(M,b){const n=b.length,A=M.map((r,i)=>[...r,b[i]]);for(let i=0;i<n;i++){let p=i;for(let k=i+1;k<n;k++)if(Math.abs(A[k][i])>Math.abs(A[p][i]))p=k;[A[i],A[p]]=[A[p],A[i]];for(let k=i+1;k<n;k++){const f=A[k][i]/A[i][i];for(let j=i;j<=n;j++)A[k][j]-=f*A[i][j]}}
+ const x=Array(n).fill(0);for(let i=n-1;i>=0;i--){let s=A[i][n];for(let j=i+1;j<n;j++)s-=A[i][j]*x[j];x[i]=s/A[i][i]}return x}
+// ---------- drawing helpers
+let V={s:1,ox:0,oy:0};
+function fitView(pts,W,H,m=40){const f=pts.filter(p=>p&&isFinite(p[0])&&isFinite(p[1]));const x0=Math.min(...f.map(p=>p[0])),x1=Math.max(...f.map(p=>p[0])),y0=Math.min(...f.map(p=>p[1])),y1=Math.max(...f.map(p=>p[1]));
+ const s=Math.min((W-2*m)/Math.max(x1-x0,1e-6),(H-2*m)/Math.max(y1-y0,1e-6));V={s,ox:(W-s*(x0+x1))/2,oy:(H+s*(y0+y1))/2}}
+const P=p=>[V.ox+V.s*p[0],V.oy-V.s*p[1]];
+const C={b:'#1f77b4',o:'#e8590c',g:'#2a9d4a',r:'#d6204a',k:()=>css().color,m:'#888'};
+function line(x,a,b,col,w=1.5,dash=[]){x.beginPath();x.setLineDash(dash);const p=P(a),q=P(b);x.moveTo(...p);x.lineTo(...q);x.strokeStyle=col;x.lineWidth=w;x.stroke();x.setLineDash([])}
+function dot(x,p,col,name,r=4,dx=7,dy=-7){const q=P(p);x.beginPath();x.arc(q[0],q[1],r,0,7);x.fillStyle=col;x.fill();if(name){x.font='13px system-ui';x.fillText(name,q[0]+dx,q[1]+dy)}}
+function circle(x,c,r,col,dash=[5,4]){const q=P(c);x.beginPath();x.setLineDash(dash);x.arc(q[0],q[1],r*V.s,0,7);x.strokeStyle=col;x.lineWidth=1;x.stroke();x.setLineDash([])}
+function poly(x,pts,col,w=1.4,dash=[]){x.beginPath();x.setLineDash(dash);let st=false;for(const p of pts){if(!p){st=false;continue}const q=P(p);if(!st){x.moveTo(...q);st=true}else x.lineTo(...q)}x.strokeStyle=col;x.lineWidth=w;x.stroke();x.setLineDash([])}
+// ---------- tabs
+const T={};let cur,anim=0,raf;
+function num(id,v,l,st=0.1){return`<div><label>${l}</label><input type=number id=${id} value=${v} step=${st}></div>`}
+function sl(id,min,max,st,v,l){return`<label>${l}<b id=v_${id}>${v}</b></label><input type=range id=${id} min=${min} max=${max} step=${st} value=${v}>`}
+function setup(n){cur=n;cancelAnimationFrame(raf);document.querySelectorAll('#tabs button').forEach(b=>b.classList.toggle('on',b.dataset.n==n));T[n].html();T[n].bind();T[n].draw()}
+function bindAll(fn){$('ctl').querySelectorAll('input,select').forEach(e=>e.addEventListener('input',()=>{const v=$('v_'+e.id);if(v)v.textContent=e.value;fn()}))}
+const val=id=>+$(id).value;
+// ===== 1 coupler curve
+const PRE={Watt:[10.77,5,4,5,2,0],Evans:[5.39,2,2.5,2.5,5,0],Roberts:[4,2.5,2,2.5,1,-2.29],Chebyshev:[2,2.5,1,2.5,.5,0],'Crank-rocker':[6,2,5,4,2.5,1.5]};
+T.curve={html(){$('ctl').innerHTML=`<h2>Four-bar coupler curve</h2><label>preset</label><select id=pre>${Object.keys(PRE).map(k=>`<option>${k}</option>`).join('')}</select>`+sl('l1',1,12,.01,10.77,'frame O₂O₄')+sl('l2',.5,8,.01,5,'crank O₂A')+sl('l3',.5,10,.01,4,'coupler AB')+sl('l4',.5,8,.01,5,'rocker O₄B')+sl('u',-2,12,.01,2,'coupler point u (along AB)')+sl('v',-6,6,.01,0,'coupler point v (⟂ AB)')+`<div class=eq>Presets are the straight-line linkages of Fig. 3.29 (Watt, Evans, Roberts, Chebyshev). Blue = assembly 1, orange = assembly 2.</div>`},
+ bind(){bindAll(()=>T.curve.draw());$('pre').addEventListener('input',()=>{const p=PRE[$('pre').value];['l1','l2','l3','l4','u','v'].forEach((id,i)=>{$(id).value=p[i];$('v_'+id).textContent=p[i]});T.curve.draw()});anim=0;const f=()=>{anim+=.015;T.curve.draw();raf=requestAnimationFrame(f)};raf=requestAnimationFrame(f)},
+ draw(){const x=$('cv').getContext('2d'),W=900,H=640;x.clearRect(0,0,W,H);const O2=[0,0],O4=[val('l1'),0],l2=val('l2'),l3=val('l3'),l4=val('l4'),u=val('u'),v=val('v');
+  const c1=ccurve(O2,O4,l2,l3,l4,u,v,1),c2=ccurve(O2,O4,l2,l3,l4,u,v,-1);fitView([...c1,...c2,O2,O4],W,H);
+  poly(x,c2,C.o,1,[]);poly(x,c1,C.b,2);
+  for(const br of[1,-1]){const r=fourbar(O2,O4,l2,l3,l4,anim,br);if(!r)continue;const k=C.k(),a=r[0],b=r[1],c=cpt(a,b,u,v);line(x,O2,a,k,2);line(x,a,b,k,2);line(x,O4,b,k,2);line(x,a,c,k,1,[3,3]);line(x,b,c,k,1,[3,3]);dot(x,c,C.r,br==1?'C':'',4);dot(x,a,C.o,'',3);dot(x,b,C.g,'',3)}
+  x.fillStyle=C.k();dot(x,O2,C.k(),'O₂',5);dot(x,O4,C.k(),'O₄',5);
+  const ok=l2+l3+l4+val('l1')-2*Math.max(l2,l3,l4,val('l1'));const s=[val('l1'),l2,l3,l4].sort((a,b)=>a-b);$('res').innerHTML='Grashof: '+((s[0]+s[3]<=s[1]+s[2])?'<span class=ok>s + l ≤ p + q (a link can rotate fully)</span>':'<span class=bad>s + l &gt; p + q (non-Grashof, all rockers)</span>')}};
+// ===== 2 motion generation
+T.motion={html(){$('ctl').innerHTML=`<h2>Motion generation, 3 positions</h2><div class=eq>Coupler pose = (x, y, φ°) of the body frame</div><div class=grid>${num('x1',0,'x₁')}${num('y1',0,'y₁')}${num('f1',14,'φ₁°',1)}${num('x2',2.6,'x₂')}${num('y2',2.3,'y₂')}${num('f2',54,'φ₂°',1)}${num('x3',1.2,'x₃')}${num('y3',4.6,'y₃')}${num('f3',100,'φ₃°',1)}</div>
+ <label>mode</label><select id=mode><option value=free>pivots free: circle centres</option><option value=piv>pivots given: inversion</option></select><div class=eq>Body points A and B (body coordinates)</div><div class=grid>${num('ax',0,'A u')}${num('ay',0,'A v')}<span></span>${num('bx',4,'B u')}${num('by',0,'B v')}<span></span></div>
+ <div class=eq>If pivots are given:</div><div class=grid>${num('o2x',-3.5,'O₂ x')}${num('o2y',1,'O₂ y')}<span></span>${num('o4x',-3.8,'O₄ x')}${num('o4y',6.5,'O₄ y')}<span></span></div><div class=eq>Free: O₂ = circle(A₁A₂A₃), O₄ = circle(B₁B₂B₃). Given: A₁ = circle(O₂, O₂¹₂, O₂¹₃), B₁ likewise (kinematic inversion).</div>`},
+ bind(){bindAll(()=>T.motion.draw())},
+ draw(){const x=$('cv').getContext('2d'),W=900,H=640;x.clearRect(0,0,W,H);const poses=[1,2,3].map(i=>[val('x'+i),val('y'+i),val('f'+i)*D]);const body=[[-.4,-.5],[4.4,-.5],[4.4,.9],[-.4,.9]];
+  let A,B,O2,O4;const free=$('mode').value=='free';
+  if(free){A=poses.map(p=>toW(p,[val('ax'),val('ay')]));B=poses.map(p=>toW(p,[val('bx'),val('by')]));O2=circ3(...A);O4=circ3(...B)}
+  else{O2=[val('o2x'),val('o2y')];O4=[val('o4x'),val('o4y')];const inv=O=>poses.map(p=>toW(poses[0],toB(p,O)));const i2=inv(O2),i4=inv(O4);const a1=circ3(...i2),b1=circ3(...i4);if(!a1||!b1){$('res').textContent='degenerate (collinear inverted points)';return}
+   A=poses.map(p=>toW(p,toB(poses[0],a1)));B=poses.map(p=>toW(p,toB(poses[0],b1)));window._inv=[i2,i4]}
+  if(!O2||!O4){$('res').textContent='degenerate: the three positions are collinear';return}
+  const all=[O2,O4,...A,...B,...poses.flatMap(p=>body.map(q=>toW(p,q)))];fitView(all,W,H);
+  poses.forEach((p,k)=>{poly(x,[...body.map(q=>toW(p,q)),toW(p,body[0])],C.b,k==0?2:1,k==0?[]:[5,4]);dot(x,A[k],C.o,'A'+(k+1),4);dot(x,B[k],C.g,'B'+(k+1),4);line(x,A[k],B[k],C.b,1.5)});
+  circle(x,O2,nrm(sub(A[0],O2)),C.o);circle(x,O4,nrm(sub(B[0],O4)),C.g);line(x,O2,A[0],C.o,2.5);line(x,O4,B[0],C.g,2.5);dot(x,O2,C.k(),'O₂',6);dot(x,O4,C.k(),'O₄',6);
+  if(!free&&window._inv){window._inv[0].forEach((p,k)=>dot(x,p,C.o,'',3));window._inv[1].forEach((p,k)=>dot(x,p,C.g,'',3))}
+  const r=(a,o)=>a.map(p=>nrm(sub(p,o)).toFixed(4)).join(', ');$('res').innerHTML=`O₂ = (${O2[0].toFixed(3)}, ${O2[1].toFixed(3)}), O₄ = (${O4[0].toFixed(3)}, ${O4[1].toFixed(3)})<br>link lengths: O₂A = ${nrm(sub(A[0],O2)).toFixed(3)}, AB = ${nrm(sub(A[0],B[0])).toFixed(3)}, O₄B = ${nrm(sub(B[0],O4)).toFixed(3)}, frame = ${nrm(sub(O4,O2)).toFixed(3)}<br>check |O₂A<sub>k</sub>| = ${r(A,O2)} · |O₄B<sub>k</sub>| = ${r(B,O4)}`}};
+// ===== 3 path generation
+T.path={html(){$('ctl').innerHTML=`<h2>Path generation, 3 points (inversion)</h2><div class=grid>${num('c1x',0,'C₁ x')}${num('c1y',0,'C₁ y')}<span></span>${num('c2x',3,'C₂ x')}${num('c2y',1,'C₂ y')}<span></span>${num('c3x',6,'C₃ x')}${num('c3y',0,'C₃ y')}<span></span></div><div class=eq>chosen parameters</div><div class=grid>${num('o2x',-3,'O₂ x')}${num('o2y',-4,'O₂ y')}<span></span>${num('o4x',4,'O₄ x')}${num('o4y',-4,'O₄ y')}<span></span>${num('b1x',0,'B₁ x')}${num('b1y',-3,'B₁ y')}<span></span></div><div class=eq>B₂, B₃ from |O₄B| and |BC|; A₁ = circle(O₂, O₂¹₂, O₂¹₃). The blue curve is the coupler path of the designed 4R.</div>`},
+ bind(){bindAll(()=>T.path.draw())},
+ draw(){const x=$('cv').getContext('2d'),W=900,H=640;x.clearRect(0,0,W,H);const Cc=[1,2,3].map(i=>[val('c'+i+'x'),val('c'+i+'y')]),O2=[val('o2x'),val('o2y')],O4=[val('o4x'),val('o4y')],B1=[val('b1x'),val('b1y')];
+  const rB=nrm(sub(B1,O4)),bc=nrm(sub(Cc[0],B1));const Bk=[B1];for(const k of[1,2]){const p=ccInt(O4,rB,Cc[k],bc,Bk[Bk.length-1]);if(!p){$('res').innerHTML='<span class=bad>C'+(k+1)+' is out of reach of the B-circle: move O₄ / B₁ or reduce |BC|</span>';return}Bk.push(p)}
+  const a0=Math.atan2(Cc[0][1]-Bk[0][1],Cc[0][0]-Bk[0][0]),poses=Cc.map((c,k)=>{const ph=Math.atan2(c[1]-Bk[k][1],c[0]-Bk[k][0])-a0,t=sub(c,rot(Cc[0],ph));return[t[0],t[1],ph]});
+  const inv=poses.map(p=>toB(p,O2)),A1=circ3(...inv);if(!A1){$('res').textContent='degenerate: inverted pivots collinear';return}
+  const l2=nrm(sub(A1,O2)),l3=nrm(sub(A1,B1)),l4=rB,l1=nrm(sub(O4,O2));const rel=sub(Cc[0],A1),e=sub(B1,A1),ln=nrm(e),u=(rel[0]*e[0]+rel[1]*e[1])/ln;
+  const uu=u,vv=(-e[1]*rel[0]+e[0]*rel[1])/ln;   // coupler point: u along AB, v perpendicular (CCW)
+  const c1=ccurve(O2,O4,l2,l3,l4,uu,vv,1),c2=ccurve(O2,O4,l2,l3,l4,uu,vv,-1);
+  fitView([...Cc,O2,O4,B1,A1,...Bk,...inv],W,H,50);poly(x,c2,'rgba(232,89,12,.45)',1);poly(x,c1,C.b,1.6);
+  inv.forEach((p,k)=>dot(x,p,C.o,"O₂¹"+(k+1),3));circle(x,A1,nrm(sub(inv[0],A1)),C.o);
+  Cc.forEach((c,k)=>{dot(x,c,C.r,'C'+(k+1),5);line(x,Bk[k],c,C.b,1,k?[3,3]:[]);dot(x,Bk[k],C.g,'B'+(k+1),3)});circle(x,O4,rB,C.g);
+  line(x,O2,A1,C.o,2.5);line(x,A1,B1,C.b,2.5);line(x,O4,B1,C.g,2.5);line(x,A1,Cc[0],C.b,1.2);dot(x,A1,C.o,'A₁',5);dot(x,O2,C.k(),'O₂',6);dot(x,O4,C.k(),'O₄',6);
+  const Ak=poses.map(p=>add(rot(A1,p[2]),[p[0],p[1]]));$('res').innerHTML=`A₁ = (${A1[0].toFixed(3)}, ${A1[1].toFixed(3)}) · O₂A = ${l2.toFixed(3)}, AB = ${l3.toFixed(3)}, O₄B = ${l4.toFixed(3)}, frame = ${l1.toFixed(3)}, BC = ${bc.toFixed(3)}<br>check |O₂A<sub>k</sub>| = ${Ak.map(a=>nrm(sub(a,O2)).toFixed(4)).join(', ')}`}};
+// ===== 4 analytical
+T.analytic={html(){$('ctl').innerHTML=`<h2>Analytical tools</h2><div class=eq><b>Chebyshev spacing (3.4)</b></div><div class=grid>${num('xi',1,'xⁱ')}${num('xf',10,'xᶠ')}${num('k',3,'k',1)}</div><div class=eq style=margin-top:10px><b>Freudenstein (3.6): three (θ₂, θ₄) pairs in degrees, l₂</b></div><div class=grid>${num('p1a',101,'θ₂¹',.1)}${num('p1b',222.7,'θ₄¹',.1)}<span></span>${num('p2a',75,'θ₂²',.1)}${num('p2b',201.7,'θ₄²',.1)}<span></span>${num('p3a',49,'θ₂³',.1)}${num('p3b',153.4,'θ₄³',.1)}${num('l2',5,'l₂ (shortest link)',.1)}</div>
+ <div class=eq style=margin-top:10px><b>Dyad solve (3.20): δ₂, δ₃ and chosen rotations (deg)</b></div><div class=grid>${num('d2x',3,'δ₂ re')}${num('d2y',1,'δ₂ im')}<span></span>${num('d3x',6,'δ₃ re')}${num('d3y',0,'δ₃ im')}<span></span>${num('t22',30,'θ₂²',1)}${num('t23',70,'θ₂³',1)}<span></span>${num('t32',-10,'θ₃²',1)}${num('t33',-35,'θ₃³',1)}<span></span></div>`},
+ bind(){bindAll(()=>T.analytic.draw())},
+ draw(){const x=$('cv').getContext('2d'),W=900,H=640;x.clearRect(0,0,W,H);
+  const xi=val('xi'),xf=val('xf'),k=Math.max(1,Math.round(val('k'))),a=(xi+xf)/2,h=(xf-xi)/2,pts=[...Array(k)].map((_,l)=>a+h*Math.cos((2*l+1)*Math.PI/(2*k)));
+  // chebyshev picture
+  x.save();const cx=W/2,cy=170,sc=Math.min(140/h,(W-120)/(xf-xi));x.strokeStyle=C.m;x.lineWidth=1;x.beginPath();x.arc(cx,cy,h*sc,Math.PI,2*Math.PI);x.stroke();x.beginPath();x.moveTo(cx-h*sc,cy);x.lineTo(cx+h*sc,cy);x.strokeStyle=C.k();x.stroke();
+  x.fillStyle=C.r;x.font='13px system-ui';x.textAlign='center';for(let l=0;l<k;l++){const th=(2*l+1)*Math.PI/(2*k),px=cx+h*sc*Math.cos(th),py=cy-h*sc*Math.sin(th);x.beginPath();x.setLineDash([3,3]);x.moveTo(px,py);x.lineTo(px,cy);x.strokeStyle=C.o;x.stroke();x.setLineDash([]);x.beginPath();x.arc(px,py,4,0,7);x.fillStyle=C.b;x.fill();x.beginPath();x.rect(px-4,cy-4,8,8);x.fillStyle=C.r;x.fill();x.fillText('x'+(l+1)+'='+pts[l].toFixed(3),px,cy+20)}x.restore();
+  // freudenstein
+  const pr=[1,2,3].map(i=>[val('p'+i+'a')*D,val('p'+i+'b')*D]);const K=solve(pr.map(([t2,t4])=>[Math.cos(t4),-Math.cos(t2),1]),pr.map(([t2,t4])=>Math.cos(t2-t4)));const l2=val('l2'),l1=K[0]*l2,l4=l1/K[1],l3=Math.sqrt(Math.max(l1*l1+l2*l2+l4*l4-2*l2*l4*K[2],0));
+  // dyads
+  const ang=[val('t22')*D,val('t23')*D],a3=[val('t32')*D,val('t33')*D],dl=[[val('d2x'),val('d2y')],[val('d3x'),val('d3y')]];
+  const cm=(a,b)=>[a[0]*b[0]-a[1]*b[1],a[0]*b[1]+a[1]*b[0]],ex=t=>[Math.cos(t)-1,Math.sin(t)];const det=(a,b,c,d)=>{const p=cm(a,d),q=cm(b,c);return[p[0]-q[0],p[1]-q[1]]},dv=(a,b)=>{const d=b[0]**2+b[1]**2;return[(a[0]*b[0]+a[1]*b[1])/d,(a[1]*b[0]-a[0]*b[1])/d]};
+  const m11=ex(ang[0]),m12=ex(a3[0]),m21=ex(ang[1]),m22=ex(a3[1]),D0=det(m11,m12,m21,m22);const Lr=dv(det(dl[0],m12,dl[1],m22),D0),Ls=dv(det(m11,dl[0],m21,dl[1]),D0);
+  const f=(z)=>z[0].toFixed(3)+(z[1]<0?' − ':' + ')+Math.abs(z[1]).toFixed(3)+'i';
+  x.fillStyle=C.k();x.font='14px system-ui';x.textAlign='left';const L=['Freudenstein (3.6):','K₁ = '+K[0].toFixed(4)+',  K₂ = '+K[1].toFixed(4)+',  K₃ = '+K[2].toFixed(4),'l₁ = K₁l₂ = '+l1.toFixed(3)+',  l₄ = l₁/K₂ = '+l4.toFixed(3)+',  l₃ = '+l3.toFixed(3)+'   (negative l₄ = reversed vector sense)','',
+   'Dyad (3.20a,b):  L = O₂A = '+f(Lr)+'   (|L| = '+Math.hypot(...Lr).toFixed(3)+')','L* = AC = '+f(Ls)+'   (|L*| = '+Math.hypot(...Ls).toFixed(3)+')','O₂ = C₁ − L − L*   (with C₁ = origin: O₂ = ('+(-Lr[0]-Ls[0]).toFixed(3)+', '+(-Lr[1]-Ls[1]).toFixed(3)+'))','','Defaults: Prob. 3.5 pairs → K = (2, −0.703, 1.078), l = 10, 5, 21.85, −14.2'];
+  L.forEach((t,i)=>x.fillText(t,40,300+i*28));$('res').textContent='Chebyshev points are the projections of a regular 2k-gon on the interval; red squares are the accuracy points.'}};
+// ---------- boot
+const names={curve:'Coupler curves',motion:'Motion generation',path:'Path generation',analytic:'Analytical tools'};
+for(const k in names){const b=document.createElement('button');b.textContent=names[k];b.dataset.n=k;b.onclick=()=>setup(k);$('tabs').appendChild(b)}
+setup('curve');
+</script></body></html>

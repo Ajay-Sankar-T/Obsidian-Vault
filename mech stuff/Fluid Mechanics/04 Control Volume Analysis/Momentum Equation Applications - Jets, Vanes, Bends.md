@@ -38,3 +38,6 @@ plus any pressure, weight, and support forces acting on the bend.
 ## Related
 - [[Fluid Mechanics/04 Control Volume Analysis/Linear Momentum Equation|Linear Momentum Equation]]
 - [[Fluid Mechanics/04 Control Volume Analysis/Conservation of Mass (Continuity Equation)|Conservation of Mass (Continuity Equation)]]
+
+## See also
+- [[Incompressible Inviscid Flow and Bernoulli - Formula Bank]] — nozzle and Venturi flow combine Bernoulli with this momentum balance.

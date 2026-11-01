@@ -34,3 +34,6 @@ the principal stresses are exactly the **eigenvalues** of $[\sigma]$ (roots of $
 
 ---
 Next: [[Mohr's Circle for Stress]]
+
+## See also
+- [[Materials and Design - MOC]] — failure criteria built from principal stresses.

@@ -57,3 +57,6 @@ Series for $\nu=0,1,2,\tfrac12,-\tfrac12,\tfrac14,1.7$ agree with library values
 
 ## Next
 [[Bessel Functions of the Second Kind and General Solution]] → [[Bessel Function Properties and Recurrence Relations]] → [[Bessel Generating Function]]
+
+## See also
+- [[Legendre Polynomials and Rodrigues' Formula]] — Legendre's equation has an ordinary point at 0, Bessel's a regular singular point: the Frobenius method covers both.

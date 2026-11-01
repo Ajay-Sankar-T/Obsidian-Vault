@@ -36,3 +36,6 @@ Next: [[Power Transmission by Shafts]]
 ## Cross-domain links
 
 - [[Cross-Domain Synthesis/Second Moments of Area - One Integral, Many Jobs|Second Moments of Area]] — J = I_x + I_y = 2I for a circle; same integral as bending, buckling, centre of pressure.
+
+## See also
+- [[Flexure Formula]] — the polar moment $J$ here and the second moment $I$ there play the same role.

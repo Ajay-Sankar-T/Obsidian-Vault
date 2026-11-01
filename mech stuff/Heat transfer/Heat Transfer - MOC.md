@@ -67,6 +67,8 @@ graph TD
 - **Resistance networks** ↔ [[Series-Parallel Resistance Reduction]]: same series/parallel algebra with temperature in place of voltage.
 - **Scale analysis and Nusselt, Prandtl, Grashof numbers** ↔ [[Buckingham Pi Theorem]] and [[Dimensional Analysis and Similitude - Formula Bank]].
 - **Thermal stress** ↔ [[Thermal Stresses]]: the temperature field from this course is the input to restrained-expansion stresses.
+- [[Measurements, Instrumentation and Control - MOC]] — lumped capacitance is a first-order system: time constant, step response and sensor lag.
+- [[Viscosity and Newton's Law of Viscosity]] — Prandtl number $=\nu/\alpha$ compares momentum and thermal diffusivity.
 
 ## Study Progress
 - [ ] Conduction (steady, unsteady) · [ ] Convection · [ ] Radiation · [ ] Boiling/condensation · [ ] Heat exchangers

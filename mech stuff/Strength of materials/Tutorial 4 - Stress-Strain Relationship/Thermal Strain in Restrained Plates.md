@@ -46,3 +46,6 @@ $$0=\frac{\sigma(1-\nu)}{E}+\alpha_T\Delta T\qquad\Longrightarrow\qquad\boxed{\s
 ## Related
 - [[Strength of materials/02 Axial Loading/Thermal Stresses|Thermal Stresses]]
 - [[Strength of materials/Tutorial 4 - Stress-Strain Relationship/Restrained and Confined Deformation|Restrained and Confined Deformation]]
+
+## See also
+- [[Q7 - Massive Bar with Thermal Expansion]] — thermal strain superposed on mechanical strain.

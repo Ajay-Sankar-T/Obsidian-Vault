@@ -73,3 +73,28 @@ Use this note to record structural changes that affect navigation, naming, templ
 
 - Added `Entrepreneurship/Solution/Assignment_9_Batch_B_group_14.pdf` and its source note [[Entrepreneurship/Solution/Assignment 9 - Sponsored Search Market (VCG and GSP)|Assignment 9 — Sponsored Search Market (VCG and GSP)]]: social optimum, VCG prices, GSP truthful bidding, equilibria and revenue for the slide-57 market of `Pricing-1.pdf` (slide 57 shows only the market, so the task was read from slides 54–56 and cross-checked against slides 58–59).
 - Added `Solution/Tools/assignment9_check.py` (brute-force VCG, GSP and equilibrium checks; figure `A9-fig2`). All slide numbers (VCG 44, GSP equilibria 48 and 34, payoffs 10 and 24) are reproduced.
+
+## 2026-10-29
+
+- Updated the knowledge graph incrementally with `/graphify` (94 changed files; 6,545 nodes, 10,899 edges, 396 communities).
+- Linked related notes that were not connected: 65 notes gained a "Cross-domain links", "See also" or "Continues in" section. Main bridges: exponential decay ↔ heat transfer, instrumentation and ODEs; Fourier's law as a third constitutive law; thermal and electrical analogy; eigenvalues ↔ Sturm–Liouville, transfer-function poles and covariance; the ML formula sheet (previously isolated) ↔ inner-product spaces, gradient flow, second-order systems; course MOCs ↔ the courses that continue them; missing links inside DE, EE1100, KDoMs, Strength of Materials and Fluid Mechanics.
+- Added [[Entrepreneurship - MOC]] (the Entrepreneurship folder had no map) and linked it, and the ML sheet, from [[Home]].
+- Every wikilink added in this pass resolves; every note now has an incoming link except `CLAUDE.md`.
+- Restructuring the vault layout was considered and declined by the owner: folder layout and PDF locations are unchanged.
+
+## 2026-10-31
+
+- Added `wiki/`: a static, offline learning site generated from the vault (`wiki/index.html`). Duolingo-style course paths, lesson mode, practice problems with hint/solution/result reveal and self-grading, how-to-solve cards, interactive explorers on 25 notes, search, backlinks, graph, dark mode and XP/streak stored in the browser. Rebuild with `python wiki/_build/build.py`; see `wiki/README.md`.
+- Scope: course notes only. Applications, Clubs & Projects, Entrepreneurship/Solution (team assignments), Chemistry, Life sciences, Templates, CLAUDE.md, the guide and this log are not published.
+- `wiki/_build/node_modules/` is gitignored; the generated site itself is not committed yet.
+- Site audit pass: fixed unit order and names (Differential Equations now starts at first-order ODEs; machinery, computing and electrical units renamed), lesson order follows each unit's own map, upcoming courses list their syllabus topics as locked nodes, Practice groups by course and tutorial with a link per question, and every math snippet now renders (the build prints any KaTeX failure to `wiki/_build/math_errors.txt`).
+- Source fixes found by the audit: unclosed `\boxed{` in `AC Transient and Steady-State Response of RLC Circuits`; escaped callouts (`> \[!abstract\]`) in `ML_Formula_Theory_Obsidian`.
+- Site second pass: lists that follow a paragraph line (common inside callouts) now render as lists; the Mohr's circle explorer no longer clips the circle (equal axis scales); all explorer axes use round tick values; upcoming-course cards on the home page say "syllabus map, notes coming" instead of "1 lesson".
+
+## 2026-11-02
+
+- **Partial differential equations (Lectures 29–37, Assignments 8–10).** New folder `MathFlow/Differential Equations/PDEs/` with [[PDEs - MOC]] and 13 concept notes (definitions and direct integration, formation, Lagrange's method, Cauchy problem, complete/general/singular integrals, classification, canonical forms, d'Alembert, separation of variables, wave, heat, Laplace in rectangles/strips and in polar coordinates); Lecture 29 examples added to [[Sturm-Liouville Problems]]. Solutions: [[Assignment 8 - First Order PDEs and Canonical Forms - Solutions]], [[Assignment 9 - D'Alembert, Wave and Heat Equations - Solutions]], [[Assignment 10 - Laplace Equations - Solutions]]. Verification and figures in `Tools/de_a8_*.py`, `de_a9_a10.py`, `de_pde_figs.py`. The checks found three mistakes in the sheets' printed answers (A9 Q3(c), A10 Q8(a) and Q8(b)); they are flagged in the notes.
+- **Fluid Mechanics 09 Pipe Flow and Losses** (GPS 7 and 8): formula bank and six solved problems with Moody-chart figures; `Tools/fm_pipe.py`.
+- **EE1100 Tutorials 6 (op-amps) and 7 (transformers):** one note per question, theory note for op-amps, circuits redrawn; `Basic Electrical Engineering/Tools/ee_t6_t7.py`. New concept notes in `Transformers and Induction Machines/` from Lectures 39–41 (voltage regulation and efficiency, revolving field, slip and power flow, types and construction); the two animations are linked from them.
+- KDoMs tutorial PDFs now live in `KDoMs/Tutorials/`; the MOC text was updated (Tutorials 1–4 and 8 still unsolved).
+- Site: mobile polish and Vercel configuration (see the wiki README).

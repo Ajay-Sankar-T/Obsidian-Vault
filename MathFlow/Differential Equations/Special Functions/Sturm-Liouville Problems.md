@@ -52,3 +52,29 @@ For $y''+fy'+(g+\lambda h)y=0$ multiply by $p=e^{\int f}$: $(py')'+pgy+\lambda h
 
 ## Worked examples
 [[Assignment 7 - Sturm-Liouville Problems - Solutions]] (13 eigenproblems, Gram matrices, expansions in two different eigenbases), [[Assignment 6 - Bessel Functions - Solutions]] Q12 (orthogonality of Bessel functions from the Lagrange identity).
+
+
+## Worked examples (Lecture 29)
+**1. Cauchy–Euler eigenproblem.** $x^2y''+3xy'+\lambda y=0$, $y(1)=y(2)=0$. Try $y=x^m$: $m^2+2m+\lambda=0$, $m=-1\pm\sqrt{1-\lambda}$.
+- $\lambda<1$: real distinct roots, $y(1)=0$ forces $c_2=-c_1$, then $y(2)=0$ forces $c_1=0$. No eigenvalue.
+- $\lambda=1$: $y=c_1x^{-1}+c_2x^{-1}\ln x$; $y(1)=0\Rightarrow c_1=0$, $y(2)=0\Rightarrow c_2=0$. No eigenvalue.
+- $\lambda>1$: $y=x^{-1}\big(c_1\cos(\sqrt{\lambda-1}\ln x)+c_2\sin(\sqrt{\lambda-1}\ln x)\big)$; $y(1)=0\Rightarrow c_1=0$; $y(2)=0\Rightarrow\sqrt{\lambda-1}\,\ln2=n\pi$.
+
+$$\lambda_n=1+\frac{n^2\pi^2}{(\ln2)^2},\qquad y_n=x^{-1}\sin\!\Big(\frac{n\pi\ln x}{\ln2}\Big),\qquad n=1,2,\dots$$
+Self-adjoint form $(x^3y')'+\lambda xy=0$: weight $r=x$ (so $\int_1^2x\,y_my_n\,dx=0$).
+
+**2. Absorb a variable coefficient by a change of variable.** $\big((2x+1)^{-1}y'\big)'+\lambda(2x+1)y=0$, $y(0)=y(\pi)=0$. Put $dt=(2x+1)\,dx$, i.e. $t=x^2+x$. Then $\frac d{dx}\big((2x+1)^{-1}y_x\big)=(2x+1)y_{tt}$ and the equation becomes $y_{tt}+\lambda y=0$ on $0<t<\pi(\pi+1)$ with Dirichlet ends:
+$$\lambda_n=\frac{n^2}{(\pi+1)^2},\qquad y_n=\sin\frac{n(x^2+x)}{\pi+1}.$$
+General recipe: $s=\int\sqrt{r/p}\,dx$ turns $(py')'+\lambda ry=0$ into $z_{ss}+\lambda z=0$ (as in point 4 above).
+
+**3. Cauchy–Euler in logarithmic variable.** $x^2y''+xy'+\lambda y=0$, $y(1)=y(e)=0$: $t=\ln x$ gives $y_{tt}+\lambda y=0$ on $[0,1]$, so $\lambda_n=n^2\pi^2$, $y_n=\sin(n\pi\ln x)$ with weight $1/x$: $\int_1^e\frac{\sin(m\ln x)\sin(n\ln x)}{x}dx=\int_0^1\sin m\pi t\sin n\pi t\,dt=0$. Expansion $f\sim\sum c_n\sin(n\pi\ln x)$, $c_n=2\int_1^e\frac{f(x)}x\sin(n\pi\ln x)\,dx$.
+
+**4. Self-adjoint form of two named equations.**
+- $y''+\frac2xy'+\lambda y=0$ ($x>0$): $p=e^{\int2/x}=x^2$, so $(x^2y')'+\lambda x^2y=0$, weight $x^2$ (spherical Bessel).
+- Chebyshev $(1-x^2)y''-xy'+n^2y=0$: $p=\sqrt{1-x^2}$, so $\big(\sqrt{1-x^2}\,y'\big)'+\frac{n^2}{\sqrt{1-x^2}}y=0$, weight $\frac1{\sqrt{1-x^2}}$.
+
+**5. Periodic and Robin cases.** Periodic $y''+\lambda y=0$, $y(-\pi)=y(\pi)$, $y'(-\pi)=y'(\pi)$: $\lambda_n=n^2$, eigenfunctions $1$ (simple) and $\cos nx,\sin nx$ (multiplicity 2 for $n\ge1$). Robin $y''+\lambda y=0$, $y(0)=0$, $y'(1)+2y(1)=0$: $y=\sin px$ with $p\cos p+2\sin p=0$, i.e. $\tan p=-p/2$, which has no closed-form roots (found graphically or numerically, $\lambda_n=p_n^2$).
+
+**6. Expansion of a constant.** $1\sim\sum c_n\sin\frac{n\pi x}L$ on $(0,L)$: $c_n=\frac2L\int_0^L\sin\frac{n\pi x}L\,dx=\frac2{n\pi}\big(1-(-1)^n\big)=\frac4{n\pi}$ for odd $n$, so $1\sim\frac4\pi\sum_{n\text{ odd}}\frac1n\sin\frac{n\pi x}L$.
+
+These eigenfunctions are the spatial parts used in [[Separation of Variables]] for the wave, heat and Laplace equations ([[PDEs - MOC]]).

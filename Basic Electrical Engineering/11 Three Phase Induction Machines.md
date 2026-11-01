@@ -42,6 +42,9 @@ Torque starts at a moderate value at s=1 (standstill), rises to a **maximum (bre
 Modeled like a transformer ([[10 Single Phase Transformers|Week 10]]) with the rotor as a short-circuited secondary, except the rotor-side resistance appears divided by slip (R_2/s) — splitting naturally into R_2 (actual rotor copper loss) plus R_2(1−s)/s (the term that represents mechanical power output). This split is *why* the equivalent circuit directly shows both losses and useful output in one model.
 
 ## Related
+- [[Induction Machines - Types, Construction and Applications]] — Lecture 40
+- [[Revolving Magnetic Field and Synchronous Speed]] — derivation of the rotating field (Lecture 41)
+- [[Induction Motor - Slip, Rotor Circuit and Power Flow]] — slip, rotor circuit, power flow and torque (Lecture 41)
 - [[Concepts|Concepts glossary]]
 - [[09 Three Phase Circuits and Power Measurement|Week 9 — Three Phase Circuits]]
 - [[12 DC Machines|Week 12 — DC Machines]]

@@ -47,3 +47,6 @@ The sum rule was verified numerically ($x=3$: $J_0^2+2\sum J_n^2=1$).
 
 ## Problems using this
 [[Assignment-6.pdf]] Q10 (sum rule and bounds); the recurrence proofs (Q2, Q7) can also be derived from $G$.
+
+## See also
+- [[Legendre Recurrence Relations and Integrals]] — Legendre recurrences are derived from the Legendre generating function the same way.

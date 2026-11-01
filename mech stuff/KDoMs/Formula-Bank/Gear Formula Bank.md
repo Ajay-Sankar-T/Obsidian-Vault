@@ -446,3 +446,6 @@ python gear_viz.py fig4 anim  # selected ones
 ## Cross-domain links
 
 - [[Cross-Domain Synthesis/Gears, Transformers and Reflected Impedance|Gears, Transformers and Reflected Impedance]] — a gear pair is a lossless two-port like an ideal transformer; load inertia reflects by (ratio)². Map: [[KDoMs/KDoMs - MOC|KDoMs MOC]].
+
+## See also
+- [[Introduction to Machine Design - MOC]] — gear design for strength: Lewis bending equation, surface stress, helical and worm gears.

@@ -26,3 +26,6 @@ Even working in the Eulerian frame, physical laws (Newton's second law, conserva
 ## Related
 - [[Fluid Mechanics/03 Fluid Kinematics/Material Derivative and Fluid Acceleration|Material Derivative and Fluid Acceleration]]
 - [[Fluid Mechanics/04 Control Volume Analysis/System and Control Volume|System and Control Volume]]
+
+## See also
+- [[Streamlines, Pathlines, Streaklines and Timelines]] — a pathline is the Lagrangian picture of one particle.

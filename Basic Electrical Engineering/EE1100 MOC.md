@@ -64,6 +64,8 @@ See [[Concepts]] for the full glossary (laws, theorems, quantities, with diagram
   - [[Q11 - Star Connection Impedance|Q11 - Star Connection Impedance]]
   - [[Q12 - Star Load Voltage and Current|Q12 - Star Load Voltage and Current]]
 - [[Tutorial 5 on Diode Circuits and Applications|Tutorial 5 — Diode Circuits and Applications]] — Part A (theory, rectifiers, ripple, filter design: A-Q1…A-Q9) and Part B (circuit problems B-Q1…B-Q12), one note per question, with [[Theory - Diode Models and Circuit Analysis|theory]]
+- [[Tutorial 6 on OP-AMP|Tutorial 6 — Operational Amplifiers]] — twelve questions (gain, summer, difference amplifier, integrator, photodiode, non-ideal follower, design problems), with the models in [[Theory - Operational Amplifiers]]
+- [[Tutorial 7 on Transformer|Tutorial 7 — Transformers]] — ten questions: EMF equation, referred impedances, equivalent circuit, OC/SC tests, voltage regulation, efficiency
 - [[AC Transients|AC Transients]] — the bridge between Tutorial 2 (DC transients) and Tutorial 3 (AC steady state):
   - [[First-Order AC Transients (RC and RL)|First-Order AC Transients (RC and RL)]]
   - [[Second-Order AC Transients (Series and Parallel RLC)|Second-Order AC Transients (Series and Parallel RLC)]]
@@ -74,6 +76,16 @@ See [[Concepts]] for the full glossary (laws, theorems, quantities, with diagram
   - [[DC Step Response of RLC Circuits|DC Step Response of RLC Circuits]]
   - [[AC Transient and Steady-State Response of RLC Circuits|AC Transient and Steady-State Response of RLC Circuits]]
   - [[Frequency Response and Resonance Curves|Frequency Response and Resonance Curves]]
+
+## Transformers and induction machines (Lectures 35–41)
+
+Concept notes built from the lecture slides, to be read with [[10 Single Phase Transformers|Week 10]] and [[11 Three Phase Induction Machines|Week 11]]:
+- [[Transformer Voltage Regulation and Efficiency]] — Lecture 39: regulation, zero-regulation angle, maximum efficiency, worked example
+- [[Induction Machines - Types, Construction and Applications]] — Lecture 40: classification, squirrel-cage vs slip-ring, NEMA classes, efficiency
+- [[Revolving Magnetic Field and Synchronous Speed]] — Lecture 41: $\tfrac32F_m\sin(\omega t-\alpha)$, $n_s=120f/P$
+- [[Induction Motor - Slip, Rotor Circuit and Power Flow]] — Lecture 41: slip, $f_2=sf_1$, $r_2/s$, $P_g:P_{cu}:P_{em}=1:s:(1-s)$
+
+Interactive animations: [Three-phase revolving field](revolving%20field%20animation.html) · [Transformer current and flux](transformer-current-flux-animation.html).
 
 ## Cross-domain synthesis
 
@@ -93,3 +105,6 @@ The same RLC/impedance/resonance machinery reappears — in different notation �
 - [ ] Week 10
 - [ ] Week 11
 - [ ] Week 12
+
+## Continues in
+- [[Measurements, Instrumentation and Control - MOC]] — op-amps, filters and bridges used for signal conditioning.

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Velocity and Acceleration Polygons</title>
+<style>
+:root{--bg:#fafafa;--fg:#1c1c1e;--card:#fff;--line:#d9d9de;--mut:#6b6b75}
+@media (prefers-color-scheme:dark){:root{--bg:#161618;--fg:#ececf0;--card:#202024;--line:#3a3a42;--mut:#9a9aa5}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.45 system-ui,Segoe UI,sans-serif}
+header{padding:14px 20px;border-bottom:1px solid var(--line)}h1{margin:0;font-size:18px}header p{margin:2px 0 0;color:var(--mut)}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;padding:12px 20px 0}button{padding:6px 12px;border:1px solid var(--line);background:var(--card);color:var(--fg);border-radius:6px;cursor:pointer}button.on{background:#1f77b4;color:#fff;border-color:#1f77b4}
+main{display:grid;grid-template-columns:minmax(280px,340px) 1fr;gap:16px;padding:16px 20px;max-width:1400px;margin:auto}@media(max-width:900px){main{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}.card h2{margin:0 0 8px;font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--mut)}
+label{display:flex;justify-content:space-between;margin-top:7px}label b{font-variant-numeric:tabular-nums}input[type=range]{width:100%}
+.row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}canvas{width:100%;height:auto;background:var(--card);border:1px solid var(--line);border-radius:8px;display:block}.cap{font-size:12px;color:var(--mut);margin:4px 0 0;text-align:center}
+.eq{color:var(--mut);font-size:12px;margin-top:10px}.res{margin-top:10px;font-variant-numeric:tabular-nums;font-size:13px}.bad{color:#d6204a}
+</style></head><body>
+<header><h1>Velocity and Acceleration Polygons</h1><p>Ghosh &amp; Mallik, Sec. 2.6–2.7 – the diagrams are built the graphical way: each vector equation closes a polygon from direction lines. Drag the sliders.</p></header>
+<div class="tabs" id="tabs"></div>
+<main><section class="card" id="ctl"></section><section><div class="row"><div><canvas id="c0" width="420" height="420"></canvas><div class="cap">mechanism</div></div><div><canvas id="c1" width="420" height="420"></canvas><div class="cap">velocity polygon</div></div><div><canvas id="c2" width="420" height="420"></canvas><div class="cap">acceleration polygon</div></div></div><div class="res card" id="res" style="margin-top:12px"></div></section></main>
+<script>
+const $=id=>document.getElementById(id),D=Math.PI/180,sin=Math.sin,cos=Math.cos;
+const add=(a,b)=>[a[0]+b[0],a[1]+b[1]],sub=(a,b)=>[a[0]-b[0],a[1]-b[1]],mul=(a,k)=>[a[0]*k,a[1]*k],pp=a=>[-a[1],a[0]],dot=(a,b)=>a[0]*b[0]+a[1]*b[1],nrm=a=>Math.hypot(a[0],a[1]),rot=(r,t)=>[r*cos(t),r*sin(t)];
+const col=()=>getComputedStyle(document.body).color;
+function meet(p,dp,q,dq){const det=dp[0]*(-dq[1])-dp[1]*(-dq[0]);const rx=q[0]-p[0],ry=q[1]-p[1];const t=(rx*(-dq[1])-ry*(-dq[0]))/det;return[p[0]+t*dp[0],p[1]+t*dp[1]]}
+// ---- constructions (same polygons as va_poly.py)
+function fourbar(l,t2,w2,a2,m){const[l1,l2,l3,l4]=l,a=sin(t2),b=cos(t2)-l1/l2,c=-(l1/l4)*cos(t2)+(l1*l1+l2*l2+l4*l4-l3*l3)/(2*l2*l4),dd=a*a+b*b-c*c;if(dd<0)return null;
+ const t4=2*Math.atan2(a+m*Math.sqrt(dd),b+c),O4=[l1,0],A=rot(l2,t2),B=add(O4,rot(l4,t4)),AB=sub(B,A),O4B=sub(B,O4),o=[0,0];
+ const va=mul(pp(A),w2),vb=meet(va,pp(AB),o,pp(O4B)),w3=dot(sub(vb,va),pp(AB))/dot(AB,AB),w4=dot(vb,pp(O4B))/dot(O4B,O4B);
+ const aa=add(add(o,mul(A,-w2*w2)),mul(pp(A),a2)),p1=add(o,mul(O4B,-w4*w4)),p2=add(aa,mul(AB,-w3*w3)),ab=meet(p1,pp(O4B),p2,pp(AB));
+ const a3=dot(sub(ab,p2),pp(AB))/dot(AB,AB),a4=dot(sub(ab,p1),pp(O4B))/dot(O4B,O4B);
+ return{mech:{pts:{O2:[0,0],O4,A,B},links:[[[0,0],A],[A,B],[O4,B]]},vel:{o,pts:{a:va,b:vb},vec:[[o,va,'V_A','#1f77b4'],[va,vb,'V_BA','#2a9d4a'],[o,vb,'V_B','#e8590c']]},
+ acc:{o,pts:{a:aa,n:p2,b:ab},vec:[[o,aa,'a_A','#1f77b4'],[aa,p2,'aⁿ_BA','#9467bd'],[p2,ab,'aᵗ_BA','#2a9d4a'],[o,p1,'aⁿ_B','#9467bd'],[p1,ab,'aᵗ_B','#2a9d4a'],[o,ab,'a_B','#e8590c']]},
+ txt:`ω₃ = ${w3.toFixed(4)}, ω₄ = ${w4.toFixed(4)} rad/s · α₃ = ${a3.toFixed(4)}, α₄ = ${a4.toFixed(4)} rad/s²`+` · V_B = ${nrm(vb).toFixed(3)}, a_B = ${nrm(ab).toFixed(3)}`}}
+function slider(l2,l3,t2,w2,a2){const A=rot(l2,t2),s3=A[1]/l3;if(Math.abs(s3)>1)return null;const B=[A[0]+Math.sqrt(l3*l3-A[1]*A[1]),0],AB=sub(B,A),o=[0,0];
+ const va=mul(pp(A),w2),vb=meet(va,pp(AB),o,[1,0]),w3=dot(sub(vb,va),pp(AB))/dot(AB,AB),aa=add(mul(A,-w2*w2),mul(pp(A),a2)),n=add(aa,mul(AB,-w3*w3)),ab=meet(n,pp(AB),o,[1,0]),a3=dot(sub(ab,n),pp(AB))/dot(AB,AB);
+ return{mech:{pts:{O2:[0,0],A,B},links:[[[0,0],A],[A,B]],rail:true},vel:{o,pts:{a:va,b:vb},vec:[[o,va,'V_A','#1f77b4'],[va,vb,'V_BA','#2a9d4a'],[o,vb,'V_B','#e8590c']]},
+ acc:{o,pts:{a:aa,n,b:ab},vec:[[o,aa,'a_A','#1f77b4'],[aa,n,'aⁿ_BA','#9467bd'],[n,ab,'aᵗ_BA','#2a9d4a'],[o,ab,'a_B','#e8590c']]},txt:`V_B = ${vb[0].toFixed(3)}, ω₃ = ${w3.toFixed(4)} · a_B = ${ab[0].toFixed(3)}, α₃ = ${a3.toFixed(4)}`}}
+function slotted(l1,l2,t2,w2,a2){const O4=[0,-l1],A=rot(l2,t2),r4=sub(A,O4),e=mul(r4,1/nrm(r4)),o=[0,0];
+ const va2=mul(pp(A),w2),va4=meet(o,pp(r4),va2,e),w4=dot(va4,pp(r4))/dot(r4,r4),vrel=sub(va2,va4),aA=add(mul(A,-w2*w2),mul(pp(A),a2)),p1=mul(r4,-w4*w4),ac=mul(pp(vrel),2*w4),p2=add(p1,ac),d=meet(p2,pp(r4),aA,e),a4=dot(sub(d,p2),pp(r4))/dot(r4,r4);
+ return{mech:{pts:{O2:[0,0],O4,A},links:[[[0,0],A]],slot:[O4,add(O4,mul(e,Math.max(l1+l2,nrm(r4))+1))]},vel:{o,pts:{a2:va2,a4:va4},vec:[[o,va2,'V_A2=V_A3','#1f77b4'],[o,va4,'V_A4','#e8590c'],[va4,va2,'V_A3/4','#2a9d4a']]},
+ acc:{o,pts:{c:p2,d,a3:aA},vec:[[o,aA,'a_A3','#1f77b4'],[o,p1,'aⁿ_A4','#9467bd'],[p1,p2,'Coriolis','#d6204a'],[p2,d,'aᵗ_A4','#e8590c'],[d,aA,'a_A3/4','#2a9d4a']]},txt:`ω₄ = ${w4.toFixed(4)} rad/s, α₄ = ${a4.toFixed(4)} rad/s² · Coriolis 2ω₄V_A3/4 = ${nrm(ac).toFixed(4)}`}}
+// ---- drawing
+function fit(pts,W,H,m){const xs=pts.map(p=>p[0]),ys=pts.map(p=>p[1]),x0=Math.min(...xs),x1=Math.max(...xs),y0=Math.min(...ys),y1=Math.max(...ys),s=Math.min((W-2*m)/Math.max(x1-x0,1e-6),(H-2*m)/Math.max(y1-y0,1e-6));return{s,ox:(W-s*(x0+x1))/2,oy:(H+s*(y0+y1))/2}}
+function arrow(x,V,p,q,c,lab,w=2){const a=[V.ox+V.s*p[0],V.oy-V.s*p[1]],b=[V.ox+V.s*q[0],V.oy-V.s*q[1]];x.beginPath();x.moveTo(...a);x.lineTo(...b);x.strokeStyle=c;x.lineWidth=w;x.stroke();const g=Math.atan2(b[1]-a[1],b[0]-a[0]);
+ if(Math.hypot(b[0]-a[0],b[1]-a[1])>8){x.beginPath();x.moveTo(...b);x.lineTo(b[0]-9*Math.cos(g-.4),b[1]-9*Math.sin(g-.4));x.lineTo(b[0]-9*Math.cos(g+.4),b[1]-9*Math.sin(g+.4));x.fillStyle=c;x.fill()}if(lab){x.fillStyle=c;x.font='11px system-ui';x.fillText(lab,(a[0]+b[0])/2+4,(a[1]+b[1])/2-4)}}
+function node(x,V,p,n,c){const q=[V.ox+V.s*p[0],V.oy-V.s*p[1]];x.beginPath();x.arc(q[0],q[1],3.5,0,7);x.fillStyle=c||col();x.fill();x.fillStyle=col();x.font='12px system-ui';x.fillText(n,q[0]+5,q[1]+14)}
+function drawPoly(id,P,vecs,pts,pole){const c=$(id),x=c.getContext('2d');x.clearRect(0,0,c.width,c.height);const all=[pole,...Object.values(pts),...vecs.flatMap(v=>[v[0],v[1]])];const V=fit(all,c.width,c.height,34);
+ vecs.forEach(v=>arrow(x,V,v[0],v[1],v[3],v[2],v[2][0]=='V'||v[2][0]=='a'&&v[2].length<=4?2.4:1.6));node(x,V,pole,'o');for(const k in pts)node(x,V,pts[k],k)}
+const M={};let cur,spin=false,raf;const S=(id,min,max,st,v,l)=>`<label>${l}<b id=v_${id}>${v}</b></label><input type=range id=${id} min=${min} max=${max} step=${st} value=${v}>`;
+const common=`${S('t2',0,360,1,115,'θ₂ (°)')}${S('w2',-10,10,.1,2,'ω₂ (rad/s)')}${S('a2',-10,10,.1,1.5,'α₂ (rad/s²)')}`;
+M.fb={n:'Four-bar',h:`<h2>Four-bar</h2>${common}${S('l1',2,9,.01,5.5,'frame l₁')}${S('l2',.8,4,.01,1.7,'crank l₂')}${S('l3',2,9,.01,5.5,'coupler l₃')}${S('l4',2,8,.01,4.08,'follower l₄')}<label>assembly mode</label><select id=md><option value=1>+</option><option value=-1>−</option></select>`,f:()=>fourbar([+$('l1').value,+$('l2').value,+$('l3').value,+$('l4').value],+$('t2').value*D,+$('w2').value,+$('a2').value,+$('md').value)};
+M.sc={n:'Slider-crank',h:`<h2>Slider-crank (Prob. 2.9)</h2>${common}${S('l2',1,8,.01,6,'crank l₂')}${S('l3',8,25,.01,16,'rod l₃')}`,f:()=>slider(+$('l2').value,+$('l3').value,+$('t2').value*D,+$('w2').value,+$('a2').value)};
+M.sl={n:'Slotted lever',h:`<h2>Slotted lever (coincident points)</h2>${common}${S('l1',1,8,.01,3,'l₁ (O₂O₄)')}${S('l2',1,9,.01,5,'l₂ (crank)')}`,f:()=>slotted(+$('l1').value,+$('l2').value,+$('t2').value*D,+$('w2').value,+$('a2').value)};
+function setup(n){cur=n;cancelAnimationFrame(raf);document.querySelectorAll('#tabs button').forEach(b=>b.classList.toggle('on',b.dataset.n==n));
+ $('ctl').innerHTML=M[n].h+'<label style="margin-top:10px"><span>animate crank</span><input type=checkbox id=spin></label><div class=eq>Each polygon closes a vector equation: V_B = V_A + V_BA (⊥ AB) with V_B in its known direction; a_B = a_A + aⁿ_BA + aᵗ_BA, etc. Values read off the polygon are shown below.</div>';
+ $('ctl').querySelectorAll('input,select').forEach(e=>e.addEventListener('input',()=>{const v=$('v_'+e.id);if(v)v.textContent=e.value;draw()}));$('spin').addEventListener('input',()=>{spin=$('spin').checked;if(spin)loop()});draw()}
+function loop(){if(!spin)return;const t=(+$('t2').value+1)%360;$('t2').value=t;$('v_t2').textContent=t;draw();raf=requestAnimationFrame(loop)}
+function draw(){const r=M[cur].f();if(!r){$('res').innerHTML='<span class=bad>cannot be assembled</span>';return}
+ const c=$('c0'),x=c.getContext('2d');x.clearRect(0,0,c.width,c.height);const all=[...Object.values(r.mech.pts),...(r.mech.slot||[]),...(r.mech.rail?[[-2,0],[26,0]]:[])];const V=fit(all,c.width,c.height,34);
+ if(r.mech.slot)arrow(x,V,r.mech.slot[0],r.mech.slot[1],'rgba(136,136,136,.6)','',8);r.mech.links.forEach(l=>arrow(x,V,l[0],l[1],col(),'',2.4));x.lineCap='butt';for(const k in r.mech.pts)node(x,V,r.mech.pts[k],k);
+ drawPoly('c1',r,r.vel.vec,r.vel.pts,r.vel.o);drawPoly('c2',r,r.acc.vec,r.acc.pts,r.acc.o);$('res').innerHTML=r.txt}
+for(const k in M){const b=document.createElement('button');b.textContent=M[k].n;b.dataset.n=k;b.onclick=()=>setup(k);$('tabs').appendChild(b)}setup('fb');
+</script></body></html>

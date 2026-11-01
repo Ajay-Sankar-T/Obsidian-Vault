@@ -13,7 +13,8 @@ title: Machine Learning Formula Sheet --- Theory and Intuition
 
 # Machine Learning Formula Sheet --- Theory and Intuition
 
-> [\!abstract\] How to use this note Each item explains what the formula
+> [!abstract] How to use this note
+> Each item explains what the formula
 > measures, why it matters, and how to interpret it. The formulas are
 > written in LaTeX so Obsidian can render them. Unless stated otherwise,
 > vectors are column vectors and sums run over the indicated
@@ -912,7 +913,16 @@ commutative: $AB\ne BA$.
 8.  **Linear algebra foundation:** vectors, norms, dot products, matrix
     multiplication.
 
-> \[!tip\] Study method For each formula, learn (1) what each symbol
+> [!tip] Study method
+> For each formula, learn (1) what each symbol
 > means, (2) what happens when the input/parameter increases, (3) one
 > tiny numerical example, and (4) when the formula is appropriate.
 > Memorising symbols without the assumptions is much less useful.
+
+## Cross-domain links
+- [[Inner Product Spaces and Orthogonal Functions]] — Euclidean and Manhattan distances are the $L^2$ and $L^1$ norms; cosine similarity is the angle from the inner product.
+- [[Legendre Series and Fourier-Legendre Expansions]] — least-squares regression and a Legendre series are both orthogonal projections onto a chosen set of basis functions.
+- [[First Order ODEs]] — gradient descent is the Euler method on $d\theta/dt=-\nabla L$.
+- [[The Universal Second-Order Linear System]] — momentum methods behave like a damped oscillator.
+- [[Exponential Decay - Time Constants, Damping and Spatial Relaxation]] — learning-rate decay is exponential relaxation.
+- [[Eigenvalues, Rotation and Diagonalization Everywhere]] — covariance matrices are symmetric and are diagonalised by a rotation (PCA, principal stresses).

@@ -14,7 +14,7 @@ up: "[[RLC Circuits - Responses]]"
 
 ## The defining difference from a DC step
 
-$$\boxed{x(t)=\underbrace{x_{ss}(t)}_{\text{permanent sinusoid, from phasor analysis}}+\underbrace{x_n(t)}_{\text{decaying, from }\alpha,\omega_d}$$
+$$\boxed{x(t)=\underbrace{x_{ss}(t)}_{\text{permanent sinusoid, from phasor analysis}}+\underbrace{x_n(t)}_{\text{decaying, from }\alpha,\omega_d}}$$
 
 Unlike the [[DC Step Response of RLC Circuits|DC step response]], the "final value" here is **not a constant** — it's a sinusoid that persists forever, computed by ordinary phasor analysis ([[Impedance and Series-Parallel AC Circuits|Impedance and Series-Parallel AC Circuits]]). Only the transient term $x_n(t)$ decays away.
 

@@ -42,3 +42,6 @@ units m²/s — appears naturally in the [[Fluid Mechanics/01 Dimensionless Numb
 ## Cross-domain links
 
 - [[Cross-Domain Synthesis/Fluids and Solids - Pressure, Stress and Constitutive Laws|Fluids and Solids]] — G vs μ side by side; Maxwell time constant μ/G behind the Deborah number.
+
+## See also
+- [[Heat Transfer - MOC]] — momentum diffusivity $\nu$ is to viscous shear what thermal diffusivity $\alpha$ is to conduction; their ratio is the Prandtl number.

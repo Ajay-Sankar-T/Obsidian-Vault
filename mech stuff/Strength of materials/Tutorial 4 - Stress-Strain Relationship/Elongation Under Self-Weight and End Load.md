@@ -52,3 +52,6 @@ The $\tfrac12$ factor here is the axial-loading twin of the pattern used through
 ## Related
 - [[Strength of materials/02 Axial Loading/Axial Deformation|Axial Deformation]]
 - [[Strength of materials/04 Shear Force and Bending Moment/Relations Between Load, Shear, and Moment|Relations Between Load, Shear, and Moment]]
+
+## See also
+- [[Q5 - Self-Weight Pyramid]] — the tapered case.

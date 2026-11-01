@@ -53,6 +53,7 @@ flowchart LR
 **Efficiency** η = output power / (output power + core loss + copper loss); since copper loss grows with load² while core loss is roughly constant, maximum efficiency occurs at the load where copper loss = core loss.
 
 ## Related
+- [[Transformer Voltage Regulation and Efficiency]] — Lecture 39: regulation and efficiency in detail; practice in [[Tutorial 7 on Transformer]]
 - [[Concepts|Concepts glossary]]
 - [[08 Resonance and Magnetically Coupled Circuits|Week 8 — Magnetically Coupled Circuits]]
 - [[11 Three Phase Induction Machines|Week 11 — Three Phase Induction Machines]]

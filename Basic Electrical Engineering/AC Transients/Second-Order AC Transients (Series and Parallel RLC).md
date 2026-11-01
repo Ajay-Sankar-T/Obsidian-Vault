@@ -84,3 +84,7 @@ but $i_C$, $v_L$ may jump — see [[AC Transients|AC Transients]] for the full c
 - [[Tutorial 2 - Transient Analysis of DC Circuits|Tutorial 2 — DC RLC transients]]
 - [[08 Resonance and Magnetically Coupled Circuits|Week 8 — Resonance]] ($\omega_n$ reappears as the resonant frequency)
 - [[First-Order AC Transients (RC and RL)|First-Order AC Transients (RC and RL)]]
+
+## See also
+- [[Frequency Response and Resonance Curves]] — sharpness in frequency and ringing in time are two views of the same damping.
+- [[Series vs Parallel RLC - Key Distinctions]] — series/parallel duality table.

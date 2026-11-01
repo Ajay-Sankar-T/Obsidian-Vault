@@ -77,3 +77,9 @@ The checks in `Tools/de_core.py` found these slide errors (details in each note)
 - [ ] Gamma function
 - [ ] Bessel functions of first and second kind
 - [ ] Bessel recurrences, integrals, generating function
+
+## Continues in
+- [[Heat Transfer - MOC]] — Bessel functions and Sturm–Liouville eigenfunctions in cylindrical conduction.
+
+## Continues in
+- [[PDEs - MOC]] — Lectures 29–37: more Sturm–Liouville examples ([[Sturm-Liouville Problems#Worked examples (Lecture 29)]]), then partial differential equations. The eigenfunctions of this unit are the building blocks of [[Separation of Variables]].

@@ -31,3 +31,12 @@ $$T(t) = T_s + (T_0 - T_s)e^{-kt}.$$
 
 ---
 Next: [[Isoclines]]
+
+## Cross-domain links
+- [[Exponential Decay - Time Constants, Damping and Spatial Relaxation]] — the decay half of $dy/dt=ky$ across circuits, structures and thermal systems.
+- [[Heat Transfer - MOC]] — Newton's law of cooling is the same ODE.
+- [[Assignment 8.1 - Six Ds Analysis of Ather Energy]] — compound growth (Ather revenue about 89% a year over FY20–FY26) is $dy/dt=ky$ read as an annual rate.
+- [[ML_Formula_Theory_Obsidian]] — gradient descent is the explicit Euler method on the gradient flow $d\theta/dt=-\nabla L$ (items 19–20).
+
+## See also
+- [[Linear Differential Equations]] — the integrating-factor solution of $y'+Py=Q$.

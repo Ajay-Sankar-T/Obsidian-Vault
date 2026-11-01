@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#58cc02"><meta name="description" content="Interactive lessons, practice problems and solved tutorials from engineering course notes"><link rel="icon" href="../assets/Favicons/Alya.png" type="image/png"><link rel="apple-touch-icon" href="../assets/Favicons/Alya.png"><link rel="manifest" href="../manifest.webmanifest">
+<title>Introduction to Machine Design - MOC · Wiki</title>
+<script>try{var t=localStorage.getItem('wiki.theme');if(!t&&matchMedia('(prefers-color-scheme: dark)').matches)t='dark';if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="../assets/style.css"><link rel="stylesheet" href="../assets/vendor/katex.min.css">
+</head><body data-root="../" data-page="note" data-slug="introduction-to-machine-design-moc" data-course="mdes">
+<div class="app">
+<aside class="side"><a class="logo" href="../index.html"><span class="logo-mark">W</span><span class="logo-t">wiki</span></a><nav><a class="nav-i" href="../index.html"><svg viewBox="0 0 24 24"><path d="M12 3 2 8l10 5 8-4v6h2V8L12 3Zm-6 9.6V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-3.4l-6 3-6-3Z"/></svg><span>Learn</span></a><a class="nav-i" href="../practice.html"><svg viewBox="0 0 24 24"><path d="M7 4h2v16H7V4Zm8 0h2v16h-2V4ZM3 9h2v6H3V9Zm16 0h2v6h-2V9ZM9 11h6v2H9v-2Z"/></svg><span>Practice</span></a><a class="nav-i" href="../solve.html"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm3.8 6.2-2.1 5.5-5.5 2.1 2.1-5.5 5.5-2.1ZM12 11a1 1 0 1 0 0 2 1 1 0 0 0 0-2Z"/></svg><span>How to solve</span></a><a class="nav-i" href="../graph.html"><svg viewBox="0 0 24 24"><path d="M6 3a3 3 0 0 0-1 5.8v6.4a3 3 0 1 0 2 0V13l6-2.2A3 3 0 1 0 12.4 9 3 3 0 0 0 9 11.3L7 12V8.8A3 3 0 0 0 6 3Zm0 2a1 1 0 1 1 0 2 1 1 0 0 1 0-2Zm12 2a1 1 0 1 1 0 2 1 1 0 0 1 0-2ZM6 17a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/></svg><span>Graph</span></a><button class="nav-i" id="openSearch" type="button"><svg viewBox="0 0 24 24"><path d="M10 3a7 7 0 1 0 4.4 12.4l4.6 4.6 1.4-1.4-4.6-4.6A7 7 0 0 0 10 3Zm0 2a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z"/></svg><span>Search</span><kbd>/</kbd></button></nav>
+<div class="side-card" id="sideStats"></div></aside>
+<div class="main"><header class="top"><div class="top-l" id="crumbTop"></div><div class="top-r"><span class="pill pill-streak" id="streak" title="Day streak"></span><span class="pill pill-xp" id="xp" title="Experience points"></span><button class="icon-btn" id="themeBtn" type="button" aria-label="Toggle dark mode"></button></div></header>
+<main class="content"><article class="note" data-kind="concept" style="--c:#e0a458;--cd:#b3834a">
+<div class="crumbs"><a href="../course/mdes.html">Introduction to Machine Design</a></div><h1>Introduction to Machine Design — Map of Content</h1><div class="chips"><span class="chip">machine-design</span><span class="chip">upcoming</span></div>
+<div class="actions"><button class="btn" id="startLesson" type="button">Start lesson</button><button class="btn btn-ghost" id="markDone" type="button" data-xp="10">Mark as learned</button></div>
+<div class="body" id="body"><section class="step intro"><p>Navigation spine for ME3203. Part of <a href="../n/mechanical-engineering-curriculum-moc.html">Mechanical Engineering Curriculum - MOC</a>. Official syllabus: <a href="../n/introduction-to-machine-design-course-details.html">Course Details</a>.</p>
+</section><section class="step" data-title="Course Overview"><h2 id="course-overview">Course Overview</h2>
+<p><strong>Course:</strong> Introduction to Machine Design · <strong>Code:</strong> ME3203 · <strong>Semester 5</strong> · <strong>L-T-E-P-O / credits:</strong> 2-1-1-0-4 / 8</p>
+<p><strong>Core purpose:</strong> stress-based design of simple mechanical elements: choose materials and dimensions so that shafts, keys, bearings, gears, springs and bolts survive static and fluctuating loads.</p>
+<p><strong>Textbooks:</strong> R. L. Norton, <em>Machine Design: An Integrated Approach</em> (Pearson). Reference: Budynas &amp; Nisbett, <em>Shigley's Mechanical Engineering Design</em>.</p>
+<p><strong>Prerequisite (syllabus: none).</strong> The course is a direct application of <a href="../n/strength-of-materials-moc.html">Strength of Materials - MOC</a>, the fatigue and failure theories of <a href="../n/materials-and-design-moc.html">Materials and Design - MOC</a>, the gear geometry of <a href="../n/kdoms-moc.html">KDoMs - MOC</a> and the drawing skills of <a href="../n/computer-aided-machine-drawing-moc.html">Computer Aided Machine Drawing - MOC</a>.</p>
+<h3 id="prepare-from-the-existing-vault">Prepare from the existing vault</h3>
+<ul>
+<li>Stress at a point and combined loading: <a href="../n/plane-stress-transformation.html">Plane Stress Transformation</a>, <a href="../n/mohrs-circle-for-stress.html">Mohr&#x27;s Circle for Stress</a>, <a href="../n/unsymmetric-and-combined-bending.html">Unsymmetric and Combined Bending</a>.</li>
+<li>Shaft sizing: <a href="../n/torsion-of-circular-shafts.html">Torsion of Circular Shafts</a>, <a href="../n/power-transmission-by-shafts.html">Power Transmission by Shafts</a>, <a href="../n/flexure-formula.html">Flexure Formula</a>, <a href="../n/shear-force-and-bending-moment-diagrams.html">Shear Force and Bending Moment Diagrams</a>.</li>
+<li>Bolted joints and preload: <a href="../n/statically-indeterminate-axial-members.html">Statically Indeterminate Axial Members</a>, <a href="../n/thermal-stresses.html">Thermal Stresses</a> (joint stiffness is a parallel-spring problem).</li>
+<li>Gears: <a href="../n/gear-formula-bank.html">Gear Formula Bank</a> (geometry, contact ratio, interference).</li>
+<li>Columns and instability: <a href="../n/euler-buckling-of-columns.html">Euler Buckling of Columns</a>.</li>
+</ul>
+</section><section class="step" data-title="Syllabus Map"><h2 id="syllabus-map">Syllabus Map</h2>
+<ol>
+<li><strong>Shafts, keys and couplings:</strong> shaft materials, loads and stresses; shafts under fully reversed bending with steady torsion; fluctuating bending and torsion; key types and design.</li>
+<li><strong>Bearings:</strong> sliding bearings (lubrication basics, choice of lubricant and geometry for a given load); rolling-element bearings (types, uses, selection from load ratings).</li>
+<li><strong>Transmission elements, spur gears:</strong> loading and stresses; Lewis bending equation and design factors; surface stress; designing a gear mesh; extension to helical and worm gears.</li>
+<li><strong>Springs:</strong> stresses in helical compression and tension springs; design for static and fatigue loading.</li>
+<li><strong>Bolts and fasteners:</strong> nomenclature, load analysis, design under static and dynamic loads, joint stiffness factor, bolts and dowel pins in shear.</li>
+</ol>
+</section><section class="step" data-title="Concept Map"><h2 id="concept-map">Concept Map</h2>
+<pre class="mermaid">graph TD
+    SOM[&quot;Strength of materials: stress, torsion, bending&quot;] --&gt; SH[&quot;Shafts and keys&quot;]
+    FAT[&quot;Fatigue and failure theories (Materials and Design)&quot;] --&gt; SH
+    FAT --&gt; SP[&quot;Springs&quot;]
+    FAT --&gt; BO[&quot;Bolts and fasteners&quot;]
+    SOM --&gt; BO
+    SOM --&gt; SP
+    KD[&quot;Gear geometry (KDoMs)&quot;] --&gt; GE[&quot;Spur gears: Lewis, surface stress&quot;]
+    SOM --&gt; GE
+    FM[&quot;Viscosity (fluid mechanics)&quot;] --&gt; BR[&quot;Bearings: lubrication, rolling selection&quot;]
+    SH --&gt; BR
+    GE --&gt; SH</pre>
+</section><section class="step" data-title="Methods &amp;amp; Problem Types"><h2 id="methods-problem-types">Methods &amp; Problem Types</h2>
+<table>
+<thead>
+<tr>
+<th>Problem type</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Size a shaft under bending plus torsion</td>
+<td>equivalent stress from the combined loading, with a failure theory and safety factor</td>
+</tr>
+<tr>
+<td>Fatigue of a shaft</td>
+<td>endurance limit with Marin factors, Goodman line for mean plus alternating stress</td>
+</tr>
+<tr>
+<td>Select a key</td>
+<td>shear and bearing check at the key</td>
+</tr>
+<tr>
+<td>Select a rolling bearing</td>
+<td>equivalent load, load rating and life</td>
+</tr>
+<tr>
+<td>Gear tooth bending</td>
+<td>Lewis equation with dynamic and geometry factors</td>
+</tr>
+<tr>
+<td>Gear surface durability</td>
+<td>contact (Hertz) stress</td>
+</tr>
+<tr>
+<td>Helical spring</td>
+<td>shear stress with Wahl factor, deflection <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03785em;">δ</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mord">8</span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mord">/</span><span class="mopen">(</span><span class="mord mathnormal">G</span><span class="mord"><span class="mord mathnormal">d</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">4</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td>Bolted joint</td>
+<td>joint stiffness factor, preload and load sharing between bolt and members</td>
+</tr>
+</tbody>
+</table>
+</section><section class="step" data-title="Cross-Domain Links"><h2 id="cross-domain-links">Cross-Domain Links</h2>
+<ul>
+<li><strong>Shaft design</strong> ↔ <a href="../n/power-transmission-by-shafts.html">Power Transmission by Shafts</a> and <a href="../n/gears-transformers-and-reflected-impedance.html">Gears, Transformers and Reflected Impedance</a>: torque, speed and power relations through a gear train.</li>
+<li><strong>Joint stiffness</strong> ↔ <a href="../n/statically-indeterminate-axial-members.html">Statically Indeterminate Axial Members</a>: the bolt and the clamped members are two springs sharing a load, solved by compatibility.</li>
+<li><strong>Helical spring</strong> ↔ <a href="../n/torsion-of-circular-shafts.html">Torsion of Circular Shafts</a>: a coil spring wire is loaded in torsion.</li>
+<li><strong>Sliding-bearing lubrication</strong> ↔ <a href="../n/viscosity-and-newtons-law-of-viscosity.html">Viscosity and Newton&#x27;s Law of Viscosity</a> and <a href="../n/newtonian-and-non-newtonian-fluids.html">Newtonian and Non-Newtonian Fluids</a>.</li>
+<li><strong>Fluctuating stress</strong> ↔ <a href="../n/materials-and-design-moc.html">Materials and Design - MOC</a> (S–N curve, Goodman diagram).</li>
+</ul>
+</section><section class="step" data-title="Study Progress"><h2 id="study-progress">Study Progress</h2>
+<ul>
+<li class="task"><label><input type="checkbox" data-task="introduction-to-machine-design-moc:1"> <span>Shafts, keys, couplings · [ ] Bearings · [ ] Spur gears · [ ] Springs · [ ] Bolts and fasteners</span></label></li>
+<li class="task"><label><input type="checkbox" data-task="introduction-to-machine-design-moc:2"> <span>Tutorials · [ ] Past-paper patterns</span></label></li>
+</ul></section></div><nav class="pager"><span></span><span></span></nav><section class="related"><h2>Related notes</h2><h3>Links to</h3><div class="rels"><a class="rel" href="computer-aided-machine-drawing-moc.html" style="--c:#9aa5b1"><span class="dot"></span><span>Computer Aided Machine Drawing - MOC<small>Computer Aided Machine Drawing</small></span></a><a class="rel" href="euler-buckling-of-columns.html" style="--c:#58cc02"><span class="dot"></span><span>Euler Buckling of Columns<small>Strength of Materials</small></span></a><a class="rel" href="flexure-formula.html" style="--c:#58cc02"><span class="dot"></span><span>Flexure Formula<small>Strength of Materials</small></span></a><a class="rel" href="gear-formula-bank.html" style="--c:#ff9600"><span class="dot"></span><span>Gear Formula Bank<small>Kinematics &amp; Dynamics of Machinery</small></span></a><a class="rel" href="gears-transformers-and-reflected-impedance.html" style="--c:#ff4b4b"><span class="dot"></span><span>Gears, Transformers and Reflected Impedance<small>Cross-Domain Connections</small></span></a><a class="rel" href="introduction-to-machine-design-course-details.html" style="--c:#e0a458"><span class="dot"></span><span>Introduction to Machine Design — syllabus<small>Introduction to Machine Design</small></span></a><a class="rel" href="kdoms-moc.html" style="--c:#ff9600"><span class="dot"></span><span>KDoMs - MOC<small>Kinematics &amp; Dynamics of Machinery</small></span></a><a class="rel" href="materials-and-design-moc.html" style="--c:#8a6df1"><span class="dot"></span><span>Materials and Design - MOC<small>Materials and Design</small></span></a><a class="rel" href="mechanical-engineering-curriculum-moc.html" style="--c:#777777"><span class="dot"></span><span>Mechanical Engineering Curriculum - MOC<small>Mechanical Engineering Curriculum</small></span></a><a class="rel" href="mohrs-circle-for-stress.html" style="--c:#58cc02"><span class="dot"></span><span>Mohr&#x27;s Circle for Stress<small>Strength of Materials</small></span></a><a class="rel" href="newtonian-and-non-newtonian-fluids.html" style="--c:#1cb0f6"><span class="dot"></span><span>Newtonian and Non-Newtonian Fluids<small>Fluid Mechanics</small></span></a><a class="rel" href="plane-stress-transformation.html" style="--c:#58cc02"><span class="dot"></span><span>Plane Stress Transformation<small>Strength of Materials</small></span></a><a class="rel" href="power-transmission-by-shafts.html" style="--c:#58cc02"><span class="dot"></span><span>Power Transmission by Shafts<small>Strength of Materials</small></span></a><a class="rel" href="shear-force-and-bending-moment-diagrams.html" style="--c:#58cc02"><span class="dot"></span><span>Shear Force and Bending Moment Diagrams<small>Strength of Materials</small></span></a><a class="rel" href="statically-indeterminate-axial-members.html" style="--c:#58cc02"><span class="dot"></span><span>Statically Indeterminate Axial Members<small>Strength of Materials</small></span></a><a class="rel" href="strength-of-materials-moc.html" style="--c:#58cc02"><span class="dot"></span><span>Strength of Materials - MOC<small>Strength of Materials</small></span></a><a class="rel" href="thermal-stresses.html" style="--c:#58cc02"><span class="dot"></span><span>Thermal Stresses<small>Strength of Materials</small></span></a><a class="rel" href="torsion-of-circular-shafts.html" style="--c:#58cc02"><span class="dot"></span><span>Torsion of Circular Shafts<small>Strength of Materials</small></span></a></div><h3>Linked from</h3><div class="rels"><a class="rel" href="second-moments-of-area-one-integral-many-jobs.html" style="--c:#ff4b4b"><span class="dot"></span><span>Second Moments of Area - One Integral, Many Jobs<small>Cross-Domain Connections</small></span></a></div><canvas id="miniGraph" width="640" height="320" aria-label="Connections"></canvas></section></article><aside class="toc"><b>On this page</b><a href="#course-overview">Course Overview</a><a href="#syllabus-map">Syllabus Map</a><a href="#concept-map">Concept Map</a><a href="#methods-problem-types">Methods &amp; Problem Types</a><a href="#cross-domain-links">Cross-Domain Links</a><a href="#study-progress">Study Progress</a></aside></main></div></div>
+<div class="search" id="search" hidden><div class="search-box"><input id="q" type="search" placeholder="Search notes…" autocomplete="off"><div id="results"></div></div></div>
+<script src="../assets/data.js"></script><script src="../assets/vendor/mermaid.min.js"></script>
+<script src="../assets/app.js"></script>
+</body></html>
