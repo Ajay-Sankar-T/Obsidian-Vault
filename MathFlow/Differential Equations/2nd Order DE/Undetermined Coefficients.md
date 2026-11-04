@@ -13,13 +13,13 @@ Find a particular solution $y_p$ of $y''+Py'+Qy=R(x)$ when $P,Q$ are constants. 
 
 (assuming no duplication with $y_c$)
 
-| $R(x)$ | Trial $y_p$ | Condition |
-|---|---|---|
-| $P_n(x)$ (degree $n$) | $A_nx^n+\cdots+A_0$ | 0 is not root of AE |
-| $ae^{kx}$ | $Ae^{kx}$ | $k$ is not root of AE |
-| $a\cos\beta x$ or $a\sin\beta x$ | $A\cos\beta x+B\sin\beta x$ | $i\beta$ is not root of AE |
-| $P_n(x)e^{kx}$ | $(A_nx^n+\cdots+A_0)e^{kx}$ | $k$ is not root of AE |
-| $e^{kx}(a\cos\beta x+b\sin\beta x)$ | $e^{kx}(A\cos\beta x+B\sin\beta x)$ | $k+i\beta$ is not root of AE |
+| $R(x)$                                | Trial $y_p$                                                     | Condition                    |
+| ------------------------------------- | --------------------------------------------------------------- | ---------------------------- |
+| $P_n(x)$ (degree $n$)                 | $A_nx^n+\cdots+A_0$                                             | 0 is not root of AE          |
+| $ae^{kx}$                             | $Ae^{kx}$                                                       | $k$ is not root of AE        |
+| $a\cos\beta x$ or $a\sin\beta x$      | $A\cos\beta x+B\sin\beta x$                                     | $i\beta$ is not root of AE   |
+| $P_n(x)e^{kx}$                        | $(A_nx^n+\cdots+A_0)e^{kx}$                                     | $k$ is not root of AE        |
+| $e^{kx}(a\cos\beta x+b\sin\beta x)$   | $e^{kx}(A\cos\beta x+B\sin\beta x)$                             | $k+i\beta$ is not root of AE |
 | $P_n(x)e^{kx}\cos\beta x$ (or $\sin$) | $e^{kx}[(A_nx^n+\cdots)\cos\beta x+(B_nx^n+\cdots)\sin\beta x]$ | $k+i\beta$ is not root of AE |
 
 ## Modification rule

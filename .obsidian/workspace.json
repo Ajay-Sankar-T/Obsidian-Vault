@@ -20,31 +20,47 @@
             }
           },
           {
-            "id": "46526471a4825a80",
+            "id": "0cf9cd25112bb9c6",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "MathFlow/Differential Equations/MA2102-Lecture-Slides/Lecture-8.pdf"
+                "file": "MathFlow/Differential Equations/2nd Order DE/Non-homogeneous Cauchy-Euler Equations.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-file-text",
-              "title": "Lecture-8"
+              "icon": "lucide-file",
+              "title": "Non-homogeneous Cauchy-Euler Equations"
             }
           },
           {
-            "id": "74d6ab9cb0ae0c3f",
+            "id": "cacd3957fc8946af",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "MathFlow/Differential Equations/2nd Order DE/Linear Independence and the Wronskian.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Linear Independence and the Wronskian"
+            }
+          },
+          {
+            "id": "ce2429de2663250f",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
-                "file": "mech stuff/Fluid Mechanics/GPS/GPS_7_8.pdf"
+                "file": "mech stuff/Strength of materials/Tutorials/AM2200_2026_Tutorial 9.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "GPS_7_8"
+              "title": "AM2200_2026_Tutorial 9"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -223,55 +239,55 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "74d6ab9cb0ae0c3f",
+  "active": "ce2429de2663250f",
   "lastOpenFiles": [
-    "MathFlow/Differential Equations/MA2102-Lecture-Slides/Lecture-4.pdf",
-    "MathFlow/Differential Equations/MA2102-Lecture-Slides/Lecture-8.pdf",
-    "MathFlow/Differential Equations/MA2102-Lecture-Slides/Lecture-10.pdf",
-    "MathFlow/Differential Equations/MA2102-Lecture-Slides/Lecture-13.pdf",
-    "MathFlow/Differential Equations/MA2102-Lecture-Slides/Lecture-18.pdf",
-    "MathFlow/Differential Equations/MA2102-Lecture-Slides/Lecture-15.pdf",
-    "MathFlow/Differential Equations/MA2102-Lecture-Slides/Lecture-14.pdf",
-    "MathFlow/Differential Equations/MA2102-Lecture-Slides/Lecture-12.pdf",
-    "MathFlow/Differential Equations/MA2102-Lecture-Slides/Lecture-11.pdf",
-    "MathFlow/Differential Equations/MA2102-Lecture-Slides/Lecture-9.pdf",
-    "MathFlow/Differential Equations/MA2102-Lecture-Slides/Lecture-7.pdf",
-    "wiki/README.md",
-    "mech stuff/Heat transfer/Heat Transfer - MOC.md",
-    "Wiki Maintenance Log.md",
-    "Entrepreneurship/Entrepreneurship - MOC.md",
-    "Home.md",
-    "Templates/Course MOC.md",
-    "Life sciences/Course Details.md",
-    "mech stuff/Foundations of Thermal Engineering/Course Details.md",
-    "mech stuff/Foundations of Thermal Engineering/Foundations of Thermal Engineering - MOC.md",
-    "MathFlow/Differential Equations/Problems/Assignment 7 - Sturm-Liouville Problems - Solutions.md",
-    "MathFlow/Differential Equations/Series Solutions of DE/Airy's Equation.md",
-    "MathFlow/Differential Equations/Series Solutions of DE/Frobenius Method - Indicial Equation and Three Cases.md",
-    "Entrepreneurship/Solution/Team Contribution.md",
-    "Entrepreneurship/Solution/Assignment 9 - Sponsored Search Market (VCG and GSP).md",
-    "Entrepreneurship/Solution/assets/A9-fig3-revenue-welfare.png",
-    "Entrepreneurship/Solution/assets/A9-fig2-payoff-vs-bid.png",
-    "Entrepreneurship/Solution/assets/A9-fig1-market.png",
-    "Untitled.canvas",
-    "mech stuff/Manufacturing Technology/Manufacturing Technology - MOC.md",
-    "mech stuff/Materials and design/Materials and Design - MOC.md",
-    "mech stuff/Materials and design/Course Details.md",
+    "wiki/_build/_math_out.json",
+    "wiki/_build/_math_in.json",
+    "mech stuff/Strength of materials/Tutorial 9 - Columns/Tutorial 9 - Columns.md",
+    "mech stuff/Strength of materials/Tutorial 9 - Columns",
+    "mech stuff/Strength of materials/assets/SM-T9-Q5-rigid-elastic.png",
+    "mech stuff/Strength of materials/assets/SM-T9-Q4-spring-ends.png",
+    "mech stuff/Strength of materials/assets/SM-T9-Q3-sway-column.png",
+    "mech stuff/Strength of materials/assets/SM-T9-Q2-column-AB.png",
+    "mech stuff/Strength of materials/assets/SM-T9-Q1-control-rod.png",
+    "mech stuff/Strength of materials/Tools/sm_t9.py",
+    "MathFlow/Differential Equations/2nd Order DE/Linear Independence and the Wronskian.md",
+    "MathFlow/Differential Equations/2nd Order DE/Non-homogeneous Cauchy-Euler Equations.md",
+    "MathFlow/Differential Equations/2nd Order DE/Cauchy-Euler Equations.md",
+    "MathFlow/Differential Equations/2nd Order DE/Variation of Parameters - 3rd Order.md",
+    "MathFlow/Differential Equations/2nd Order DE/Undetermined Coefficients - Higher Order.md",
+    "MathFlow/Differential Equations/2nd Order DE/Higher Order Homogeneous ODEs.md",
+    "MathFlow/Differential Equations/2nd Order DE/Variation of Parameters.md",
+    "MathFlow/Differential Equations/2nd Order DE/Undetermined Coefficients.md",
+    "MathFlow/Differential Equations/2nd Order DE/2nd Order Linear ODE with Constant Coefficients.md",
+    "MathFlow/Differential Equations/2nd Order DE/Reduction of Order.md",
+    "MathFlow/Differential Equations/2nd Order DE/General Solution Structure Theorem.md",
+    "MathFlow/Differential Equations/2nd Order DE/Existence, Uniqueness, and Fundamental Sets.md",
+    "MathFlow/Differential Equations/2nd Order DE/Abel's Formula.md",
+    "MathFlow/Differential Equations/2nd Order DE/Solution of a Second Order ODE.md",
+    "MathFlow/Differential Equations/2nd Order DE/Standard Form and Homogeneity.md",
+    "MathFlow/Differential Equations/2nd Order DE/2nd Order ODEs - MOC.md",
+    "wiki/assets/img/A1-fig1-direction-fields.png",
+    "mech stuff/ME25B_curriculum.pdf",
+    "MathFlow/Differential Equations/MA2102-Lecture-Slides/Lecture-38.pdf",
+    "MathFlow/Differential Equations/MA2102-Lecture-Slides/Unconfirmed 74117.crdownload",
     "mech stuff/Mechanical Engineering Curriculum - MOC.md",
+    "MathFlow/Differential Equations/MA2102-Lecture-Slides/Lecture-11.pdf",
+    "MathFlow/Differential Equations/MA2102-Lecture-Slides/Lecture-10.pdf",
+    "MathFlow/Differential Equations/MA2102-Lecture-Slides/Lecture-24.pdf",
+    "MathFlow/Differential Equations/MA2102-Lecture-Slides/Lecture-30.pdf",
     "mech stuff/Strength of materials/Tutorial 8 - Deflection of Beams/Tutorial 8 - Deflection of Beams.md",
-    "mech stuff/Computer Aided Machine Drawing/Computer Aided Machine Drawing - MOC.md",
-    "mech stuff/Measurements and instrumentation/Measurements, Instrumentation and Control - MOC.md",
-    "mech stuff/Introduction to Machine Design/Introduction to Machine Design - MOC.md",
-    "mech stuff/Measurements and instrumentation/Course Details.md",
-    "mech stuff/Introduction to Machine Design/Course Details.md",
-    "mech stuff/Heat transfer/Course Details.md",
-    "mech stuff/Strength of materials/assets/SM-T8-Q8-frame.png",
-    "mech stuff/Strength of materials/assets/SM-T8-Q7-continuous-beam.png",
-    "mech stuff/Strength of materials/assets/SM-T8-Q6-post-and-gap.png",
-    "mech stuff/Strength of materials/assets/SM-T8-Q5-triangular-castigliano.png",
-    "mech stuff/Strength of materials/assets/SM-T8-Q4-cantilever.png",
-    "mech stuff/Strength of materials/assets/SM-T8-Q3-singularity-beam.png",
-    "mech stuff/Strength of materials/assets/SM-T8-Q2-couple.png",
+    "wiki/assets/img/FM-P6-laminar-point.png",
+    "wiki/assets/img/FM-P1-moody-operating-points.png",
+    "wiki/assets/img/DE-PDE-string.png",
+    "wiki/assets/img/DE-PDE-laplace.png",
+    "Basic Electrical Engineering/Tutorial 7 on Transformer/Tutorial 7 on Transformer.md",
+    "Basic Electrical Engineering/Tutorial 7 on Transformer/T7-Q10 - Maximum Efficiency and Regulation.md",
+    "Basic Electrical Engineering/Tutorial 7 on Transformer/T7-Q9 - Efficiency and Regulation from Tests.md",
+    "Basic Electrical Engineering/Tutorial 7 on Transformer/T7-Q8 - Voltage Regulation at Full Load.md",
+    "Basic Electrical Engineering/Tutorial 7 on Transformer/T7-Q7 - OC and SC Test Parameters.md",
+    "Basic Electrical Engineering/Tutorial 7 on Transformer/T7-Q6 - Equivalent Circuit on the LT Side.md",
+    "Untitled.canvas",
     "Untitled 1.canvas",
     "Untitled 2.canvas"
   ]

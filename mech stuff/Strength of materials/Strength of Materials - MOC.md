@@ -45,6 +45,7 @@ Map of content for a standard Strength of Materials / Mechanics of Solids course
 
 ## 09 Columns and Buckling
 - [[Euler Buckling of Columns]]
+- [[Tutorial 9 - Columns/Tutorial 9 - Columns|Tutorial 9 — Columns]]: effective length, axis choice, elastic end restraint and stepped columns
 
 ## 10 Energy Methods
 - [[Strain Energy and Castigliano's Theorem]]
@@ -75,6 +76,8 @@ Map of content for a standard Strength of Materials / Mechanics of Solids course
 - [[Tutorial 7 - Bending and Shear Stresses/Tutorial 7 - Bending and Shear Stresses|Tutorial 7 — Bending and Shear Stresses]] (theory + Q1–Q8 in one note: self-weight rod, bimodular beam, diving board, box beam, plywood/pine composite, glued cantilever shear, concrete–steel composite, notched section with unequal allowables; figures `assets/SM-T7-*.png`, check script `Tools/sm_t7.py`). Tests [[Flexure Formula]], [[Shear Stress Formula for Beams]], [[Shear Force and Bending Moment Diagrams]], [[Unsymmetric and Combined Bending]].
 
 - [[Tutorial 8 - Deflection of Beams/Tutorial 8 - Deflection of Beams|Tutorial 8 — Deflection of Beams]] (theory + Q1–Q8 in one note: two-rod cantilever, couple on a simple beam, singularity-function beams, triangular load by Castigliano, beam on a post with a gap, continuous beam by Castigliano, frame by modified Castigliano; figures `assets/SM-T8-*.png`, check script `Tools/sm_t8.py`). Tests [[Double Integration and Macaulay's Method]], [[Moment-Area Method]], [[Strain Energy and Castigliano's Theorem]].
+
+- [[Tutorial 9 - Columns/Tutorial 9 - Columns|Tutorial 9 — Columns]] (theory + Q1–Q5 in one note: control rod BC from lever statics, column AB about two axes with different ends and a factor of safety, fixed–fixed column free to sway, torsional-spring ends $\tan u=-2u$, rigid + elastic halves $\tan ka=-ka$)
 
 
 ## Lab manuals (AM2540)

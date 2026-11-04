@@ -98,3 +98,7 @@ Use this note to record structural changes that affect navigation, naming, templ
 - **EE1100 Tutorials 6 (op-amps) and 7 (transformers):** one note per question, theory note for op-amps, circuits redrawn; `Basic Electrical Engineering/Tools/ee_t6_t7.py`. New concept notes in `Transformers and Induction Machines/` from Lectures 39–41 (voltage regulation and efficiency, revolving field, slip and power flow, types and construction); the two animations are linked from them.
 - KDoMs tutorial PDFs now live in `KDoMs/Tutorials/`; the MOC text was updated (Tutorials 1–4 and 8 still unsolved).
 - Site: mobile polish and Vercel configuration (see the wiki README).
+
+## 2026-11-05
+
+- **AM2200 Tutorial 9 (Columns):** [[Tutorial 9 - Columns/Tutorial 9 - Columns|solution note]] for Q1–Q5 with figures and `Strength of materials/Tools/sm_t9.py` (the spring-ended and rigid-plus-elastic conditions were cross-checked by integrating the buckling ODE); [[Euler Buckling of Columns]] got a short section on restrained and stepped columns.

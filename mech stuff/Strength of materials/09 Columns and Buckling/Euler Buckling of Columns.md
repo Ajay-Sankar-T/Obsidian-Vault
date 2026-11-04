@@ -25,6 +25,9 @@ Different support conditions change the effective buckled shape, captured by an 
 
 General form: $P_{cr}=\dfrac{\pi^2EI}{(KL)^2}$.
 
+## Beyond the table: restraint by springs, joints and sway
+The $K$ table covers ideal supports only. For elastic or stepped supports write $EIv''=M_0+V_0x-Pv$, apply the boundary conditions and set the determinant to zero; the smallest root $kL$ gives $P_{cr}=(kL)^2EI/L^2$. Worked in [[Tutorial 9 - Columns/Tutorial 9 - Columns|Tutorial 9]]: a column fixed against rotation at both ends but free to sway has $K=1$; torsional springs of stiffness $c_T$ at pinned ends give $\tan u=-(2EI/c_Tl)\,u$ with $u=kl/2$ (13.49 $EI/l^2$ for $c_Tl=EI$, between the pinned $\pi^2$ and the clamped $4\pi^2$); a rigid half plus an elastic half gives $\tan ka=-ka$, $F_{cr}=4.116\,EI/a^2$.
+
 ## Critical Stress and Slenderness Ratio
 
 Dividing by area, using $I=Ar^2$ ($r$ = radius of gyration):
