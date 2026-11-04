@@ -36,22 +36,22 @@ STRIP_SECTIONS = re.compile(r"^(MOC Maintenance Rules|Study Log|Course Completio
 
 COURSES = [
     # id, title, code, colour, dark shade, root prefix, blurb
-    ("de", "Differential Equations", "MA2020", "#ce82ff", "#a568cc", "MathFlow/Differential Equations", "ODEs, series solutions, Bessel and Legendre, Sturm–Liouville"),
-    ("som", "Strength of Materials", "AM2200", "#58cc02", "#58a700", "mech stuff/Strength of materials", "Stress, torsion, bending, deflection, buckling, energy methods"),
-    ("fm", "Fluid Mechanics", "AM2530", "#1cb0f6", "#1899d6", "mech stuff/Fluid Mechanics", "Statics, kinematics, control volumes, dimensional analysis, Bernoulli"),
-    ("kdoms", "Kinematics & Dynamics of Machinery", "ME2201", "#ff9600", "#cc7800", "mech stuff/KDoMs", "Velocity and acceleration, mechanism synthesis, gears"),
-    ("ee", "Basic Electrical Engineering", "EE1100", "#ffc800", "#d4a700", "Basic Electrical Engineering", "Circuits, phasors, transients, resonance, transformers, machines"),
-    ("xd", "Cross-Domain Connections", "", "#ff4b4b", "#cc3c3c", "Cross-Domain Synthesis", "Where the same mathematics appears in different subjects"),
-    ("ml", "Computing", "", "#2b70c9", "#235aa1", "CS stuff", "Machine-learning formula sheet, web basics"),
-    ("ent", "Entrepreneurship", "", "#ff86d0", "#cc6ba6", "Entrepreneurship", "Innovation course: slides, auctions and pricing"),
-    ("fte", "Foundations of Thermal Engineering", "ME2102 / ME3105", "#00cd9c", "#00a47d", "mech stuff/Foundations of Thermal Engineering", "Exergy, cycles, refrigeration, combustion, turbomachines"),
-    ("ht", "Heat Transfer", "ME3101", "#ff6b3d", "#cc5631", "mech stuff/Heat transfer", "Conduction, convection, radiation, heat exchangers"),
-    ("mat", "Materials and Design", "ME2200", "#8a6df1", "#6f57c0", "mech stuff/Materials and design", "Crystal structure, failure theories, fatigue, phase diagrams"),
-    ("mfg", "Manufacturing Technology", "ME2302 / ME3305", "#a0a0a0", "#808080", "mech stuff/Manufacturing Technology", "Casting, forming, machining, additive, metrology"),
-    ("mic", "Measurements, Instrumentation and Control", "ME2400", "#35c2c9", "#299ba1", "mech stuff/Measurements and instrumentation", "Sensors, signal conditioning, feedback control"),
-    ("mdes", "Introduction to Machine Design", "ME3203", "#e0a458", "#b3834a", "mech stuff/Introduction to Machine Design", "Shafts, bearings, gears, springs, bolts"),
-    ("camd", "Computer Aided Machine Drawing", "ME3283", "#9aa5b1", "#7b848e", "mech stuff/Computer Aided Machine Drawing", "Sections, fasteners, assemblies, tolerances"),
-    ("cur", "Mechanical Engineering Curriculum", "", "#777777", "#5f5f5f", "mech stuff/Mechanical Engineering Curriculum - MOC.md", "Semester map"),
+    ("de", "Differential Equations", "MA2020", "#7a5a9a", "#4f3a6b", "MathFlow/Differential Equations", "ODEs, series solutions, Bessel and Legendre, Sturm–Liouville"),
+    ("som", "Strength of Materials", "AM2200", "#4f7a52", "#335636", "mech stuff/Strength of materials", "Stress, torsion, bending, deflection, buckling, energy methods"),
+    ("fm", "Fluid Mechanics", "AM2530", "#3f6d99", "#284a6e", "mech stuff/Fluid Mechanics", "Statics, kinematics, control volumes, dimensional analysis, Bernoulli"),
+    ("kdoms", "Kinematics & Dynamics of Machinery", "ME2201", "#b8692f", "#84451a", "mech stuff/KDoMs", "Velocity and acceleration, mechanism synthesis, gears"),
+    ("ee", "Basic Electrical Engineering", "EE1100", "#b8962f", "#86691a", "Basic Electrical Engineering", "Circuits, phasors, transients, resonance, transformers, machines"),
+    ("xd", "Cross-Domain Connections", "", "#a54540", "#752c28", "Cross-Domain Synthesis", "Where the same mathematics appears in different subjects"),
+    ("ml", "Computing", "", "#38558a", "#243a63", "CS stuff", "Machine-learning formula sheet, web basics"),
+    ("ent", "Entrepreneurship", "", "#a8607e", "#794159", "Entrepreneurship", "Innovation course: slides, auctions and pricing"),
+    ("fte", "Foundations of Thermal Engineering", "ME2102 / ME3105", "#3a8579", "#255a52", "mech stuff/Foundations of Thermal Engineering", "Exergy, cycles, refrigeration, combustion, turbomachines"),
+    ("ht", "Heat Transfer", "ME3101", "#bd5a35", "#8a3a1d", "mech stuff/Heat transfer", "Conduction, convection, radiation, heat exchangers"),
+    ("mat", "Materials and Design", "ME2200", "#6a68a3", "#4a487a", "mech stuff/Materials and design", "Crystal structure, failure theories, fatigue, phase diagrams"),
+    ("mfg", "Manufacturing Technology", "ME2302 / ME3305", "#7a7d80", "#55575a", "mech stuff/Manufacturing Technology", "Casting, forming, machining, additive, metrology"),
+    ("mic", "Measurements, Instrumentation and Control", "ME2400", "#3f8794", "#2a606a", "mech stuff/Measurements and instrumentation", "Sensors, signal conditioning, feedback control"),
+    ("mdes", "Introduction to Machine Design", "ME3203", "#a8814c", "#785a30", "mech stuff/Introduction to Machine Design", "Shafts, bearings, gears, springs, bolts"),
+    ("camd", "Computer Aided Machine Drawing", "ME3283", "#6f8294", "#4b5c6b", "mech stuff/Computer Aided Machine Drawing", "Sections, fasteners, assemblies, tolerances"),
+    ("cur", "Mechanical Engineering Curriculum", "", "#77716a", "#55504a", "mech stuff/Mechanical Engineering Curriculum - MOC.md", "Semester map"),
 ]
 ACTIVE = ["de", "som", "fm", "kdoms", "ee", "xd", "ml", "ent"]
 UPCOMING = ["fte", "ht", "mat", "mfg", "mic", "mdes", "camd"]
@@ -493,27 +493,39 @@ ICON = {
     "graph": '<svg viewBox="0 0 24 24"><path d="M6 3a3 3 0 0 0-1 5.8v6.4a3 3 0 1 0 2 0V13l6-2.2A3 3 0 1 0 12.4 9 3 3 0 0 0 9 11.3L7 12V8.8A3 3 0 0 0 6 3Zm0 2a1 1 0 1 1 0 2 1 1 0 0 1 0-2Zm12 2a1 1 0 1 1 0 2 1 1 0 0 1 0-2ZM6 17a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/></svg>',
     "search": '<svg viewBox="0 0 24 24"><path d="M10 3a7 7 0 1 0 4.4 12.4l4.6 4.6 1.4-1.4-4.6-4.6A7 7 0 0 0 10 3Zm0 2a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z"/></svg>',
 }
-NAV = [("learn", "Learn", "index.html"), ("practice", "Practice", "practice.html"), ("solve", "How to solve", "solve.html"), ("graph", "Graph", "graph.html")]
+ICON["menu"] = '<svg class="i" viewBox="0 0 24 24"><path d="M4 6h16v2H4V6Zm0 5h16v2H4v-2Zm0 5h16v2H4v-2Z"/></svg>'
+ICON["sun"] = '<svg class="i" viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0-5h-1v3h2V2h-1Zm0 17h-1v3h2v-3h-1ZM2 11v2h3v-2H2Zm17 0v2h3v-2h-3ZM5.6 4.2 4.2 5.6l2.1 2.1 1.4-1.4-2.1-2.1Zm12.1 12.1-1.4 1.4 2.1 2.1 1.4-1.4-2.1-2.1ZM4.2 18.4l1.4 1.4 2.1-2.1-1.4-1.4-2.1 2.1ZM16.3 6.3l1.4 1.4 2.1-2.1-1.4-1.4-2.1 2.1Z"/></svg>'
+NAV = [("learn", "Library", "index.html"), ("practice", "Practice", "practice.html"), ("solve", "How to solve", "solve.html"), ("graph", "Link map", "graph.html")]
 
 
-def shell(title, body, root, page, slug="", course="", scripts=(), katex=False, mermaid=False):
-    nav = "".join(f'<a class="nav-i{" on" if page == k else ""}" href="{root}{href}">{ICON[k]}<span>{label}</span></a>' for k, label, href in NAV)
-    nav += f'<button class="nav-i" id="openSearch" type="button">{ICON["search"]}<span>Search</span><kbd>/</kbd></button>'
+def shell(title, body, root, page, slug="", course="", scripts=(), katex=False, mermaid=False, crumbs=(), wide=False):
+    tabs = "".join(f'<a class="tab{" on" if page == k else ""}" href="{root}{href}">{label}</a>' for k, label, href in NAV)
+    dock = "".join(f'<a class="{"on" if page == k else ""}" href="{root}{href}">{ICON[k]}<span>{label if k != "solve" else "Solve"}</span></a>' for k, label, href in NAV)
+    dock += f'<button id="openSearchDock" type="button" aria-label="Search">{ICON["search"]}<span>Search</span></button>'
     kcss = f'<link rel="stylesheet" href="{root}assets/vendor/katex.min.css">' if katex else ""
     extra = "".join(f'<script src="{root}assets/{s}"></script>' for s in scripts)
     mer = f'<script src="{root}assets/vendor/mermaid.min.js"></script>' if mermaid else ""
+    cb = ""
+    if crumbs:
+        parts = [f'<a href="{root}{h}">{esc(t)}</a>' if h else f"<span>{esc(t)}</span>" for t, h in crumbs]
+        cb = '<nav class="crumbbar" aria-label="Breadcrumb">' + "<i>›</i>".join(parts) + "</nav>"
     return f"""<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#58cc02"><meta name="description" content="Interactive lessons, practice problems and solved tutorials from engineering course notes"><link rel="icon" href="{root}assets/Favicons/Alya.png" type="image/png"><link rel="apple-touch-icon" href="{root}assets/Favicons/Alya.png"><link rel="manifest" href="{root}manifest.webmanifest">
-<title>{esc(title)} · Wiki</title>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#4a2f20"><meta name="description" content="Course notes, worked problems and interactive explorers, bound as a notebook"><link rel="icon" href="{root}assets/Favicons/Alya.png" type="image/png"><link rel="apple-touch-icon" href="{root}assets/Favicons/Alya.png"><link rel="manifest" href="{root}manifest.webmanifest">
+<title>{esc(title)} · Engineering Notebook</title>
 <script>try{{var t=localStorage.getItem('wiki.theme');if(!t&&matchMedia('(prefers-color-scheme: dark)').matches)t='dark';if(t)document.documentElement.dataset.theme=t}}catch(e){{}}</script>
 <link rel="stylesheet" href="{root}assets/style.css">{kcss}
 </head><body data-root="{root}" data-page="{page}" data-slug="{slug}" data-course="{course}">
-<div class="app">
-<aside class="side"><a class="logo" href="{root}index.html"><span class="logo-mark">W</span><span class="logo-t">wiki</span></a><nav>{nav}</nav>
-<div class="side-card" id="sideStats"></div></aside>
-<div class="main"><header class="top"><div class="top-l" id="crumbTop"></div><div class="top-r"><span class="pill pill-streak" id="streak" title="Day streak"></span><span class="pill pill-xp" id="xp" title="Experience points"></span><button class="icon-btn" id="themeBtn" type="button" aria-label="Toggle dark mode"></button></div></header>
-<main class="content">{body}</main></div></div>
-<div class="search" id="search" hidden><div class="search-box"><input id="q" type="search" placeholder="Search notes…" autocomplete="off"><div id="results"></div></div></div>
+<header class="top"><button class="key key-menu" id="menuBtn" type="button" aria-label="Open contents" aria-expanded="false">{ICON["menu"]}</button>
+<a class="plate" href="{root}index.html"><span class="plate-mark">EN</span><span class="plate-t">Engineering Notebook</span></a>
+<nav class="tabs" aria-label="Sections">{tabs}</nav>
+<div class="top-r"><button class="search-key" id="openSearch" type="button" aria-label="Search the notebook">{ICON["search"]}<span>Search the notebook</span><kbd>/</kbd></button><button class="key" id="themeBtn" type="button" aria-label="Switch between day and night desk"></button></div></header>
+<div class="thread" id="thread"></div>
+<div class="frame"><aside class="tree" id="tree" aria-label="Contents"></aside>
+<main class="content">{cb}<div class="paper{" wide" if wide else ""}">{body}</div></main></div>
+<div class="scrim" id="scrim"></div>
+<nav class="dock" aria-label="Sections">{dock}</nav>
+<button class="key totop" id="toTop" type="button" aria-label="Back to top">↑</button>
+<div class="search" id="search" hidden><div class="search-box"><div class="search-h"><span>Find in the notebook</span><button id="closeSearch" type="button" aria-label="Close search">×</button></div><input id="q" type="search" placeholder="Title, heading or any word…" autocomplete="off"><div id="results"></div></div></div>
 <script src="{root}assets/data.js"></script>{mer}
 <script src="{root}assets/app.js"></script>{extra}
 </body></html>"""
@@ -633,7 +645,7 @@ def main():
         body = n.html
         wk = WIDGET_OF.get(n.base)
         if wk:
-            marker = f'<div class="widget-wrap"><h3 class="widget-h">Play with it: {WIDGET_TITLE[wk]}</h3><div class="widget" data-widget="{wk}"></div></div>'
+            marker = f'<div class="widget-wrap"><h3 class="widget-h">{WIDGET_TITLE[wk]}</h3><div class="widget" data-widget="{wk}"></div></div>'
             m = re.search(r'<h2 id="', body)
             body = (body[:m.start()] + marker + body[m.start():]) if m else body + marker
         steps = wrap_steps(body, n)
@@ -643,17 +655,17 @@ def main():
         mer = 'class="mermaid"' in n.html
         # header chips
         chips = "".join(f'<span class="chip">{esc(t)}</span>' for t in n.tags[:5])
-        crumbs = f'<a href="../course/{n.cid}.html">{esc(cmap[n.cid][1])}</a>' + (f' <i>›</i> {esc(n.unit)}' if n.unit and n.unit not in ("Lessons", "Overview") else "")
+        crumb_list = [("Library", "index.html"), (cmap[n.cid][1], f"course/{n.cid}.html")] + ([(n.unit, None)] if n.unit and n.unit not in ("Lessons", "Overview") else [])
         actions = ""
         if lesson:
-            actions += '<button class="btn" id="startLesson" type="button">Start lesson</button>'
-        actions += '<button class="btn btn-ghost" id="markDone" type="button" data-xp="10">Mark as learned</button>' if n.kind in ("concept", "moc") else ""
+            actions += '<button class="btn" id="startLesson" type="button">Study mode</button>'
+        actions += '<button class="btn btn-ghost" id="markDone" type="button">Mark as read</button>' if n.kind in ("concept", "moc") else ""
         # pager
         pager = ""
         if n.slug in path_of:
             cid, i, seq = path_of[n.slug]
-            prv = f'<a class="pg" href="{seq[i-1]}.html"><small>Previous</small>{esc(by_slug[seq[i-1]].title)}</a>' if i > 0 else "<span></span>"
-            nxt = f'<a class="pg pg-next" href="{seq[i+1]}.html"><small>Next lesson</small>{esc(by_slug[seq[i+1]].title)}</a>' if i + 1 < len(seq) else "<span></span>"
+            prv = f'<a class="pg" href="{seq[i-1]}.html"><small>Previous page</small>{esc(by_slug[seq[i-1]].title)}</a>' if i > 0 else "<span></span>"
+            nxt = f'<a class="pg pg-next" href="{seq[i+1]}.html"><small>Next page</small>{esc(by_slug[seq[i+1]].title)}</a>' if i + 1 < len(seq) else "<span></span>"
             pager = f'<nav class="pager">{prv}{nxt}</nav>'
         # related
         outs = sorted((s for s in n.links if s in by_slug and s != n.slug), key=lambda s: by_slug[s].title)
@@ -674,16 +686,16 @@ def main():
         problem_hint = ""
         if n.kind == "problem" and 'class="step prob"' in steps:
             problem_hint = ('<div class="howto"><b>How to attack a problem</b><ol><li>Say what is asked and what is given.</li><li>Pick the principle <em>before</em> calculating (open the hint).</li>'
-                            '<li>Solve symbolically, then plug in numbers.</li><li>Check units and a limiting case.</li><li>Be honest: mark it “I got it” only if you could redo it.</li></ol></div>')
+                            '<li>Solve symbolically, then plug in numbers.</li><li>Check units and a limiting case.</li><li>Be honest: mark it solved only if you could redo it.</li></ol></div>')
         done_bar = ""
         page = f"""<article class="note" data-kind="{n.kind}" style="--c:{color};--cd:{cmap[n.cid][4]}">
-<div class="crumbs">{crumbs}</div><h1>{esc(n.h1 if n.h1 else n.title)}</h1><div class="chips">{chips}</div>
+<h1>{esc(n.h1 if n.h1 else n.title)}</h1><div class="chips">{chips}</div>
 <div class="actions">{actions}</div>{problem_hint}
 <div class="body" id="body">{steps}</div>{done_bar}{pager}{related}</article>{tochtml}"""
         page = finalize(page, math_html)
         text = plain_text(n.html)
         search.append(dict(s=n.slug, t=n.title, c=n.cid, h=[t for lv, i, t in n.toc][:20], x=text[:6000]))
-        out = shell(n.title, page, "../", "note", slug=n.slug, course=n.cid, scripts=(["widgets.js"] if wk else []), katex=has_math, mermaid=mer)
+        out = shell(n.title, page, "../", "note", slug=n.slug, course=n.cid, scripts=(["widgets.js"] if wk else []), katex=has_math, mermaid=mer, crumbs=crumb_list)
         (NOTEDIR / f"{n.slug}.html").write_text(out, encoding="utf-8")
         n.nsteps, n.nprob = nsteps, steps.count('class="step prob"')
         n.qs = re.findall(r'<section class="step prob" data-title="([^"]*)" data-q="[^#"]+#([^"]+)"', steps)
@@ -697,33 +709,36 @@ def main():
         unit_html = []
         k = 0
         for ui, u in enumerate(c["units"]):
-            nodes = []
-            for li, s in enumerate(u["lessons"]):
-                off = [0, 38, 64, 38, 0, -38, -64, -38][k % 8]
+            rows = []
+            for li, sl in enumerate(u["lessons"]):
                 k += 1
-                nodes.append(f'<a class="node" data-slug="{s}" href="../n/{s}.html" style="--off:{off}px"><span class="ic"></span><span class="lbl">{esc("Course overview" if u["name"] == "Overview" else by_slug[s].title)}</span></a>')
+                ttl = "Course overview" if u["name"] == "Overview" else by_slug[sl].title
+                rows.append(f'<li><a class="node" data-slug="{sl}" href="../n/{sl}.html"><span class="no">{k:02d}</span><span class="lbl">{esc(ttl)}</span><i class="lead"></i><span class="mark"></span></a></li>')
             guide = f'<a class="unit-guide" href="../n/{c["moc"]}.html">Course map</a>' if c["moc"] and c["moc"] not in u["lessons"] else ""
-            unit_html.append(f'<section class="unit" style="--c:{c["color"]};--cd:{c["dark"]}"><header><div><small>UNIT {ui + 1}</small><h2>{esc(u["name"])}</h2></div>{guide}</header><div class="path">{"".join(nodes)}</div></section>')
+            unit_html.append(f'<section class="unit"><div class="unit-h"><span class="tape">Chapter {ui + 1}</span><h2>{esc(u["name"])}</h2>{guide}</div><ol class="toc-list">{"".join(rows)}</ol></section>')
         if c["syllabus"]:
-            soon = "".join(f'<span class="node locked" style="--off:{[0, 38, 64, 38, 0, -38, -64, -38][(k + i) % 8]}px"><span class="ic"></span><span class="lbl">{esc(t)}</span></span>' for i, t in enumerate(c["syllabus"]))
-            unit_html.append(f'<section class="unit unit-soon" style="--c:{c["color"]};--cd:{c["dark"]}"><header><div><small>PLANNED</small><h2>Syllabus topics</h2></div></header><div class="path">{soon}</div></section>')
+            soon = "".join(f'<li><span class="node locked"><span class="no">{i + 1:02d}</span><span class="lbl">{esc(t)}</span><i class="lead"></i><span class="mark"></span></span></li>' for i, t in enumerate(c["syllabus"]))
+            unit_html.append(f'<section class="unit"><div class="unit-h"><span class="tape">Planned</span><h2>Syllabus topics</h2></div><ol class="toc-list">{soon}</ol></section>')
         probs = ""
         if c["problems"]:
-            probs = '<section class="unit-more"><h3>Practice sets</h3><div class="pgrid">' + "".join(
-                f'<a class="pcard" data-slug="{s}" href="../n/{s}.html" style="--c:{c["color"]}"><span class="dot"></span><span>{esc(by_slug[s].title)}<small>{qcount(by_slug[s])}</small></span></a>'
-                for s in c["problems"]) + "</div></section>"
-        head = f'<div class="course-head" style="--c:{c["color"]};--cd:{c["dark"]}"><div><small>{esc(c["code"]) or "COURSE"}</small><h1>{esc(c["title"])}</h1><p>{esc(c["blurb"])}</p></div><div class="ring" data-course="{c["id"]}"></div></div>'
-        body = head + (f'<p class="upnote">Upcoming course: this is a syllabus-based map; lessons will appear as notes are written.</p>' if c["upcoming"] else "") + "".join(unit_html) + probs
-        (WIKI / "course" / f'{c["id"]}.html').write_text(shell(c["title"], body, "../", "course", course=c["id"]), encoding="utf-8")
+            probs = '<section class="unit-more"><div class="unit-h"><span class="tape">Problems</span><h2>Practice sets</h2></div><div class="pgrid">' + "".join(
+                f'<a class="pcard" data-slug="{sl}" href="../n/{sl}.html" style="--c:{c["color"]}"><span class="dot"></span><span>{esc(by_slug[sl].title)}<small>{qcount(by_slug[sl])}</small></span></a>'
+                for sl in c["problems"]) + "</div></section>"
+        head = (f'<div class="cover" style="--c:{c["color"]};--cd:{c["dark"]}"><div><small>{esc(c["code"]) or "COURSE"}</small><h1>{esc(c["title"])}</h1><p>{esc(c["blurb"])}</p></div>'
+                f'<div class="stat" data-course="{c["id"]}"><b>0%</b>read</div></div>')
+        body = head + ('<p class="upnote">Upcoming course: this is a syllabus-based map; chapters will appear as notes are written.</p>' if c["upcoming"] else "") + "".join(unit_html) + probs
+        (WIKI / "course" / f'{c["id"]}.html').write_text(shell(c["title"], body, "../", "course", course=c["id"], crumbs=[("Library", "index.html"), (c["title"], None)]), encoding="utf-8")
 
     # ---------------------------------------------------------------- home
-    def course_card(cid):
+    def book(cid):
         c = cobj.get(cid)
         if not c:
             return ""
         nl = sum(len(u["lessons"]) for u in c["units"])
-        return (f'<a class="ccard" data-course="{cid}" href="course/{cid}.html" style="--c:{c["color"]};--cd:{c["dark"]}"><span class="cbadge">{esc(c["title"][0])}</span>'
-                f'<span class="ctext"><b>{esc(c["title"])}</b><small>{esc(c["code"]) + " · " if c["code"] else ""}{"syllabus map, notes coming" if c["upcoming"] else f"{nl} lesson" + ("s" if nl != 1 else "")}</small>{"" if c["upcoming"] else '<span class="bar"><i></i></span>'}</span></a>')
+        sub = "syllabus map only" if c["upcoming"] else f"{nl} page" + ("s" if nl != 1 else "")
+        bar = "" if c["upcoming"] else '<span class="bar"><i></i></span>'
+        return (f'<a class="book{" soon" if c["upcoming"] else ""}" data-course="{cid}" href="course/{cid}.html" style="--c:{c["color"]};--cd:{c["dark"]}">'
+                f'<span class="book-code">{esc(c["code"]) or "Notes"}</span><span class="book-t">{esc(c["title"])}</span><span class="book-n">{sub}</span>{bar}</a>')
     sims = []
     for rels in files.values():
         for rel in rels:
@@ -733,15 +748,16 @@ def main():
                 title = (tm.group(1).strip() if tm else Path(rel).stem.replace("-", " ").replace("_", " ")).strip()
                 sims.append((title, Path(rel).name))
     sims.sort()
-    sims_html = ('<h2 class="sec">Simulations</h2><p class="lead">Stand-alone explorers from your notes (they open in a new tab).</p><div class="pgrid">'
-                 + "".join(f'<a class="pcard" href="assets/sims/{urllib.parse.quote(f)}" target="_blank" rel="noopener" style="--c:#1cb0f6"><span class="dot"></span><span>{esc(t)}<small>interactive</small></span></a>' for t, f in sims) + "</div>") if sims else ""
-    home = f"""<section class="hero"><div><h1>Learn engineering,<br>one lesson at a time.</h1><p>Short interactive lessons from your notes. Open a course, tap a lesson, try the sliders, then test yourself in Practice.</p></div>
-<div class="hero-card" id="continue"></div></section>
-<h2 class="sec">Your courses</h2><div class="cgrid">{"".join(course_card(c) for c in ACTIVE)}</div>
-<h2 class="sec">Coming up</h2><div class="cgrid">{"".join(course_card(c) for c in UPCOMING)}</div>
+    sims_html = ('<h2 class="sec"><span class="tape">Workshop</span>Stand-alone simulations</h2><p class="lead">Interactive explorers from the notes; each opens in a new tab.</p><div class="plates">'
+                 + "".join(f'<a class="plate-card" href="assets/sims/{urllib.parse.quote(f)}" target="_blank" rel="noopener"><span>{esc(t)}</span><small>interactive</small></a>' for t, f in sims) + "</div>") if sims else ""
+    home = f"""<section class="hero"><div><h1>Engineering Notebook</h1><p>Course notes, worked problems and interactive explorers, bound in one place. Take a book from the shelf, or search for any topic.</p>
+<div class="recent-h" id="recentH" hidden>Recently opened</div><div class="recent" id="recent"></div></div>
+<div class="ribbon" id="continue"></div></section>
+<h2 class="sec"><span class="tape">Shelf</span>Your courses</h2><div class="bookcase"><div class="shelf">{"".join(book(c) for c in ACTIVE)}</div></div>
+<h2 class="sec"><span class="tape">Coming up</span>Planned courses</h2><div class="bookcase"><div class="shelf">{"".join(book(c) for c in UPCOMING)}</div></div>
 {sims_html}
-<p class="foot"><a href="n/{next((n.slug for n in notes if n.base == 'Mechanical Engineering Curriculum - MOC'), '')}.html">Curriculum map</a> · {len(notes)} notes</p>"""
-    (WIKI / "index.html").write_text(shell("Learn", home, "", "learn"), encoding="utf-8")
+<p class="foot"><a href="n/{next((n.slug for n in notes if n.base == 'Mechanical Engineering Curriculum - MOC'), '')}.html">Curriculum map</a> · {len(notes)} notes · progress is saved in this browser only</p>"""
+    (WIKI / "index.html").write_text(shell("Library", home, "", "learn"), encoding="utf-8")
 
     # ---------------------------------------------------------------- practice page
     plist = []
@@ -769,10 +785,10 @@ def main():
         groups.append(f'<section class="pgroup" data-course="{c["id"]}" style="--c:{c["color"]}"><h2 class="sec">{esc(c["title"])}</h2>{inner}</section>')
     cards = "".join(groups)
     chips = '<button class="fchip on" data-f="all">All</button>' + "".join(f'<button class="fchip" data-f="{c["id"]}" style="--c:{c["color"]}">{esc(c["title"])}</button>' for c in courses_out if c["problems"])
-    practice = f"""<h1 class="pg-title">Practice</h1><p class="lead">Read the problem, open only the hint, try it on paper, then reveal the solution and grade yourself honestly.</p>
+    practice = f"""<h1 class="pg-title">Practice</h1><p class="lead">Read the problem, open only the hint, try it on paper, then lift the flap for the solution and mark yourself honestly. Problems you solve get a stamp.</p>
 <div class="howto"><b>How to attack a problem</b><ol><li>Say what is asked and what is given.</li><li>Choose the principle before calculating.</li><li>Solve symbolically, then plug in numbers.</li><li>Check units and a limiting case.</li></ol></div>
 <div class="filters"><input id="sf" type="search" placeholder="Filter, e.g. beam, bessel, rectifier…" autocomplete="off"></div><div class="filters">{chips}</div>{cards}"""
-    (WIKI / "practice.html").write_text(shell("Practice", practice, "", "practice"), encoding="utf-8")
+    (WIKI / "practice.html").write_text(shell("Practice", practice, "", "practice", crumbs=[("Library", "index.html"), ("Practice", None)]), encoding="utf-8")
 
     # ---------------------------------------------------------------- how to solve (problem-type tables)
     entries = []
@@ -828,7 +844,7 @@ def main():
 <div class="scards">{solve_cards}</div>"""
     math_html = math_html + render_math(len(math_html))   # math added by the how-to-solve entries
     solve_html = finalize(solve, math_html)
-    (WIKI / "solve.html").write_text(shell("How to solve", solve_html, "", "solve", katex=True), encoding="utf-8")
+    (WIKI / "solve.html").write_text(shell("How to solve", solve_html, "", "solve", katex=True, crumbs=[("Library", "index.html"), ("How to solve", None)]), encoding="utf-8")
 
     # ---------------------------------------------------------------- graph page
     idx = {n.slug: i for i, n in enumerate(notes)}
@@ -842,8 +858,8 @@ def main():
         deg[a] += 1; deg[b] += 1
     graph = dict(n=[[n.slug, n.title, n.cid, deg[i]] for i, n in enumerate(notes)], l=[list(e) for e in sorted(edges)])
     legend = "".join(f'<span class="lg" style="--c:{c[3]}"><i></i>{esc(c[1])}</span>' for c in COURSES if any(n.cid == c[0] for n in notes))
-    gbody = f'<h1 class="pg-title">Graph</h1><p class="lead">Every note and the wikilinks between them. Drag to pan, scroll to zoom, click a node to open it.</p><div class="legend">{legend}</div><div class="gwrap"><canvas id="graph"></canvas><div id="gtip"></div></div>'
-    (WIKI / "graph.html").write_text(shell("Graph", gbody, "", "graph"), encoding="utf-8")
+    gbody = f'<h1 class="pg-title">Link map</h1><p class="lead">Every note is a pin and every link between notes a thread. Drag to pan, scroll or pinch to zoom; tap a pin to see its name, tap again to open it.</p><div class="legend">{legend}</div><div class="gwrap"><canvas id="graph"></canvas><div id="gtip"></div></div>'
+    (WIKI / "graph.html").write_text(shell("Link map", gbody, "", "graph", wide=True, crumbs=[("Library", "index.html"), ("Link map", None)]), encoding="utf-8")
 
     # ---------------------------------------------------------------- data files
     meta = {n.slug: [n.title, n.cid, n.kind, getattr(n, "nsteps", 0), getattr(n, "nprob", 0)] for n in notes}

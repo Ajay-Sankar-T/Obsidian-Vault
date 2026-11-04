@@ -102,3 +102,4 @@ Use this note to record structural changes that affect navigation, naming, templ
 ## 2026-11-05
 
 - **AM2200 Tutorial 9 (Columns):** [[Tutorial 9 - Columns/Tutorial 9 - Columns|solution note]] for Q1–Q5 with figures and `Strength of materials/Tools/sm_t9.py` (the spring-ended and rigid-plus-elastic conditions were cross-checked by integrating the buckling ODE); [[Euler Buckling of Columns]] got a short section on restrained and stepped columns.
+- **Site redesign:** dropped the gamified look (XP, streaks, rings) for a skeuomorphic notebook (leather bar, wood desk, paper pages, bookshelf, cork-board link map) with a contents tree, breadcrumbs, phone drawer and bottom tabs; `wiki/README.md` describes it. Checked at 360 and 390 px.

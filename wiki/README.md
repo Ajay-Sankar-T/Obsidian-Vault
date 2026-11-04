@@ -3,17 +3,19 @@
 A static, offline learning site generated from the vault's notes. Open `index.html` in a browser; nothing needs a server.
 
 ## What you get
-- **Learn**: each course is a path of lessons (Duolingo-style). *Start lesson* turns a note into step-by-step cards; *Mark as learned* gives XP and fills the progress ring.
+- **A notebook on a desk.** Leather top bar with brass keys, wood-grain desk, ruled paper pages with binder holes, a bookshelf of cloth-bound course books on the home page, taped sticky-note callouts, and brushed-metal panels for the explorers. Day desk and night desk (the sun/moon key).
+- **Easy navigation.** A contents tree (chapters fold open, your place is highlighted, read pages are ticked) sits beside every course and note; on a phone it slides in from the menu key. Breadcrumbs on every page, a bottom tab bar on phones (Library, Practice, Solve, Link map, Search), "On this page" outline, previous/next page, a reading thread under the top bar, a back-to-top key, and Search (`/` or Ctrl+K) that lists your recently opened pages before you type.
+- **Library and courses.** Each course is a book on the shelf with a progress bar; opening it shows a table of contents. *Study mode* turns a note into one page at a time; *Mark as read* ticks it off.
 - **Play with it**: interactive explorers on the relevant notes (damping, time constants, Mohr's circle, beam deflection, column buckling, series approximations, Bessel/Legendre, resonance, lumped cooling, GSP vs VCG auctions).
-- **Practice**: tutorial and assignment notes with the hint, solution, result and trap hidden behind buttons, plus self-grading (+15 XP).
+- **Practice**: tutorial and assignment notes with the hint, solution, result and trap hidden behind flaps; mark a problem solved and it gets a stamp.
 - **How to solve**: "I see this kind of problem, what do I use?" cards for every course (108 entries).
-- **Graph**, **Search** (`/` or Ctrl+K), **backlinks and related notes**, **dark mode**, and the stand-alone simulations from the vault.
-- Progress (XP, streak, finished lessons, ticked checklists) is stored in the browser's local storage on this device.
+- **Link map**: every note is a pin on a cork board, every link a red thread; backlinks and related notes on each page; plus the stand-alone simulations from the vault.
+- Progress (read pages, solved problems, ticked checklists, recent pages) is stored in the browser's local storage on this device. There are no points or streaks.
 
 ## Rebuild after editing notes
 ```
 pip install markdown          # once
-cd wiki/_build && npm install # once (KaTeX, mermaid, Nunito font)
+cd wiki/_build && npm install # once (KaTeX, mermaid)
 python wiki/_build/build.py   # from the vault root, regenerates everything in wiki/
 python wiki/_build/check_site.py   # broken links, leftover placeholders, personal strings
 ```
@@ -34,4 +36,4 @@ The site is plain static files, so there is no build step on Vercel.
 Progress is kept in each visitor's own browser (local storage), so a public deployment shares nothing between people.
 
 ## Phones
-Layout switches to a bottom tab bar under 820 px; every page was checked for horizontal overflow at 360 px and 390 px widths. Sliders and buttons have 44 px touch targets, the graph supports one-finger pan, two-finger pinch and tap-to-preview/tap-to-open, wide equations and tables scroll sideways inside their own box, and `manifest.webmanifest` lets the site be added to the home screen.
+The contents tree becomes a slide-in drawer under 1000 px and a bottom tab bar appears;  every page was checked for horizontal overflow at 360 px and 390 px widths. Sliders and buttons have 44 px touch targets, the graph supports one-finger pan, two-finger pinch and tap-to-preview/tap-to-open, wide equations and tables scroll sideways inside their own box, and `manifest.webmanifest` lets the site be added to the home screen.
