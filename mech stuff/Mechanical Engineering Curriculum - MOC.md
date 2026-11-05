@@ -15,22 +15,22 @@ Semester-by-semester map of the core programme, taken from `ME25B_curriculum.pdf
 |---|---|---|---|
 | ME1100 | Thermodynamics | 3-1-0-0-6 → 10 | ⬜ folder `Thermodynamics/` is empty |
 | ME1401 | Introduction to Computing for Mechanical Engineers | 2-0-2-0-8 → 12 | ⬜ folder is empty |
-| ME1480 | Engineering Drawing | 1-0-0-3-3 → 7 | guidelines PDF in `Engineering drawing/` |
+| ME1480 | Engineering Drawing | 1-0-0-3-3 → 7 | ✅ [[Engineering Drawing - MOC]] (guidelines deck in `Engineering drawing/`) |
 | CY1001, CY1002 | Chemistry I and lab | | see the `Chemistry/` folder |
 
 ## Semester 2
 | Code | Course | L-T-E-P-O → C | Vault |
 |---|---|---|---|
 | MA1101 | Calculus | 3-1-0-0-6 → 10 | PDFs in `MathFlow/Calculus/` |
-| PH1010, PH1030 | Physics I and Physics Laboratory I | 3-1-0-0-6 → 10; 0-0-0-3-1 → 4 | concept notes and figures in [[Physics I - MOC]] (weekly slides in `Physics/`), manuals in `Physics Lab/` |
-| AM1100 | Engineering Mechanics | 3-1-0-0-6 → 10 | books in `Engineering Mechanics/` |
+| PH1010, PH1030 | Physics I and Physics Laboratory I | 3-1-0-0-6 → 10; 0-0-0-3-1 → 4 | concept notes and figures in [[Physics I - MOC]] (weekly slides in `Physics/`), lab notes in [[Physics Laboratory I - MOC]] (manual in `Physics Lab/`) |
+| AM1100 | Engineering Mechanics | 3-1-0-0-6 → 10 | ✅ [[Engineering Mechanics - MOC]] (Meriam & Kraige books in `Engineering Mechanics/`) |
 
 ## Semester 3 (current)
 | Code | Course | L-T-E-P-O → C | Vault |
 |---|---|---|---|
 | AM2200 | Strength of Materials | 3-1-0-0-6 → 10 | ✅ [[Strength of Materials - MOC]] |
 | AM2530 | Foundations of Fluid Mechanics | 3-1-0-0-6 → 10 | ✅ [[Fluid Mechanics - MOC]] |
-| AM2540 | Applied Mechanics / Fluid Mechanics Lab | 0-0-0-3-0 → 3 | lab manuals in `Fluid Mechanics Lab/` |
+| AM2540 | Applied Mechanics / Fluid Mechanics Lab | 0-0-0-3-0 → 3 | ✅ [[Applied Mechanics Lab - MOC]] (manuals in `Fluid Mechanics Lab/`) |
 | EE1100 | Basic Electrical Engineering | 3-1-0-0-6 → 10 | ✅ [[EE1100 MOC]] |
 | MA2020 | Differential Equations | 3-0-0-0-6 → 9 | ✅ [[Differential Equations - MOC]] |
 | ME2201 | Kinematics and Dynamics of Machinery | 3-1-0-0-6 → 10 | ✅ [[KDoMs - MOC]] |

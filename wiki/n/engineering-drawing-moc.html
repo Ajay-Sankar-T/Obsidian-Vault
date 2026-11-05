@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#4a2f20"><meta name="description" content="Course notes, worked problems and interactive explorers, bound as a notebook"><link rel="icon" href="../assets/Favicons/Alya.png" type="image/png"><link rel="apple-touch-icon" href="../assets/Favicons/Alya.png"><link rel="manifest" href="../manifest.webmanifest">
+<title>Engineering Drawing - MOC · Engineering Notebook</title>
+<script>try{var t=localStorage.getItem('wiki.theme');if(!t&&matchMedia('(prefers-color-scheme: dark)').matches)t='dark';if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="../assets/style.css"><link rel="stylesheet" href="../assets/vendor/katex.min.css">
+</head><body data-root="../" data-page="note" data-slug="engineering-drawing-moc" data-course="ed">
+<header class="top"><button class="key key-menu" id="menuBtn" type="button" aria-label="Open contents" aria-expanded="false"><svg class="i" viewBox="0 0 24 24"><path d="M4 6h16v2H4V6Zm0 5h16v2H4v-2Zm0 5h16v2H4v-2Z"/></svg></button>
+<a class="plate" href="../index.html"><span class="plate-mark">EN</span><span class="plate-t">Engineering Notebook</span></a>
+<nav class="tabs" aria-label="Sections"><a class="tab" href="../index.html">Library</a><a class="tab" href="../practice.html">Practice</a><a class="tab" href="../solve.html">How to solve</a><a class="tab" href="../graph.html">Link map</a></nav>
+<div class="top-r"><button class="search-key" id="openSearch" type="button" aria-label="Search the notebook"><svg viewBox="0 0 24 24"><path d="M10 3a7 7 0 1 0 4.4 12.4l4.6 4.6 1.4-1.4-4.6-4.6A7 7 0 0 0 10 3Zm0 2a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z"/></svg><span>Search the notebook</span><kbd>/</kbd></button><button class="key" id="themeBtn" type="button" aria-label="Switch between day and night desk"></button></div></header>
+<div class="thread" id="thread"></div>
+<div class="frame"><aside class="tree" id="tree" aria-label="Contents"></aside>
+<main class="content"><nav class="crumbbar" aria-label="Breadcrumb"><a href="../index.html">Library</a><i>›</i><a href="../course/ed.html">Engineering Drawing</a></nav><div class="paper"><article class="note" data-kind="moc" style="--c:#8a8f55;--cd:#62663a">
+<h1>Engineering Drawing — Map of Content</h1><div class="chips"><span class="chip">engineering-drawing</span><span class="chip">ME1480</span></div>
+<div class="actions"><button class="btn btn-ghost" id="markDone" type="button">Mark as read</button></div>
+<div class="body" id="body"><section class="step intro"><p>The language of engineers: how a part is shown, sized and specified so that anyone can make it. This map covers the <strong>General Guidelines</strong> lecture (Dr S. Ravisubramanian, ME CAE Lab, Machine Design, IIT Madras): purpose, sheet sizes and layout, scales, lettering, line types and dimensioning, plus the projection convention behind the title block's symbol. The slide deck is a PDF in this folder.</p>
+<div class="callout callout-abstract">
+<div class="callout-title">The course in one line</div>
+<p><strong>One drawing, one meaning.</strong> Standards (ISO and BIS SP 46:2003) exist so that the maker reads exactly what the designer meant.</p>
+</div>
+</section><section class="step" data-title="Course Overview"><h2 id="course-overview">Course Overview</h2>
+<ul>
+<li><strong>Course:</strong> Engineering Drawing (ME1480), 1-0-0-3-3, Semester 1.</li>
+<li><strong>Core purpose:</strong> produce and read dimensioned orthographic drawings.</li>
+<li><strong>Prerequisites:</strong> none; geometry and a sharp pencil.</li>
+<li><strong>Next courses:</strong> <a href="../n/computer-aided-machine-drawing-moc.html">Computer Aided Machine Drawing - MOC</a>, <a href="../n/introduction-to-machine-design-moc.html">Introduction to Machine Design - MOC</a>.</li>
+</ul>
+</section><section class="step" data-title="Concept Map"><h2 id="concept-map">Concept Map</h2>
+<pre class="mermaid">graph TD
+    P[&quot;Purpose of a drawing&quot;] --&gt; S[&quot;Paper sizes and sheet layout&quot;]
+    S --&gt; SC[&quot;Scales&quot;]
+    S --&gt; L[&quot;Lettering and line types&quot;]
+    L --&gt; D[&quot;Dimensioning&quot;]
+    SC --&gt; D
+    D --&gt; PR[&quot;Orthographic projection (first angle)&quot;]
+    L --&gt; PR</pre>
+</section><section class="step" data-title="Main Spine"><h2 id="main-spine">Main Spine</h2>
+<ol>
+<li><a href="../n/purpose-of-engineering-drawing.html">Purpose of Engineering Drawing</a></li>
+<li><a href="../n/paper-sizes-and-sheet-layout.html">Paper Sizes and Sheet Layout</a></li>
+<li><a href="../n/drawing-scales.html">Drawing Scales</a></li>
+<li><a href="../n/lettering-and-types-of-lines.html">Lettering and Types of Lines</a></li>
+<li><a href="../n/dimensioning-dimension-extension-and-leader-lines.html">Dimensioning - Dimension, Extension and Leader Lines</a></li>
+<li><a href="../n/projection-symbol-and-first-angle-projection.html">Projection Symbol and First-Angle Projection</a></li>
+</ol>
+</section><section class="step" data-title="Standards Cheat-Sheet"><h2 id="standards-cheat-sheet">Standards Cheat-Sheet</h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A0 sheet</td>
+<td><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">1189</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">841</span></span></span></span> mm, area <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mspace"> </span><span class="mord"><span class="mord mathrm">m</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span>, ratio <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.04em;vertical-align:-0.1328em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9072em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;">2</span></span><span style="top:-2.8672em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="1.08em" viewBox="0 0 400000 1080" preserveAspectRatio="xMinYMin slice"><path d="M95,702
+c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,-10,-9.5,-14
+c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54
+c44.2,-33.3,65.8,-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10
+s173,378,173,378c0.7,0,35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429
+c69,-144,104.5,-217.7,106.5,-221
+l0 -0
+c5.3,-9.3,12,-14,20,-14
+H400000v40H845.2724
+s-225.272,467,-225.272,467s-235,486,-235,486c-2.7,4.7,-9,7,-19,7
+c-6,0,-10,-1,-12,-3s-194,-422,-194,-422s-65,47,-65,47z
+M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.1328em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span></td>
+</tr>
+<tr>
+<td>A3 / A4</td>
+<td><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">420</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">297</span></span></span></span> / <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">297</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">210</span></span></span></span> mm</td>
+</tr>
+<tr>
+<td>Grid reference</td>
+<td>even number of divisions, each 25–75 mm</td>
+</tr>
+<tr>
+<td>Title block</td>
+<td>name, date, projection symbol, scale, title, drawing number</td>
+</tr>
+<tr>
+<td>Scale notation</td>
+<td><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> full, <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> enlarge, <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span></span></span></span> reduce</td>
+</tr>
+<tr>
+<td>Lettering (type B)</td>
+<td>title 7 mm, subtitle 5 mm, dimensions and notes 3.5 mm</td>
+</tr>
+<tr>
+<td>Lines</td>
+<td>thick continuous visible; thin continuous dimension/extension/leader; thick dashed hidden; thin chain centre</td>
+</tr>
+<tr>
+<td>Projection (India)</td>
+<td>first angle: top view below, left view right of the front</td>
+</tr>
+</tbody>
+</table>
+</section><section class="step" data-title="Methods and Problem Types"><h2 id="methods-and-problem-types">Methods and Problem Types</h2>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Concept</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Choose a sheet</td>
+<td><a href="../n/paper-sizes-and-sheet-layout.html">Paper Sizes and Sheet Layout</a></td>
+<td>smallest A size that fits the drawing plus dimensions</td>
+</tr>
+<tr>
+<td>Fit a big part</td>
+<td><a href="../n/drawing-scales.html">Drawing Scales</a></td>
+<td>reduction scale; dimensions stay true</td>
+</tr>
+<tr>
+<td>Draw a hidden feature</td>
+<td><a href="../n/lettering-and-types-of-lines.html">Lettering and Types of Lines</a></td>
+<td>thick dashed line</td>
+</tr>
+<tr>
+<td>Dimension a part</td>
+<td><a href="../n/dimensioning-dimension-extension-and-leader-lines.html">Dimensioning - Dimension, Extension and Leader Lines</a></td>
+<td>extension + dimension lines outside; one dimension per feature</td>
+</tr>
+<tr>
+<td>Lay out views</td>
+<td><a href="../n/projection-symbol-and-first-angle-projection.html">Projection Symbol and First-Angle Projection</a></td>
+<td>front, top below, left to the right</td>
+</tr>
+</tbody>
+</table>
+<h3 id="before-you-submit-a-drawing">Before you submit a drawing</h3>
+<pre class="mermaid">flowchart TD
+    A[&quot;sheet size and border&quot;] --&gt; B[&quot;title block filled, projection symbol, scale&quot;]
+    B --&gt; C[&quot;views aligned, hidden and centre lines correct&quot;]
+    C --&gt; D[&quot;every feature dimensioned once, true sizes&quot;]
+    D --&gt; E[&quot;lettering uniform, 3.5 mm for dimensions&quot;]</pre>
+</section><section class="step" data-title="Visual Library"><h2 id="visual-library">Visual Library</h2>
+<p>A-series nesting, sheet layout, scales, line types, dimensioning and first-angle views are all drawn by <code>Tools/ed_figs.py</code> and embedded in the notes above.</p>
+</section><section class="step" data-title="Exam / Revision Map"><h2 id="exam-revision-map">Exam / Revision Map</h2>
+<ul>
+<li><strong>Know cold:</strong> sheet sizes, scale notation, line meanings, the three dimensioning lines, first-angle layout.</li>
+<li><strong>Commonly confused:</strong> <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> vs <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span></span></span></span>; dimension number (true size) vs drawn length; visible vs hidden lines; first vs third angle.</li>
+</ul>
+</section><section class="step" data-title="Study Progress"><h2 id="study-progress">Study Progress</h2>
+<ul>
+<li class="task"><label><input type="checkbox" data-task="engineering-drawing-moc:1"> <span>Standards and sheet layout</span></label></li>
+<li class="task"><label><input type="checkbox" data-task="engineering-drawing-moc:2"> <span>Scales and lettering</span></label></li>
+<li class="task"><label><input type="checkbox" data-task="engineering-drawing-moc:3"> <span>Lines and dimensioning</span></label></li>
+<li class="task"><label><input type="checkbox" data-task="engineering-drawing-moc:4"> <span>First-angle projection</span></label></li>
+</ul>
+</section><section class="step" data-title="Quick Navigation"><h2 id="quick-navigation">Quick Navigation</h2>
+<ul>
+<li><strong>Foundations:</strong> <a href="../n/purpose-of-engineering-drawing.html">Purpose of Engineering Drawing</a> · <strong>Core:</strong> <a href="../n/dimensioning-dimension-extension-and-leader-lines.html">Dimensioning - Dimension, Extension and Leader Lines</a></li>
+<li><strong>Next:</strong> <a href="../n/computer-aided-machine-drawing-moc.html">Computer Aided Machine Drawing - MOC</a> · <strong>Back to:</strong> <a href="../n/mechanical-engineering-curriculum-moc.html">Mechanical Engineering Curriculum - MOC</a></li>
+</ul></section></div><section class="related"><h2>Related notes</h2><h3>Links to</h3><div class="rels"><a class="rel" href="computer-aided-machine-drawing-moc.html" style="--c:#6f8294"><span class="dot"></span><span>Computer Aided Machine Drawing - MOC<small>Computer Aided Machine Drawing</small></span></a><a class="rel" href="dimensioning-dimension-extension-and-leader-lines.html" style="--c:#8a8f55"><span class="dot"></span><span>Dimensioning - Dimension, Extension and Leader Lines<small>Engineering Drawing</small></span></a><a class="rel" href="drawing-scales.html" style="--c:#8a8f55"><span class="dot"></span><span>Drawing Scales<small>Engineering Drawing</small></span></a><a class="rel" href="introduction-to-machine-design-moc.html" style="--c:#a8814c"><span class="dot"></span><span>Introduction to Machine Design - MOC<small>Introduction to Machine Design</small></span></a><a class="rel" href="lettering-and-types-of-lines.html" style="--c:#8a8f55"><span class="dot"></span><span>Lettering and Types of Lines<small>Engineering Drawing</small></span></a><a class="rel" href="mechanical-engineering-curriculum-moc.html" style="--c:#77716a"><span class="dot"></span><span>Mechanical Engineering Curriculum - MOC<small>Mechanical Engineering Curriculum</small></span></a><a class="rel" href="paper-sizes-and-sheet-layout.html" style="--c:#8a8f55"><span class="dot"></span><span>Paper Sizes and Sheet Layout<small>Engineering Drawing</small></span></a><a class="rel" href="projection-symbol-and-first-angle-projection.html" style="--c:#8a8f55"><span class="dot"></span><span>Projection Symbol and First-Angle Projection<small>Engineering Drawing</small></span></a><a class="rel" href="purpose-of-engineering-drawing.html" style="--c:#8a8f55"><span class="dot"></span><span>Purpose of Engineering Drawing<small>Engineering Drawing</small></span></a></div><canvas id="miniGraph" width="640" height="320" aria-label="Connections"></canvas></section></article><aside class="toc"><b>On this page</b><a href="#course-overview">Course Overview</a><a href="#concept-map">Concept Map</a><a href="#main-spine">Main Spine</a><a href="#standards-cheat-sheet">Standards Cheat-Sheet</a><a href="#methods-and-problem-types">Methods and Problem Types</a><a href="#visual-library">Visual Library</a><a href="#exam-revision-map">Exam / Revision Map</a><a href="#study-progress">Study Progress</a><a href="#quick-navigation">Quick Navigation</a></aside></div></main></div>
+<div class="scrim" id="scrim"></div>
+<nav class="dock" aria-label="Sections"><a class="" href="../index.html"><svg viewBox="0 0 24 24"><path d="M12 3 2 8l10 5 8-4v6h2V8L12 3Zm-6 9.6V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-3.4l-6 3-6-3Z"/></svg><span>Library</span></a><a class="" href="../practice.html"><svg viewBox="0 0 24 24"><path d="M7 4h2v16H7V4Zm8 0h2v16h-2V4ZM3 9h2v6H3V9Zm16 0h2v6h-2V9ZM9 11h6v2H9v-2Z"/></svg><span>Practice</span></a><a class="" href="../solve.html"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm3.8 6.2-2.1 5.5-5.5 2.1 2.1-5.5 5.5-2.1ZM12 11a1 1 0 1 0 0 2 1 1 0 0 0 0-2Z"/></svg><span>Solve</span></a><a class="" href="../graph.html"><svg viewBox="0 0 24 24"><path d="M6 3a3 3 0 0 0-1 5.8v6.4a3 3 0 1 0 2 0V13l6-2.2A3 3 0 1 0 12.4 9 3 3 0 0 0 9 11.3L7 12V8.8A3 3 0 0 0 6 3Zm0 2a1 1 0 1 1 0 2 1 1 0 0 1 0-2Zm12 2a1 1 0 1 1 0 2 1 1 0 0 1 0-2ZM6 17a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/></svg><span>Link map</span></a><button id="openSearchDock" type="button" aria-label="Search"><svg viewBox="0 0 24 24"><path d="M10 3a7 7 0 1 0 4.4 12.4l4.6 4.6 1.4-1.4-4.6-4.6A7 7 0 0 0 10 3Zm0 2a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z"/></svg><span>Search</span></button></nav>
+<button class="key totop" id="toTop" type="button" aria-label="Back to top">↑</button>
+<div class="search" id="search" hidden><div class="search-box"><div class="search-h"><span>Find in the notebook</span><button id="closeSearch" type="button" aria-label="Close search">×</button></div><input id="q" type="search" placeholder="Title, heading or any word…" autocomplete="off"><div id="results"></div></div></div>
+<script src="../assets/data.js"></script><script src="../assets/vendor/mermaid.min.js"></script>
+<script src="../assets/app.js"></script>
+</body></html>

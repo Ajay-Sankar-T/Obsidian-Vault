@@ -23,7 +23,7 @@ python wiki/_build/check_site.py   # broken links, leftover placeholders, person
 `build.py` reads the notes directly, so the generated folders (`n/`, `course/`, `assets/img`, `assets/sims`, `assets/data.js`, `assets/search.js`, `assets/vendor`) can be deleted and rebuilt at any time.
 
 ## Scope
-Published: Differential Equations, Physics I, Strength of Materials, Fluid Mechanics, KDoMs, EE1100, Cross-Domain notes, Computing, the Entrepreneurship map and the course maps for the upcoming courses.
+Published: Differential Equations, Physics I, Engineering Mechanics, Engineering Drawing, Physics Laboratory I, Applied Mechanics Lab, Strength of Materials, Fluid Mechanics, KDoMs, EE1100, Cross-Domain notes, Computing, the Entrepreneurship map and the course maps for the upcoming courses.
 Left out: `Applications`, `Clubs & Projects`, `Entrepreneurship/Solution` (team assignments with names and roll numbers), `Chemistry`, `Life sciences`, `Templates`, `CLAUDE.md`, the guide and the maintenance log. PDFs (lecture slides, problem sheets) are **not** copied or linked: a reference to one shows as plain text, so nothing from the course packs is published.
 To add a note, just write it in the vault. To attach an explorer to a note, add its file name to `WIDGETS` in `build.py`. To add a how-to-solve entry for a course, edit `solve_extra.py`, or add a table with a "Problem type | Method" header to any note.
 

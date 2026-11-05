@@ -39,6 +39,10 @@ COURSES = [
     ("de", "Differential Equations", "MA2020", "#7a5a9a", "#4f3a6b", "MathFlow/Differential Equations", "ODEs, series solutions, Bessel and Legendre, Sturm–Liouville"),
     ("som", "Strength of Materials", "AM2200", "#4f7a52", "#335636", "mech stuff/Strength of materials", "Stress, torsion, bending, deflection, buckling, energy methods"),
     ("ph", "Physics I", "PH1010", "#7c8a3a", "#566225", "mech stuff/Physics", "Newton's laws, oscillations, phase space, Lagrangian mechanics, orbits, vector calculus"),
+    ("em", "Engineering Mechanics", "AM1100", "#8c6a3f", "#654a28", "mech stuff/Engineering Mechanics", "Statics, friction, virtual work, particle and rigid-body dynamics, vibration"),
+    ("ed", "Engineering Drawing", "ME1480", "#8a8f55", "#62663a", "mech stuff/Engineering drawing", "Sheet sizes, scales, lettering, lines, dimensioning, first-angle projection"),
+    ("pl", "Physics Laboratory I", "PH1030", "#9a6fb0", "#6d4a80", "mech stuff/Physics Lab", "Nine experiments, error analysis and uncertainty"),
+    ("aml", "Applied Mechanics Lab", "AM2540", "#4f8fa8", "#336479", "mech stuff/Fluid Mechanics Lab", "Beam deflection, buckling, tensile tests and torsion"),
     ("fm", "Fluid Mechanics", "AM2530", "#3f6d99", "#284a6e", "mech stuff/Fluid Mechanics", "Statics, kinematics, control volumes, dimensional analysis, Bernoulli"),
     ("kdoms", "Kinematics & Dynamics of Machinery", "ME2201", "#b8692f", "#84451a", "mech stuff/KDoMs", "Velocity and acceleration, mechanism synthesis, gears"),
     ("ee", "Basic Electrical Engineering", "EE1100", "#b8962f", "#86691a", "Basic Electrical Engineering", "Circuits, phasors, transients, resonance, transformers, machines"),
@@ -54,7 +58,7 @@ COURSES = [
     ("camd", "Computer Aided Machine Drawing", "ME3283", "#6f8294", "#4b5c6b", "mech stuff/Computer Aided Machine Drawing", "Sections, fasteners, assemblies, tolerances"),
     ("cur", "Mechanical Engineering Curriculum", "", "#77716a", "#55504a", "mech stuff/Mechanical Engineering Curriculum - MOC.md", "Semester map"),
 ]
-ACTIVE = ["de", "ph", "som", "fm", "kdoms", "ee", "xd", "ml", "ent"]
+ACTIVE = ["de", "ph", "em", "ed", "som", "fm", "aml", "pl", "kdoms", "ee", "xd", "ml", "ent"]
 UPCOMING = ["fte", "ht", "mat", "mfg", "mic", "mdes", "camd"]
 UNIT_NAMES = {"de": {"Intro": "First-order ODEs", "2nd Order DE": "Second-order ODEs", "Series Solutions of DE": "Series solutions",
                      "Special Functions": "Special functions", "PDEs": "Partial differential equations", "Problems": "Assignments"},
@@ -62,8 +66,8 @@ UNIT_NAMES = {"de": {"Intro": "First-order ODEs", "2nd Order DE": "Second-order 
               "ml": {"ML": "Machine learning", "WebOps": "Web basics"}}
 UNIT_ORDER = {"de": ["Intro", "2nd Order DE", "Series Solutions of DE", "Special Functions", "PDEs", "Problems"],
               "kdoms": ["Velocity-Acceleration-Bank", "Synthesis-Formula-Bank", "Formula-Bank"],
-              "ee": ["", "AC Transients", "RLC Circuits - Responses", "Transformers and Induction Machines"]}
-DEFAULT_UNIT = {"ee": "Weekly lessons", "xd": "Connections", "ent": "Class notes"}
+              "ee": ["", "AC Transients", "RLC Circuits - Responses", "Transformers and Induction Machines"], "em": ["Statics", "Dynamics"]}
+DEFAULT_UNIT = {"ee": "Weekly lessons", "xd": "Connections", "ent": "Class notes", "ed": "Drawing standards", "pl": "Experiments and skills", "aml": "Experiments"}
 
 # interactive widgets attached to notes (by note file name without .md)
 WIDGETS = {

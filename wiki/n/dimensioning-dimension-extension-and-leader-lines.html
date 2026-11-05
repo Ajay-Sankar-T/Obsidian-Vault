@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#4a2f20"><meta name="description" content="Course notes, worked problems and interactive explorers, bound as a notebook"><link rel="icon" href="../assets/Favicons/Alya.png" type="image/png"><link rel="apple-touch-icon" href="../assets/Favicons/Alya.png"><link rel="manifest" href="../manifest.webmanifest">
+<title>Dimensioning - Dimension, Extension and Leader Lines · Engineering Notebook</title>
+<script>try{var t=localStorage.getItem('wiki.theme');if(!t&&matchMedia('(prefers-color-scheme: dark)').matches)t='dark';if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="../assets/style.css"><link rel="stylesheet" href="../assets/vendor/katex.min.css">
+</head><body data-root="../" data-page="note" data-slug="dimensioning-dimension-extension-and-leader-lines" data-course="ed">
+<header class="top"><button class="key key-menu" id="menuBtn" type="button" aria-label="Open contents" aria-expanded="false"><svg class="i" viewBox="0 0 24 24"><path d="M4 6h16v2H4V6Zm0 5h16v2H4v-2Zm0 5h16v2H4v-2Z"/></svg></button>
+<a class="plate" href="../index.html"><span class="plate-mark">EN</span><span class="plate-t">Engineering Notebook</span></a>
+<nav class="tabs" aria-label="Sections"><a class="tab" href="../index.html">Library</a><a class="tab" href="../practice.html">Practice</a><a class="tab" href="../solve.html">How to solve</a><a class="tab" href="../graph.html">Link map</a></nav>
+<div class="top-r"><button class="search-key" id="openSearch" type="button" aria-label="Search the notebook"><svg viewBox="0 0 24 24"><path d="M10 3a7 7 0 1 0 4.4 12.4l4.6 4.6 1.4-1.4-4.6-4.6A7 7 0 0 0 10 3Zm0 2a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z"/></svg><span>Search the notebook</span><kbd>/</kbd></button><button class="key" id="themeBtn" type="button" aria-label="Switch between day and night desk"></button></div></header>
+<div class="thread" id="thread"></div>
+<div class="frame"><aside class="tree" id="tree" aria-label="Contents"></aside>
+<main class="content"><nav class="crumbbar" aria-label="Breadcrumb"><a href="../index.html">Library</a><i>›</i><a href="../course/ed.html">Engineering Drawing</a><i>›</i><span>Drawing standards</span></nav><div class="paper"><article class="note" data-kind="concept" style="--c:#8a8f55;--cd:#62663a">
+<h1>Dimensioning - Dimension, Extension and Leader Lines</h1><div class="chips"><span class="chip">concept</span><span class="chip">engineering-drawing</span><span class="chip">ME1480</span><span class="chip">drawing-standards</span><span class="chip">dimensioning</span></div>
+<div class="actions"><button class="btn" id="startLesson" type="button">Study mode</button><button class="btn btn-ghost" id="markDone" type="button">Mark as read</button></div>
+<div class="body" id="body"><section class="step intro"><div class="callout callout-abstract">
+<div class="callout-title">The big idea</div>
+<p>Dimensions are what turn a shape into a <em>specification</em>. Three kinds of <strong>thin</strong> lines carry them: the <strong>dimension line</strong> (with arrowheads, showing direction and extent), the <strong>extension lines</strong> (projecting the feature's edge out to where you can dimension it) and the <strong>leader line</strong> (pointing to a feature that needs a note). Because they are thin, they cannot be confused with the part's outline.</p>
+</div>
+</section><section class="step" data-title="The three lines"><h2 id="the-three-lines">The three lines</h2>
+<table>
+<thead>
+<tr>
+<th>Line</th>
+<th>Definition</th>
+<th>Rules</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Dimension line</strong></td>
+<td>thin line terminated by arrowheads; shows the direction and extent of a dimension</td>
+<td>placed outside the view where possible; the number sits above it</td>
+</tr>
+<tr>
+<td><strong>Extension line</strong></td>
+<td>thin solid line extending from the point on the drawing the dimension refers to</td>
+<td>avoid long extension lines; project a little beyond the dimension line</td>
+</tr>
+<tr>
+<td><strong>Leader line</strong></td>
+<td>straight inclined thin solid line, usually ending in an arrowhead</td>
+<td>points at a circle, hole or surface and carries a note (e.g. <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7261em;vertical-align:-0.0817em;"></span><span class="mord amsrm">∅</span><span class="mord">14</span></span></span></span>, 2 holes)</td>
+</tr>
+</tbody>
+</table>
+<p><img src="../assets/img/ED-dimensioning.png" alt="ED-dimensioning" loading="lazy"></p>
+<p><strong>Figure:</strong> A plate with two <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7261em;vertical-align:-0.0817em;"></span><span class="mord amsrm">∅</span><span class="mord">14</span></span></span></span> holes. The overall length <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">80</span></span></span></span> and height <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">40</span></span></span></span> use extension lines (blue) and dimension lines with arrowheads (red); the hole spacing is given as a chain <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">20</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">40</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">20</span></span></span></span>; the leader line (green) carries the note for the two holes. Centre lines locate the holes.</p>
+<details class="callout callout-question fold">
+<summary>🎯 Predict first: should the <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">20</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">40</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">20</span></span></span></span> chain <i>and</i> the overall <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">80</span></span></span></span> both be given?</summary>
+<p>One of them is redundant. Giving all four lets the maker add up the chain and get something other than <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">80</span></span></span></span> if rounding or errors creep in. Good practice: dimension the chain and the overall length, but mark one as a <strong>reference</strong> dimension, or omit the one that can be derived. Every feature defined <em>once</em>.</p>
+</details>
+</section><section class="step" data-title="Good practice (a checklist)"><h2 id="good-practice-a-checklist">Good practice (a checklist)</h2>
+<ol>
+<li><strong>Outside the view</strong>, between views, not inside the part.</li>
+<li><strong>Shortest dimension nearest</strong> the part, longest outermost, so lines do not cross.</li>
+<li><strong>Do not use a visible edge or centre line as a dimension line.</strong></li>
+<li><strong>Give true size</strong>, independent of the scale (<a href="../n/drawing-scales.html">Drawing Scales</a>).</li>
+<li>Lettering at <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">3.5</span></span></span></span> mm height for dimensions (<a href="../n/lettering-and-types-of-lines.html">Lettering and Types of Lines</a>); read from the bottom or the right of the sheet.</li>
+<li><strong>Avoid duplicate and redundant dimensions.</strong></li>
+</ol>
+</section><section class="step" data-title="Worked example"><h2 id="worked-example">Worked example</h2>
+<details class="callout callout-example fold">
+<summary>🔬 Dimension a <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">60</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">30</span></span></span></span> plate with one centred <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7261em;vertical-align:-0.0817em;"></span><span class="mord amsrm">∅</span><span class="mord">10</span></span></span></span> hole</summary>
+<p>Overall: <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">60</span></span></span></span> (horizontal) and <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">30</span></span></span></span> (vertical), each with extension lines and a dimension line outside the plate. Hole: a centre cross (chain thin lines) at the plate centre; a leader line to the circle with the note <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7261em;vertical-align:-0.0817em;"></span><span class="mord amsrm">∅</span><span class="mord">10</span></span></span></span>. Because the hole is <em>centred</em>, it needs no location dimensions: say "centred" or give <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">30</span></span></span></span> and <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">15</span></span></span></span> from two edges.
+<strong>Check:</strong> every feature (outline, hole size, hole position) is defined exactly once.</p>
+</details>
+<details class="callout callout-warning fold">
+<summary>⚠️ A dimension line that touches the part</summary>
+<p>Leave a small gap between the part and the start of an extension line, and let the extension line run slightly past the arrowhead; otherwise the thin line merges with the outline.</p>
+</details>
+<details class="callout callout-danger fold">
+<summary>💥 Dimensioning to hidden lines</summary>
+<p>Dimensions belong on <strong>visible</strong> features where possible. A dimension to a dashed line is hard to read and often ambiguous; choose a view where that feature is visible.</p>
+</details>
+</section><section class="step" data-title="Self-check"><h2 id="self-check">Self-check</h2>
+<ul>
+<li class="task"><label><input type="checkbox" data-task="dimensioning-dimension-extension-and-leader-lines:1"> <span>I can define dimension, extension and leader lines.</span></label></li>
+<li class="task"><label><input type="checkbox" data-task="dimensioning-dimension-extension-and-leader-lines:2"> <span>I can dimension a simple plate with a hole without redundancy.</span></label></li>
+<li class="task"><label><input type="checkbox" data-task="dimensioning-dimension-extension-and-leader-lines:3"> <span>I can explain why all three lines are thin.</span></label></li>
+</ul>
+</section><section class="step" data-title="Connections"><h2 id="connections">Connections</h2>
+<ul>
+<li><strong>Previous:</strong> <a href="../n/lettering-and-types-of-lines.html">Lettering and Types of Lines</a> · <strong>Next:</strong> <a href="../n/projection-symbol-and-first-angle-projection.html">Projection Symbol and First-Angle Projection</a></li>
+<li><strong>Course map:</strong> <a href="../n/engineering-drawing-moc.html">Engineering Drawing - MOC</a></li>
+</ul>
+</section><section class="step" data-title="Metadata"><h2 id="metadata">Metadata</h2>
+<ul>
+<li><strong>Status:</strong> draft · <strong>Type:</strong> concept · <strong>Difficulty:</strong> beginner</li>
+<li><strong>Course map:</strong> <a href="../n/engineering-drawing-moc.html">Engineering Drawing - MOC</a></li>
+</ul></section></div><nav class="pager"><a class="pg" href="lettering-and-types-of-lines.html"><small>Previous page</small>Lettering and Types of Lines</a><a class="pg pg-next" href="projection-symbol-and-first-angle-projection.html"><small>Next page</small>Projection Symbol and First-Angle Projection</a></nav><section class="related"><h2>Related notes</h2><h3>Links to</h3><div class="rels"><a class="rel" href="drawing-scales.html" style="--c:#8a8f55"><span class="dot"></span><span>Drawing Scales<small>Engineering Drawing</small></span></a><a class="rel" href="engineering-drawing-moc.html" style="--c:#8a8f55"><span class="dot"></span><span>Engineering Drawing - MOC<small>Engineering Drawing</small></span></a><a class="rel" href="lettering-and-types-of-lines.html" style="--c:#8a8f55"><span class="dot"></span><span>Lettering and Types of Lines<small>Engineering Drawing</small></span></a><a class="rel" href="projection-symbol-and-first-angle-projection.html" style="--c:#8a8f55"><span class="dot"></span><span>Projection Symbol and First-Angle Projection<small>Engineering Drawing</small></span></a></div><h3>Linked from</h3><div class="rels"><a class="rel" href="purpose-of-engineering-drawing.html" style="--c:#8a8f55"><span class="dot"></span><span>Purpose of Engineering Drawing<small>Engineering Drawing</small></span></a></div><canvas id="miniGraph" width="640" height="320" aria-label="Connections"></canvas></section></article><aside class="toc"><b>On this page</b><a href="#the-three-lines">The three lines</a><a href="#good-practice-a-checklist">Good practice (a checklist)</a><a href="#worked-example">Worked example</a><a href="#self-check">Self-check</a><a href="#connections">Connections</a><a href="#metadata">Metadata</a></aside></div></main></div>
+<div class="scrim" id="scrim"></div>
+<nav class="dock" aria-label="Sections"><a class="" href="../index.html"><svg viewBox="0 0 24 24"><path d="M12 3 2 8l10 5 8-4v6h2V8L12 3Zm-6 9.6V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-3.4l-6 3-6-3Z"/></svg><span>Library</span></a><a class="" href="../practice.html"><svg viewBox="0 0 24 24"><path d="M7 4h2v16H7V4Zm8 0h2v16h-2V4ZM3 9h2v6H3V9Zm16 0h2v6h-2V9ZM9 11h6v2H9v-2Z"/></svg><span>Practice</span></a><a class="" href="../solve.html"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm3.8 6.2-2.1 5.5-5.5 2.1 2.1-5.5 5.5-2.1ZM12 11a1 1 0 1 0 0 2 1 1 0 0 0 0-2Z"/></svg><span>Solve</span></a><a class="" href="../graph.html"><svg viewBox="0 0 24 24"><path d="M6 3a3 3 0 0 0-1 5.8v6.4a3 3 0 1 0 2 0V13l6-2.2A3 3 0 1 0 12.4 9 3 3 0 0 0 9 11.3L7 12V8.8A3 3 0 0 0 6 3Zm0 2a1 1 0 1 1 0 2 1 1 0 0 1 0-2Zm12 2a1 1 0 1 1 0 2 1 1 0 0 1 0-2ZM6 17a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/></svg><span>Link map</span></a><button id="openSearchDock" type="button" aria-label="Search"><svg viewBox="0 0 24 24"><path d="M10 3a7 7 0 1 0 4.4 12.4l4.6 4.6 1.4-1.4-4.6-4.6A7 7 0 0 0 10 3Zm0 2a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z"/></svg><span>Search</span></button></nav>
+<button class="key totop" id="toTop" type="button" aria-label="Back to top">↑</button>
+<div class="search" id="search" hidden><div class="search-box"><div class="search-h"><span>Find in the notebook</span><button id="closeSearch" type="button" aria-label="Close search">×</button></div><input id="q" type="search" placeholder="Title, heading or any word…" autocomplete="off"><div id="results"></div></div></div>
+<script src="../assets/data.js"></script>
+<script src="../assets/app.js"></script>
+</body></html>
