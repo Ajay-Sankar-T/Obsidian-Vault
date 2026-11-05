@@ -38,3 +38,6 @@ Progress is kept in each visitor's own browser (local storage), so a public depl
 
 ## Phones
 The contents tree becomes a slide-in drawer under 1000 px and a bottom tab bar appears;  every page was checked for horizontal overflow at 360 px and 390 px widths. Sliders and buttons have 44 px touch targets, the graph supports one-finger pan, two-finger pinch and tap-to-preview/tap-to-open, wide equations and tables scroll sideways inside their own box, and `manifest.webmanifest` lets the site be added to the home screen.
+
+### Phone layout (700 px and under)
+A separate "pocket notebook" layout: the paper runs edge to edge (no desk border, margin line or binder holes), the header is 48 px, the breadcrumb is a single scrolling line, and the five-tab dock stays at the bottom. The home page opens with a slim *continue* card and a two-column bookshelf; reading text is 16.5 px at 1.62 line height; figures, tables and code blocks run full width and scroll sideways inside themselves; callout tape is hidden; chip and filter rows scroll horizontally; the heavy paper-noise textures are dropped for smoother scrolling. Checked for horizontal overflow at 360 px on every course's pages.

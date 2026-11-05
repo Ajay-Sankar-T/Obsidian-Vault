@@ -473,3 +473,107 @@ details.callout.fold>:not(summary){margin-left:20px;margin-right:20px}
 details.callout.fold[open]{padding-bottom:12px}
 details.callout.fold[open]>summary{border-bottom:1px dashed color-mix(in srgb,var(--cc) 40%,transparent);margin-bottom:6px}
 .callout-quote{font-style:italic}
+
+/* =====================================================================================================
+   PHONE MODE (<= 700px): a pocket notebook. Paper runs edge to edge (no desk border, margin line or
+   binder holes), a slim header and dock, compact home page, smaller reading type, full-bleed figures
+   and tables, no heavy noise textures. Placed last so it overrides the tablet rules above.
+   ===================================================================================================== */
+@media (max-width:700px){
+  :root{--top-h:48px;--noise:linear-gradient(transparent,transparent)}
+  html,body{background:var(--paper)}
+  body{background-image:none}
+
+  /* chrome */
+  .top{padding:0 10px;gap:8px}.top::after{inset:4px 5px}
+  .key{width:36px;height:36px}.search-key{width:36px;height:36px}
+  .plate{padding:3px 8px 3px 6px}.plate-mark{width:24px;height:24px}
+  .plate-t{display:inline;font-size:13.5px}
+  .top-r{gap:8px}
+  .dock{padding:4px 4px calc(4px + env(safe-area-inset-bottom))}
+  .dock a,.dock button{min-height:44px;min-width:0;flex:1;font-size:9px;letter-spacing:.05em;padding:3px 2px}
+  .dock svg{width:20px;height:20px}
+  .totop{bottom:calc(66px + env(safe-area-inset-bottom));right:10px}
+  .tree{height:100dvh}
+
+  /* the page itself: full-bleed paper */
+  .frame,body.has-tree .frame{padding:0 0 calc(64px + env(safe-area-inset-bottom));gap:0}
+  .content{margin:0}
+  .crumbbar{margin:0;max-width:none;padding:9px 14px;gap:5px;background:var(--paper2);border-bottom:1px solid var(--rule);font-size:11px}
+  .crumbbar a,.crumbbar span{color:var(--ink-m);text-shadow:none}.crumbbar i{color:var(--ink-m)}
+  .crumbbar span:last-child{color:var(--ink);font-weight:800}
+  .frame .paper{max-width:none;margin:0;padding:16px 16px 40px;border-radius:0;box-shadow:none;border:0;background:var(--paper)}
+  .paper::before,.paper::after{display:none}
+  .paper:has(.toc){display:block}
+
+  /* typography */
+  .note h1{font-size:25px;line-height:1.2;margin:2px 0 8px}
+  .pg-title{font-size:25px}.lead{font-size:15.5px}
+  .body{font-size:16.5px;line-height:1.62}
+  .body h2{font-size:21px;margin:30px 0 8px}.body h3{font-size:18px;margin:22px 0 4px}
+  .body p{margin:9px 0}.body ul,.body ol{padding-left:22px}
+  .body img{width:calc(100% + 32px);max-width:none;margin:16px -16px;padding:6px;border-left:0;border-right:0;border-radius:0}
+  .body table{width:calc(100% + 32px);margin:14px -16px;border-left:0;border-right:0;border-radius:0;font-size:13.5px}
+  .body th,.body td{padding:6px 9px}
+  .body pre{margin-left:-16px;margin-right:-16px;border-radius:0;font-size:13px}
+  .katex-display{margin:.7em 0}
+
+  /* note header */
+  .chips{flex-wrap:nowrap;overflow-x:auto;margin:0 -16px 10px;padding:0 16px;scrollbar-width:none}.chips::-webkit-scrollbar{display:none}
+  .chip{flex:none;font-size:10px;padding:2px 8px}
+  .actions{gap:8px;margin:6px 0 16px;flex-wrap:nowrap}
+  .actions .btn{flex:1 1 0;min-height:44px;padding:0 8px;font-size:12.5px;letter-spacing:.05em}
+  .jump{margin:0 0 14px}
+  .step.intro>p:first-child{margin-top:4px}
+
+  /* callouts and flaps: compact, no tape that pokes past the screen */
+  .callout{margin:16px 0 12px;padding:12px 14px 6px;font-size:15.5px}
+  .callout::before{display:none}
+  details.callout.fold>summary{padding:12px 12px 11px 38px;min-height:44px;font-size:12px}
+  details.callout.fold>summary::before{left:15px}
+  details.callout.fold>:not(summary){margin-left:14px;margin-right:14px}
+
+  /* widgets */
+  .widget-wrap{margin:20px -6px;padding:6px 12px 14px}
+  .widget-h{font-size:11px;letter-spacing:.1em}
+  .w-row label{font-size:12.5px}
+  .w-out{font-size:12.5px}
+
+  /* related, pager */
+  .pager{gap:8px}.rels{grid-template-columns:1fr}
+
+  /* home */
+  .hero{display:flex;flex-direction:column;gap:12px;padding:2px 0 0}
+  .hero h1{font-size:27px;margin:0 0 2px}
+  .hero p{font-size:14.5px;line-height:1.45}
+  .ribbon{order:-1;clip-path:none;min-height:0;width:100%;box-sizing:border-box;padding:14px 16px;border-radius:8px}.hero>div{min-width:0}
+  .ribbon h3{font-size:17px;margin:4px 0 10px}
+  .ribbon .btn{min-height:40px;font-size:12px}
+  .recent{flex-wrap:nowrap;overflow-x:auto;margin:10px -16px 0;padding:0 16px 4px;scrollbar-width:none}.recent::-webkit-scrollbar{display:none}
+  .recent a{flex:none}
+  .sec{font-size:19px;margin:20px 0 8px;gap:8px}
+  .sec .tape{font-size:9.5px;padding:3px 8px}
+  .bookcase{--bh:164px;margin:6px -6px 4px;padding:8px 8px 0;border-width:5px}
+  .shelf{column-gap:10px}
+  .book{padding:11px 8px 9px 17px}
+  .book::before{inset:6px 5px 6px 12px}
+  .book-t{font-size:13px}.book-n{font-size:10px}
+  .plates{grid-template-columns:1fr}
+
+  /* course page */
+  .cover{padding:14px 14px 14px 22px;margin:0 0 4px}
+  .cover::before{inset:6px 6px 6px 14px}
+  .cover h1{font-size:22px;margin:8px 0 4px}.cover p{font-size:14px}
+  .unit{margin-top:22px}.unit-h h2{font-size:19px}
+  .node{min-height:50px}.node .lbl{font-size:15.5px}
+
+  /* practice, filters, link map, lessons */
+  .filters{flex-wrap:nowrap;overflow-x:auto;margin:10px -16px;padding:0 16px 4px;scrollbar-width:none}.filters::-webkit-scrollbar{display:none}
+  .fchip{flex:none}
+  .pgrid{grid-template-columns:1fr}
+  .gwrap{height:calc(100dvh - 250px);min-height:340px;border-width:6px}
+  .lesson-card{padding:18px 16px 24px 22px;font-size:16.5px}.lesson-card::after{left:12px}
+  .lesson-card h2{font-size:21px}
+  .search{padding:0}.search-box{width:100%;max-height:100dvh;height:100dvh;border-radius:0}
+}
+@media (max-width:360px){.plate-t{display:none}.shelf{column-gap:8px}.book-t{font-size:12px}}
