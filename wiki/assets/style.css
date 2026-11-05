@@ -396,7 +396,7 @@ body.lesson-on{overflow:hidden}
 .w-plot{background:var(--noise),linear-gradient(#fbf6e6,#f2e9cf);border:6px solid #2c2f32;border-radius:7px;overflow:hidden;box-shadow:inset 0 3px 8px rgba(0,0,0,.4),0 1px 0 rgba(255,255,255,.6);--text:#2a2318;--muted:#6a5d46;--line:#d8cba8}
 .w-plot canvas{width:100%;display:block}
 .w-ctrl{display:flex;flex-direction:column;gap:12px}
-.w-row label{display:flex;justify-content:space-between;font:800 11.5px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:#4a5157;text-shadow:0 1px 0 rgba(255,255,255,.6)}
+.w-row label{display:flex;justify-content:space-between;font:700 13px var(--sans);letter-spacing:.01em;text-transform:none;color:#4a5157;text-shadow:0 1px 0 rgba(255,255,255,.6)}
 .w-row label b{color:#14181b;font-family:var(--mono);letter-spacing:0;text-transform:none;font-size:13px}
 [data-theme="dark"] .w-row label{color:#c6cacc;text-shadow:none}[data-theme="dark"] .w-row label b{color:#fff}
 .w-row input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:30px;background:transparent;margin:0}
@@ -461,3 +461,15 @@ body.lesson-on{overflow:hidden}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 
 .kx-scroll{display:inline-block;max-width:100%;overflow-x:auto;overflow-y:hidden;vertical-align:bottom}
+
+/* foldable callouts (Obsidian "[!kind]-"): a taped flap that opens on tap */
+details.callout.fold{padding:0}
+details.callout.fold>summary{list-style:none;cursor:pointer;position:relative;padding:14px 20px 13px 46px;min-height:48px;font:800 13px/1.35 var(--sans);letter-spacing:.07em;text-transform:uppercase;color:var(--cc)}
+details.callout.fold>summary::-webkit-details-marker{display:none}
+details.callout.fold>summary::before{content:"";position:absolute;left:20px;top:50%;margin-top:-5px;border:6px solid transparent;border-left:9px solid currentColor;border-right:0;transition:transform .15s}
+details.callout.fold[open]>summary::before{transform:rotate(90deg)}
+details.callout.fold>summary:hover{filter:brightness(1.12)}
+details.callout.fold>:not(summary){margin-left:20px;margin-right:20px}
+details.callout.fold[open]{padding-bottom:12px}
+details.callout.fold[open]>summary{border-bottom:1px dashed color-mix(in srgb,var(--cc) 40%,transparent);margin-bottom:6px}
+.callout-quote{font-style:italic}

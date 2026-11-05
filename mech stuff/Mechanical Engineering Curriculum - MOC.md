@@ -22,7 +22,7 @@ Semester-by-semester map of the core programme, taken from `ME25B_curriculum.pdf
 | Code | Course | L-T-E-P-O → C | Vault |
 |---|---|---|---|
 | MA1101 | Calculus | 3-1-0-0-6 → 10 | PDFs in `MathFlow/Calculus/` |
-| PH1010, PH1030 | Physics I and Physics Laboratory I | 3-1-0-0-6 → 10; 0-0-0-3-1 → 4 | weekly slides in `Physics/`, manuals in `Physics Lab/` |
+| PH1010, PH1030 | Physics I and Physics Laboratory I | 3-1-0-0-6 → 10; 0-0-0-3-1 → 4 | concept notes and figures in [[Physics I - MOC]] (weekly slides in `Physics/`), manuals in `Physics Lab/` |
 | AM1100 | Engineering Mechanics | 3-1-0-0-6 → 10 | books in `Engineering Mechanics/` |
 
 ## Semester 3 (current)

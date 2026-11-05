@@ -38,6 +38,7 @@ COURSES = [
     # id, title, code, colour, dark shade, root prefix, blurb
     ("de", "Differential Equations", "MA2020", "#7a5a9a", "#4f3a6b", "MathFlow/Differential Equations", "ODEs, series solutions, Bessel and Legendre, Sturm–Liouville"),
     ("som", "Strength of Materials", "AM2200", "#4f7a52", "#335636", "mech stuff/Strength of materials", "Stress, torsion, bending, deflection, buckling, energy methods"),
+    ("ph", "Physics I", "PH1010", "#7c8a3a", "#566225", "mech stuff/Physics", "Newton's laws, oscillations, phase space, Lagrangian mechanics, orbits, vector calculus"),
     ("fm", "Fluid Mechanics", "AM2530", "#3f6d99", "#284a6e", "mech stuff/Fluid Mechanics", "Statics, kinematics, control volumes, dimensional analysis, Bernoulli"),
     ("kdoms", "Kinematics & Dynamics of Machinery", "ME2201", "#b8692f", "#84451a", "mech stuff/KDoMs", "Velocity and acceleration, mechanism synthesis, gears"),
     ("ee", "Basic Electrical Engineering", "EE1100", "#b8962f", "#86691a", "Basic Electrical Engineering", "Circuits, phasors, transients, resonance, transformers, machines"),
@@ -53,7 +54,7 @@ COURSES = [
     ("camd", "Computer Aided Machine Drawing", "ME3283", "#6f8294", "#4b5c6b", "mech stuff/Computer Aided Machine Drawing", "Sections, fasteners, assemblies, tolerances"),
     ("cur", "Mechanical Engineering Curriculum", "", "#77716a", "#55504a", "mech stuff/Mechanical Engineering Curriculum - MOC.md", "Semester map"),
 ]
-ACTIVE = ["de", "som", "fm", "kdoms", "ee", "xd", "ml", "ent"]
+ACTIVE = ["de", "ph", "som", "fm", "kdoms", "ee", "xd", "ml", "ent"]
 UPCOMING = ["fte", "ht", "mat", "mfg", "mic", "mdes", "camd"]
 UNIT_NAMES = {"de": {"Intro": "First-order ODEs", "2nd Order DE": "Second-order ODEs", "Series Solutions of DE": "Series solutions",
                      "Special Functions": "Special functions", "PDEs": "Partial differential equations", "Problems": "Assignments"},
@@ -79,11 +80,18 @@ WIDGETS = {
                 "Legendre Polynomials and Rodrigues' Formula", "Generating Function of Legendre Polynomials"],
     "resonance": ["Frequency Response and Resonance Curves", "Series vs Parallel RLC - Key Distinctions", "Resonance and Buckling - Instability as an Eigenvalue Problem"],
     "auction": ["Primitives, Markets with Power and Auctions"],
+    "freeosc": ["Damped Oscillations"],
+    "driven": ["Driven Oscillations and Resonance"],
+    "phase": ["The Nonlinear Pendulum"],
+    "orbit": ["Kepler's Laws and Orbits"],
+    "vfield": ["Divergence Theorem and Flux"],
 }
 WIDGET_OF = {name: w for w, names in WIDGETS.items() for name in names}
 WIDGET_TITLE = {"oscillator": "Damping explorer", "decay": "Time-constant explorer", "lumped": "Lumped-capacitance cooling", "mohr": "Mohr's circle explorer",
                 "beam": "Beam deflection explorer", "euler": "Column buckling calculator", "series": "Series approximation explorer",
-                "special": "Special-function explorer", "resonance": "Resonance explorer", "auction": "GSP vs VCG auction explorer"}
+                "special": "Special-function explorer", "resonance": "Resonance explorer", "auction": "GSP vs VCG auction explorer",
+                "freeosc": "Free-oscillation explorer", "driven": "Driven-oscillator explorer", "phase": "Pendulum phase-portrait explorer",
+                "orbit": "Orbit explorer", "vfield": "Divergence and curl explorer"}
 
 # --------------------------------------------------------------------------------------------- helpers
 def slugify(s):
@@ -388,18 +396,22 @@ def strip_sections(text):
 
 
 def convert_callouts(text):
+    """Obsidian callouts. `> [!kind]- Title` folds closed, `> [!kind]+ Title` folds open; both become <details> on the site."""
     lines, out, i = text.split("\n"), [], 0
     while i < len(lines):
-        m = re.match(r"^>\s*\[!(\w+)\][+-]?\s*(.*)$", lines[i])
+        m = re.match(r"^>\s*\[!(\w+)\]([+-]?)\s*(.*)$", lines[i])
         if not m:
             out.append(lines[i]); i += 1; continue
-        kind, title = m.group(1).lower(), m.group(2).strip()
+        kind, fold, title = m.group(1).lower(), m.group(2), m.group(3).strip()
         body = []
         i += 1
         while i < len(lines) and lines[i].startswith(">"):
             body.append(re.sub(r"^>\s?", "", lines[i])); i += 1
         title_html = re.sub(r"\*(.+?)\*", r"<i>\1</i>", re.sub(r"\*\*(.+?)\*\*", r"<b>\1</b>", title)) or kind.capitalize()
-        out += ["", f'<div class="callout callout-{kind}" markdown="1">', f'<div class="callout-title" markdown="0">{title_html}</div>', ""] + body + ["", "</div>", ""]
+        if fold:
+            out += ["", f'<details class="callout callout-{kind} fold"{" open" if fold == "+" else ""} markdown="1">', f'<summary markdown="0">{title_html}</summary>', ""] + body + ["", "</details>", ""]
+        else:
+            out += ["", f'<div class="callout callout-{kind}" markdown="1">', f'<div class="callout-title" markdown="0">{title_html}</div>', ""] + body + ["", "</div>", ""]
     return "\n".join(out)
 
 

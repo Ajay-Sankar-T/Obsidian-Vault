@@ -43,3 +43,4 @@ $\dot m_{\rm in}=\dot m_{\rm out}$ (steady, no accumulation) is the direct fluid
 - [[Fluid Mechanics/04 Control Volume Analysis/Reynolds Transport Theorem|Reynolds Transport Theorem]]
 - [[Fluid Mechanics/04 Control Volume Analysis/Linear Momentum Equation|Linear Momentum Equation]]
 - [[Nodal and Mesh Analysis (AC)|Cross-domain: Nodal and Mesh Analysis (AC) — KCL]]
+- [[Divergence Theorem and Flux]] and [[Fluid Flow, Continuity and Bernoulli]] — the vector-calculus preview of this equation in Physics I: the integral form is the divergence theorem, and $\nabla\cdot\mathbf{u}=0$ is the incompressible limit.

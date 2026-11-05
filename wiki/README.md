@@ -6,7 +6,8 @@ A static, offline learning site generated from the vault's notes. Open `index.ht
 - **A notebook on a desk.** Leather top bar with brass keys, wood-grain desk, ruled paper pages with binder holes, a bookshelf of cloth-bound course books on the home page, taped sticky-note callouts, and brushed-metal panels for the explorers. Day desk and night desk (the sun/moon key).
 - **Easy navigation.** A contents tree (chapters fold open, your place is highlighted, read pages are ticked) sits beside every course and note; on a phone it slides in from the menu key. Breadcrumbs on every page, a bottom tab bar on phones (Library, Practice, Solve, Link map, Search), "On this page" outline, previous/next page, a reading thread under the top bar, a back-to-top key, and Search (`/` or Ctrl+K) that lists your recently opened pages before you type.
 - **Library and courses.** Each course is a book on the shelf with a progress bar; opening it shows a table of contents. *Study mode* turns a note into one page at a time; *Mark as read* ticks it off.
-- **Play with it**: interactive explorers on the relevant notes (damping, time constants, Mohr's circle, beam deflection, column buckling, series approximations, Bessel/Legendre, resonance, lumped cooling, GSP vs VCG auctions).
+- **Foldable callouts.** Obsidian callouts written as `> [!question]- Title` fold closed (`+` opens them) and become tappable flaps on the site: predict-first prompts, traps, analogies, worked examples and quiz answers hide until you open them.
+- **Play with it**: interactive explorers on the relevant notes (damping, free and driven oscillations, pendulum phase portraits, orbits, divergence and curl, time constants, Mohr's circle, beam deflection, column buckling, series approximations, Bessel/Legendre, resonance, lumped cooling, GSP vs VCG auctions).
 - **Practice**: tutorial and assignment notes with the hint, solution, result and trap hidden behind flaps; mark a problem solved and it gets a stamp.
 - **How to solve**: "I see this kind of problem, what do I use?" cards for every course (108 entries).
 - **Link map**: every note is a pin on a cork board, every link a red thread; backlinks and related notes on each page; plus the stand-alone simulations from the vault.
@@ -22,7 +23,7 @@ python wiki/_build/check_site.py   # broken links, leftover placeholders, person
 `build.py` reads the notes directly, so the generated folders (`n/`, `course/`, `assets/img`, `assets/sims`, `assets/data.js`, `assets/search.js`, `assets/vendor`) can be deleted and rebuilt at any time.
 
 ## Scope
-Published: Differential Equations, Strength of Materials, Fluid Mechanics, KDoMs, EE1100, Cross-Domain notes, Computing, the Entrepreneurship map and the course maps for the upcoming courses.
+Published: Differential Equations, Physics I, Strength of Materials, Fluid Mechanics, KDoMs, EE1100, Cross-Domain notes, Computing, the Entrepreneurship map and the course maps for the upcoming courses.
 Left out: `Applications`, `Clubs & Projects`, `Entrepreneurship/Solution` (team assignments with names and roll numbers), `Chemistry`, `Life sciences`, `Templates`, `CLAUDE.md`, the guide and the maintenance log. PDFs (lecture slides, problem sheets) are **not** copied or linked: a reference to one shows as plain text, so nothing from the course packs is published.
 To add a note, just write it in the vault. To attach an explorer to a note, add its file name to `WIDGETS` in `build.py`. To add a how-to-solve entry for a course, edit `solve_extra.py`, or add a table with a "Problem type | Method" header to any note.
 

@@ -257,6 +257,99 @@
     up();
   };
 
+  /* ---------- Physics I explorers */
+  W.freeosc = function (root) {
+    var f = frame(root, "Release the mass and watch it ring (underdamped), return fastest without overshoot (critical) or creep (overdamped). The dotted envelope is e^(−βt); the damped frequency ω₁ is always a little below ω₀.");
+    var w0s = slider(f.ctrl, "Natural frequency ω₀", 1, 10, 0.1, 4, "rad/s", up), zs = slider(f.ctrl, "Damping ratio β/ω₀", 0, 3, 0.01, 0.15, "", up);
+    var xs = slider(f.ctrl, "Start position x₀", -1, 1, 0.05, 1, "", up), vs = slider(f.ctrl, "Start velocity v₀", -6, 6, 0.1, 0, "", up); f.ctrl.appendChild(f.out);
+    function up() {
+      var w0 = w0s.get(), z = zs.get(), x0 = xs.get(), v0 = vs.get(), b = z * w0, r, fn, A = 0, reg;
+      if (z < 0.999) { var w1 = w0 * Math.sqrt(1 - z * z), c2 = (v0 + b * x0) / w1; A = Math.sqrt(x0 * x0 + c2 * c2); fn = function (t) { return Math.exp(-b * t) * (x0 * Math.cos(w1 * t) + c2 * Math.sin(w1 * t)); }; reg = z === 0 ? "undamped (SHM)" : "underdamped"; }
+      else if (z <= 1.001) { fn = function (t) { return Math.exp(-b * t) * (x0 + (v0 + b * x0) * t); }; reg = "critically damped"; }
+      else { r = Math.sqrt(b * b - w0 * w0); var r1 = -b + r, r2 = -b - r; fn = function (t) { return ((v0 - r2 * x0) * Math.exp(r1 * t) - (v0 - r1 * x0) * Math.exp(r2 * t)) / (r1 - r2); }; reg = "overdamped"; }
+      var tmax = Math.min(40, Math.max(6 * Math.PI / w0, b > 0.02 ? 5 / b : 40)), pts = sample(fn, 0, tmax, 700), m = Math.max(0.3, Math.max.apply(null, pts.map(function (p) { return Math.abs(p[1]); })) * 1.15);
+      var env = z < 0.999 && z > 0 ? [{ pts: sample(function (t) { return A * Math.exp(-b * t); }, 0, tmax, 120), color: css("--muted"), dash: [4, 4], width: 1.4 }, { pts: sample(function (t) { return -A * Math.exp(-b * t); }, 0, tmax, 120), color: css("--muted"), dash: [4, 4], width: 1.4 }] : [];
+      draw(f, { xmin: 0, xmax: tmax, ymin: -m, ymax: m, xlabel: "time (s)", ylabel: "x(t)" }, [{ hline: 0, color: css("--line"), width: 1.5 }].concat(env, [{ pts: pts, color: css("--blue") }]));
+      out(f, ["<b>" + reg + "</b>", z < 0.999 ? "ω₁ = " + fmt(w0 * Math.sqrt(1 - z * z), 2) + " rad/s, Q = " + (z > 0 ? fmt(1 / (2 * z), 2) : "∞") : "no oscillation", b > 0 ? "amplitude falls to 1/e in 1/β = <b>" + fmt(1 / b, 2) + " s</b>" : "no decay"]);
+    }
+    up();
+  };
+
+  W.driven = function (root) {
+    var f = frame(root, "Steady-state amplitude of a driven oscillator, in units of the static deflection F₀/k. Light damping gives a tall narrow peak near ω₀ whose height is the quality factor Q; the dot is the frequency you are driving at.");
+    var zs = slider(f.ctrl, "Damping ratio β/ω₀", 0.02, 1, 0.01, 0.1, "", up), rs = slider(f.ctrl, "Drive frequency ω/ω₀", 0.1, 2.2, 0.01, 0.9, "", up); f.ctrl.appendChild(f.out);
+    function up() {
+      var z = zs.get(), r0 = rs.get(), A = function (r) { return 1 / Math.sqrt(Math.pow(1 - r * r, 2) + Math.pow(2 * z * r, 2)); }, Q = 1 / (2 * z), rp = z < 0.7071 ? Math.sqrt(1 - 2 * z * z) : 0, peak = A(rp || 0.001);
+      draw(f, { xmin: 0, xmax: 2.2, ymin: 0, ymax: Math.min(12, Math.max(2, peak * 1.15)), xlabel: "driving frequency ω/ω₀", ylabel: "amplitude / (F₀/k)" }, [{ vline: 1, color: css("--muted"), dash: [6, 5], width: 1.5 }, { pts: sample(A, 0.01, 2.2, 500), color: css("--blue"), fillTo: 0 }, { dots: [[r0, A(r0)]], color: css("--red"), r: 6 }]);
+      var dl = Math.atan2(2 * z * r0, 1 - r0 * r0) * 180 / Math.PI;
+      out(f, ["amplitude at your ω: <b>" + fmt(A(r0), 2) + "×</b> static", "phase lag: <b>" + fmt(dl, 0) + "°</b>", "Q = <b>" + fmt(Q, 2) + "</b>, peak <b>" + fmt(peak, 2) + "×</b> at ω/ω₀ = " + fmt(rp, 3), "width ≈ ω₀/Q = " + fmt(2 * z, 2) + " ω₀"]);
+    }
+    up();
+  };
+
+  W.phase = function (root) {
+    var f = frame(root, "Phase portrait (angle against angular speed) of a pendulum, in units where ω₀ = 1. The red dashed curve is the separatrix E = mgl: start inside and it swings, start outside and it spins over the top. Add damping and the path spirals in.");
+    var ts = slider(f.ctrl, "Start angle θ₀", 5, 175, 1, 60, "°", up), os = slider(f.ctrl, "Start speed θ̇₀", 0, 3, 0.05, 0, "ω₀", up), bs = slider(f.ctrl, "Damping β/ω₀", 0, 0.4, 0.01, 0, "", up); f.ctrl.appendChild(f.out);
+    function up() {
+      var th = ts.get() * Math.PI / 180, w = os.get(), b = bs.get(), dt = 0.02, N = 3500, i, segs = [[]], cur = segs[0], wrap = function (a) { return a - 2 * Math.PI * Math.round(a / (2 * Math.PI)); };
+      function acc(a, v) { return -Math.sin(a) - 2 * b * v; }
+      var a0 = th, v0 = w, last = wrap(a0); cur.push([last, v0]);
+      for (i = 0; i < N; i++) {
+        var k1a = v0, k1v = acc(a0, v0), k2a = v0 + dt / 2 * k1v, k2v = acc(a0 + dt / 2 * k1a, v0 + dt / 2 * k1v), k3a = v0 + dt / 2 * k2v, k3v = acc(a0 + dt / 2 * k2a, v0 + dt / 2 * k2v), k4a = v0 + dt * k3v, k4v = acc(a0 + dt * k3a, v0 + dt * k3v);
+        a0 += dt / 6 * (k1a + 2 * k2a + 2 * k3a + k4a); v0 += dt / 6 * (k1v + 2 * k2v + 2 * k3v + k4v);
+        var wv = wrap(a0); if (Math.abs(wv - last) > Math.PI) { cur = []; segs.push(cur); } cur.push([wv, v0]); last = wv;
+      }
+      var sep = function (s) { return sample(function (x) { return s * 2 * Math.cos(x / 2); }, -Math.PI, Math.PI, 120); };
+      var series = [{ pts: sep(1), color: css("--red"), dash: [6, 5], width: 2 }, { pts: sep(-1), color: css("--red"), dash: [6, 5], width: 2 }, { dots: [[0, 0]], color: css("--green"), r: 5 }];
+      segs.forEach(function (s) { if (s.length > 1) series.push({ pts: s, color: css("--blue"), width: 2.2 }); });
+      series.push({ dots: [[wrap(th), w]], color: css("--orange"), r: 6 });
+      draw(f, { xmin: -Math.PI, xmax: Math.PI, ymin: -3, ymax: 3, xlabel: "angle θ (rad), wrapped to ±π", ylabel: "θ̇ / ω₀", xticks: 6 }, series);
+      var E = w * w / 2 - Math.cos(th), reg = Math.abs(E - 1) < 0.01 ? "on the separatrix (takes forever)" : E < 1 ? "libration (swinging)" : "rotation (over the top)";
+      var rows = ["energy E = <b>" + fmt(E, 3) + "</b> (separatrix at 1)", "<b>" + reg + "</b>"];
+      if (w === 0 && b === 0) { var a = 1, g = Math.cos(th / 2), s; for (s = 0; s < 12; s++) { var an = (a + g) / 2; g = Math.sqrt(a * g); a = an; } rows.push("period = <b>" + fmt(1 / a, 4) + "</b> × small-angle period"); }
+      out(f, rows);
+    }
+    up();
+  };
+
+  W.orbit = function (root) {
+    var f = frame(root, "Every Kepler orbit is r = ℓ/(1 + e cos φ) with the Sun at the focus (dot at the origin). Increase e to stretch the circle into an ellipse, a parabola and a hyperbola; drag the angle to see the speed change (fast near the Sun, slow far away).");
+    var es = slider(f.ctrl, "Eccentricity e", 0, 1.8, 0.01, 0.5, "", up), ps = slider(f.ctrl, "Position angle φ", 0, 360, 1, 40, "°", up); f.ctrl.appendChild(f.out);
+    function up() {
+      var e = es.get(), ph0 = ps.get() * Math.PI / 180, rr = function (p) { return 1 / (1 + e * Math.cos(p)); }, pts = [], p, lim = e > 1 ? Math.acos(-1 / e) * 0.985 : Math.PI;
+      for (p = -lim; p <= lim + 1e-9; p += lim / 200) { var r = rr(p); pts.push([r * Math.cos(p), r * Math.sin(p)]); }
+      var ok = e <= 1 || Math.cos(ph0) > -1 / e + 0.02, series = [{ pts: pts, color: css("--blue"), width: 2.6 }, { dots: [[0, 0]], color: css("--orange"), r: 8 }];
+      if (ok) { var r1 = rr(ph0), px = r1 * Math.cos(ph0), py = r1 * Math.sin(ph0); series.push({ pts: [[0, 0], [px, py]], color: css("--muted"), width: 1.5, dash: [4, 4] }); series.push({ dots: [[px, py]], color: css("--red"), r: 6 }); }
+      draw(f, { xmin: -6.6, xmax: 2.2, ymin: -2.2, ymax: 2.2, xlabel: "x / ℓ", ylabel: "y / ℓ", xticks: 6 }, series);
+      var typ = e < 0.005 ? "circle" : e < 0.995 ? "ellipse" : e < 1.005 ? "parabola" : "hyperbola", rows = ["<b>" + typ + "</b>, energy E = <b>" + fmt((e * e - 1) / 2, 3) + "</b> (units mk²/L²)"];
+      if (e < 0.995) { var a = 1 / (1 - e * e); rows.push("a = " + fmt(a, 2) + " ℓ, pericentre " + fmt(1 / (1 + e), 3) + " ℓ, apocentre " + fmt(1 / (1 - e), 2) + " ℓ", "T ∝ a^(3/2) = " + fmt(Math.pow(a, 1.5), 2) + ", v_peri / v_apo = " + fmt((1 + e) / (1 - e), 2)); } else rows.push("unbound: it passes the Sun once and leaves");
+      if (ok) rows.push("speed here: <b>" + fmt(Math.sqrt(Math.max(0, 2 / rr(ph0) - (1 - e * e))), 3) + "</b> (units √(GM/ℓ))");
+      out(f, rows);
+    }
+    up();
+  };
+
+  W.vfield = function (root) {
+    var f = frame(root, "The field F = (ax − by, bx + ay). Its divergence is 2a (how much it spreads) and its curl is 2b (how much it swirls). Over the unit circle (red), the flux out equals divergence × area and the circulation equals curl × area: the divergence and Stokes theorems in one picture.");
+    var as = slider(f.ctrl, "Spread  a", -2, 2, 0.05, 1, "", up), bs = slider(f.ctrl, "Swirl  b", -2, 2, 0.05, 0.5, "", up); f.ctrl.appendChild(f.out);
+    function up() {
+      var a = as.get(), b = bs.get(), ctx = f.ctx, X = function (x) { return PW / 2 + x * (PW / 7.2); }, Y = function (y) { return PH / 2 - y * (PW / 7.2); }, i, j;
+      ctx.setTransform(DPR, 0, 0, DPR, 0, 0); ctx.clearRect(0, 0, PW, PH);
+      ctx.strokeStyle = css("--line"); ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(0, Y(0)); ctx.lineTo(PW, Y(0)); ctx.moveTo(X(0), 0); ctx.lineTo(X(0), PH); ctx.stroke();
+      var sc = 0.5 / Math.max(1, Math.hypot(a, b) * 3.4);
+      for (i = -3; i <= 3; i += 0.6) for (j = -1.6; j <= 1.6; j += 0.55) {
+        var u = a * i - b * j, v = b * i + a * j, m = Math.hypot(u, v); if (m < 1e-6) continue;
+        var L = Math.min(0.55, m * sc * 1.2), x1 = X(i), y1 = Y(j), dx = u / m * L * (PW / 7.2), dy = -v / m * L * (PW / 7.2);
+        ctx.strokeStyle = css("--blue"); ctx.fillStyle = css("--blue"); ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x1 + dx, y1 + dy); ctx.stroke();
+        var ang = Math.atan2(dy, dx); ctx.beginPath(); ctx.moveTo(x1 + dx, y1 + dy); ctx.lineTo(x1 + dx - 6 * Math.cos(ang - 0.45), y1 + dy - 6 * Math.sin(ang - 0.45)); ctx.lineTo(x1 + dx - 6 * Math.cos(ang + 0.45), y1 + dy - 6 * Math.sin(ang + 0.45)); ctx.fill();
+      }
+      ctx.strokeStyle = css("--red"); ctx.lineWidth = 3; ctx.beginPath(); ctx.arc(X(0), Y(0), PW / 7.2, 0, 7); ctx.stroke();
+      var div = 2 * a, curl = 2 * b, kind = Math.abs(a) < 0.03 && Math.abs(b) < 0.03 ? "zero field" : Math.abs(b) < 0.03 ? (a > 0 ? "pure source" : "pure sink") : Math.abs(a) < 0.03 ? (b > 0 ? "pure anticlockwise swirl" : "pure clockwise swirl") : (a > 0 ? "source with swirl: outward spiral" : "sink with swirl: inward spiral");
+      out(f, ["<b>" + kind + "</b>", "div F = <b>" + fmt(div, 2) + "</b>, curl F = <b>" + fmt(curl, 2) + "</b>", "flux out of unit circle = div × π = <b>" + fmt(div * Math.PI, 2) + "</b>", "circulation round it = curl × π = <b>" + fmt(curl * Math.PI, 2) + "</b>"]);
+    }
+    up();
+  };
+
   function init(rootEl) {
     Array.prototype.forEach.call((rootEl || document).querySelectorAll(".widget[data-widget]:not([data-init])"), function (el) {
       el.dataset.init = "1"; var fn = W[el.dataset.widget]; if (fn) { try { fn(el); } catch (e) { el.innerHTML = "<p class='w-note'>Widget failed: " + e.message + "</p>"; } }
