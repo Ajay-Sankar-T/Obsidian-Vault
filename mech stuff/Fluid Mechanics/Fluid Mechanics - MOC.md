@@ -69,7 +69,11 @@ This is the index note for the course, reorganized into topic folders (previousl
 - [[Fluid Mechanics/09 Pipe Flow and Losses/Pipe Flow and Losses - Formula Bank|Pipe Flow and Losses — Formula Bank]] — energy equation with losses, Darcy–Weisbach, friction factor (laminar, Colebrook, Haaland, fully rough), Moody chart, minor losses and equivalent lengths, the three pipe problems
 - [[Fluid Mechanics/09 Pipe Flow and Losses/Pipe Flow and Losses - Solved Problems|Solved Problems (GPS 7 & 8)]] — house water supply with booster or larger pipe, gravity drainpipes, industrial supply line, Roman nozzle with diffuser, scaled water main, laminar tube from a tank
 
-*Tools:* `Tools/fm_core.py` (checks every number and Π group), `Tools/fm_viz.py` (figures in `assets/`), `Tools/fm_pipe.py` (pipe-flow solutions and Moody-chart figures).
+## 10 Viscous Flow and Exact Solutions
+- [[Fluid Mechanics/10 Viscous Flow and Exact Solutions/Viscous Flow and Exact Solutions - Formula Bank|Viscous Flow and Exact Solutions — Formula Bank]] — the one-ODE recipe for unidirectional flow, plane Couette and Poiseuille, film flow, Hagen–Poiseuille, annulus, stress tensor, creeping flow
+- [[Fluid Mechanics/10 Viscous Flow and Exact Solutions/Viscous Flow and Exact Solutions - Solved Problems|Solved Problems (GPS 9 & 10)]] — flow chamber, lava film, stagnation-point flow, wire coating, dashpot, syringe, siphon with cavitation limit, pump with parallel or larger pipe
+
+*Tools:* `Tools/fm_core.py` (checks every number and Π group), `Tools/fm_viz.py` (figures in `assets/`), `Tools/fm_pipe.py` (pipe-flow solutions and Moody-chart figures), `Tools/fm_gps9_10.py` (viscous-flow solutions, siphon and pump numbers, figures `FM-V*`).
 
 ## The four biggest problem-solving ideas
 

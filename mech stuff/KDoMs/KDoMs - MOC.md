@@ -19,6 +19,10 @@ Kinematics and dynamics of machinery (ME 2201). Source text: *Theory of Mechanis
    - [[KDoMs/Synthesis-Formula-Bank/Motion and Path Generation - Graphical Methods|Graphical synthesis]] — inversion, poles, three/four positions
    - [[KDoMs/Synthesis-Formula-Bank/Motion and Path Generation - Analytical Methods|Analytical synthesis]] — dyads, Chebyshev spacing, Freudenstein
 3. **Gears** — [[KDoMs/Formula-Bank/Gear Formula Bank|Gear Formula Bank]] — involute geometry, interference, contact ratio, gear trains, epicyclic trains
+4. **Cams, flywheels and balancing** — motion from a prescribed law, and smoothing or cancelling the forces it causes
+   - [[Cam Motion Laws and the Flat-Face Follower]] — cycloidal law, profile, curvature, driving-effort eccentricity
+   - [[Flywheel Sizing from the Turning-Moment Diagram]] — mean torque, $\Delta E$, $C_s$, mass
+   - [[Balancing of Rotors - Static and Dynamic]] — force and couple polygons, two-plane replacement
 
 ```text
 Mechanism given ──► Velocity / acceleration analysis ──► (loads, power)
@@ -37,6 +41,9 @@ Speed ratio required ──► Gears ──► train value ──► torques
 | Exact, programmable synthesis | [[KDoMs/Synthesis-Formula-Bank/Motion and Path Generation - Analytical Methods|Analytical synthesis]] |
 | Tooth numbers, interference, centre distance | [[KDoMs/Formula-Bank/Gear Formula Bank|Gear Formula Bank]] → [[KDoMs/Tutorial-solutions/Tutorial-7-solution|Tutorial 7]] |
 | Speeds and torques in a planetary train | Gear Formula Bank §11–12 |
+| Cam profile for a given lift law, or check curvature and jamming | [[Cam Motion Laws and the Flat-Face Follower]] → [[KDoMs/Tutorial-solutions/Tutorial-9-solution|Tutorial 9]] |
+| Flywheel mass for a given speed band | [[Flywheel Sizing from the Turning-Moment Diagram]] → [[KDoMs/Tutorial-solutions/Tutorial-10-solution|Tutorial 10 Q1]] |
+| Add or remove mass to balance a rotor in chosen planes | [[Balancing of Rotors - Static and Dynamic]] → [[KDoMs/Tutorial-solutions/Tutorial-10-solution|Tutorial 10 Q2]] |
 
 ## Tutorials and problems
 
@@ -46,8 +53,22 @@ Speed ratio required ──► Gears ──► train value ──► torques
 | [[KDoMs/Tutorial-solutions/Tutorial-5-solution|Tutorial 5 — Atkinson engine mechanism]] | velocity/acceleration analysis, instant centre | `Tutorial 5.pdf` |
 | [[KDoMs/Tutorial-solutions/Tutorial-6-solution|Tutorial 6 — tipper-dumper]] | three-position rigid-body guidance, inversion | `Tutorial 6.pdf` |
 | [[KDoMs/Tutorial-solutions/Tutorial-7-solution|Tutorial 7 — involute gears]] | interference, centre distance, tooth data | `Tutorial 7.pdf` |
+| [[KDoMs/Tutorial-solutions/Tutorial-9-solution|Tutorial 9 — flat-face cam, cycloidal motion]] | [[Cam Motion Laws and the Flat-Face Follower]]: profile, graphical construction, $v_{\max}$, $a_{\max}$, $\rho$, driving-effort eccentricity | `Tutorial 9.pdf` |
+| [[KDoMs/Tutorial-solutions/Tutorial-10-solution|Tutorial 10 — flywheel and two-plane balancing]] | [[Flywheel Sizing from the Turning-Moment Diagram]], [[Balancing of Rotors - Static and Dynamic]] | `Tutorial 10.pdf` (Mallik & Ghosh 7.14) |
 
-The statements are in the `Tutorials/` folder (`Tutorial 1.pdf`–`Tutorial 8.pdf`). Tutorials 5–7 are solved above; Tutorials 1–4 and 8 are not yet solved in the vault.
+The statements are in the `Tutorials/` folder (`Tutorial 1.pdf`–`Tutorial 10.pdf`). Tutorials 5–7, 9 and 10 are solved above; Tutorials 1–4 and 8 are not yet solved in the vault.
+
+### Exam patterns
+- **Cam, "draw profile / find $v$, $a$, $\rho$"** — recognise by a lift table plus a named law. Needs $s,s',s''$ at one angle; flat face: $\rho=R_0+s+s''$, $\varepsilon=s'-e$. Offset never changes a flat-face outline.
+- **Flywheel from a torque diagram** — recognise by triangle areas and a scale. Needs $T_{\text{mean}}=W/(\text{cycle angle})$, then the area above the mean line, then $I=\Delta E/(\omega^2C_s)$.
+- **Balance "in other planes"** — recognise by trial masses or inaccessible planes. Needs a couple polygon about one plane, a force polygon for the other, and care with add versus remove.
+
+### Problem coverage
+| Concept | Problems | Status |
+| --- | --- | --- |
+| Cycloidal cam, flat-face follower | Tutorial 9 | solved |
+| Flywheel sizing | Tutorial 10 Q1 | solved |
+| Two-plane balancing | Tutorial 10 Q2 | solved |
 
 ## Tools
 
@@ -65,7 +86,8 @@ Verification scripts and browser explorers sit beside each bank: `va_core.py`, `
 - [x] Velocity/acceleration banks
 - [x] Synthesis banks
 - [x] Gear bank
-- [ ] Tutorials 2–4 solved
+- [x] Cam, flywheel and balancing notes; Tutorials 9 and 10 solved
+- [ ] Tutorials 2–4 and 8 solved
 
 ## Continues in
 - [[Introduction to Machine Design - MOC]] — gear design and mechanism loads.

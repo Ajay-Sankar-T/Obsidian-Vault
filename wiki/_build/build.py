@@ -62,10 +62,10 @@ ACTIVE = ["de", "ph", "em", "ed", "som", "fm", "aml", "pl", "kdoms", "ee", "xd",
 UPCOMING = ["fte", "ht", "mat", "mfg", "mic", "mdes", "camd"]
 UNIT_NAMES = {"de": {"Intro": "First-order ODEs", "2nd Order DE": "Second-order ODEs", "Series Solutions of DE": "Series solutions",
                      "Special Functions": "Special functions", "PDEs": "Partial differential equations", "Problems": "Assignments"},
-              "kdoms": {"Velocity-Acceleration-Bank": "Velocity and acceleration", "Synthesis-Formula-Bank": "Mechanism synthesis", "Formula-Bank": "Gears"},
+              "kdoms": {"Velocity-Acceleration-Bank": "Velocity and acceleration", "Synthesis-Formula-Bank": "Mechanism synthesis", "Formula-Bank": "Gears", "Cams-Flywheels-Balancing": "Cams, flywheels and balancing"},
               "ml": {"ML": "Machine learning", "WebOps": "Web basics"}}
 UNIT_ORDER = {"de": ["Intro", "2nd Order DE", "Series Solutions of DE", "Special Functions", "PDEs", "Problems"],
-              "kdoms": ["Velocity-Acceleration-Bank", "Synthesis-Formula-Bank", "Formula-Bank"],
+              "kdoms": ["Velocity-Acceleration-Bank", "Synthesis-Formula-Bank", "Formula-Bank", "Cams-Flywheels-Balancing"],
               "ee": ["", "AC Transients", "RLC Circuits - Responses", "Transformers and Induction Machines"], "em": ["Statics", "Dynamics"]}
 DEFAULT_UNIT = {"ee": "Weekly lessons", "xd": "Connections", "ent": "Class notes", "ed": "Drawing standards", "pl": "Experiments and skills", "aml": "Experiments"}
 
