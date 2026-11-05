@@ -13,10 +13,10 @@
             "state": {
               "type": "pdf",
               "state": {
-                "file": "MathFlow/Differential Equations/MA2102-Lecture-Slides/Lecture-4.pdf"
+                "file": "MathFlow/Differential Equations/MA2102-Lecture-Slides/Lecture-12.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "Lecture-4"
+              "title": "Lecture-12"
             }
           },
           {
@@ -39,12 +39,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MathFlow/Differential Equations/2nd Order DE/Linear Independence and the Wronskian.md",
+                "file": "mech stuff/Physics/Physics I - MOC.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Linear Independence and the Wronskian"
+              "title": "Physics I - MOC"
             }
           },
           {
@@ -60,7 +60,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -239,54 +239,54 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "ce2429de2663250f",
+  "active": "cacd3957fc8946af",
   "lastOpenFiles": [
     "wiki/_build/_math_out.json",
     "wiki/_build/_math_in.json",
-    "mech stuff/Strength of materials/Tutorial 9 - Columns/Tutorial 9 - Columns.md",
-    "mech stuff/Strength of materials/Tutorial 9 - Columns",
-    "mech stuff/Strength of materials/assets/SM-T9-Q5-rigid-elastic.png",
-    "mech stuff/Strength of materials/assets/SM-T9-Q4-spring-ends.png",
-    "mech stuff/Strength of materials/assets/SM-T9-Q3-sway-column.png",
-    "mech stuff/Strength of materials/assets/SM-T9-Q2-column-AB.png",
-    "mech stuff/Strength of materials/assets/SM-T9-Q1-control-rod.png",
-    "mech stuff/Strength of materials/Tools/sm_t9.py",
-    "MathFlow/Differential Equations/2nd Order DE/Linear Independence and the Wronskian.md",
-    "MathFlow/Differential Equations/2nd Order DE/Non-homogeneous Cauchy-Euler Equations.md",
-    "MathFlow/Differential Equations/2nd Order DE/Cauchy-Euler Equations.md",
-    "MathFlow/Differential Equations/2nd Order DE/Variation of Parameters - 3rd Order.md",
-    "MathFlow/Differential Equations/2nd Order DE/Undetermined Coefficients - Higher Order.md",
-    "MathFlow/Differential Equations/2nd Order DE/Higher Order Homogeneous ODEs.md",
-    "MathFlow/Differential Equations/2nd Order DE/Variation of Parameters.md",
-    "MathFlow/Differential Equations/2nd Order DE/Undetermined Coefficients.md",
-    "MathFlow/Differential Equations/2nd Order DE/2nd Order Linear ODE with Constant Coefficients.md",
-    "MathFlow/Differential Equations/2nd Order DE/Reduction of Order.md",
-    "MathFlow/Differential Equations/2nd Order DE/General Solution Structure Theorem.md",
-    "MathFlow/Differential Equations/2nd Order DE/Existence, Uniqueness, and Fundamental Sets.md",
-    "MathFlow/Differential Equations/2nd Order DE/Abel's Formula.md",
-    "MathFlow/Differential Equations/2nd Order DE/Solution of a Second Order ODE.md",
-    "MathFlow/Differential Equations/2nd Order DE/Standard Form and Homogeneity.md",
-    "MathFlow/Differential Equations/2nd Order DE/2nd Order ODEs - MOC.md",
-    "wiki/assets/img/A1-fig1-direction-fields.png",
-    "mech stuff/ME25B_curriculum.pdf",
-    "MathFlow/Differential Equations/MA2102-Lecture-Slides/Lecture-38.pdf",
-    "MathFlow/Differential Equations/MA2102-Lecture-Slides/Unconfirmed 74117.crdownload",
-    "mech stuff/Mechanical Engineering Curriculum - MOC.md",
-    "MathFlow/Differential Equations/MA2102-Lecture-Slides/Lecture-11.pdf",
-    "MathFlow/Differential Equations/MA2102-Lecture-Slides/Lecture-10.pdf",
-    "MathFlow/Differential Equations/MA2102-Lecture-Slides/Lecture-24.pdf",
-    "MathFlow/Differential Equations/MA2102-Lecture-Slides/Lecture-30.pdf",
-    "mech stuff/Strength of materials/Tutorial 8 - Deflection of Beams/Tutorial 8 - Deflection of Beams.md",
-    "wiki/assets/img/FM-P6-laminar-point.png",
-    "wiki/assets/img/FM-P1-moody-operating-points.png",
-    "wiki/assets/img/DE-PDE-string.png",
-    "wiki/assets/img/DE-PDE-laplace.png",
-    "Basic Electrical Engineering/Tutorial 7 on Transformer/Tutorial 7 on Transformer.md",
-    "Basic Electrical Engineering/Tutorial 7 on Transformer/T7-Q10 - Maximum Efficiency and Regulation.md",
-    "Basic Electrical Engineering/Tutorial 7 on Transformer/T7-Q9 - Efficiency and Regulation from Tests.md",
-    "Basic Electrical Engineering/Tutorial 7 on Transformer/T7-Q8 - Voltage Regulation at Full Load.md",
-    "Basic Electrical Engineering/Tutorial 7 on Transformer/T7-Q7 - OC and SC Test Parameters.md",
-    "Basic Electrical Engineering/Tutorial 7 on Transformer/T7-Q6 - Equivalent Circuit on the LT Side.md",
+    "wiki/assets/sedR2dvgA",
+    "mech stuff/Engineering Mechanics/Dynamics/Vibration of Particles and Rigid Bodies.md",
+    "mech stuff/Engineering Mechanics/Dynamics/Mass Moments of Inertia.md",
+    "mech stuff/Engineering Mechanics/Dynamics/Plane Kinetics of Rigid Bodies.md",
+    "mech stuff/Engineering Mechanics/Dynamics/Plane Kinematics of Rigid Bodies.md",
+    "mech stuff/Engineering Mechanics/Dynamics/Impact and Systems of Particles.md",
+    "mech stuff/Engineering Mechanics/Dynamics/Kinetics of Particles - Work-Energy and Impulse-Momentum.md",
+    "mech stuff/Engineering Mechanics/Dynamics/Particle Kinematics - Rectilinear and Curvilinear Motion.md",
+    "mech stuff/Engineering Mechanics/Statics/Virtual Work and Potential Energy Stability.md",
+    "mech stuff/Engineering Mechanics/Statics/Friction in Machines - Belts, Screws and Wedges.md",
+    "mech stuff/Engineering Mechanics/Statics/Dry Friction.md",
+    "mech stuff/Engineering Mechanics/Statics/Distributed Loads and Equivalent Point Loads.md",
+    "mech stuff/Engineering Mechanics/Statics/Frames and Machines.md",
+    "mech stuff/Engineering Mechanics/Statics/Plane Trusses - Method of Joints and Sections.md",
+    "mech stuff/Engineering Mechanics/Statics/Free-Body Diagrams and Equilibrium of Rigid Bodies.md",
+    "mech stuff/Engineering Mechanics/Statics/Moments, Couples and Equivalent Force Systems.md",
+    "mech stuff/Engineering Mechanics/Statics/Force Systems and Resultants.md",
+    "mech stuff/Engineering Mechanics/Dynamics",
+    "mech stuff/Engineering Mechanics/Statics",
+    "mech stuff/Engineering Mechanics/Engineering Mechanics - MOC.md",
+    "mech stuff/Engineering Mechanics/Vibration of Particles and Rigid Bodies.md",
+    "mech stuff/Engineering Mechanics/Mass Moments of Inertia.md",
+    "mech stuff/Engineering Mechanics/Plane Kinetics of Rigid Bodies.md",
+    "mech stuff/Engineering Mechanics/Plane Kinematics of Rigid Bodies.md",
+    "mech stuff/Engineering Mechanics/Impact and Systems of Particles.md",
+    "mech stuff/Engineering Mechanics/Kinetics of Particles - Work-Energy and Impulse-Momentum.md",
+    "mech stuff/Engineering Mechanics/Particle Kinematics - Rectilinear and Curvilinear Motion.md",
+    "mech stuff/Engineering Mechanics/Virtual Work and Potential Energy Stability.md",
+    "mech stuff/Engineering Mechanics/Plane Trusses - Method of Joints and Sections.md.tmp.33008.da75cab0d647",
+    "mech stuff/Engineering Mechanics/Plane Trusses - Method of Joints and Sections.md.tmp.33008.5e5da71deed0",
+    "mech stuff/Engineering Mechanics/Free-Body Diagrams and Equilibrium of Rigid Bodies.md.tmp.33008.c23a9e9f5ce6",
+    "mech stuff/Engineering Mechanics/Force Systems and Resultants.md.tmp.33008.1b5dce277a21",
+    "mech stuff/Engineering Mechanics/Meriam_Kraige_Engg_Mech_Statics_7thEdition.pdf",
+    "mech stuff/Engineering Mechanics/assets/EM-force-system.png",
+    "mech stuff/Engineering Mechanics/assets/EM-energy-block.png",
+    "mech stuff/Engineering Mechanics/assets/EM-bounce.png",
+    "mech stuff/Engineering Mechanics/assets/EM-belt-friction.png",
+    "MathFlow/Calculus/Multivariable Calculus/MA1101- Notes.pdf",
+    "mech stuff/Physics Lab/assets/PL-young-wood.png",
+    "mech stuff/Physics Lab/assets/PL-stefan.png",
+    "mech stuff/Physics Lab/assets/PL-coil-field.png",
+    "mech stuff/Physics Lab/assets/PL-transistor.png",
+    "mech stuff/Physics Lab/assets/PL-newton-rings.png",
+    "mech stuff/Physics Lab/assets/PL-ultrasonic.png",
     "Untitled.canvas",
     "Untitled 1.canvas",
     "Untitled 2.canvas"
