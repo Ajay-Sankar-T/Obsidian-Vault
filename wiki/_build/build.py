@@ -60,6 +60,9 @@ COURSES = [
 ]
 ACTIVE = ["de", "ph", "em", "ed", "som", "fm", "aml", "pl", "kdoms", "mdes", "mat", "fte", "ht", "mfg", "mic", "camd", "ee", "xd", "ml", "ent"]
 UPCOMING = []
+SHELVES = [("Foundations: maths, physics, mechanics, drawing", ["de", "ph", "em", "ed"]), ("Solids and materials", ["som", "mat", "aml"]),
+           ("Machines, design and manufacture", ["kdoms", "mdes", "camd", "mfg"]), ("Heat and fluids", ["fm", "ht", "fte"]),
+           ("Measurement, control and electrical", ["mic", "ee", "pl"]), ("Across subjects", ["xd", "ml", "ent"])]
 UNIT_NAMES = {"de": {"Intro": "First-order ODEs", "2nd Order DE": "Second-order ODEs", "Series Solutions of DE": "Series solutions",
                      "Special Functions": "Special functions", "PDEs": "Partial differential equations", "Problems": "Assignments"},
               "kdoms": {"Foundations": "Mechanism basics", "Velocity-Acceleration-Bank": "Velocity and acceleration", "Synthesis-Formula-Bank": "Mechanism synthesis", "Formula-Bank": "Gears", "Cams-Flywheels-Balancing": "Cams, flywheels and balancing"},
@@ -770,7 +773,8 @@ def main():
     home = f"""<section class="hero"><div><h1>Engineering Notebook</h1><p>Course notes, worked problems and interactive explorers, bound in one place. Take a book from the shelf, or search for any topic.</p>
 <div class="recent-h" id="recentH" hidden>Recently opened</div><div class="recent" id="recent"></div></div>
 <div class="ribbon" id="continue"></div></section>
-<h2 class="sec"><span class="tape">Shelf</span>Your courses</h2><div class="bookcase"><div class="shelf">{"".join(book(c) for c in ACTIVE)}</div></div>
+<div class="stats"><span><b>{len(notes)}</b> notes</span><span><b>{sum(1 for n in notes if n.kind == 'concept')}</b> concepts</span><span><b>{sum(1 for n in notes if n.kind == 'problem')}</b> solved problems</span><span><b>{len(set(WIDGET_OF.values()))}</b> explorers</span><span><b>{len([c for c in ACTIVE])}</b> books</span></div>
+<h2 class="sec"><span class="tape">Shelf</span>Your courses</h2>{"".join('<h3 class="shelf-h">' + gt + '</h3><div class="bookcase"><div class="shelf">' + "".join(book(c) for c in ids if c in ACTIVE) + '</div></div>' for gt, ids in SHELVES)}
 {("<h2 class=\"sec\"><span class=\"tape\">Coming up</span>Planned courses</h2><div class=\"bookcase\"><div class=\"shelf\">" + "".join(book(c) for c in UPCOMING) + "</div></div>") if UPCOMING else ""}
 {sims_html}
 <p class="foot"><a href="n/{next((n.slug for n in notes if n.base == 'Mechanical Engineering Curriculum - MOC'), '')}.html">Curriculum map</a> · {len(notes)} notes · progress is saved in this browser only</p>"""
