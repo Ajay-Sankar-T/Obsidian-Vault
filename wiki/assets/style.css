@@ -577,3 +577,41 @@ details.callout.fold[open]>summary{border-bottom:1px dashed color-mix(in srgb,va
   .search{padding:0}.search-box{width:100%;max-height:100dvh;height:100dvh;border-radius:0}
 }
 @media (max-width:360px){.plate-t{display:none}.shelf{column-gap:8px}.book-t{font-size:12px}}
+
+/* ===== SCROLLBARS: slim, theme-coloured, never the white OS bar ===== */
+:root{--sb:rgba(110,80,45,.42);--sb-h:rgba(110,80,45,.7)}
+[data-theme="dark"]{--sb:rgba(232,205,150,.30);--sb-h:rgba(232,205,150,.55)}
+*{scrollbar-width:thin;scrollbar-color:var(--sb) transparent}
+@supports not (scrollbar-color:auto){
+  *::-webkit-scrollbar{width:8px;height:8px}
+  *::-webkit-scrollbar-track,*::-webkit-scrollbar-corner{background:transparent}
+  *::-webkit-scrollbar-thumb{background:var(--sb);border-radius:8px;border:2px solid transparent;background-clip:content-box}
+  *::-webkit-scrollbar-thumb:hover{background:var(--sb-h);background-clip:content-box}
+}
+.tree,.toc,#results,.lesson-main{scrollbar-gutter:stable}
+
+@media (max-width:700px){
+  /* phones scroll by touch: no bars at all, a soft edge shadow shows that a table or equation scrolls */
+  html,body,.body table,.body pre,.katex-display,.kx-scroll,.scard .sm,.tree,#results,.lesson-main,.crumbbar,.chips,.recent,.filters{scrollbar-width:none}
+  html::-webkit-scrollbar,body::-webkit-scrollbar,.body table::-webkit-scrollbar,.body pre::-webkit-scrollbar,.katex-display::-webkit-scrollbar,.kx-scroll::-webkit-scrollbar,.scard .sm::-webkit-scrollbar,.tree::-webkit-scrollbar,#results::-webkit-scrollbar,.lesson-main::-webkit-scrollbar{display:none}
+  .body table{background:
+      linear-gradient(to right,var(--paper) 30%,transparent) left center,
+      linear-gradient(to left,var(--paper) 30%,transparent) right center,
+      radial-gradient(farthest-side at 0 50%,rgba(0,0,0,.4),transparent) left center,
+      radial-gradient(farthest-side at 100% 50%,rgba(0,0,0,.4),transparent) right center,
+      var(--paper);
+    background-repeat:no-repeat;background-size:34px 100%,34px 100%,12px 100%,12px 100%,auto;
+    background-attachment:local,local,scroll,scroll,scroll}
+  .katex-display{background:
+      linear-gradient(to right,var(--paper) 30%,transparent) left center,
+      linear-gradient(to left,var(--paper) 30%,transparent) right center,
+      radial-gradient(farthest-side at 0 50%,rgba(0,0,0,.3),transparent) left center,
+      radial-gradient(farthest-side at 100% 50%,rgba(0,0,0,.3),transparent) right center;
+    background-repeat:no-repeat;background-size:30px 100%,30px 100%,10px 100%,10px 100%;
+    background-attachment:local,local,scroll,scroll}
+
+  /* nothing clipped: tags and breadcrumbs wrap instead of scrolling sideways */
+  .chips{flex-wrap:wrap;overflow:visible;margin:0 0 10px;padding:0;gap:6px}
+  .crumbbar{flex-wrap:wrap;overflow:visible;white-space:normal;row-gap:3px;font-size:11px;letter-spacing:.04em;line-height:1.35;padding:6px 16px}
+  .crumbbar>*{min-width:0;overflow-wrap:anywhere}
+}
