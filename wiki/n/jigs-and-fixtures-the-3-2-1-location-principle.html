@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#4a2f20"><meta name="description" content="Course notes, worked problems and interactive explorers, bound as a notebook"><link rel="icon" href="../assets/Favicons/Alya.png" type="image/png"><link rel="apple-touch-icon" href="../assets/Favicons/Alya.png"><link rel="manifest" href="../manifest.webmanifest">
+<title>Jigs and Fixtures - The 3-2-1 Location Principle · Engineering Notebook</title>
+<script>try{var t=localStorage.getItem('wiki.theme');if(!t&&matchMedia('(prefers-color-scheme: dark)').matches)t='dark';if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="../assets/style.css"><link rel="stylesheet" href="../assets/vendor/katex.min.css">
+</head><body data-root="../" data-page="note" data-slug="jigs-and-fixtures-the-3-2-1-location-principle" data-course="mfg">
+<header class="top"><button class="key key-menu" id="menuBtn" type="button" aria-label="Open contents" aria-expanded="false"><svg class="i" viewBox="0 0 24 24"><path d="M4 6h16v2H4V6Zm0 5h16v2H4v-2Zm0 5h16v2H4v-2Z"/></svg></button>
+<a class="plate" href="../index.html"><span class="plate-mark">EN</span><span class="plate-t">Engineering Notebook</span></a>
+<nav class="tabs" aria-label="Sections"><a class="tab" href="../index.html">Library</a><a class="tab" href="../practice.html">Practice</a><a class="tab" href="../solve.html">How to solve</a><a class="tab" href="../graph.html">Link map</a></nav>
+<div class="top-r"><button class="search-key" id="openSearch" type="button" aria-label="Search the notebook"><svg viewBox="0 0 24 24"><path d="M10 3a7 7 0 1 0 4.4 12.4l4.6 4.6 1.4-1.4-4.6-4.6A7 7 0 0 0 10 3Zm0 2a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z"/></svg><span>Search the notebook</span><kbd>/</kbd></button><button class="key" id="themeBtn" type="button" aria-label="Switch between day and night desk"></button></div></header>
+<div class="thread" id="thread"></div>
+<div class="frame"><aside class="tree" id="tree" aria-label="Contents"></aside>
+<main class="content"><nav class="crumbbar" aria-label="Breadcrumb"><a href="../index.html">Library</a><i>›</i><a href="../course/mfg.html">Manufacturing Technology</a><i>›</i><span>Fixtures and Metrology</span></nav><div class="paper"><article class="note" data-kind="concept" style="--c:#7a7d80;--cd:#55575a">
+<h1>Jigs and Fixtures — The 3-2-1 Location Principle</h1><div class="chips"><span class="chip">concept</span><span class="chip">manufacturing</span></div>
+<div class="actions"><button class="btn" id="startLesson" type="button">Study mode</button><button class="btn btn-ghost" id="markDone" type="button">Mark as read</button></div>
+<div class="body" id="body"><section class="step intro"><div class="callout callout-abstract">
+<div class="callout-title">In one breath</div>
+<p>A free rigid body has <strong>six degrees of freedom</strong>. A fixture removes them with the fewest, most repeatable contacts: <strong>3 points on one plane, 2 on a second, 1 on a third</strong>: six point contacts, six constraints. Locators <strong>position</strong> the part, clamps <strong>hold</strong> it against the locators, and nothing else should touch.</p>
+</div>
+<p>Part of <a href="../n/manufacturing-technology-moc.html">Manufacturing Technology - MOC</a>. Previous: <a href="../n/tool-life-and-machining-economics.html">Tool Life and Machining Economics</a>. Next: <a href="../n/metrology-and-gd-and-t-form-position-and-gauging.html">Metrology and GD&amp;T - Form, Position and Gauging</a>.</p>
+</section><section class="step" data-title="1. Jig and fixture"><h2 id="1-jig-and-fixture">1. Jig and fixture</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Jig</th>
+<th>Fixture</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Holds the part</td>
+<td>yes</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Guides the tool</td>
+<td><strong>yes</strong> (drill bushings)</td>
+<td>no (tool is set by a gauge block or a setting key)</td>
+</tr>
+<tr>
+<td>Used on</td>
+<td>drilling, reaming, tapping</td>
+<td>milling, turning, grinding, welding, inspection</td>
+</tr>
+</tbody>
+</table>
+<p>Purpose: <strong>accuracy and interchangeability</strong> (every part located the same way), <strong>speed</strong>, <strong>safety</strong>, and lower skill needs.</p>
+</section><section class="step" data-title="2. The 3-2-1 principle"><h2 id="2-the-3-2-1-principle">2. The 3-2-1 principle</h2>
+<p>A rigid part has 3 translations and 3 rotations. Take three mutually perpendicular reference planes (datums):</p>
+<table>
+<thead>
+<tr>
+<th>Datum</th>
+<th>Contacts</th>
+<th>Degrees of freedom removed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Primary</strong> (the base, the largest, most stable face)</td>
+<td><strong>3</strong> points, forming a triangle as large as possible</td>
+<td>1 translation (normal) + 2 rotations</td>
+</tr>
+<tr>
+<td><strong>Secondary</strong> (a long side)</td>
+<td><strong>2</strong> points, as far apart as possible</td>
+<td>1 translation + 1 rotation (about the primary normal)</td>
+</tr>
+<tr>
+<td><strong>Tertiary</strong> (an end face)</td>
+<td><strong>1</strong> point</td>
+<td>the last translation</td>
+</tr>
+</tbody>
+</table>
+<p>Total <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">6</span></span></span></span> constraints. Each locator is a point contact (pad, pin, button).</p>
+<p><img src="../assets/img/MFG-6-fixture-gdt.png" alt="MFG-6-fixture-gdt" loading="lazy"></p>
+<p><strong>Rules.</strong></p>
+<ul>
+<li><strong>Never over-constrain</strong>: a fourth point on the primary plane makes the part rock on a rough surface, so locators are fixed in position and the part is held by clamps. Use a <strong>fourth, adjustable or floating</strong> support only to prevent deflection under load.</li>
+<li><strong>Use the datum of the drawing</strong>: locate on the faces from which the dimensions are measured, to avoid tolerance stack-up.</li>
+<li><strong>Locating on holes:</strong> one <strong>round pin</strong> (removes 2 translations), one <strong>diamond (relieved) pin</strong> (removes 1 rotation) in a second hole, a plane as the primary: it removes 3+2+1 with a pair of holes and avoids the hole-spacing error.</li>
+<li><strong>V-block</strong> for round parts (centres the axis, removes 4 DOF).</li>
+</ul>
+</section><section class="step" data-title="3. Clamping"><h2 id="3-clamping">3. Clamping</h2>
+<p>Clamps do not locate: they press the part onto the locators against the <strong>cutting forces</strong>. Rules:</p>
+<ol>
+<li>The clamp force acts <strong>toward the locators</strong> (so that the locators carry the reaction, not the clamp).</li>
+<li>Cutting forces should push the part <strong>against</strong> the locators, not off them.</li>
+<li>Clamp <strong>over</strong> a support to avoid bending the part.</li>
+<li>Clamping must be strong but not distort a thin part.</li>
+</ol>
+<p><strong>Estimate.</strong> If the cutting force <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">c</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> is resisted only by friction (<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">μ</span></span></span></span> at the locators/clamp), the required clamp force is</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9694em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">c</span><span class="mord mathnormal mtight" style="margin-right:0.01968em;">l</span><span class="mord mathnormal mtight">am</span><span class="mord mathnormal mtight">p</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.2408em;vertical-align:-0.8804em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3603em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">μ</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">SF</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">c</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8804em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:2em;"></span><span class="mord text"><span class="mord">e.g. </span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">c</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord">800</span><span class="mspace"> </span><span class="mord text"><span class="mord">N</span></span><span class="mpunct">,</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">μ</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord">0.2</span><span class="mpunct">,</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">SF</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.9694em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">c</span><span class="mord mathnormal mtight" style="margin-right:0.01968em;">l</span><span class="mord mathnormal mtight">am</span><span class="mord mathnormal mtight">p</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">8000</span><span class="mspace"> </span><span class="mord text"><span class="mord">N</span></span></span></span></span></span></p>
+<p>Orienting a locator <strong>against</strong> the cutting force removes the need for friction: the clamp then only needs to keep the part in contact, perhaps a tenth as much.</p>
+</section><section class="step" data-title="4. Design checklist"><h2 id="4-design-checklist">4. Design checklist</h2>
+<p>Pick datums from the drawing, choose the locator layout (3-2-1), decide the clamping direction and forces, ensure loading and unloading access and chip clearance, add error-proofing (a part can only fit one way), and select materials (hardened steel locators) and tolerances (the fixture should be about 30–50 % of the part's tolerance).</p>
+<div class="callout callout-warning">
+<div class="callout-title">Traps</div>
+<ul>
+<li>Putting all three primary points in a line: they remove only 2 degrees of freedom (the part tips about the line).</li>
+<li>Using four fixed locators on one plane: the part rocks.</li>
+<li>Clamping on an unsupported overhang: the part bends and springs back when released.</li>
+<li>Locating on a rough cast surface with a pad (not a point): use buttons or adjustable screws.</li>
+<li>Letting the cutting force overcome the friction clamp.</li>
+</ul>
+</div>
+<details class="callout callout-question fold">
+<summary>Predict first: a flat plate sits on a table with three points, and is pushed sideways by a drill. How many more locators does it need, and where?</summary>
+<p>Two on one side edge (secondary datum) and one on an end (tertiary): <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">6</span></span></span></span>. The drill force should push the part against the two-point datum.</p>
+</details>
+<details class="callout callout-question fold">
+<summary>Why must the two secondary points be far apart?</summary>
+<p>They set the rotation about the primary normal; the angular error equals the positioning error divided by the separation, so the wider apart they are, the smaller the angle error. The same reasoning for the three primary points: use the biggest triangle.</p>
+</details>
+</section><section class="step" data-title="5. Connections"><h2 id="5-connections">5. Connections</h2>
+<ul>
+<li><a href="../n/mobility-kutzbach-equation-and-exceptions.html">Mobility - Kutzbach Equation and Exceptions</a> — degrees-of-freedom counting: <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">6</span></span></span></span> for a spatial rigid body, <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">3</span></span></span></span> for a planar one.</li>
+<li><a href="../n/kinematic-pairs-links-and-chains.html">Kinematic Pairs, Links and Chains</a> — each point contact removes one degree of freedom, a higher pair.</li>
+<li><a href="../n/free-body-diagrams-and-equilibrium-of-rigid-bodies.html">Free-Body Diagrams and Equilibrium of Rigid Bodies</a> — locators and clamps provide the six reaction components that hold the part against cutting forces.</li>
+<li><a href="../n/metrology-and-gd-and-t-form-position-and-gauging.html">Metrology and GD&amp;T - Form, Position and Gauging</a> — datums and datum reference frames are the same 3-2-1 idea.</li>
+</ul></section></div><nav class="pager"><a class="pg" href="tool-life-and-machining-economics.html"><small>Previous page</small>Tool Life and Machining Economics</a><a class="pg pg-next" href="metrology-and-gd-and-t-form-position-and-gauging.html"><small>Next page</small>Metrology and GD&amp;T - Form, Position and Gauging</a></nav><section class="related"><h2>Related notes</h2><h3>Links to</h3><div class="rels"><a class="rel" href="free-body-diagrams-and-equilibrium-of-rigid-bodies.html" style="--c:#8c6a3f"><span class="dot"></span><span>Free-Body Diagrams and Equilibrium of Rigid Bodies<small>Engineering Mechanics</small></span></a><a class="rel" href="kinematic-pairs-links-and-chains.html" style="--c:#b8692f"><span class="dot"></span><span>Kinematic Pairs, Links and Chains<small>Kinematics &amp; Dynamics of Machinery</small></span></a><a class="rel" href="manufacturing-technology-moc.html" style="--c:#7a7d80"><span class="dot"></span><span>Manufacturing Technology - MOC<small>Manufacturing Technology</small></span></a><a class="rel" href="metrology-and-gd-and-t-form-position-and-gauging.html" style="--c:#7a7d80"><span class="dot"></span><span>Metrology and GD&amp;T - Form, Position and Gauging<small>Manufacturing Technology</small></span></a><a class="rel" href="mobility-kutzbach-equation-and-exceptions.html" style="--c:#b8692f"><span class="dot"></span><span>Mobility - Kutzbach Equation and Exceptions<small>Kinematics &amp; Dynamics of Machinery</small></span></a><a class="rel" href="tool-life-and-machining-economics.html" style="--c:#7a7d80"><span class="dot"></span><span>Tool Life and Machining Economics<small>Manufacturing Technology</small></span></a></div><h3>Linked from</h3><div class="rels"><a class="rel" href="assembly-drawings-3d-modelling-and-bills-of-materials.html" style="--c:#6f8294"><span class="dot"></span><span>Assembly Drawings, 3D Modelling and Bills of Materials<small>Computer Aided Machine Drawing</small></span></a></div><canvas id="miniGraph" width="640" height="320" aria-label="Connections"></canvas></section></article><aside class="toc"><b>On this page</b><a href="#1-jig-and-fixture">1. Jig and fixture</a><a href="#2-the-3-2-1-principle">2. The 3-2-1 principle</a><a href="#3-clamping">3. Clamping</a><a href="#4-design-checklist">4. Design checklist</a><a href="#5-connections">5. Connections</a></aside></div></main></div>
+<div class="scrim" id="scrim"></div>
+<nav class="dock" aria-label="Sections"><a class="" href="../index.html"><svg viewBox="0 0 24 24"><path d="M12 3 2 8l10 5 8-4v6h2V8L12 3Zm-6 9.6V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-3.4l-6 3-6-3Z"/></svg><span>Library</span></a><a class="" href="../practice.html"><svg viewBox="0 0 24 24"><path d="M7 4h2v16H7V4Zm8 0h2v16h-2V4ZM3 9h2v6H3V9Zm16 0h2v6h-2V9ZM9 11h6v2H9v-2Z"/></svg><span>Practice</span></a><a class="" href="../solve.html"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm3.8 6.2-2.1 5.5-5.5 2.1 2.1-5.5 5.5-2.1ZM12 11a1 1 0 1 0 0 2 1 1 0 0 0 0-2Z"/></svg><span>Solve</span></a><a class="" href="../graph.html"><svg viewBox="0 0 24 24"><path d="M6 3a3 3 0 0 0-1 5.8v6.4a3 3 0 1 0 2 0V13l6-2.2A3 3 0 1 0 12.4 9 3 3 0 0 0 9 11.3L7 12V8.8A3 3 0 0 0 6 3Zm0 2a1 1 0 1 1 0 2 1 1 0 0 1 0-2Zm12 2a1 1 0 1 1 0 2 1 1 0 0 1 0-2ZM6 17a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/></svg><span>Link map</span></a><button id="openSearchDock" type="button" aria-label="Search"><svg viewBox="0 0 24 24"><path d="M10 3a7 7 0 1 0 4.4 12.4l4.6 4.6 1.4-1.4-4.6-4.6A7 7 0 0 0 10 3Zm0 2a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z"/></svg><span>Search</span></button></nav>
+<button class="key totop" id="toTop" type="button" aria-label="Back to top">↑</button>
+<div class="search" id="search" hidden><div class="search-box"><div class="search-h"><span>Find in the notebook</span><button id="closeSearch" type="button" aria-label="Close search">×</button></div><input id="q" type="search" placeholder="Title, heading or any word…" autocomplete="off"><div id="results"></div></div></div>
+<script src="../assets/data.js"></script>
+<script src="../assets/app.js"></script>
+</body></html>

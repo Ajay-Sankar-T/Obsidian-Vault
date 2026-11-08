@@ -29,6 +29,22 @@ Navigation spine for ME3101. Part of [[Mechanical Engineering Curriculum - MOC]]
 7. **Radiation:** basic laws, surface properties, view factors, network method and enclosure analysis for gray diffuse enclosures with transparent media, engineering treatment of gas radiation.
 8. **Heat exchangers:** analysis and design with the LMTD and NTU methods.
 
+## Concept Notes
+
+| Part | Note | What it settles |
+|---|---|---|
+| Conduction | [[Steady Conduction and Thermal Resistance Networks]] | Fourier's law, resistances in series, critical radius |
+| Conduction | [[Extended Surfaces - Fins]] | $\theta''=m^2\theta$, tip conditions, efficiency |
+| Conduction | [[Transient Conduction - Lumped Capacitance and Heisler Charts]] | $Bi$, $Fo$, one-term series, $\tau=\rho Vc/hA$ |
+| Convection | [[Convection Fundamentals - Boundary Layers and Scale Analysis]] | $Nu=f(Re,Pr)$ from scale analysis |
+| Convection | [[Forced Convection Correlations]] | plate and tube correlations, Gnielinski, bulk temperature |
+| Convection | [[Natural Convection]] | $Ra$, Churchill–Chu, vertical and horizontal surfaces |
+| Convection | [[Boiling and Condensation]] | boiling curve, Zuber, Rohsenow, Nusselt film |
+| Radiation | [[Thermal Radiation - Laws, View Factors and Networks]] | laws, view factors, shields, radiosity network |
+| Exchangers | [[Heat Exchangers - LMTD and NTU]] | sizing with LMTD, rating with $\varepsilon$–NTU |
+
+Numbers and figures in these notes are recomputed in `Tools/ht_core.py` (properties from CoolProp).
+
 ## Concept Map
 
 ```mermaid

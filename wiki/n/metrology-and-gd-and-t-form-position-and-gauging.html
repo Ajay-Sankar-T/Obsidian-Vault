@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#4a2f20"><meta name="description" content="Course notes, worked problems and interactive explorers, bound as a notebook"><link rel="icon" href="../assets/Favicons/Alya.png" type="image/png"><link rel="apple-touch-icon" href="../assets/Favicons/Alya.png"><link rel="manifest" href="../manifest.webmanifest">
+<title>Metrology and GD&amp;T - Form, Position and Gauging · Engineering Notebook</title>
+<script>try{var t=localStorage.getItem('wiki.theme');if(!t&&matchMedia('(prefers-color-scheme: dark)').matches)t='dark';if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="../assets/style.css"><link rel="stylesheet" href="../assets/vendor/katex.min.css">
+</head><body data-root="../" data-page="note" data-slug="metrology-and-gd-and-t-form-position-and-gauging" data-course="mfg">
+<header class="top"><button class="key key-menu" id="menuBtn" type="button" aria-label="Open contents" aria-expanded="false"><svg class="i" viewBox="0 0 24 24"><path d="M4 6h16v2H4V6Zm0 5h16v2H4v-2Zm0 5h16v2H4v-2Z"/></svg></button>
+<a class="plate" href="../index.html"><span class="plate-mark">EN</span><span class="plate-t">Engineering Notebook</span></a>
+<nav class="tabs" aria-label="Sections"><a class="tab" href="../index.html">Library</a><a class="tab" href="../practice.html">Practice</a><a class="tab" href="../solve.html">How to solve</a><a class="tab" href="../graph.html">Link map</a></nav>
+<div class="top-r"><button class="search-key" id="openSearch" type="button" aria-label="Search the notebook"><svg viewBox="0 0 24 24"><path d="M10 3a7 7 0 1 0 4.4 12.4l4.6 4.6 1.4-1.4-4.6-4.6A7 7 0 0 0 10 3Zm0 2a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z"/></svg><span>Search the notebook</span><kbd>/</kbd></button><button class="key" id="themeBtn" type="button" aria-label="Switch between day and night desk"></button></div></header>
+<div class="thread" id="thread"></div>
+<div class="frame"><aside class="tree" id="tree" aria-label="Contents"></aside>
+<main class="content"><nav class="crumbbar" aria-label="Breadcrumb"><a href="../index.html">Library</a><i>›</i><a href="../course/mfg.html">Manufacturing Technology</a><i>›</i><span>Fixtures and Metrology</span></nav><div class="paper"><article class="note" data-kind="concept" style="--c:#7a7d80;--cd:#55575a">
+<h1>Metrology and GD&amp;T — Form, Position and Gauging</h1><div class="chips"><span class="chip">concept</span><span class="chip">manufacturing</span></div>
+<div class="actions"><button class="btn" id="startLesson" type="button">Study mode</button><button class="btn btn-ghost" id="markDone" type="button">Mark as read</button></div>
+<div class="body" id="body"><section class="step intro"><div class="callout callout-abstract">
+<div class="callout-title">In one breath</div>
+<p><strong>Metrology</strong> is measuring, with known uncertainty. <strong>GD&amp;T</strong> says what to measure: tolerances on <strong>form, orientation, location and runout</strong> relative to <strong>datums</strong>, not just on sizes. A <strong>gauge</strong> checks quickly whether a feature is inside its zone. Everything rests on one chain: <em>specify, measure, accept</em>.</p>
+</div>
+<p>Part of <a href="../n/manufacturing-technology-moc.html">Manufacturing Technology - MOC</a>. Previous: <a href="../n/jigs-and-fixtures-the-3-2-1-location-principle.html">Jigs and Fixtures - The 3-2-1 Location Principle</a>. Drawing side: <a href="../n/limits-fits-and-tolerances.html">Limits, Fits and Tolerances</a> and <a href="../n/surface-finish-machining-symbols-and-production-drawings.html">Surface Finish, Machining Symbols and Production Drawings</a> in <a href="../n/computer-aided-machine-drawing-moc.html">Computer Aided Machine Drawing - MOC</a>.</p>
+</section><section class="step" data-title="1. Measurement vocabulary"><h2 id="1-measurement-vocabulary">1. Measurement vocabulary</h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Accuracy</strong></td>
+<td>closeness of the mean to the true value</td>
+</tr>
+<tr>
+<td><strong>Precision (repeatability)</strong></td>
+<td>scatter of repeated readings</td>
+</tr>
+<tr>
+<td><strong>Resolution</strong></td>
+<td>smallest change the instrument can show</td>
+</tr>
+<tr>
+<td><strong>Range</strong></td>
+<td>span measurable</td>
+</tr>
+<tr>
+<td><strong>Uncertainty</strong></td>
+<td>stated bound on the error, with confidence</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Rule of ten:</strong> the instrument's resolution should be about <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.1901em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8451em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">10</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span> of the tolerance to be checked (a <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">±</span><span class="mord">0.05</span></span></span></span> mm tolerance needs 0.01 mm resolution). <strong>Abbe principle:</strong> the measuring axis should be in line with the scale axis; offset gives a cosine error that grows with the offset.</p>
+<table>
+<thead>
+<tr>
+<th>Instrument</th>
+<th>Typical resolution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Steel rule</td>
+<td>0.5–1 mm</td>
+</tr>
+<tr>
+<td>Vernier caliper</td>
+<td>0.02 mm</td>
+</tr>
+<tr>
+<td>Micrometer</td>
+<td>0.01 mm (0.001 mm digital)</td>
+</tr>
+<tr>
+<td>Dial indicator</td>
+<td>0.01 mm (0.001 mm)</td>
+</tr>
+<tr>
+<td>Gauge blocks (reference)</td>
+<td>sub-micron (calibrated)</td>
+</tr>
+<tr>
+<td>CMM (coordinate measuring machine)</td>
+<td>1–5 µm</td>
+</tr>
+<tr>
+<td>Surface profilometer</td>
+<td>tens of nm</td>
+</tr>
+</tbody>
+</table>
+</section><section class="step" data-title="2. The geometric tolerances"><h2 id="2-the-geometric-tolerances">2. The geometric tolerances</h2>
+<p>A tolerance <strong>zone</strong> that the real feature must lie within (a width between two planes, a cylinder, a circle). The 14 symbols fall in five families:</p>
+<table>
+<thead>
+<tr>
+<th>Family</th>
+<th>Characteristics</th>
+<th>Datum?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Form</strong></td>
+<td>straightness, <strong>flatness</strong>, circularity, cylindricity</td>
+<td>no</td>
+</tr>
+<tr>
+<td><strong>Orientation</strong></td>
+<td>perpendicularity, parallelism, angularity</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><strong>Location</strong></td>
+<td><strong>position</strong>, concentricity, symmetry</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><strong>Runout</strong></td>
+<td>circular, total</td>
+<td>yes (an axis)</td>
+</tr>
+<tr>
+<td><strong>Profile</strong></td>
+<td>line, surface</td>
+<td>with or without</td>
+</tr>
+</tbody>
+</table>
+<p>A <strong>feature control frame</strong> reads left to right: characteristic · tolerance (with Ø if the zone is a cylinder, and a material-condition modifier) · datum references in order of precedence. The <strong>datum reference frame</strong> is the 3-2-1 set of planes on the datum features, so the same part is measured in the same orientation it will be assembled.</p>
+<p><strong>Example, flatness 0.05:</strong> the surface lies between two parallel planes 0.05 mm apart, wherever they are placed. It limits form only and says nothing about the position of the face.</p>
+</section><section class="step" data-title="3. Material conditions and bonus tolerance"><h2 id="3-material-conditions-and-bonus-tolerance">3. Material conditions and bonus tolerance</h2>
+<p><strong>MMC</strong> (maximum material condition): the size limit where the part has the most material (smallest hole, biggest shaft); <strong>LMC</strong> the opposite. A tolerance modified by Ⓜ gets a <strong>bonus</strong> equal to the departure of the size from MMC: as a hole gets bigger, a bigger position error still lets the bolt fit.</p>
+<p><strong>Example.</strong> Hole Ø10.0–10.1 mm, position tolerance Ø0.2 at MMC:</p>
+<table>
+<thead>
+<tr>
+<th>Hole size</th>
+<th>Position tolerance zone</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>at MMC, Ø10.0</td>
+<td>Ø0.2</td>
+</tr>
+<tr>
+<td>Ø10.05</td>
+<td>Ø0.25</td>
+</tr>
+<tr>
+<td>at LMC, Ø10.1</td>
+<td><strong>Ø0.3</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Virtual condition</strong> <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">=</span></span></span></span> MMC <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="mord">−</span></span></span></span> tolerance (hole) <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">10.0</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0.2</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">9.8</span></span></span></span> mm: the pin that always fits has to be at most 9.8 mm. Fixed-size functional gauges are made to the virtual condition.</p>
+<p><img src="../assets/img/MFG-6-fixture-gdt.png" alt="MFG-6-fixture-gdt" loading="lazy"></p>
+</section><section class="step" data-title="4. Gauging"><h2 id="4-gauging">4. Gauging</h2>
+<p>A <strong>fixed gauge</strong> gives a pass/fail answer quickly:</p>
+<ul>
+<li><strong>GO gauge</strong> checks the MMC limit (the plug that must enter a hole), <strong>NO-GO</strong> (NOT GO) checks the LMC limit and must not enter.</li>
+<li><strong>Taylor's principle:</strong> the GO gauge should check the <strong>whole</strong> feature at once (full-form: a full plug), the NO-GO checks one dimension at a time (a short pin).</li>
+<li><strong>Gauge tolerance</strong> is about 10 % of the workpiece tolerance, with a wear allowance on GO gauges.</li>
+</ul>
+<p><strong>Example.</strong> A Ø10 H7 hole has limits 10.000 to 10.015 mm (tolerance 0.015). GO plug 10.000 (+0.0015 gauge tolerance), NO-GO plug 10.015 (−0.0015): a hole accepts GO and rejects NO-GO.</p>
+<p>Other checks: <strong>comparators</strong> (a dial indicator against a master), <strong>optical</strong> projectors, <strong>angles</strong> by sine bars, <strong>screw threads</strong> by three-wire method or thread gauges, <strong>surface roughness</strong> with a stylus profilometer (Ra) and <strong>CMM</strong> probes for 3-D position, with software evaluating the feature control frames.</p>
+</section><section class="step" data-title="5. Why it matters in manufacturing"><h2 id="5-why-it-matters-in-manufacturing">5. Why it matters in manufacturing</h2>
+<p>Tolerance drives process choice and cost: IT12 can come from sawing, IT7 needs turning and reaming, IT5 grinding. Measurement uncertainty must stay a small fraction of the tolerance. A part whose size is in tolerance may still fail on <strong>form</strong> (a bent shaft) or <strong>position</strong> (misaligned holes), which is what GD&amp;T specifies.</p>
+<div class="callout callout-warning">
+<div class="callout-title">Traps</div>
+<ul>
+<li>Reading a flatness tolerance as a size tolerance: it floats within the size limits.</li>
+<li>Measuring from the wrong datum: the result depends on the datum order.</li>
+<li>Forgetting the bonus tolerance when the modifier is MMC.</li>
+<li>Using a measuring instrument with a resolution equal to the tolerance.</li>
+<li>Applying the NO-GO as a full-form gauge: it should check one point of size.</li>
+</ul>
+</div>
+<details class="callout callout-question fold">
+<summary>Predict first: a hole at Ø10.1 (LMC) is 0.28 mm off its true position. Accept or reject under Ø0.2 at MMC?</summary>
+<p>Accept: the allowed zone at LMC is Ø0.3, and a diametral position error of 0.28 mm falls inside. At Ø10.0 (MMC) the same error would be rejected (allowed Ø0.2).</p>
+</details>
+<details class="callout callout-question fold">
+<summary>Why is a pass/fail gauge preferred on a production line to a CMM?</summary>
+<p>Speed and repeatability: it takes seconds, any operator gets the same answer, and it checks a <em>functional</em> envelope (the bolt that has to fit). The CMM gives numbers for process control and for features that cannot be gauged.</p>
+</details>
+</section><section class="step" data-title="6. Connections"><h2 id="6-connections">6. Connections</h2>
+<ul>
+<li><a href="../n/limits-fits-and-tolerances.html">Limits, Fits and Tolerances</a> — the size tolerance (ISO grades and fits) that GD&amp;T extends with form and position.</li>
+<li><a href="../n/surface-finish-machining-symbols-and-production-drawings.html">Surface Finish, Machining Symbols and Production Drawings</a> — roughness <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0077em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">a</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> and the callouts.</li>
+<li><a href="../n/jigs-and-fixtures-the-3-2-1-location-principle.html">Jigs and Fixtures - The 3-2-1 Location Principle</a> — datum reference frame = 3-2-1.</li>
+<li><a href="../n/error-analysis-uncertainty-and-propagation.html">Error Analysis - Uncertainty and Propagation</a> — measurement uncertainty, repeatability and combination of errors.</li>
+<li><a href="../n/measurements-instrumentation-and-control-moc.html">Measurements, Instrumentation and Control - MOC</a> — sensors and transducers behind digital gauges.</li>
+</ul></section></div><nav class="pager"><a class="pg" href="jigs-and-fixtures-the-3-2-1-location-principle.html"><small>Previous page</small>Jigs and Fixtures - The 3-2-1 Location Principle</a><a class="pg pg-next" href="joining-processes-welding-brazing-and-adhesives.html"><small>Next page</small>Joining Processes - Welding, Brazing and Adhesives</a></nav><section class="related"><h2>Related notes</h2><h3>Links to</h3><div class="rels"><a class="rel" href="computer-aided-machine-drawing-moc.html" style="--c:#6f8294"><span class="dot"></span><span>Computer Aided Machine Drawing - MOC<small>Computer Aided Machine Drawing</small></span></a><a class="rel" href="error-analysis-uncertainty-and-propagation.html" style="--c:#9a6fb0"><span class="dot"></span><span>Error Analysis - Uncertainty and Propagation<small>Physics Laboratory I</small></span></a><a class="rel" href="jigs-and-fixtures-the-3-2-1-location-principle.html" style="--c:#7a7d80"><span class="dot"></span><span>Jigs and Fixtures - The 3-2-1 Location Principle<small>Manufacturing Technology</small></span></a><a class="rel" href="limits-fits-and-tolerances.html" style="--c:#6f8294"><span class="dot"></span><span>Limits, Fits and Tolerances<small>Computer Aided Machine Drawing</small></span></a><a class="rel" href="manufacturing-technology-moc.html" style="--c:#7a7d80"><span class="dot"></span><span>Manufacturing Technology - MOC<small>Manufacturing Technology</small></span></a><a class="rel" href="measurements-instrumentation-and-control-moc.html" style="--c:#3f8794"><span class="dot"></span><span>Measurements, Instrumentation and Control - MOC<small>Measurements, Instrumentation and Control</small></span></a><a class="rel" href="surface-finish-machining-symbols-and-production-drawings.html" style="--c:#6f8294"><span class="dot"></span><span>Surface Finish, Machining Symbols and Production Drawings<small>Computer Aided Machine Drawing</small></span></a></div><h3>Linked from</h3><div class="rels"><a class="rel" href="joining-processes-welding-brazing-and-adhesives.html" style="--c:#7a7d80"><span class="dot"></span><span>Joining Processes - Welding, Brazing and Adhesives<small>Manufacturing Technology</small></span></a><a class="rel" href="measurement-performance-and-error-propagation.html" style="--c:#3f8794"><span class="dot"></span><span>Measurement Performance and Error Propagation<small>Measurements, Instrumentation and Control</small></span></a></div><canvas id="miniGraph" width="640" height="320" aria-label="Connections"></canvas></section></article><aside class="toc"><b>On this page</b><a href="#1-measurement-vocabulary">1. Measurement vocabulary</a><a href="#2-the-geometric-tolerances">2. The geometric tolerances</a><a href="#3-material-conditions-and-bonus-tolerance">3. Material conditions and bonus tolerance</a><a href="#4-gauging">4. Gauging</a><a href="#5-why-it-matters-in-manufacturing">5. Why it matters in manufacturing</a><a href="#6-connections">6. Connections</a></aside></div></main></div>
+<div class="scrim" id="scrim"></div>
+<nav class="dock" aria-label="Sections"><a class="" href="../index.html"><svg viewBox="0 0 24 24"><path d="M12 3 2 8l10 5 8-4v6h2V8L12 3Zm-6 9.6V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-3.4l-6 3-6-3Z"/></svg><span>Library</span></a><a class="" href="../practice.html"><svg viewBox="0 0 24 24"><path d="M7 4h2v16H7V4Zm8 0h2v16h-2V4ZM3 9h2v6H3V9Zm16 0h2v6h-2V9ZM9 11h6v2H9v-2Z"/></svg><span>Practice</span></a><a class="" href="../solve.html"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm3.8 6.2-2.1 5.5-5.5 2.1 2.1-5.5 5.5-2.1ZM12 11a1 1 0 1 0 0 2 1 1 0 0 0 0-2Z"/></svg><span>Solve</span></a><a class="" href="../graph.html"><svg viewBox="0 0 24 24"><path d="M6 3a3 3 0 0 0-1 5.8v6.4a3 3 0 1 0 2 0V13l6-2.2A3 3 0 1 0 12.4 9 3 3 0 0 0 9 11.3L7 12V8.8A3 3 0 0 0 6 3Zm0 2a1 1 0 1 1 0 2 1 1 0 0 1 0-2Zm12 2a1 1 0 1 1 0 2 1 1 0 0 1 0-2ZM6 17a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/></svg><span>Link map</span></a><button id="openSearchDock" type="button" aria-label="Search"><svg viewBox="0 0 24 24"><path d="M10 3a7 7 0 1 0 4.4 12.4l4.6 4.6 1.4-1.4-4.6-4.6A7 7 0 0 0 10 3Zm0 2a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z"/></svg><span>Search</span></button></nav>
+<button class="key totop" id="toTop" type="button" aria-label="Back to top">↑</button>
+<div class="search" id="search" hidden><div class="search-box"><div class="search-h"><span>Find in the notebook</span><button id="closeSearch" type="button" aria-label="Close search">×</button></div><input id="q" type="search" placeholder="Title, heading or any word…" autocomplete="off"><div id="results"></div></div></div>
+<script src="../assets/data.js"></script>
+<script src="../assets/app.js"></script>
+</body></html>

@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#4a2f20"><meta name="description" content="Course notes, worked problems and interactive explorers, bound as a notebook"><link rel="icon" href="../assets/Favicons/Alya.png" type="image/png"><link rel="apple-touch-icon" href="../assets/Favicons/Alya.png"><link rel="manifest" href="../manifest.webmanifest">
+<title>Assembly Drawings, 3D Modelling and Bills of Materials · Engineering Notebook</title>
+<script>try{var t=localStorage.getItem('wiki.theme');if(!t&&matchMedia('(prefers-color-scheme: dark)').matches)t='dark';if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="../assets/style.css">
+</head><body data-root="../" data-page="note" data-slug="assembly-drawings-3d-modelling-and-bills-of-materials" data-course="camd">
+<header class="top"><button class="key key-menu" id="menuBtn" type="button" aria-label="Open contents" aria-expanded="false"><svg class="i" viewBox="0 0 24 24"><path d="M4 6h16v2H4V6Zm0 5h16v2H4v-2Zm0 5h16v2H4v-2Z"/></svg></button>
+<a class="plate" href="../index.html"><span class="plate-mark">EN</span><span class="plate-t">Engineering Notebook</span></a>
+<nav class="tabs" aria-label="Sections"><a class="tab" href="../index.html">Library</a><a class="tab" href="../practice.html">Practice</a><a class="tab" href="../solve.html">How to solve</a><a class="tab" href="../graph.html">Link map</a></nav>
+<div class="top-r"><button class="search-key" id="openSearch" type="button" aria-label="Search the notebook"><svg viewBox="0 0 24 24"><path d="M10 3a7 7 0 1 0 4.4 12.4l4.6 4.6 1.4-1.4-4.6-4.6A7 7 0 0 0 10 3Zm0 2a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z"/></svg><span>Search the notebook</span><kbd>/</kbd></button><button class="key" id="themeBtn" type="button" aria-label="Switch between day and night desk"></button></div></header>
+<div class="thread" id="thread"></div>
+<div class="frame"><aside class="tree" id="tree" aria-label="Contents"></aside>
+<main class="content"><nav class="crumbbar" aria-label="Breadcrumb"><a href="../index.html">Library</a><i>›</i><a href="../course/camd.html">Computer Aided Machine Drawing</a><i>›</i><span>Assemblies</span></nav><div class="paper"><article class="note" data-kind="concept" style="--c:#6f8294;--cd:#4b5c6b">
+<h1>Assembly Drawings, 3D Modelling and Bills of Materials</h1><div class="chips"><span class="chip">concept</span><span class="chip">machine-drawing</span></div>
+<div class="actions"><button class="btn" id="startLesson" type="button">Study mode</button><button class="btn btn-ghost" id="markDone" type="button">Mark as read</button></div>
+<div class="body" id="body"><section class="step intro"><div class="callout callout-abstract">
+<div class="callout-title">In one breath</div>
+<p>A parametric 3-D model is built from <strong>sketches with constraints</strong>, turned into solids by <strong>features</strong> (extrude, revolve, hole, fillet), and combined in an <strong>assembly</strong> by <strong>mates</strong> that remove degrees of freedom. The assembly drawing then carries <strong>views, balloons numbered to a bill of materials</strong>; the part drawings carry the tolerances. The model, the drawing and the BOM stay linked, so change one and the others follow.</p>
+</div>
+<p>Part of <a href="../n/computer-aided-machine-drawing-moc.html">Computer Aided Machine Drawing - MOC</a>. Previous: <a href="../n/surface-finish-machining-symbols-and-production-drawings.html">Surface Finish, Machining Symbols and Production Drawings</a>.</p>
+</section><section class="step" data-title="1. From sketch to part"><h2 id="1-from-sketch-to-part">1. From sketch to part</h2>
+<pre class="mermaid">graph LR
+    A[&quot;2-D sketch on a plane&quot;] --&gt; B[&quot;Constraints and dimensions&quot;]
+    B --&gt; C[&quot;Feature: extrude, revolve, sweep, loft&quot;]
+    C --&gt; D[&quot;Detail: hole, fillet, chamfer, pattern&quot;]
+    D --&gt; E[&quot;Part model + material&quot;]
+    E --&gt; F[&quot;Assembly: mates&quot;]
+    F --&gt; G[&quot;Drawing: views, sections, BOM&quot;]</pre>
+<ul>
+<li><strong>Sketch:</strong> geometry (lines, arcs, circles) with <strong>geometric constraints</strong> (horizontal, tangent, concentric, equal) and <strong>dimensional constraints</strong>. A sketch is <strong>fully defined</strong> when no element can move: always aim for that (a black sketch, not a blue one).</li>
+<li><strong>Features:</strong> <em>extrude</em> (a sketch pushed along a direction), <em>revolve</em> (about an axis: shafts, bushes), <em>sweep</em> and <em>loft</em> (along a path or between sections), <em>cut</em> versions of each, and <em>hole wizards</em> that carry the tap and clearance data.</li>
+<li><strong>Design intent:</strong> put the <strong>base feature</strong> and the <strong>dimensions</strong> in the order that the part would change: make the thickness a parameter, hole spacing a pattern, and tie the fillet to the edge so the model survives edits. <strong>Parameters and equations</strong> drive families of parts (all bolt lengths from one table).</li>
+<li><strong>History tree</strong> and <strong>suppression</strong>: the feature order matters; deleting a parent can break the children.</li>
+</ul>
+</section><section class="step" data-title="2. Assembly and mates"><h2 id="2-assembly-and-mates">2. Assembly and mates</h2>
+<p>An assembly places each part with <strong>mates</strong>: constraints between faces, edges and axes. A free rigid part has <strong>6 degrees of freedom</strong>. Each mate removes some of them:</p>
+<table>
+<thead>
+<tr>
+<th>Mate</th>
+<th>Removes</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Coincident (face to face)</strong></td>
+<td>3 (one translation, two rotations)</td>
+<td>head of a bolt on the plate</td>
+</tr>
+<tr>
+<td><strong>Concentric (axis to axis)</strong></td>
+<td>4 (two translations, two rotations)</td>
+<td>bolt in a hole</td>
+</tr>
+<tr>
+<td><strong>Distance, angle</strong></td>
+<td>1 each</td>
+<td>offset between faces</td>
+</tr>
+<tr>
+<td><strong>Parallel, perpendicular</strong></td>
+<td>2 or 1</td>
+<td>orientation of a face</td>
+</tr>
+<tr>
+<td><strong>Tangent</strong></td>
+<td>1</td>
+<td>cam and follower, cylinder on a plane</td>
+</tr>
+<tr>
+<td><strong>Fixed (grounded)</strong></td>
+<td>6</td>
+<td>the base or frame</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Worked count: a bolt in a plate.</strong> The bolt starts with 6 DOF. A <em>concentric</em> mate with the hole leaves 2 (slide along the axis, spin about it). A <em>coincident</em> mate between the head and the plate nominally removes 3, but two of those are the rotations that concentric already removed: only <strong>1</strong> is new, leaving 1 (spin about the axis, which is harmless). CAD flags the redundant part as <strong>over-defined</strong>: the model still works, but redundant mates can conflict and make the assembly fail to rebuild after an edit. This is the mobility count of <a href="../n/mobility-kutzbach-equation-and-exceptions.html">Mobility - Kutzbach Equation and Exceptions</a> in three dimensions, and the redundant constraint is the same idea as a redundant link.</p>
+<p><img src="../assets/img/CAMD-6-assembly.png" alt="CAMD-6-assembly" loading="lazy"></p>
+<p><strong>Assembly checks:</strong> interference detection (parts occupying the same space), clearance, motion study (do the joints move as intended), and <strong>tolerance stack-up</strong>.</p>
+<p><strong>Mechanisms:</strong> a four-bar is modelled with revolute (concentric + coincident) mates and one driven angle: the same linkage as in <a href="../n/grashof-criterion-and-four-bar-inversions.html">Grashof Criterion and Four-Bar Inversions</a>; a slider-crank adds a slider mate for the piston.</p>
+</section><section class="step" data-title="3. The assembly drawing"><h2 id="3-the-assembly-drawing">3. The assembly drawing</h2>
+<p>An assembly drawing shows <strong>how the parts fit together</strong>, not how each is made.</p>
+<ul>
+<li><strong>Views:</strong> the front view (usually a <strong>section</strong>) and as many others as are needed; <strong>exploded view</strong> to show the order of assembly; hatching in opposite directions on adjacent parts (<a href="../n/sectional-views-and-hatching-conventions.html">Sectional Views and Hatching Conventions</a>); bolts, shafts and keys unsectioned.</li>
+<li><strong>Balloons (item numbers):</strong> a circle with a leader to each part, in a clockwise or counter-clockwise order, aligned in rows and columns; the number refers to the BOM.</li>
+<li><strong>Dimensions:</strong> only overall sizes, <strong>fits</strong> between mating parts (Ø25 H7/g6), and the key assembly dimensions: no detail dimensions.</li>
+<li><strong>Title block and BOM</strong> (parts list) at the bottom right of the sheet.</li>
+</ul>
+</section><section class="step" data-title="4. The bill of materials"><h2 id="4-the-bill-of-materials">4. The bill of materials</h2>
+<p>A <strong>BOM</strong> lists every part with one row per distinct part:</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Part number</th>
+<th>Description</th>
+<th>Qty</th>
+<th>Material / standard</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>FC-01</td>
+<td>Flange half-coupling, Ø25 H7 bore</td>
+<td>2</td>
+<td>C45 steel</td>
+</tr>
+<tr>
+<td>2</td>
+<td>—</td>
+<td>Key 8 × 7 × 30</td>
+<td>1</td>
+<td>IS 2048, C45</td>
+</tr>
+<tr>
+<td>3</td>
+<td>—</td>
+<td>Hex bolt M10 × 50, grade 8.8</td>
+<td>4</td>
+<td>IS 1364</td>
+</tr>
+<tr>
+<td>4</td>
+<td>—</td>
+<td>Hex nut M10</td>
+<td>4</td>
+<td>IS 1363</td>
+</tr>
+<tr>
+<td>5</td>
+<td>—</td>
+<td>Washer 10</td>
+<td>8</td>
+<td>IS 2016</td>
+</tr>
+</tbody>
+</table>
+<p>Order: assemblies first, then parts, or by item number; <strong>standard parts</strong> (bolts, nuts, washers, bearings, keys) are listed by designation, not drawn individually. The BOM is generated from the assembly model, so the quantities cannot disagree with the drawing; mass and cost roll-ups come from the same list.</p>
+</section><section class="step" data-title="5. A good model, a good drawing"><h2 id="5-a-good-model-a-good-drawing">5. A good model, a good drawing</h2>
+<ul>
+<li>Model the <strong>function</strong> first (the datums, the mating features); add cosmetic detail last.</li>
+<li>Name parts and features meaningfully; use standard libraries for fasteners.</li>
+<li>Draw the part drawing from the part model: dimensions come from the sketch (driven), tolerances and finishes are added as annotations (<a href="../n/limits-fits-and-tolerances.html">Limits, Fits and Tolerances</a>, <a href="../n/surface-finish-machining-symbols-and-production-drawings.html">Surface Finish, Machining Symbols and Production Drawings</a>).</li>
+<li>Keep one model: assembly, part drawings and BOM follow its changes (revision control).</li>
+</ul>
+<div class="callout callout-warning">
+<div class="callout-title">Traps</div>
+<ul>
+<li>Leaving sketches under-defined: they move unexpectedly when dimensions change.</li>
+<li>Over-defining mates (redundant or conflicting): the assembly will not rebuild.</li>
+<li>Dimensioning an assembly drawing with detail sizes.</li>
+<li>Listing the same standard part under two item numbers.</li>
+<li>Hatching a bolt or a key in the assembly section.</li>
+</ul>
+</div>
+<details class="callout callout-question fold">
+<summary>Predict first: two plates joined by a bolt and nut. How many DOF has the nut after being mated concentric with the bolt?</summary>
+<p>2 (slide along the axis and spin about it): concentric removes 4 of 6. A coincident mate between the nut face and the plate removes 1 new DOF (the slide); the spin remains until a friction or torque model is added.</p>
+</details>
+<details class="callout callout-question fold">
+<summary>Why are balloons numbered to the BOM rather than labelled with the part names?</summary>
+<p>The number is unambiguous and short, the BOM carries the description, quantity and standard; changing a part's name or supplier changes one BOM row, not every view.</p>
+</details>
+</section><section class="step" data-title="6. Connections"><h2 id="6-connections">6. Connections</h2>
+<ul>
+<li><a href="../n/mobility-kutzbach-equation-and-exceptions.html">Mobility - Kutzbach Equation and Exceptions</a> and <a href="../n/kinematic-pairs-links-and-chains.html">Kinematic Pairs, Links and Chains</a> — mates are joint constraints; redundant constraints appear in both.</li>
+<li><a href="../n/screw-threads-and-threaded-fasteners.html">Screw Threads and Threaded Fasteners</a>, <a href="../n/keys-rivets-and-welds.html">Keys, Rivets and Welds</a> — the standard parts in the BOM.</li>
+<li><a href="../n/jigs-and-fixtures-the-3-2-1-location-principle.html">Jigs and Fixtures - The 3-2-1 Location Principle</a> — fixing six DOF with six point contacts, the manufacturing counterpart of mates.</li>
+<li><a href="../n/introduction-to-machine-design-moc.html">Introduction to Machine Design - MOC</a> — the sized shaft, key, gears and bolts that are modelled and listed here.</li>
+</ul></section></div><nav class="pager"><a class="pg" href="surface-finish-machining-symbols-and-production-drawings.html"><small>Previous page</small>Surface Finish, Machining Symbols and Production Drawings</a><span></span></nav><section class="related"><h2>Related notes</h2><h3>Links to</h3><div class="rels"><a class="rel" href="computer-aided-machine-drawing-moc.html" style="--c:#6f8294"><span class="dot"></span><span>Computer Aided Machine Drawing - MOC<small>Computer Aided Machine Drawing</small></span></a><a class="rel" href="grashof-criterion-and-four-bar-inversions.html" style="--c:#b8692f"><span class="dot"></span><span>Grashof Criterion and Four-Bar Inversions<small>Kinematics &amp; Dynamics of Machinery</small></span></a><a class="rel" href="introduction-to-machine-design-moc.html" style="--c:#a8814c"><span class="dot"></span><span>Introduction to Machine Design - MOC<small>Introduction to Machine Design</small></span></a><a class="rel" href="jigs-and-fixtures-the-3-2-1-location-principle.html" style="--c:#7a7d80"><span class="dot"></span><span>Jigs and Fixtures - The 3-2-1 Location Principle<small>Manufacturing Technology</small></span></a><a class="rel" href="keys-rivets-and-welds.html" style="--c:#6f8294"><span class="dot"></span><span>Keys, Rivets and Welds<small>Computer Aided Machine Drawing</small></span></a><a class="rel" href="kinematic-pairs-links-and-chains.html" style="--c:#b8692f"><span class="dot"></span><span>Kinematic Pairs, Links and Chains<small>Kinematics &amp; Dynamics of Machinery</small></span></a><a class="rel" href="limits-fits-and-tolerances.html" style="--c:#6f8294"><span class="dot"></span><span>Limits, Fits and Tolerances<small>Computer Aided Machine Drawing</small></span></a><a class="rel" href="mobility-kutzbach-equation-and-exceptions.html" style="--c:#b8692f"><span class="dot"></span><span>Mobility - Kutzbach Equation and Exceptions<small>Kinematics &amp; Dynamics of Machinery</small></span></a><a class="rel" href="screw-threads-and-threaded-fasteners.html" style="--c:#6f8294"><span class="dot"></span><span>Screw Threads and Threaded Fasteners<small>Computer Aided Machine Drawing</small></span></a><a class="rel" href="sectional-views-and-hatching-conventions.html" style="--c:#6f8294"><span class="dot"></span><span>Sectional Views and Hatching Conventions<small>Computer Aided Machine Drawing</small></span></a><a class="rel" href="surface-finish-machining-symbols-and-production-drawings.html" style="--c:#6f8294"><span class="dot"></span><span>Surface Finish, Machining Symbols and Production Drawings<small>Computer Aided Machine Drawing</small></span></a></div><canvas id="miniGraph" width="640" height="320" aria-label="Connections"></canvas></section></article><aside class="toc"><b>On this page</b><a href="#1-from-sketch-to-part">1. From sketch to part</a><a href="#2-assembly-and-mates">2. Assembly and mates</a><a href="#3-the-assembly-drawing">3. The assembly drawing</a><a href="#4-the-bill-of-materials">4. The bill of materials</a><a href="#5-a-good-model-a-good-drawing">5. A good model, a good drawing</a><a href="#6-connections">6. Connections</a></aside></div></main></div>
+<div class="scrim" id="scrim"></div>
+<nav class="dock" aria-label="Sections"><a class="" href="../index.html"><svg viewBox="0 0 24 24"><path d="M12 3 2 8l10 5 8-4v6h2V8L12 3Zm-6 9.6V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-3.4l-6 3-6-3Z"/></svg><span>Library</span></a><a class="" href="../practice.html"><svg viewBox="0 0 24 24"><path d="M7 4h2v16H7V4Zm8 0h2v16h-2V4ZM3 9h2v6H3V9Zm16 0h2v6h-2V9ZM9 11h6v2H9v-2Z"/></svg><span>Practice</span></a><a class="" href="../solve.html"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm3.8 6.2-2.1 5.5-5.5 2.1 2.1-5.5 5.5-2.1ZM12 11a1 1 0 1 0 0 2 1 1 0 0 0 0-2Z"/></svg><span>Solve</span></a><a class="" href="../graph.html"><svg viewBox="0 0 24 24"><path d="M6 3a3 3 0 0 0-1 5.8v6.4a3 3 0 1 0 2 0V13l6-2.2A3 3 0 1 0 12.4 9 3 3 0 0 0 9 11.3L7 12V8.8A3 3 0 0 0 6 3Zm0 2a1 1 0 1 1 0 2 1 1 0 0 1 0-2Zm12 2a1 1 0 1 1 0 2 1 1 0 0 1 0-2ZM6 17a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/></svg><span>Link map</span></a><button id="openSearchDock" type="button" aria-label="Search"><svg viewBox="0 0 24 24"><path d="M10 3a7 7 0 1 0 4.4 12.4l4.6 4.6 1.4-1.4-4.6-4.6A7 7 0 0 0 10 3Zm0 2a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z"/></svg><span>Search</span></button></nav>
+<button class="key totop" id="toTop" type="button" aria-label="Back to top">↑</button>
+<div class="search" id="search" hidden><div class="search-box"><div class="search-h"><span>Find in the notebook</span><button id="closeSearch" type="button" aria-label="Close search">×</button></div><input id="q" type="search" placeholder="Title, heading or any word…" autocomplete="off"><div id="results"></div></div></div>
+<script src="../assets/data.js"></script><script src="../assets/vendor/mermaid.min.js"></script>
+<script src="../assets/app.js"></script>
+</body></html>

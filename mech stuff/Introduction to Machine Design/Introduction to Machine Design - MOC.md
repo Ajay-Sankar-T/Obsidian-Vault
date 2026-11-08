@@ -33,6 +33,19 @@ Navigation spine for ME3203. Part of [[Mechanical Engineering Curriculum - MOC]]
 4. **Springs:** stresses in helical compression and tension springs; design for static and fatigue loading.
 5. **Bolts and fasteners:** nomenclature, load analysis, design under static and dynamic loads, joint stiffness factor, bolts and dowel pins in shear.
 
+## Concept Notes
+
+| Topic | Note | What it settles |
+|---|---|---|
+| Shafts | [[Shaft Design - Static and Fatigue Loading]] | fully reversed bending plus steady torsion, DE-Goodman, Marin factors |
+| Keys, couplings | [[Keys and Couplings]] | shear and crushing of the key, equal-strength length, flange bolts |
+| Bearings | [[Bearings - Rolling Selection and Sliding Lubrication]] | $L_{10}=(C/P)^p$, Petroff, Sommerfeld, Stribeck |
+| Gears | [[Spur Gear Design - Lewis Bending and Surface Stress]] | $W_t$, Lewis with $K_v$, Hertz contact |
+| Springs | [[Helical Springs]] | Wahl factor, rate, static and fatigue safety |
+| Bolts | [[Bolted Joints - Preload and Joint Stiffness]] | $C=k_b/(k_b+k_m)$, preload, separation, fatigue |
+
+Numbers and figures: `Tools/md_core.py`.
+
 ## Concept Map
 
 ```mermaid

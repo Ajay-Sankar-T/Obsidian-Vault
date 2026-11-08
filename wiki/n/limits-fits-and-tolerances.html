@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#4a2f20"><meta name="description" content="Course notes, worked problems and interactive explorers, bound as a notebook"><link rel="icon" href="../assets/Favicons/Alya.png" type="image/png"><link rel="apple-touch-icon" href="../assets/Favicons/Alya.png"><link rel="manifest" href="../manifest.webmanifest">
+<title>Limits, Fits and Tolerances · Engineering Notebook</title>
+<script>try{var t=localStorage.getItem('wiki.theme');if(!t&&matchMedia('(prefers-color-scheme: dark)').matches)t='dark';if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="../assets/style.css"><link rel="stylesheet" href="../assets/vendor/katex.min.css">
+</head><body data-root="../" data-page="note" data-slug="limits-fits-and-tolerances" data-course="camd">
+<header class="top"><button class="key key-menu" id="menuBtn" type="button" aria-label="Open contents" aria-expanded="false"><svg class="i" viewBox="0 0 24 24"><path d="M4 6h16v2H4V6Zm0 5h16v2H4v-2Zm0 5h16v2H4v-2Z"/></svg></button>
+<a class="plate" href="../index.html"><span class="plate-mark">EN</span><span class="plate-t">Engineering Notebook</span></a>
+<nav class="tabs" aria-label="Sections"><a class="tab" href="../index.html">Library</a><a class="tab" href="../practice.html">Practice</a><a class="tab" href="../solve.html">How to solve</a><a class="tab" href="../graph.html">Link map</a></nav>
+<div class="top-r"><button class="search-key" id="openSearch" type="button" aria-label="Search the notebook"><svg viewBox="0 0 24 24"><path d="M10 3a7 7 0 1 0 4.4 12.4l4.6 4.6 1.4-1.4-4.6-4.6A7 7 0 0 0 10 3Zm0 2a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z"/></svg><span>Search the notebook</span><kbd>/</kbd></button><button class="key" id="themeBtn" type="button" aria-label="Switch between day and night desk"></button></div></header>
+<div class="thread" id="thread"></div>
+<div class="frame"><aside class="tree" id="tree" aria-label="Contents"></aside>
+<main class="content"><nav class="crumbbar" aria-label="Breadcrumb"><a href="../index.html">Library</a><i>›</i><a href="../course/camd.html">Computer Aided Machine Drawing</a><i>›</i><span>Tolerances and Production Drawings</span></nav><div class="paper"><article class="note" data-kind="concept" style="--c:#6f8294;--cd:#4b5c6b">
+<h1>Limits, Fits and Tolerances</h1><div class="chips"><span class="chip">concept</span><span class="chip">machine-drawing</span></div>
+<div class="actions"><button class="btn" id="startLesson" type="button">Study mode</button><button class="btn btn-ghost" id="markDone" type="button">Mark as read</button></div>
+<div class="body" id="body"><section class="step intro"><div class="callout callout-abstract">
+<div class="callout-title">In one breath</div>
+<p>No part can be made to an exact size, and none needs to be. A <strong>tolerance</strong> states how much the size may vary. A <strong>fit</strong> states how a shaft sits in a hole: loosely (clearance), tightly (interference) or in between. The ISO system describes both with a <strong>letter and a number</strong> (H7, g6) built from two independent ideas: the <strong>tolerance grade</strong> (how big the zone is) and the <strong>fundamental deviation</strong> (where it sits relative to the basic size).</p>
+</div>
+<p>Part of <a href="../n/computer-aided-machine-drawing-moc.html">Computer Aided Machine Drawing - MOC</a>. Previous: <a href="../n/keys-rivets-and-welds.html">Keys, Rivets and Welds</a>. Next: <a href="../n/surface-finish-machining-symbols-and-production-drawings.html">Surface Finish, Machining Symbols and Production Drawings</a>. Geometric tolerances: <a href="../n/metrology-and-gd-and-t-form-position-and-gauging.html">Metrology and GD&amp;T - Form, Position and Gauging</a>.</p>
+</section><section class="step" data-title="1. Terms"><h2 id="1-terms">1. Terms</h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Basic size</strong></td>
+<td>the nominal size shared by hole and shaft</td>
+</tr>
+<tr>
+<td><strong>Limits</strong></td>
+<td>the maximum and minimum permitted sizes</td>
+</tr>
+<tr>
+<td><strong>Tolerance</strong></td>
+<td>upper limit minus lower limit</td>
+</tr>
+<tr>
+<td><strong>Deviation</strong></td>
+<td>limit minus basic size (upper and lower; sign matters)</td>
+</tr>
+<tr>
+<td><strong>Fundamental deviation</strong></td>
+<td>the deviation nearer to the zero line: it fixes the zone's position</td>
+</tr>
+<tr>
+<td><strong>Allowance</strong></td>
+<td>the intended difference between mating sizes (minimum clearance, or maximum interference)</td>
+</tr>
+<tr>
+<td><strong>Clearance</strong></td>
+<td>hole minus shaft, positive</td>
+</tr>
+<tr>
+<td><strong>Interference</strong></td>
+<td>shaft minus hole, positive</td>
+</tr>
+</tbody>
+</table>
+</section><section class="step" data-title="2. The ISO system"><h2 id="2-the-iso-system">2. The ISO system</h2>
+<p><strong>Tolerance grade</strong> IT01…IT18: IT5–IT7 for precision fits (grinding, reaming), IT7–IT9 for general machined fits, IT11 and above for non-critical sizes. For diameters in a range with geometric mean <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span></span></span></span> (mm), the standard tolerance unit is</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0589em;vertical-align:-0.0833em;"></span><span class="mord">0.45</span><span class="mord sqrt"><span class="root"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8689em;"><span style="top:-3.0466em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size6 size1 mtight"><span class="mord mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9755em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord mathnormal" style="margin-right:0.02778em;">D</span></span></span><span style="top:-2.9355em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="1.08em" viewBox="0 0 400000 1080" preserveAspectRatio="xMinYMin slice"><path d="M95,702
+c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,-10,-9.5,-14
+c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54
+c44.2,-33.3,65.8,-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10
+s173,378,173,378c0.7,0,35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429
+c69,-144,104.5,-217.7,106.5,-221
+l0 -0
+c5.3,-9.3,12,-14,20,-14
+H400000v40H845.2724
+s-225.272,467,-225.272,467s-235,486,-235,486c-2.7,4.7,-9,7,-19,7
+c-6,0,-10,-1,-12,-3s-194,-422,-194,-422s-65,47,-65,47z
+M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.0645em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">0.001</span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mspace"> </span><span class="mspace"> </span><span class="mopen">(</span><span class="mord mathnormal">μ</span><span class="mord text"><span class="mord">m</span></span><span class="mclose">)</span><span class="mpunct">,</span><span class="mspace" style="margin-right:2em;"></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mord">5</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord">7</span><span class="mord mathnormal">i</span><span class="mpunct">,</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mord">6</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord">10</span><span class="mord mathnormal">i</span><span class="mpunct">,</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mord">7</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord">16</span><span class="mord mathnormal">i</span><span class="mpunct">,</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mord">8</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord">25</span><span class="mord mathnormal">i</span><span class="mpunct">,</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mord">9</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord">40</span><span class="mord mathnormal">i</span><span class="mpunct">,</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mord">10</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord">64</span><span class="mord mathnormal">i</span><span class="mpunct">,</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mord">11</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord">100</span><span class="mord mathnormal">i</span></span></span></span></span></p>
+<p>For 18–30 mm, <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.04em;vertical-align:-0.1744em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8656em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord">18</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">30</span></span></span><span style="top:-2.8256em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="1.08em" viewBox="0 0 400000 1080" preserveAspectRatio="xMinYMin slice"><path d="M95,702
+c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,-10,-9.5,-14
+c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54
+c44.2,-33.3,65.8,-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10
+s173,378,173,378c0.7,0,35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429
+c69,-144,104.5,-217.7,106.5,-221
+l0 -0
+c5.3,-9.3,12,-14,20,-14
+H400000v40H845.2724
+s-225.272,467,-225.272,467s-235,486,-235,486c-2.7,4.7,-9,7,-19,7
+c-6,0,-10,-1,-12,-3s-194,-422,-194,-422s-65,47,-65,47z
+M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.1744em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">23.2</span></span></span></span> mm, <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">1.31</span><span class="mspace"> </span><span class="mord mathnormal">μ</span></span></span></span>m: <strong>IT6 = 13, IT7 = 21, IT8 = 33, IT9 = 52 µm</strong>. (The ISO tables give the same values at this size; they differ by 1 µm from the formula in the smallest ranges: IT7 is 15 µm at 6–10 mm and 18 µm at 10–18 mm.) For 50–80 mm, IT7 = 30 µm; 80–120 mm, IT7 = 35 µm: the tolerance grows with the size.</p>
+<p><strong>Fundamental deviation</strong> is a <strong>letter</strong>: capital for holes (A…Z), lower case for shafts (a…z).</p>
+<ul>
+<li><strong>H</strong> (hole): lower deviation = 0, so the hole is the basic size or larger.</li>
+<li><strong>h</strong> (shaft): upper deviation = 0, the shaft is the basic size or smaller.</li>
+<li><strong>a…g</strong> shafts are smaller than basic (clearance fits with an H hole); <strong>j, js, k, m, n</strong> are transition; <strong>p…z</strong> are larger (interference).</li>
+</ul>
+<p>For shafts, representative fundamental deviations are <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7167em;vertical-align:-0.2861em;"></span><span class="mord mathnormal">e</span><span class="mord"><span class="mord mathnormal">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03588em;">g</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8974em;vertical-align:-0.0833em;"></span><span class="mord">−</span><span class="mord">2.5</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0.34</span></span></span></span></span></span></span></span></span></span></span></span>, <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7167em;vertical-align:-0.2861em;"></span><span class="mord mathnormal">e</span><span class="mord"><span class="mord mathnormal">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.10764em;">f</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8974em;vertical-align:-0.0833em;"></span><span class="mord">−</span><span class="mord">5.5</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0.41</span></span></span></span></span></span></span></span></span></span></span></span>, <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord mathnormal">e</span><span class="mord"><span class="mord mathnormal">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">e</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8974em;vertical-align:-0.0833em;"></span><span class="mord">−</span><span class="mord">11</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0.41</span></span></span></span></span></span></span></span></span></span></span></span>, <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord mathnormal">e</span><span class="mord"><span class="mord mathnormal">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">d</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8974em;vertical-align:-0.0833em;"></span><span class="mord">−</span><span class="mord">16</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">0.44</span></span></span></span></span></span></span></span></span></span></span></span> (µm), <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8095em;vertical-align:-0.15em;"></span><span class="mord mathnormal">e</span><span class="mord"><span class="mord mathnormal">i</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.04em;vertical-align:-0.1133em;"></span><span class="mord">+</span><span class="mord">0.6</span><span class="mord sqrt"><span class="root"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8102em;"><span style="top:-2.988em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size6 size1 mtight"><span class="mord mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9267em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord mathnormal" style="margin-right:0.02778em;">D</span></span></span><span style="top:-2.8867em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="1.08em" viewBox="0 0 400000 1080" preserveAspectRatio="xMinYMin slice"><path d="M95,702
+c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,-10,-9.5,-14
+c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54
+c44.2,-33.3,65.8,-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10
+s173,378,173,378c0.7,0,35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429
+c69,-144,104.5,-217.7,106.5,-221
+l0 -0
+c5.3,-9.3,12,-14,20,-14
+H400000v40H845.2724
+s-225.272,467,-225.272,467s-235,486,-235,486c-2.7,4.7,-9,7,-19,7
+c-6,0,-10,-1,-12,-3s-194,-422,-194,-422s-65,47,-65,47z
+M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.1133em;"><span></span></span></span></span></span></span></span></span> (for IT4–IT7), <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">h</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span>.</p>
+<p>A designation is <strong>letter + grade</strong>: <strong>Ø25 H7</strong> (hole, limits <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">+</span><span class="mord">21/0</span></span></span></span> µm), <strong>Ø25 g6</strong> (shaft). A fit is written <strong>H7/g6</strong>, hole first.</p>
+</section><section class="step" data-title="3. Hole-basis and shaft-basis systems"><h2 id="3-hole-basis-and-shaft-basis-systems">3. Hole-basis and shaft-basis systems</h2>
+<ul>
+<li><strong>Hole basis</strong> (preferred): the hole is always H; the shaft letter selects the fit. The hole is the harder dimension to produce (drilled, reamed with standard tools), so keeping it constant reduces tooling.</li>
+<li><strong>Shaft basis:</strong> the shaft is always h; the hole letter changes. Used when one long shaft carries several parts with different fits (line shafting, drawn bright bar).</li>
+</ul>
+</section><section class="step" data-title="4. Worked example: Ø25 with a H7 hole (21 µm tolerance)"><h2 id="4-worked-example-25-with-a-h7-hole-21-m-tolerance">4. Worked example: Ø25 with a H7 hole (21 µm tolerance)</h2>
+<p>Computed from the formulas above, with the standard values for the interference grades:</p>
+<table>
+<thead>
+<tr>
+<th>Fit</th>
+<th>Hole</th>
+<th>Shaft limits (µm)</th>
+<th>Clearance (min to max)</th>
+<th>Type</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>H7/f7</strong></td>
+<td>+21/0</td>
+<td>−41/−20</td>
+<td>20 to 62</td>
+<td>clearance</td>
+<td>running fit, bearings</td>
+</tr>
+<tr>
+<td><strong>H7/g6</strong></td>
+<td>+21/0</td>
+<td>−20/−7</td>
+<td>7 to 41</td>
+<td>clearance</td>
+<td>sliding, close running</td>
+</tr>
+<tr>
+<td><strong>H7/h6</strong></td>
+<td>+21/0</td>
+<td>−13/0</td>
+<td>0 to 34</td>
+<td>clearance</td>
+<td>locating, slides when oiled</td>
+</tr>
+<tr>
+<td><strong>H7/k6</strong></td>
+<td>+21/0</td>
+<td>+15/+2</td>
+<td>−15 to +19</td>
+<td><strong>transition</strong></td>
+<td>location, hammer assembly</td>
+</tr>
+<tr>
+<td><strong>H7/n6</strong></td>
+<td>+21/0</td>
+<td>+28/+15</td>
+<td>−28 to +6</td>
+<td>transition</td>
+<td>tight location, press</td>
+</tr>
+<tr>
+<td><strong>H7/p6</strong></td>
+<td>+21/0</td>
+<td>+35/+22</td>
+<td>−35 to −1</td>
+<td><strong>interference</strong></td>
+<td>light press, permanent</td>
+</tr>
+<tr>
+<td><strong>H7/s6</strong></td>
+<td>+21/0</td>
+<td>+48/+35</td>
+<td>−48 to −14</td>
+<td>interference</td>
+<td>medium drive, shrink fit</td>
+</tr>
+</tbody>
+</table>
+<p><img src="../assets/img/CAMD-4-fits.png" alt="CAMD-4-fits" loading="lazy"></p>
+<p>A negative "clearance" is an interference. The H7 zone sits on the zero line; the shaft zones step up from f to s: clearance fits (green) lie below, interference fits (red) above. For a <strong>transition fit</strong> the actual parts may show either clearance or interference.</p>
+<p><strong>Calculating a fit:</strong> minimum clearance = smallest hole − largest shaft; maximum clearance = largest hole − smallest shaft. H7/g6: <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">−</span><span class="mord">7</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">7</span></span></span></span> µm and <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">21</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">−</span><span class="mord">20</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">41</span></span></span></span> µm.</p>
+</section><section class="step" data-title="5. Choosing and specifying"><h2 id="5-choosing-and-specifying">5. Choosing and specifying</h2>
+<ol>
+<li>Function: free rotation (clearance), accurate location without relative motion (transition), no relative motion at all (interference, no key needed up to a torque).</li>
+<li>Process capability: IT6 shaft with IT7 hole is a common precision pair (grinding with reaming); IT8–IT9 for ordinary turned parts.</li>
+<li>Cost rises steeply with tighter grades: roughly doubling per two grades.</li>
+<li><strong>On drawings</strong> show either the tolerance zone symbol (Ø25 H7), the limit deviations (Ø25 +0.021/0), or both; for an assembly show the fit (Ø25 H7/g6). <strong>General tolerances</strong> (ISO 2768) cover dimensions without an individual tolerance.</li>
+</ol>
+<div class="callout callout-warning">
+<div class="callout-title">Traps</div>
+<ul>
+<li>Reading 7 in H7 as 0.007 mm: the grade number gives a multiple of <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span> that depends on the size (21 µm here).</li>
+<li>Mixing up which letter is the hole and which the shaft: capital for holes.</li>
+<li>Applying H7/g6 at another size with the same deviations: the values change with the size range.</li>
+<li>Calling a transition fit a clearance fit because the nominal sizes would clear.</li>
+<li>Specifying an IT5 tolerance where IT9 will do: a large, avoidable cost.</li>
+</ul>
+</div>
+<details class="callout callout-question fold">
+<summary>Predict first: Ø25 H7/g6. Can this shaft always be pushed into the hole by hand?</summary>
+<p>Yes, and it always rattles a little: the minimum clearance is 7 µm, so even the worst-case pair fits; the maximum clearance is 41 µm. It is a sliding fit.</p>
+</details>
+<details class="callout callout-question fold">
+<summary>Why does H7/p6 still fit with only 1 µm minimum interference but 35 µm maximum?</summary>
+<p>The spread of interference equals the sum of the two tolerances (21 + 13 = 34 µm). The minimum interference is what the design relies on to hold; the maximum is what the assembly force, hoop stress and press must tolerate.</p>
+</details>
+</section><section class="step" data-title="6. Connections"><h2 id="6-connections">6. Connections</h2>
+<ul>
+<li><a href="../n/metrology-and-gd-and-t-form-position-and-gauging.html">Metrology and GD&amp;T - Form, Position and Gauging</a> — gauging a hole with GO and NO-GO plugs to its limits, plus form and position tolerances.</li>
+<li><a href="../n/surface-finish-machining-symbols-and-production-drawings.html">Surface Finish, Machining Symbols and Production Drawings</a> — the finish a given grade needs (IT6 needs Ra ≈ 0.8 µm or better).</li>
+<li><a href="../n/shaft-design-static-and-fatigue-loading.html">Shaft Design - Static and Fatigue Loading</a> and <a href="../n/bearings-rolling-selection-and-sliding-lubrication.html">Bearings - Rolling Selection and Sliding Lubrication</a> — shaft seats for bearings and gears.</li>
+<li><a href="../n/thermal-stresses.html">Thermal Stresses</a> — shrink fits use thermal expansion to assemble an interference fit.</li>
+<li><a href="../n/error-analysis-uncertainty-and-propagation.html">Error Analysis - Uncertainty and Propagation</a> — tolerance stack-up of an assembly is a worst-case or RSS combination of individual tolerances.</li>
+</ul></section></div><nav class="pager"><a class="pg" href="keys-rivets-and-welds.html"><small>Previous page</small>Keys, Rivets and Welds</a><a class="pg pg-next" href="surface-finish-machining-symbols-and-production-drawings.html"><small>Next page</small>Surface Finish, Machining Symbols and Production Drawings</a></nav><section class="related"><h2>Related notes</h2><h3>Links to</h3><div class="rels"><a class="rel" href="bearings-rolling-selection-and-sliding-lubrication.html" style="--c:#a8814c"><span class="dot"></span><span>Bearings - Rolling Selection and Sliding Lubrication<small>Introduction to Machine Design</small></span></a><a class="rel" href="computer-aided-machine-drawing-moc.html" style="--c:#6f8294"><span class="dot"></span><span>Computer Aided Machine Drawing - MOC<small>Computer Aided Machine Drawing</small></span></a><a class="rel" href="error-analysis-uncertainty-and-propagation.html" style="--c:#9a6fb0"><span class="dot"></span><span>Error Analysis - Uncertainty and Propagation<small>Physics Laboratory I</small></span></a><a class="rel" href="keys-rivets-and-welds.html" style="--c:#6f8294"><span class="dot"></span><span>Keys, Rivets and Welds<small>Computer Aided Machine Drawing</small></span></a><a class="rel" href="metrology-and-gd-and-t-form-position-and-gauging.html" style="--c:#7a7d80"><span class="dot"></span><span>Metrology and GD&amp;T - Form, Position and Gauging<small>Manufacturing Technology</small></span></a><a class="rel" href="shaft-design-static-and-fatigue-loading.html" style="--c:#a8814c"><span class="dot"></span><span>Shaft Design - Static and Fatigue Loading<small>Introduction to Machine Design</small></span></a><a class="rel" href="surface-finish-machining-symbols-and-production-drawings.html" style="--c:#6f8294"><span class="dot"></span><span>Surface Finish, Machining Symbols and Production Drawings<small>Computer Aided Machine Drawing</small></span></a><a class="rel" href="thermal-stresses.html" style="--c:#4f7a52"><span class="dot"></span><span>Thermal Stresses<small>Strength of Materials</small></span></a></div><h3>Linked from</h3><div class="rels"><a class="rel" href="assembly-drawings-3d-modelling-and-bills-of-materials.html" style="--c:#6f8294"><span class="dot"></span><span>Assembly Drawings, 3D Modelling and Bills of Materials<small>Computer Aided Machine Drawing</small></span></a></div><canvas id="miniGraph" width="640" height="320" aria-label="Connections"></canvas></section></article><aside class="toc"><b>On this page</b><a href="#1-terms">1. Terms</a><a href="#2-the-iso-system">2. The ISO system</a><a href="#3-hole-basis-and-shaft-basis-systems">3. Hole-basis and shaft-basis systems</a><a href="#4-worked-example-25-with-a-h7-hole-21-m-tolerance">4. Worked example: Ø25 with a H7 hole (21 µm tolerance)</a><a href="#5-choosing-and-specifying">5. Choosing and specifying</a><a href="#6-connections">6. Connections</a></aside></div></main></div>
+<div class="scrim" id="scrim"></div>
+<nav class="dock" aria-label="Sections"><a class="" href="../index.html"><svg viewBox="0 0 24 24"><path d="M12 3 2 8l10 5 8-4v6h2V8L12 3Zm-6 9.6V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-3.4l-6 3-6-3Z"/></svg><span>Library</span></a><a class="" href="../practice.html"><svg viewBox="0 0 24 24"><path d="M7 4h2v16H7V4Zm8 0h2v16h-2V4ZM3 9h2v6H3V9Zm16 0h2v6h-2V9ZM9 11h6v2H9v-2Z"/></svg><span>Practice</span></a><a class="" href="../solve.html"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm3.8 6.2-2.1 5.5-5.5 2.1 2.1-5.5 5.5-2.1ZM12 11a1 1 0 1 0 0 2 1 1 0 0 0 0-2Z"/></svg><span>Solve</span></a><a class="" href="../graph.html"><svg viewBox="0 0 24 24"><path d="M6 3a3 3 0 0 0-1 5.8v6.4a3 3 0 1 0 2 0V13l6-2.2A3 3 0 1 0 12.4 9 3 3 0 0 0 9 11.3L7 12V8.8A3 3 0 0 0 6 3Zm0 2a1 1 0 1 1 0 2 1 1 0 0 1 0-2Zm12 2a1 1 0 1 1 0 2 1 1 0 0 1 0-2ZM6 17a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/></svg><span>Link map</span></a><button id="openSearchDock" type="button" aria-label="Search"><svg viewBox="0 0 24 24"><path d="M10 3a7 7 0 1 0 4.4 12.4l4.6 4.6 1.4-1.4-4.6-4.6A7 7 0 0 0 10 3Zm0 2a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z"/></svg><span>Search</span></button></nav>
+<button class="key totop" id="toTop" type="button" aria-label="Back to top">↑</button>
+<div class="search" id="search" hidden><div class="search-box"><div class="search-h"><span>Find in the notebook</span><button id="closeSearch" type="button" aria-label="Close search">×</button></div><input id="q" type="search" placeholder="Title, heading or any word…" autocomplete="off"><div id="results"></div></div></div>
+<script src="../assets/data.js"></script>
+<script src="../assets/app.js"></script>
+</body></html>

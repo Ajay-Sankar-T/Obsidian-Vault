@@ -29,6 +29,20 @@ Navigation spine for ME2400. Part of [[Mechanical Engineering Curriculum - MOC]]
 4. **System modelling and response:** system models, transfer functions, time response, frequency response, Nyquist diagrams and their use.
 5. **Practical group project** applying the above.
 
+## Concept Notes
+
+| Topic | Note | What it settles |
+|---|---|---|
+| Performance | [[Measurement Performance and Error Propagation]] | static characteristics, RSS uncertainty |
+| Sensors | [[Sensors and Signal Conditioning]] | strain gauge bridge, thermocouple, RTD, LVDT, sampling |
+| Dynamics | [[First-Order Systems - Time Constant and Response]] | time constant, step, ramp lag, bandwidth |
+| Dynamics | [[Second-Order Systems - Damping and Overshoot]] | $\omega_n$, $\zeta$, overshoot, resonance |
+| Control | [[Feedback, Block Diagrams and Transfer Functions]] | block reduction, steady-state error |
+| Control | [[PID Control and Tuning]] | P, I, D actions, Ziegler–Nichols |
+| Stability | [[Frequency Response, Nyquist Plots and Stability Margins]] | Bode, Nyquist, gain and phase margin |
+
+Numbers and figures: `Tools/mic_core.py` (simulations with SciPy).
+
 ## Concept Map
 
 ```mermaid

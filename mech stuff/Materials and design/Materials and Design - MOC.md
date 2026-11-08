@@ -33,6 +33,22 @@ Navigation spine for ME2200. Part of [[Mechanical Engineering Curriculum - MOC]]
 8. **Phase diagrams:** binary diagrams and microstructure; eutectic, peritectic, peritectoid, monotectic reactions; the iron–iron-carbide diagram (ledeburite, austenite, ferrite, cementite).
 9. **Heat treatment of steel:** annealing, tempering, normalising, spheroidising; TTT diagrams; continuous cooling curves and the final microstructures and properties.
 
+## Concept Notes
+
+| Topic | Note | What it settles |
+|---|---|---|
+| Crystal structure | [[Crystal Structures and Packing]] | SC/BCC/FCC/HCP, packing factor, density, Miller indices |
+| Imperfections | [[Dislocations, Slip and Strengthening]] | Schmid's law, Hall–Petch, Taylor hardening |
+| Mechanical properties | [[Tensile Test, True Stress-Strain and Hardness]] | true stress-strain, Considère, Brinell and Vickers |
+| Static failure | [[Static Failure Theories - Tresca and von Mises]] | ductile and brittle criteria, safety factors |
+| Fracture | [[Fracture Mechanics - Stress Intensity and Griffith]] | $K_I=Y\sigma\sqrt{\pi a}$, $K_{Ic}$, critical crack length |
+| Fatigue | [[Fatigue Failure - S-N Curve, Marin Factors and Goodman Diagram]] | S–N, endurance limit, Marin factors, mean stress |
+| Fatigue with a crack | [[Fatigue Crack Growth - Paris Law]] | $da/dN=C\Delta K^m$, life by integration |
+| Phase diagrams | [[Phase Diagrams - Lever Rule and the Iron-Carbide Diagram]] | tie line, lever rule, Pb–Sn, Fe–Fe₃C |
+| Heat treatment | [[Heat Treatment of Steel - TTT and CCT Diagrams]] | pearlite, bainite, martensite, tempering, hardenability |
+
+Numbers and figures: `Tools/mat_core.py`.
+
 ## Concept Map
 
 ```mermaid

@@ -25,6 +25,19 @@ Navigation spine for ME3283. Part of [[Mechanical Engineering Curriculum - MOC]]
 3. **3D modelling and assembly** (16 h): 3D modelling of machine components; assembly drawings and bill of materials.
 4. **Dimensions, limits, fits and tolerances:** surface finish and machining symbols; production drawings.
 
+## Concept Notes
+
+| Topic | Note | What it settles |
+|---|---|---|
+| Sections | [[Sectional Views and Hatching Conventions]] | section types, hatching rules, what is not hatched |
+| Threads | [[Screw Threads and Threaded Fasteners]] | ISO metric thread, conventional drawing, bolt and nut proportions |
+| Keys, rivets, welds | [[Keys, Rivets and Welds]] | key proportions, rivet joint efficiency, weld symbols |
+| Fits | [[Limits, Fits and Tolerances]] | IT grades, H7/g6, hole basis, clearance and interference |
+| Finish | [[Surface Finish, Machining Symbols and Production Drawings]] | $R_a$, symbols, the detail drawing |
+| Assembly | [[Assembly Drawings, 3D Modelling and Bills of Materials]] | sketches, mates as DOF, BOM |
+
+Numbers and figures: `Tools/camd_figs.py`.
+
 ## Concept Map
 
 ```mermaid

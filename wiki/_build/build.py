@@ -58,8 +58,8 @@ COURSES = [
     ("camd", "Computer Aided Machine Drawing", "ME3283", "#6f8294", "#4b5c6b", "mech stuff/Computer Aided Machine Drawing", "Sections, fasteners, assemblies, tolerances"),
     ("cur", "Mechanical Engineering Curriculum", "", "#77716a", "#55504a", "mech stuff/Mechanical Engineering Curriculum - MOC.md", "Semester map"),
 ]
-ACTIVE = ["de", "ph", "em", "ed", "som", "fm", "aml", "pl", "kdoms", "ee", "xd", "ml", "ent"]
-UPCOMING = ["fte", "ht", "mat", "mfg", "mic", "mdes", "camd"]
+ACTIVE = ["de", "ph", "em", "ed", "som", "fm", "aml", "pl", "kdoms", "mdes", "mat", "fte", "ht", "mfg", "mic", "camd", "ee", "xd", "ml", "ent"]
+UPCOMING = []
 UNIT_NAMES = {"de": {"Intro": "First-order ODEs", "2nd Order DE": "Second-order ODEs", "Series Solutions of DE": "Series solutions",
                      "Special Functions": "Special functions", "PDEs": "Partial differential equations", "Problems": "Assignments"},
               "kdoms": {"Foundations": "Mechanism basics", "Velocity-Acceleration-Bank": "Velocity and acceleration", "Synthesis-Formula-Bank": "Mechanism synthesis", "Formula-Bank": "Gears", "Cams-Flywheels-Balancing": "Cams, flywheels and balancing"},
@@ -771,7 +771,7 @@ def main():
 <div class="recent-h" id="recentH" hidden>Recently opened</div><div class="recent" id="recent"></div></div>
 <div class="ribbon" id="continue"></div></section>
 <h2 class="sec"><span class="tape">Shelf</span>Your courses</h2><div class="bookcase"><div class="shelf">{"".join(book(c) for c in ACTIVE)}</div></div>
-<h2 class="sec"><span class="tape">Coming up</span>Planned courses</h2><div class="bookcase"><div class="shelf">{"".join(book(c) for c in UPCOMING)}</div></div>
+{("<h2 class=\"sec\"><span class=\"tape\">Coming up</span>Planned courses</h2><div class=\"bookcase\"><div class=\"shelf\">" + "".join(book(c) for c in UPCOMING) + "</div></div>") if UPCOMING else ""}
 {sims_html}
 <p class="foot"><a href="n/{next((n.slug for n in notes if n.base == 'Mechanical Engineering Curriculum - MOC'), '')}.html">Curriculum map</a> · {len(notes)} notes · progress is saved in this browser only</p>"""
     (WIKI / "index.html").write_text(shell("Library", home, "", "learn"), encoding="utf-8")

@@ -42,6 +42,22 @@ Navigation spine for the two-part thermal sequence that follows Thermodynamics (
 4. **Turbomachines:** turbo vs positive-displacement machines, types, velocity triangles, Euler equation, degree of reaction, non-dimensional groups, thermodynamics and efficiencies, performance characteristics.
 5. **Compressible flow:** compressibility, speed of sound, one-dimensional flow in nozzles.
 
+## Concept Notes
+
+| Part | Note | What it settles |
+|---|---|---|
+| FTE-1 | [[Exergy and Reversible Work]] | exergy of heat and flow, destruction $T_0S_{gen}$, second-law efficiency |
+| FTE-1 | [[Rankine Cycle - Superheat, Reheat and Regeneration]] | steam cycle, reheat, open feedwater heater |
+| FTE-1 | [[Brayton Cycle - Intercooling, Reheat and Regeneration]] | gas-turbine cycle, optimum pressure ratio |
+| FTE-1 | [[Vapour-Compression Refrigeration and Heat Pumps]] | R134a cycle, COP, subcooling |
+| FTE-1 | [[Psychrometrics and Air-Conditioning Processes]] | $\omega$, dew point, cooling and dehumidifying |
+| FTE-2 | [[Otto, Diesel and Dual Cycles and Engine Performance]] | air-standard cycles, mep, bsfc |
+| FTE-2 | [[Combustion - Stoichiometry, Heating Value and Flame Temperature]] | air–fuel ratio, LHV, adiabatic flame temperature |
+| FTE-2 | [[Turbomachines - Euler Equation and Velocity Triangles]] | Euler equation, reaction, affinity laws |
+| FTE-2 | [[Isentropic Nozzle Flow and Choking]] | stagnation relations, area–Mach, choked flow |
+
+Steam and R134a properties come from CoolProp; numbers and figures are recomputed in `Tools/fte_core.py`.
+
 ## Concept Map
 
 ```mermaid

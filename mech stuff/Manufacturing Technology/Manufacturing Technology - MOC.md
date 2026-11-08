@@ -40,6 +40,22 @@ Navigation spine for the two-part manufacturing sequence. Part of [[Mechanical E
 4. **Manufacturing factory:** CAD/CAM, CAPP, process-route modelling, layout optimisation, economics, automation in cells and assembly lines, digital and smart manufacturing (Industry 4.0).
 5. **Metrology:** measurement standards; form measurements (straightness, flatness, roundness, cylindricity); linear and angular measurement; surface roughness; profile and form testers, CMM; GD&T, limits and fits; gauging.
 
+## Concept Notes
+
+| Topic | Note | What it settles |
+|---|---|---|
+| Casting | [[Casting - Solidification Time and Riser Design]] | Bernoulli gating, Chvorinov, riser sizing |
+| Bulk forming | [[Bulk Deformation - Forging, Rolling, Extrusion and Drawing]] | flow stress, forging force, bite condition, drawing stress |
+| Sheet forming | [[Sheet Metal Forming - Blanking, Bending and Deep Drawing]] | blanking force, bend allowance, draw ratio |
+| Machining | [[Orthogonal Cutting - Merchant's Shear Plane Model]] | shear angle, Merchant circle, specific energy |
+| Machining | [[Tool Life and Machining Economics]] | Taylor, economic and minimum-time speeds |
+| Work holding | [[Jigs and Fixtures - The 3-2-1 Location Principle]] | six degrees of freedom, locating and clamping |
+| Metrology | [[Metrology and GD&T - Form, Position and Gauging]] | form, position, MMC bonus, GO and NO-GO gauges |
+| Joining | [[Joining Processes - Welding, Brazing and Adhesives]] | heat input, HAZ, carbon equivalent |
+| Additive | [[Additive Manufacturing - Processes and Design Rules]] | process families, build time, staircase, design rules |
+
+Numbers and figures: `Tools/mfg_core.py`.
+
 ## Concept Map
 
 ```mermaid

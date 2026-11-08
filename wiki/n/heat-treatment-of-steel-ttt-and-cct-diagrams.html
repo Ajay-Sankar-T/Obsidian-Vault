@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#4a2f20"><meta name="description" content="Course notes, worked problems and interactive explorers, bound as a notebook"><link rel="icon" href="../assets/Favicons/Alya.png" type="image/png"><link rel="apple-touch-icon" href="../assets/Favicons/Alya.png"><link rel="manifest" href="../manifest.webmanifest">
+<title>Heat Treatment of Steel - TTT and CCT Diagrams · Engineering Notebook</title>
+<script>try{var t=localStorage.getItem('wiki.theme');if(!t&&matchMedia('(prefers-color-scheme: dark)').matches)t='dark';if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="../assets/style.css"><link rel="stylesheet" href="../assets/vendor/katex.min.css">
+</head><body data-root="../" data-page="note" data-slug="heat-treatment-of-steel-ttt-and-cct-diagrams" data-course="mat">
+<header class="top"><button class="key key-menu" id="menuBtn" type="button" aria-label="Open contents" aria-expanded="false"><svg class="i" viewBox="0 0 24 24"><path d="M4 6h16v2H4V6Zm0 5h16v2H4v-2Zm0 5h16v2H4v-2Z"/></svg></button>
+<a class="plate" href="../index.html"><span class="plate-mark">EN</span><span class="plate-t">Engineering Notebook</span></a>
+<nav class="tabs" aria-label="Sections"><a class="tab" href="../index.html">Library</a><a class="tab" href="../practice.html">Practice</a><a class="tab" href="../solve.html">How to solve</a><a class="tab" href="../graph.html">Link map</a></nav>
+<div class="top-r"><button class="search-key" id="openSearch" type="button" aria-label="Search the notebook"><svg viewBox="0 0 24 24"><path d="M10 3a7 7 0 1 0 4.4 12.4l4.6 4.6 1.4-1.4-4.6-4.6A7 7 0 0 0 10 3Zm0 2a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z"/></svg><span>Search the notebook</span><kbd>/</kbd></button><button class="key" id="themeBtn" type="button" aria-label="Switch between day and night desk"></button></div></header>
+<div class="thread" id="thread"></div>
+<div class="frame"><aside class="tree" id="tree" aria-label="Contents"></aside>
+<main class="content"><nav class="crumbbar" aria-label="Breadcrumb"><a href="../index.html">Library</a><i>›</i><a href="../course/mat.html">Materials and Design</a><i>›</i><span>Phase Diagrams and Heat Treatment</span></nav><div class="paper"><article class="note" data-kind="concept" style="--c:#6a68a3;--cd:#4a487a">
+<h1>Heat Treatment of Steel — TTT and CCT Diagrams</h1><div class="chips"><span class="chip">concept</span><span class="chip">materials</span></div>
+<div class="actions"><button class="btn" id="startLesson" type="button">Study mode</button><button class="btn btn-ghost" id="markDone" type="button">Mark as read</button></div>
+<div class="body" id="body"><section class="step intro"><div class="callout callout-abstract">
+<div class="callout-title">In one breath</div>
+<p>The Fe–Fe₃C diagram says what is stable; <strong>how fast you cool decides what you get</strong>. A <strong>TTT</strong> (time–temperature–transformation) diagram shows, for austenite held at a fixed temperature, when it starts and finishes transforming. Fast enough cooling misses the pearlite and bainite and ends in <strong>martensite</strong>: the hardest, most brittle structure, which tempering then toughens.</p>
+</div>
+<p>Part of <a href="../n/materials-and-design-moc.html">Materials and Design - MOC</a>. Previous: <a href="../n/phase-diagrams-lever-rule-and-the-iron-carbide-diagram.html">Phase Diagrams - Lever Rule and the Iron-Carbide Diagram</a>.</p>
+</section><section class="step" data-title="1. Why a diagram with time"><h2 id="1-why-a-diagram-with-time">1. Why a diagram with time</h2>
+<p>Pearlite and bainite form by <strong>diffusion</strong> of carbon, which takes time and is faster when hot. So the transformation rate has two opposing effects: just below <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> there is little driving force (slow start); at low temperature diffusion is too slow. The result is a <strong>C-shaped curve</strong> with a fastest "nose" near 540 °C for a eutectoid steel.</p>
+<p><img src="../assets/img/MAT-9-ttt.png" alt="MAT-9-ttt" loading="lazy"></p>
+<p>Schematic TTT diagram for a eutectoid steel (0.77 wt% C): the solid line starts, the dashed line finishes the isothermal transformation. Below the line labelled <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.109em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">s</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> the austenite transforms <strong>without diffusion</strong> to martensite.</p>
+</section><section class="step" data-title="2. Products of austenite"><h2 id="2-products-of-austenite">2. Products of austenite</h2>
+<table>
+<thead>
+<tr>
+<th>Structure</th>
+<th>Formed</th>
+<th>Microstructure</th>
+<th>Hardness (eutectoid steel)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Coarse pearlite</strong></td>
+<td>650–727 °C</td>
+<td>thick ferrite and cementite lamellae</td>
+<td>about 15 HRC</td>
+</tr>
+<tr>
+<td><strong>Fine pearlite</strong></td>
+<td>550–650 °C</td>
+<td>thinner lamellae</td>
+<td>about 30–40 HRC</td>
+</tr>
+<tr>
+<td><strong>Upper bainite</strong></td>
+<td>400–550 °C</td>
+<td>feathery ferrite plates with cementite between</td>
+<td>40–45 HRC</td>
+</tr>
+<tr>
+<td><strong>Lower bainite</strong></td>
+<td>250–400 °C</td>
+<td>fine plates with carbide inside</td>
+<td>45–55 HRC</td>
+</tr>
+<tr>
+<td><strong>Martensite</strong></td>
+<td>below <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.109em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">s</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≈</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">220</span></span></span></span> °C, rapid quench</td>
+<td>BCT, supersaturated carbon, plate/lath</td>
+<td><strong>60–65 HRC</strong>, brittle</td>
+</tr>
+<tr>
+<td>Spheroidite</td>
+<td>prolonged hold near 700 °C</td>
+<td>cementite spheres in ferrite</td>
+<td>soft, easily machined</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Martensite</strong> forms with no diffusion by a shear lattice change from FCC to body-centred tetragonal (BCT), trapping all the carbon. It starts at <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.109em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">s</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> and continues as the temperature falls (<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.109em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">50</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> near 130 °C, finish near 50 °C): at room temperature some <strong>retained austenite</strong> may remain. Its hardness rises with carbon: the carbon strains the lattice, and the high dislocation density from the shear blocks slip (<a href="../n/dislocations-slip-and-strengthening.html">Dislocations, Slip and Strengthening</a>). Pearlite gets stronger as the lamellae get finer, a Hall–Petch effect on the lamellar spacing.</p>
+</section><section class="step" data-title="3. Cooling paths and treatments"><h2 id="3-cooling-paths-and-treatments">3. Cooling paths and treatments</h2>
+<table>
+<thead>
+<tr>
+<th>Treatment</th>
+<th>What you do</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Full annealing</strong></td>
+<td>heat 30–50 °C above <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> (hypo) or <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> (hyper), <strong>furnace</strong> cool</td>
+<td>coarse pearlite: soft, ductile, stress-free</td>
+</tr>
+<tr>
+<td><strong>Normalising</strong></td>
+<td>heat 55–85 °C above <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> or <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">c</span><span class="mord mathnormal mtight">m</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>, <strong>air</strong> cool</td>
+<td>finer pearlite: stronger than annealed, uniform</td>
+</tr>
+<tr>
+<td><strong>Spheroidising</strong></td>
+<td>hold just below <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> for many hours</td>
+<td>spheroidite: maximum softness for high-carbon steel</td>
+</tr>
+<tr>
+<td><strong>Isothermal anneal</strong></td>
+<td>quench to 680 °C, hold</td>
+<td>coarse pearlite in a controlled time</td>
+</tr>
+<tr>
+<td><strong>Quenching</strong></td>
+<td>austenitise, cool faster than the critical rate</td>
+<td>martensite (hard, brittle, internal stress, risk of cracks)</td>
+</tr>
+<tr>
+<td><strong>Tempering</strong></td>
+<td>reheat martensite to 150–650 °C</td>
+<td><strong>tempered martensite</strong>: carbon precipitates as fine carbide; hardness falls and toughness rises</td>
+</tr>
+<tr>
+<td><strong>Austempering</strong></td>
+<td>quench to a bainite temperature (e.g. 330 °C), hold</td>
+<td>bainite: tough and hard, little distortion</td>
+</tr>
+<tr>
+<td><strong>Martempering</strong></td>
+<td>quench just above <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.109em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">s</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>, equalise temperature, then cool</td>
+<td>martensite with less stress</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Tempering trade-off:</strong> as the temperature rises from 200 to 600 °C the hardness falls from about 60 HRC to about 30 HRC while the toughness (impact energy) rises. Spring steels are tempered around 400 °C, tools around 200 °C, shafts and gears around 500 °C.</p>
+</section><section class="step" data-title="4. Continuous cooling (CCT) and hardenability"><h2 id="4-continuous-cooling-cct-and-hardenability">4. Continuous cooling (CCT) and hardenability</h2>
+<p>Real parts cool continuously, not isothermally. The <strong>CCT diagram</strong> has the same nose shifted to longer times and lower temperatures. A cooling curve that stays to the left of the nose gives martensite; one that crosses it gives pearlite or bainite. The slowest cooling that still gives full martensite is the <strong>critical cooling rate</strong>.</p>
+<p><strong>Hardenability</strong> is the depth to which a steel can be hardened. It depends on how far the nose is to the right: alloying elements (Cr, Mo, Mn, Ni) move the nose rightward, so thick sections can be hardened with a gentler quench (oil instead of water, less cracking). Carbon raises the <em>maximum</em> hardness; alloying raises the <em>depth</em>. Plain carbon steels are shallow-hardening; their centre cools too slowly in a thick section. The Jominy end-quench test measures this.</p>
+</section><section class="step" data-title="5. Worked reading of the diagram"><h2 id="5-worked-reading-of-the-diagram">5. Worked reading of the diagram</h2>
+<p>A 0.77 % C steel austenitised and then:</p>
+<ol>
+<li><strong>Quenched in water to room temperature:</strong> the path stays left of the nose; austenite becomes martensite at <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.109em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">s</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≈</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">220</span></span></span></span> °C. Hard (≈ 65 HRC), brittle. Temper it.</li>
+<li><strong>Quenched to 330 °C and held 1000 s:</strong> the path crosses the bainite start line and finishes by the dashed line: <strong>bainite</strong>.</li>
+<li><strong>Quenched to 680 °C and held:</strong> passes through the high-temperature end of the nose: <strong>coarse pearlite</strong> after hours.</li>
+<li><strong>Furnace-cooled:</strong> crosses the diagram near <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> slowly: coarse pearlite, the softest.</li>
+</ol>
+<div class="callout callout-warning">
+<div class="callout-title">Traps</div>
+<ul>
+<li>Using a TTT diagram for a continuously cooled part: transformation starts at lower temperature and later time than the isothermal curve indicates.</li>
+<li>Confusing tempering with annealing: tempering is applied to <strong>martensite</strong> at a low temperature, annealing to austenitised steel with slow cooling.</li>
+<li>Assuming the hardest steel is the best: untempered martensite is too brittle for most uses.</li>
+<li>Treating <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.109em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">s</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> as dependent on cooling rate: it depends on composition (more carbon lowers <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.109em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">s</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>).</li>
+<li>Forgetting retained austenite at high carbon contents (a subzero treatment can convert it).</li>
+</ul>
+</div>
+<details class="callout callout-question fold">
+<summary>Predict first: two steels of the same carbon content, one plain and one with 1 % Cr and 0.2 % Mo. Which hardens deeper?</summary>
+<p>The alloy steel: Cr and Mo delay pearlite and bainite formation (the nose moves right), so it forms martensite at slower cooling rates and therefore deeper below the surface. At the same carbon the maximum surface hardness is the same.</p>
+</details>
+<details class="callout callout-question fold">
+<summary>Why does a quenched steel need to be tempered immediately?</summary>
+<p>Martensite is highly stressed and brittle; thermal and transformation stresses can crack it within hours. Tempering relieves stress and trades some hardness for large gains in toughness.</p>
+</details>
+</section><section class="step" data-title="6. Connections"><h2 id="6-connections">6. Connections</h2>
+<ul>
+<li><a href="../n/phase-diagrams-lever-rule-and-the-iron-carbide-diagram.html">Phase Diagrams - Lever Rule and the Iron-Carbide Diagram</a> — the equilibrium structures that these treatments bypass.</li>
+<li><a href="../n/dislocations-slip-and-strengthening.html">Dislocations, Slip and Strengthening</a> — the strengthening mechanisms of martensite and fine pearlite.</li>
+<li><a href="../n/tensile-test-true-stress-strain-and-hardness.html">Tensile Test, True Stress-Strain and Hardness</a> — hardness as a quick measure of the structure; <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2806em;"><span style="top:-2.55em;margin-left:-0.0576em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">u</span><span class="mord mathnormal mtight">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≈</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">3.45</span><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span></span></span></span>.</li>
+<li><a href="../n/exponential-decay-time-constants-damping-and-spatial-relaxation.html">Exponential Decay - Time Constants, Damping and Spatial Relaxation</a> — transformation kinetics follow the Avrami form <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.88em;"></span><span class="mord"><span class="mord mathnormal">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.88em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span><span class="mord mtight"><span class="mord mathnormal mtight">t</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7385em;"><span style="top:-2.931em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>, a stretched exponential in time.</li>
+<li><a href="../n/thermal-stresses.html">Thermal Stresses</a> — quench cracking: surface and core cool at different rates, the same thermal stress that this note's martensite transformation adds to.</li>
+<li><a href="../n/manufacturing-technology-moc.html">Manufacturing Technology - MOC</a> — heat treatment is a manufacturing step after forming and machining.</li>
+</ul></section></div><nav class="pager"><a class="pg" href="phase-diagrams-lever-rule-and-the-iron-carbide-diagram.html"><small>Previous page</small>Phase Diagrams - Lever Rule and the Iron-Carbide Diagram</a><span></span></nav><section class="related"><h2>Related notes</h2><h3>Links to</h3><div class="rels"><a class="rel" href="dislocations-slip-and-strengthening.html" style="--c:#6a68a3"><span class="dot"></span><span>Dislocations, Slip and Strengthening<small>Materials and Design</small></span></a><a class="rel" href="exponential-decay-time-constants-damping-and-spatial-relaxation.html" style="--c:#a54540"><span class="dot"></span><span>Exponential Decay - Time Constants, Damping and Spatial Relaxation<small>Cross-Domain Connections</small></span></a><a class="rel" href="manufacturing-technology-moc.html" style="--c:#7a7d80"><span class="dot"></span><span>Manufacturing Technology - MOC<small>Manufacturing Technology</small></span></a><a class="rel" href="materials-and-design-moc.html" style="--c:#6a68a3"><span class="dot"></span><span>Materials and Design - MOC<small>Materials and Design</small></span></a><a class="rel" href="phase-diagrams-lever-rule-and-the-iron-carbide-diagram.html" style="--c:#6a68a3"><span class="dot"></span><span>Phase Diagrams - Lever Rule and the Iron-Carbide Diagram<small>Materials and Design</small></span></a><a class="rel" href="tensile-test-true-stress-strain-and-hardness.html" style="--c:#6a68a3"><span class="dot"></span><span>Tensile Test, True Stress-Strain and Hardness<small>Materials and Design</small></span></a><a class="rel" href="thermal-stresses.html" style="--c:#4f7a52"><span class="dot"></span><span>Thermal Stresses<small>Strength of Materials</small></span></a></div><h3>Linked from</h3><div class="rels"><a class="rel" href="additive-manufacturing-processes-and-design-rules.html" style="--c:#7a7d80"><span class="dot"></span><span>Additive Manufacturing - Processes and Design Rules<small>Manufacturing Technology</small></span></a><a class="rel" href="joining-processes-welding-brazing-and-adhesives.html" style="--c:#7a7d80"><span class="dot"></span><span>Joining Processes - Welding, Brazing and Adhesives<small>Manufacturing Technology</small></span></a></div><canvas id="miniGraph" width="640" height="320" aria-label="Connections"></canvas></section></article><aside class="toc"><b>On this page</b><a href="#1-why-a-diagram-with-time">1. Why a diagram with time</a><a href="#2-products-of-austenite">2. Products of austenite</a><a href="#3-cooling-paths-and-treatments">3. Cooling paths and treatments</a><a href="#4-continuous-cooling-cct-and-hardenability">4. Continuous cooling (CCT) and hardenability</a><a href="#5-worked-reading-of-the-diagram">5. Worked reading of the diagram</a><a href="#6-connections">6. Connections</a></aside></div></main></div>
+<div class="scrim" id="scrim"></div>
+<nav class="dock" aria-label="Sections"><a class="" href="../index.html"><svg viewBox="0 0 24 24"><path d="M12 3 2 8l10 5 8-4v6h2V8L12 3Zm-6 9.6V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-3.4l-6 3-6-3Z"/></svg><span>Library</span></a><a class="" href="../practice.html"><svg viewBox="0 0 24 24"><path d="M7 4h2v16H7V4Zm8 0h2v16h-2V4ZM3 9h2v6H3V9Zm16 0h2v6h-2V9ZM9 11h6v2H9v-2Z"/></svg><span>Practice</span></a><a class="" href="../solve.html"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm3.8 6.2-2.1 5.5-5.5 2.1 2.1-5.5 5.5-2.1ZM12 11a1 1 0 1 0 0 2 1 1 0 0 0 0-2Z"/></svg><span>Solve</span></a><a class="" href="../graph.html"><svg viewBox="0 0 24 24"><path d="M6 3a3 3 0 0 0-1 5.8v6.4a3 3 0 1 0 2 0V13l6-2.2A3 3 0 1 0 12.4 9 3 3 0 0 0 9 11.3L7 12V8.8A3 3 0 0 0 6 3Zm0 2a1 1 0 1 1 0 2 1 1 0 0 1 0-2Zm12 2a1 1 0 1 1 0 2 1 1 0 0 1 0-2ZM6 17a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/></svg><span>Link map</span></a><button id="openSearchDock" type="button" aria-label="Search"><svg viewBox="0 0 24 24"><path d="M10 3a7 7 0 1 0 4.4 12.4l4.6 4.6 1.4-1.4-4.6-4.6A7 7 0 0 0 10 3Zm0 2a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z"/></svg><span>Search</span></button></nav>
+<button class="key totop" id="toTop" type="button" aria-label="Back to top">↑</button>
+<div class="search" id="search" hidden><div class="search-box"><div class="search-h"><span>Find in the notebook</span><button id="closeSearch" type="button" aria-label="Close search">×</button></div><input id="q" type="search" placeholder="Title, heading or any word…" autocomplete="off"><div id="results"></div></div></div>
+<script src="../assets/data.js"></script>
+<script src="../assets/app.js"></script>
+</body></html>
