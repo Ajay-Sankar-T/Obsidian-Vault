@@ -62,10 +62,10 @@ ACTIVE = ["de", "ph", "em", "ed", "som", "fm", "aml", "pl", "kdoms", "ee", "xd",
 UPCOMING = ["fte", "ht", "mat", "mfg", "mic", "mdes", "camd"]
 UNIT_NAMES = {"de": {"Intro": "First-order ODEs", "2nd Order DE": "Second-order ODEs", "Series Solutions of DE": "Series solutions",
                      "Special Functions": "Special functions", "PDEs": "Partial differential equations", "Problems": "Assignments"},
-              "kdoms": {"Velocity-Acceleration-Bank": "Velocity and acceleration", "Synthesis-Formula-Bank": "Mechanism synthesis", "Formula-Bank": "Gears", "Cams-Flywheels-Balancing": "Cams, flywheels and balancing"},
+              "kdoms": {"Foundations": "Mechanism basics", "Velocity-Acceleration-Bank": "Velocity and acceleration", "Synthesis-Formula-Bank": "Mechanism synthesis", "Formula-Bank": "Gears", "Cams-Flywheels-Balancing": "Cams, flywheels and balancing"},
               "ml": {"ML": "Machine learning", "WebOps": "Web basics"}}
 UNIT_ORDER = {"de": ["Intro", "2nd Order DE", "Series Solutions of DE", "Special Functions", "PDEs", "Problems"],
-              "kdoms": ["Velocity-Acceleration-Bank", "Synthesis-Formula-Bank", "Formula-Bank", "Cams-Flywheels-Balancing"],
+              "kdoms": ["Foundations", "Velocity-Acceleration-Bank", "Synthesis-Formula-Bank", "Formula-Bank", "Cams-Flywheels-Balancing"],
               "ee": ["", "AC Transients", "RLC Circuits - Responses", "Transformers and Induction Machines"], "em": ["Statics", "Dynamics"]}
 DEFAULT_UNIT = {"ee": "Weekly lessons", "xd": "Connections", "ent": "Class notes", "ed": "Drawing standards", "pl": "Experiments and skills", "aml": "Experiments"}
 
@@ -89,13 +89,14 @@ WIDGETS = {
     "phase": ["The Nonlinear Pendulum"],
     "orbit": ["Kepler's Laws and Orbits"],
     "vfield": ["Divergence Theorem and Flux"],
+    "fourbar": ["Grashof Criterion and Four-Bar Inversions"],
 }
 WIDGET_OF = {name: w for w, names in WIDGETS.items() for name in names}
 WIDGET_TITLE = {"oscillator": "Damping explorer", "decay": "Time-constant explorer", "lumped": "Lumped-capacitance cooling", "mohr": "Mohr's circle explorer",
                 "beam": "Beam deflection explorer", "euler": "Column buckling calculator", "series": "Series approximation explorer",
                 "special": "Special-function explorer", "resonance": "Resonance explorer", "auction": "GSP vs VCG auction explorer",
                 "freeosc": "Free-oscillation explorer", "driven": "Driven-oscillator explorer", "phase": "Pendulum phase-portrait explorer",
-                "orbit": "Orbit explorer", "vfield": "Divergence and curl explorer"}
+                "orbit": "Orbit explorer", "vfield": "Divergence and curl explorer", "fourbar": "Four-bar explorer"}
 
 # --------------------------------------------------------------------------------------------- helpers
 def slugify(s):

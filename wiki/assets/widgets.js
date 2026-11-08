@@ -350,6 +350,49 @@
     up();
   };
 
+  W.fourbar = function (root) {
+    var f = frame(root, "Drag the four link lengths. The rule: s + l < p + q (shortest plus longest less than the other two) lets the shortest link turn fully. The purple curve is the path of the coupler midpoint while the input link goes round; if the crank cannot go all the way round, only part of the curve exists.");
+    var gs = slider(f.ctrl, "Ground link g", 2, 7, 0.1, 4.5, "", up), bs = slider(f.ctrl, "Input crank b", 1, 7, 0.1, 2.0, "", up), cs = slider(f.ctrl, "Coupler c", 2, 7, 0.1, 5.0, "", up), ds = slider(f.ctrl, "Follower d", 2, 7, 0.1, 4.0, "", up), ts = slider(f.ctrl, "Input angle", 0, 360, 1, 50, "°", up);
+    var brs = select(f.ctrl, "Assembly", ["open", "crossed"], up); f.ctrl.appendChild(f.out);
+    function ci(p0, r0, p1, r1, sg) {
+      var dx = p1[0] - p0[0], dy = p1[1] - p0[1], d = Math.hypot(dx, dy);
+      if (d > r0 + r1 || d < Math.abs(r0 - r1) || d === 0) return null;
+      var a = (r0 * r0 - r1 * r1 + d * d) / (2 * d), hh = Math.sqrt(Math.max(r0 * r0 - a * a, 0)), ex = dx / d, ey = dy / d;
+      return [p0[0] + a * ex - sg * hh * ey, p0[1] + a * ey + sg * hh * ex];
+    }
+    function up() {
+      var g = gs.get(), b = bs.get(), c = cs.get(), d = ds.get(), sg = brs.get() ? -1 : 1, th = ts.get() * Math.PI / 180;
+      var A = [b * Math.cos(th), b * Math.sin(th)], B = ci(A, c, [g, 0], d, sg), series = [], segs = [], cur = [], t, ok = [], bb = [[0, 0], [g, 0], A];
+      for (t = 0; t <= 360; t += 2) {
+        var a1 = [b * Math.cos(t * Math.PI / 180), b * Math.sin(t * Math.PI / 180)], b1 = ci(a1, c, [g, 0], d, sg);
+        if (b1) { cur.push([(a1[0] + b1[0]) / 2, (a1[1] + b1[1]) / 2]); ok.push(t); bb.push(a1, b1); } else { bb.push(a1); if (cur.length) { segs.push(cur); cur = []; } }
+      }
+      if (cur.length) segs.push(cur);
+      segs.forEach(function (s) { if (s.length > 1) series.push({ pts: s, color: css("--purple") || "#8e6bd6", width: 1.8, dash: [5, 4] }); });
+      series.push({ pts: [[0, 0], [g, 0]], color: css("--muted"), width: 6 });
+      if (B) {
+        series.push({ pts: [[0, 0], A], color: css("--blue"), width: 4 }, { pts: [A, B], color: css("--green"), width: 4 }, { pts: [B, [g, 0]], color: css("--orange"), width: 4 });
+        series.push({ dots: [[0, 0], [g, 0], A, B], color: css("--text"), r: 5 });
+      } else series.push({ pts: [[0, 0], A], color: css("--blue"), width: 4 }, { dots: [[0, 0], [g, 0], A], color: css("--text"), r: 5 });
+      var x0 = Math.min.apply(null, bb.map(function (q) { return q[0]; })), x1 = Math.max.apply(null, bb.map(function (q) { return q[0]; })), y0 = Math.min.apply(null, bb.map(function (q) { return q[1]; })), y1 = Math.max.apply(null, bb.map(function (q) { return q[1]; }));
+      var hw = Math.max((x1 - x0) / 2, (y1 - y0) / 2 * 2.12) + 0.8, cx = (x0 + x1) / 2, cy = (y0 + y1) / 2;
+      draw(f, { xmin: cx - hw, xmax: cx + hw, ymin: cy - hw / 2.12, ymax: cy + hw / 2.12, xlabel: "link-length units", ylabel: "", xticks: 6, yticks: 4 }, series);
+      var L = [g, b, c, d], srt = L.slice().sort(function (x, y) { return x - y; }), s = srt[0], l = srt[3], pq = srt[1] + srt[2], G = s + l - pq, eq = function (x, y) { return Math.abs(x - y) < 1e-6; };
+      var kind, turn;
+      if (Math.abs(G) < 1e-6) kind = "change point (s + l = p + q): the chain can fold flat";
+      else if (G > 0) kind = "non-Grashof: triple rocker, no link turns fully";
+      else if (eq(g, s)) kind = "Grashof, fixed link is the shortest: <b>drag link</b> (double crank)";
+      else if (eq(c, s)) kind = "Grashof, fixed link opposite the shortest: <b>double rocker</b>";
+      else kind = "Grashof, shortest link next to the fixed one: <b>crank-rocker</b>";
+      turn = (G < -1e-6 && (eq(b, s) || eq(g, s))) ? "the input crank <b>can</b> turn 360°" : "the input crank <b>cannot</b> turn 360°";
+      var rows = ["s + l = <b>" + fmt(s + l, 2) + "</b> &nbsp; p + q = <b>" + fmt(pq, 2) + "</b> &nbsp; (difference " + fmt(G, 2) + ")", kind, turn];
+      if (!B) rows.push("<span style='color:" + css("--red") + "'>at " + Math.round(ts.get()) + "° the links cannot close; move the angle</span>");
+      else if (ok.length && ok.length < 181) rows.push("the crank reaches " + ok.length * 2 + "° of the 360° only");
+      out(f, rows);
+    }
+    up();
+  };
+
   function init(rootEl) {
     Array.prototype.forEach.call((rootEl || document).querySelectorAll(".widget[data-widget]:not([data-init])"), function (el) {
       el.dataset.init = "1"; var fn = W[el.dataset.widget]; if (fn) { try { fn(el); } catch (e) { el.innerHTML = "<p class='w-note'>Widget failed: " + e.message + "</p>"; } }

@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#4a2f20"><meta name="description" content="Course notes, worked problems and interactive explorers, bound as a notebook"><link rel="icon" href="../assets/Favicons/Alya.png" type="image/png"><link rel="apple-touch-icon" href="../assets/Favicons/Alya.png"><link rel="manifest" href="../manifest.webmanifest">
+<title>Kinematic Pairs, Links and Chains · Engineering Notebook</title>
+<script>try{var t=localStorage.getItem('wiki.theme');if(!t&&matchMedia('(prefers-color-scheme: dark)').matches)t='dark';if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="../assets/style.css"><link rel="stylesheet" href="../assets/vendor/katex.min.css">
+</head><body data-root="../" data-page="note" data-slug="kinematic-pairs-links-and-chains" data-course="kdoms">
+<header class="top"><button class="key key-menu" id="menuBtn" type="button" aria-label="Open contents" aria-expanded="false"><svg class="i" viewBox="0 0 24 24"><path d="M4 6h16v2H4V6Zm0 5h16v2H4v-2Zm0 5h16v2H4v-2Z"/></svg></button>
+<a class="plate" href="../index.html"><span class="plate-mark">EN</span><span class="plate-t">Engineering Notebook</span></a>
+<nav class="tabs" aria-label="Sections"><a class="tab" href="../index.html">Library</a><a class="tab" href="../practice.html">Practice</a><a class="tab" href="../solve.html">How to solve</a><a class="tab" href="../graph.html">Link map</a></nav>
+<div class="top-r"><button class="search-key" id="openSearch" type="button" aria-label="Search the notebook"><svg viewBox="0 0 24 24"><path d="M10 3a7 7 0 1 0 4.4 12.4l4.6 4.6 1.4-1.4-4.6-4.6A7 7 0 0 0 10 3Zm0 2a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z"/></svg><span>Search the notebook</span><kbd>/</kbd></button><button class="key" id="themeBtn" type="button" aria-label="Switch between day and night desk"></button></div></header>
+<div class="thread" id="thread"></div>
+<div class="frame"><aside class="tree" id="tree" aria-label="Contents"></aside>
+<main class="content"><nav class="crumbbar" aria-label="Breadcrumb"><a href="../index.html">Library</a><i>›</i><a href="../course/kdoms.html">Kinematics &amp; Dynamics of Machinery</a><i>›</i><span>Mechanism basics</span></nav><div class="paper"><article class="note" data-kind="concept" style="--c:#b8692f;--cd:#84451a">
+<h1>Kinematic Pairs, Links and Chains</h1><div class="chips"><span class="chip">concept</span><span class="chip">KDoM</span></div>
+<div class="actions"><button class="btn" id="startLesson" type="button">Study mode</button><button class="btn btn-ghost" id="markDone" type="button">Mark as read</button></div>
+<div class="body" id="body"><section class="step intro"><div class="callout callout-abstract">
+<div class="callout-title">In one breath</div>
+<p>A mechanism is <strong>rigid links joined by pairs</strong>. Each pair restricts the relative motion of the two links it joins and leaves a few degrees of freedom. What a mechanism does is decided by which pairs connect which links, so learn the pairs first.</p>
+</div>
+<p>Part of <a href="../n/kdoms-moc.html">KDoMs - MOC</a>. Next: <a href="../n/mobility-kutzbach-equation-and-exceptions.html">Mobility - Kutzbach Equation and Exceptions</a>.</p>
+</section><section class="step" data-title="1. Machine, mechanism, rigid body"><h2 id="1-machine-mechanism-rigid-body">1. Machine, mechanism, rigid body</h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Machine</strong></td>
+<td>Transmits and transforms energy to do useful work (engine, pump).</td>
+</tr>
+<tr>
+<td><strong>Mechanism</strong></td>
+<td>Rigid links arranged to transmit <em>motion</em> in a prescribed way. It need not carry real loads.</td>
+</tr>
+<tr>
+<td><strong>Kinematics</strong></td>
+<td>Motion without regard to force.</td>
+</tr>
+<tr>
+<td><strong>Dynamics</strong></td>
+<td>Motion with the forces and inertias that cause it.</td>
+</tr>
+<tr>
+<td><strong>Rigid link</strong></td>
+<td>A body whose points keep fixed mutual distances: a planar link has 3 degrees of freedom, a spatial one 6.</td>
+</tr>
+</tbody>
+</table>
+</section><section class="step" data-title="2. Classifying pairs"><h2 id="2-classifying-pairs">2. Classifying pairs</h2>
+<p>A pair (joint) restricts the relative motion of two links. Three independent ways to sort them:</p>
+<ol>
+<li><strong>By the nature of contact.</strong> <em>Lower pairs</em> have surface contact; <em>higher pairs</em> have line or point contact.</li>
+<li><strong>By how the contact is kept.</strong> <em>Form-closed</em> (geometry holds it: a pin in a hole, a slider in a groove) or <em>force-closed</em> (a spring, gravity or a load must press the surfaces together: a cam and follower, a link resting on a plane).</li>
+<li><strong>By the degrees of freedom it leaves</strong> between the two links.</li>
+</ol>
+<p><img src="../assets/img/FND-1-pairs.png" alt="FND-1-pairs" loading="lazy"></p>
+<table>
+<thead>
+<tr>
+<th>Lower pair</th>
+<th>Symbol</th>
+<th>Relative DOF</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Revolute (hinge, pin)</td>
+<td>R</td>
+<td>1 (rotation)</td>
+</tr>
+<tr>
+<td>Prismatic (slider)</td>
+<td>P</td>
+<td>1 (translation)</td>
+</tr>
+<tr>
+<td>Helical (screw)</td>
+<td>H</td>
+<td>1 (rotation and translation tied by the lead)</td>
+</tr>
+<tr>
+<td>Cylindrical</td>
+<td>C</td>
+<td>2 (rotation, translation)</td>
+</tr>
+<tr>
+<td>Spherical (ball and socket)</td>
+<td>S</td>
+<td>3 (three rotations)</td>
+</tr>
+<tr>
+<td>Planar</td>
+<td>E</td>
+<td>3 (two translations, one rotation)</td>
+</tr>
+</tbody>
+</table>
+<p>In a <em>planar</em> mechanism only R and P appear as full joints; they remove 2 of the 3 planar DOF. A <strong>higher pair</strong> (cam–follower, gear teeth) leaves 2 relative DOF in the plane, rolling and sliding, so it removes only 1.</p>
+<div class="callout callout-tip">
+<div class="callout-title">A joint removes as many DOF as it transmits force components</div>
+<p>A planar pin carries 2 reaction force components (and no moment) and removes 2 DOF. A higher pair carries 1 force (along the common normal) and removes 1 DOF. This is why counting constraints for mobility and drawing a free-body diagram are the same bookkeeping: <a href="../n/free-body-diagrams-and-equilibrium-of-rigid-bodies.html">Free-Body Diagrams and Equilibrium of Rigid Bodies</a>.</p>
+</div>
+</section><section class="step" data-title="3. Joints of more than two links"><h2 id="3-joints-of-more-than-two-links">3. Joints of more than two links</h2>
+<p>Several links can share one pin. A joint of <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span> links counts as <strong><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7778em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> joints</strong> for mobility (two links make a single pin; a third link on the same pin adds one more). Drawing conventions: a small circle is a revolute pair; a continuous link drawn through a pin means that link is <em>one</em> body passing the pin; the fixed link is numbered 1 and hatched; a polygon with several pins is one rigid ternary or quaternary link.</p>
+</section><section class="step" data-title="4. Links, chains, mechanisms"><h2 id="4-links-chains-mechanisms">4. Links, chains, mechanisms</h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Link</strong></td>
+<td>A rigid body with at least two pairs.</td>
+</tr>
+<tr>
+<td><strong>Kinematic chain</strong></td>
+<td>Links joined by pairs.</td>
+</tr>
+<tr>
+<td><strong>Closed chain</strong></td>
+<td>Every link has at least two pairs and the loop closes.</td>
+</tr>
+<tr>
+<td><strong>Open chain</strong></td>
+<td>An end link has only one pair (a robot arm).</td>
+</tr>
+<tr>
+<td><strong>Mechanism</strong></td>
+<td>A chain with one link fixed (a frame).</td>
+</tr>
+<tr>
+<td><strong>Linkage</strong></td>
+<td>A mechanism whose pairs are all lower pairs.</td>
+</tr>
+<tr>
+<td><strong>Constrained mechanism</strong></td>
+<td>One input fixes every link's position (mobility 1).</td>
+</tr>
+</tbody>
+</table>
+<p>Mechanism types by motion: <strong>planar</strong> (all points move in parallel planes), <strong>spherical</strong> (all points move on concentric spheres, e.g. a Hooke's joint), <strong>spatial</strong> (neither).</p>
+<pre class="mermaid">graph TD
+    P[&quot;Kinematic pair&quot;] --&gt; C[&quot;Contact&quot;]
+    P --&gt; K[&quot;Closure&quot;]
+    P --&gt; D[&quot;DOF left&quot;]
+    C --&gt; L[&quot;Lower: R, P, H, C, S, E&quot;]
+    C --&gt; H2[&quot;Higher: cam-follower, gears&quot;]
+    K --&gt; F[&quot;Form-closed&quot;]
+    K --&gt; G[&quot;Force-closed&quot;]
+    D --&gt; D1[&quot;1 DOF: R, P, H&quot;]
+    D --&gt; D2[&quot;2 DOF: C, planar higher pair&quot;]
+    D --&gt; D3[&quot;3 DOF: S, E&quot;]</pre>
+<details class="callout callout-question fold">
+<summary>Predict first: a roller follower pressed on a cam by a spring. Form- or force-closed, lower or higher?</summary>
+<p><strong>Higher</strong> (line contact) and <strong>force-closed</strong>: take the spring away and the roller leaves the cam. A groove cam holding the roller on both sides would make it form-closed.</p>
+</details>
+<details class="callout callout-question fold">
+<summary>Why does a ball joint give 3 DOF but a hinge only 1?</summary>
+<p>The ball in its socket can still turn about any axis through its centre (3 rotations). The hinge's pin removes the other two rotations and all three translations.</p>
+</details>
+</section><section class="step" data-title="5. Connections"><h2 id="5-connections">5. Connections</h2>
+<ul>
+<li><a href="../n/plane-kinematics-of-rigid-bodies.html">Plane Kinematics of Rigid Bodies</a> — the 3 planar DOF of a free link that pairs then remove.</li>
+<li><a href="../n/cam-motion-laws-and-the-flat-face-follower.html">Cam Motion Laws and the Flat-Face Follower</a> — the cam–follower higher pair in detail.</li>
+<li><a href="../n/gear-formula-bank.html">Gear Formula Bank</a> — gear teeth as a higher pair whose motion obeys the fundamental law of gearing.</li>
+</ul></section></div><nav class="pager"><span></span><a class="pg pg-next" href="mobility-kutzbach-equation-and-exceptions.html"><small>Next page</small>Mobility - Kutzbach Equation and Exceptions</a></nav><section class="related"><h2>Related notes</h2><h3>Links to</h3><div class="rels"><a class="rel" href="cam-motion-laws-and-the-flat-face-follower.html" style="--c:#b8692f"><span class="dot"></span><span>Cam Motion Laws and the Flat-Face Follower<small>Kinematics &amp; Dynamics of Machinery</small></span></a><a class="rel" href="free-body-diagrams-and-equilibrium-of-rigid-bodies.html" style="--c:#8c6a3f"><span class="dot"></span><span>Free-Body Diagrams and Equilibrium of Rigid Bodies<small>Engineering Mechanics</small></span></a><a class="rel" href="gear-formula-bank.html" style="--c:#b8692f"><span class="dot"></span><span>Gear Formula Bank<small>Kinematics &amp; Dynamics of Machinery</small></span></a><a class="rel" href="kdoms-moc.html" style="--c:#b8692f"><span class="dot"></span><span>KDoMs - MOC<small>Kinematics &amp; Dynamics of Machinery</small></span></a><a class="rel" href="mobility-kutzbach-equation-and-exceptions.html" style="--c:#b8692f"><span class="dot"></span><span>Mobility - Kutzbach Equation and Exceptions<small>Kinematics &amp; Dynamics of Machinery</small></span></a><a class="rel" href="plane-kinematics-of-rigid-bodies.html" style="--c:#8c6a3f"><span class="dot"></span><span>Plane Kinematics of Rigid Bodies<small>Engineering Mechanics</small></span></a></div><h3>Linked from</h3><div class="rels"><a class="rel" href="kinematic-inversion-slider-crank-and-double-slider-families.html" style="--c:#b8692f"><span class="dot"></span><span>Kinematic Inversion - Slider-Crank and Double-Slider Families<small>Kinematics &amp; Dynamics of Machinery</small></span></a></div><canvas id="miniGraph" width="640" height="320" aria-label="Connections"></canvas></section></article><aside class="toc"><b>On this page</b><a href="#1-machine-mechanism-rigid-body">1. Machine, mechanism, rigid body</a><a href="#2-classifying-pairs">2. Classifying pairs</a><a href="#3-joints-of-more-than-two-links">3. Joints of more than two links</a><a href="#4-links-chains-mechanisms">4. Links, chains, mechanisms</a><a href="#5-connections">5. Connections</a></aside></div></main></div>
+<div class="scrim" id="scrim"></div>
+<nav class="dock" aria-label="Sections"><a class="" href="../index.html"><svg viewBox="0 0 24 24"><path d="M12 3 2 8l10 5 8-4v6h2V8L12 3Zm-6 9.6V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-3.4l-6 3-6-3Z"/></svg><span>Library</span></a><a class="" href="../practice.html"><svg viewBox="0 0 24 24"><path d="M7 4h2v16H7V4Zm8 0h2v16h-2V4ZM3 9h2v6H3V9Zm16 0h2v6h-2V9ZM9 11h6v2H9v-2Z"/></svg><span>Practice</span></a><a class="" href="../solve.html"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm3.8 6.2-2.1 5.5-5.5 2.1 2.1-5.5 5.5-2.1ZM12 11a1 1 0 1 0 0 2 1 1 0 0 0 0-2Z"/></svg><span>Solve</span></a><a class="" href="../graph.html"><svg viewBox="0 0 24 24"><path d="M6 3a3 3 0 0 0-1 5.8v6.4a3 3 0 1 0 2 0V13l6-2.2A3 3 0 1 0 12.4 9 3 3 0 0 0 9 11.3L7 12V8.8A3 3 0 0 0 6 3Zm0 2a1 1 0 1 1 0 2 1 1 0 0 1 0-2Zm12 2a1 1 0 1 1 0 2 1 1 0 0 1 0-2ZM6 17a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/></svg><span>Link map</span></a><button id="openSearchDock" type="button" aria-label="Search"><svg viewBox="0 0 24 24"><path d="M10 3a7 7 0 1 0 4.4 12.4l4.6 4.6 1.4-1.4-4.6-4.6A7 7 0 0 0 10 3Zm0 2a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z"/></svg><span>Search</span></button></nav>
+<button class="key totop" id="toTop" type="button" aria-label="Back to top">↑</button>
+<div class="search" id="search" hidden><div class="search-box"><div class="search-h"><span>Find in the notebook</span><button id="closeSearch" type="button" aria-label="Close search">×</button></div><input id="q" type="search" placeholder="Title, heading or any word…" autocomplete="off"><div id="results"></div></div></div>
+<script src="../assets/data.js"></script><script src="../assets/vendor/mermaid.min.js"></script>
+<script src="../assets/app.js"></script>
+</body></html>

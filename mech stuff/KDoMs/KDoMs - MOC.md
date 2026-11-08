@@ -12,6 +12,11 @@ Kinematics and dynamics of machinery (ME 2201). Source text: *Theory of Mechanis
 
 ## Main spine
 
+0. **Mechanism basics** (lectures 1–5) — pairs, mobility, which link can turn, what you get by fixing a different link
+   - [[Kinematic Pairs, Links and Chains]] — lower and higher pairs, form and force closure, chains
+   - [[Mobility - Kutzbach Equation and Exceptions]] — $M=3(n-1)-2j-h$, idle DOF, redundant links
+   - [[Grashof Criterion and Four-Bar Inversions]] — $s+l\le p+q$, crank-rocker, drag link, double rocker (interactive four-bar)
+   - [[Kinematic Inversion - Slider-Crank and Double-Slider Families]] — engines, quick return, Scotch yoke, trammel, Oldham
 1. **Velocity and acceleration of a mechanism** — find motion of every link, given the input
    - [[KDoMs/Velocity-Acceleration-Bank/Velocity and Acceleration - Analytical Method|Analytical method]] — loop closure, differentiated; linear in the unknowns
    - [[KDoMs/Velocity-Acceleration-Bank/Velocity and Acceleration - Graphical Methods (Polygons)|Graphical methods (polygons)]] — velocity/acceleration polygons, images, instantaneous centres
@@ -34,6 +39,9 @@ Speed ratio required ──► Gears ──► train value ──► torques
 
 | I need… | Use |
 | --- | --- |
+| Degrees of freedom of a mechanism, or why a linkage locks | [[Mobility - Kutzbach Equation and Exceptions]] |
+| Will the crank turn fully? What type of four-bar is it? | [[Grashof Criterion and Four-Bar Inversions]] |
+| Quick return, Scotch yoke, Oldham coupling | [[Kinematic Inversion - Slider-Crank and Double-Slider Families]] |
 | Link velocities/accelerations at one configuration, by hand | [[KDoMs/Velocity-Acceleration-Bank/Velocity and Acceleration - Graphical Methods (Polygons)|Polygons]] |
 | Velocities/accelerations over a whole cycle, or in a program | [[KDoMs/Velocity-Acceleration-Bank/Velocity and Acceleration - Analytical Method|Analytical]] |
 | A sliding joint on a rotating link (Coriolis) | Coincident-point relation in either method; [[KDoMs/Problem-2.19-solution|Problem 2.19]] |
@@ -83,6 +91,7 @@ Verification scripts and browser explorers sit beside each bank: `va_core.py`, `
 
 ## Status
 
+- [x] Mechanism basics (lectures 1–5)
 - [x] Velocity/acceleration banks
 - [x] Synthesis banks
 - [x] Gear bank
