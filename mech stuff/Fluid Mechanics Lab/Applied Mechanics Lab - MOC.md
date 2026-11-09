@@ -6,7 +6,7 @@ status: active
 
 # Applied Mechanics Lab — Map of Content
 
-Five solid-mechanics experiments that test the theory of [[Strength of Materials - MOC]]: beam deflection, column buckling, two tensile tests and torsion. The folder is called `Fluid Mechanics Lab/` for historical reasons, but the manuals in it are the AM2540 *solid-mechanics* sessions. Each note turns a manual into: aim, theory, procedure, data reduction, a worked example, error sources and answered viva questions.
+Seven solid-mechanics experiments that test the theory of [[Strength of Materials - MOC]]: beam deflection, column buckling, two tensile tests, torsion, strain gauges and photoelasticity. The folder is called `Fluid Mechanics Lab/` for historical reasons, but the manuals in it are the AM2540 *solid-mechanics* sessions. Each note turns a manual (or, for strain gauges and photoelasticity, the lecture material) into: aim, theory, procedure, data reduction, a worked example, error sources and answered viva questions. Exam preparation: [[Applied Mechanics Lab - Mock Papers]].
 
 > [!abstract] The lab in one line
 > **Apply a known load, measure a small displacement, and check it against a formula from lectures, then explain the gap.** The numbers are easy; the skill is understanding why they disagree.
@@ -25,6 +25,10 @@ graph TD
     SoM --> K["Buckling: P_cr = pi^2 E I / Le^2"]
     SoM --> T["Tension: stress, strain, E, yield, UTS"]
     SoM --> R["Torsion: phi = T L / G J"]
+    SoM --> SG["Strain gauge: GF = (dR/R)/e, bridge, temperature compensation"]
+    SoM --> PE["Photoelasticity: s1 - s2 = N f / t"]
+    SG --> E
+    PE --> E
     T --> ES6["ES6 hand tester (springs and dial)"]
     T --> DIC["Hydraulic machine + DIC: true stress and strain"]
     B --> E["Report: measured vs theory, % error, sources"]
@@ -42,7 +46,9 @@ graph TD
 | 2 | [[Lab - Buckling of Struts]] | Euler buckling load for different end conditions | [[Euler Buckling of Columns]] |
 | 3 | [[Lab - Tensile Test on the ES6 Tester]] | stress–strain of Al, HE30, steel and PVC | [[Stress-Strain Diagram and Hooke's Law]] |
 | 4 | [[Lab - Tensile Test of Mild Steel with DIC]] | proportional limit, yield, UTS, true stress–strain | [[Concept of Stress]] |
-| 5 | [[Lab - Torsion of Circular Shafts]] | twist angle, shear modulus $G$ | [[Torsion of Circular Shafts]] |
+| 5 | [[Lab - Torsion of Circular Shafts]] | twist angle (also by mirror and scale), shear modulus $G$ | [[Torsion of Circular Shafts]] |
+| 6 | [[Lab - Strain Gauge Measurement on a Cantilever Beam]] | surface strain and bending stress; gauge factor; bridge arrangements and temperature compensation | [[Flexure Formula]], [[Sensors and Signal Conditioning]] |
+| 7 | [[Lab - Photoelasticity - Fringes and Stress]] | fringe order, principal-stress difference, material fringe value; disk and bent beam | [[Mohr's Circle for Stress]], [[Plane Stress Transformation]] |
 
 ## Methods and Problem Types
 
@@ -92,6 +98,7 @@ flowchart TD
 - [[Simple Harmonic Motion]]: torsion rod and beam are springs, with $k=GJ/L$ and $k=48EI/L^3$.
 
 ## Exam / Revision Map
+- **Practice papers:** [[Applied Mechanics Lab - Mock Papers]]: three timed mock papers in the style of the end-semester paper, plus [[Applied Mechanics Lab - Past Paper Pattern and Model Answers|the 2023 paper analysed and answered]]. Failure-plane sketches: [[Failure Planes - Ductile and Brittle Fracture]].
 - **Know cold:** $\delta=PL^3/48EI$, $P_{cr}=\pi^2EI/L_e^2$ with $L_e=L,\ L/\sqrt2,\ L/2$, $\sigma=F/A$, $\varepsilon=\Delta L/L$, $\sigma_{\rm true}=S(1+e)$, $\phi=TL/GJ$, $G=E/2(1+\nu)$.
 - **Commonly confused:** engineering vs true stress; $I_{xx}$ vs $I_{yy}$ (use the smaller for buckling); angle of twist vs arm rotation; stiffness ($P/\delta$) vs modulus ($E$).
 
@@ -101,11 +108,14 @@ flowchart TD
 - [ ] ES6 tensile report
 - [ ] DIC tensile report
 - [ ] Torsion report
+- [ ] Strain gauge report
+- [ ] Photoelasticity report
+- [ ] Mock papers 1–3 done under time
 
 ## MOC Maintenance Rules
 1. New experiment manual $\to$ one lab note, linked above.
 2. Keep illustrative numbers labelled as such; real measurements go in your own report, not here.
-3. Re-run `Tools/aml_figs.py` and `Tools/aml_check.py` after changing a formula.
+3. Re-run `Tools/aml_figs.py` and `Tools/aml_check.py` after changing a formula; the mock-paper numbers and figures come from `Tools/aml_mock_core.py` and `Tools/aml_mock_figs.py`.
 
 ## Quick Navigation
 - **Theory:** [[Strength of Materials - MOC]] · [[Euler Buckling of Columns]] · [[Torsion of Circular Shafts]]

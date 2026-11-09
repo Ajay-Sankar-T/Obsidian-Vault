@@ -38,6 +38,7 @@ Map of content for a standard Strength of Materials / Mechanics of Solids course
 - [[Mohr's Circle for Stress]]
 - [[Strain Transformation and Rosettes]]
 - [[Stress-Strain Transformation Analogy]] — fast-recall mnemonic layer tying the whole section together
+- [[Failure Planes - Ductile and Brittle Fracture]] — where tension, torsion, compression and bending break ductile and brittle specimens, and why
 
 ## 08 Deflection of Beams
 - [[Double Integration and Macaulay's Method]]
@@ -52,6 +53,15 @@ Map of content for a standard Strength of Materials / Mechanics of Solids course
 
 ## 11 Thin-Walled Pressure Vessels
 - [[Thin Cylindrical and Spherical Pressure Vessels]]
+
+## 12 Formula and Question Bank
+- [[Strength of Materials - Formula Bank]] — the whole course on one page: eleven chapters, section properties, standard beam table, column curve, failure criteria, the lab formulas and a "which method?" table
+- [[Strength of Materials - Question Bank]] — 48 conceptual questions, 36 solved numerical problems and 24 multiple-choice questions, in four parts:
+  - [[Question Bank 1 - Stress, Axial Loading and Torsion]]
+  - [[Question Bank 2 - Beams, Bending and Shear]]
+  - [[Question Bank 3 - Stress Transformation and Pressure Vessels]]
+  - [[Question Bank 4 - Deflection, Energy and Columns]]
+- Lab-style mock exams: [[Applied Mechanics Lab - Mock Papers]]
 
 ## Tutorials
 
@@ -82,7 +92,7 @@ Map of content for a standard Strength of Materials / Mechanics of Solids course
 
 ## Lab manuals (AM2540)
 
-PDFs in `AM2540 Manuals/` — not yet turned into notes: [[AM2540 Manuals/TENSILE TEST LAB MANUAL.pdf.pdf|Tensile test]] · [[AM2540 Manuals/Tensile Test DIC.pdf|Tensile test with DIC]] · [[AM2540 Manuals/Torsion_manual.pdf|Torsion]] · [[AM2540 Manuals/3 Point Bending.pdf|Three-point bending]] · [[AM2540 Manuals/Buckling of Struts.pdf|Buckling of struts]]. They pair with [[Stress-Strain Diagram and Hooke's Law]], [[Torsion of Circular Shafts]], [[Flexure Formula]] and [[Euler Buckling of Columns]].
+All seven experiments now have notes in [[Applied Mechanics Lab - MOC]]: [[Lab - Tensile Test on the ES6 Tester|ES6 tensile test]] · [[Lab - Tensile Test of Mild Steel with DIC|tensile test with DIC]] · [[Lab - Torsion of Circular Shafts|torsion]] · [[Lab - Deflection of Beams (Three-Point Bending)|three-point bending]] · [[Lab - Buckling of Struts|buckling of struts]] · [[Lab - Strain Gauge Measurement on a Cantilever Beam|strain gauge on a cantilever]] · [[Lab - Photoelasticity - Fringes and Stress|photoelasticity]]. They pair with [[Stress-Strain Diagram and Hooke's Law]], [[Torsion of Circular Shafts]], [[Flexure Formula]], [[Euler Buckling of Columns]] and [[Mohr's Circle for Stress]]. Exam practice: [[Applied Mechanics Lab - Mock Papers]].
 
 ## Cross-domain synthesis
 

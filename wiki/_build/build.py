@@ -205,7 +205,7 @@ def classify(n):
         return "ref"
     if title.endswith("- MOC") or title.endswith(" MOC"):
         return "moc"
-    if any(p.startswith("Tutorial") for p in parts[:-1]) or re.search(r"\bQ\d|^A-Q|^B-Q|Tutorial|Assignment|Solved Problems|solution|Problem-", title):
+    if any(p.startswith("Tutorial") for p in parts[:-1]) or re.search(r"\bQ\d|^A-Q|^B-Q|Tutorial|Assignment|Solved Problems|solution|Problem-|Question Bank \d|Mock Paper \d|Past Paper", title):
         return "problem"
     return "concept"
 

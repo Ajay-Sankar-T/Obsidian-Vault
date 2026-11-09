@@ -51,6 +51,15 @@ For each load: $W=mg$, $T=W\,r_{\rm arm}$, experimental twist (degrees $\to$ rad
 
 $$G_{\rm exp}=\frac{L}{J}\times\text{slope}.$$
 
+## Reading small twists optically: mirror and scale
+A twist of a fraction of a degree is hard to read on a protractor. A **mirror** fixed to the shaft turns with it by the twist $\phi$, and a ray of light reflected from it turns by **twice** that angle. A scale placed at a distance $D$ shows the shift $s$ of the reflected spot:
+
+![[AML-mirror-twist.png]]
+
+$$\tan2\phi=\frac{s}{D}\quad\Rightarrow\quad\phi=\frac12\arctan\frac{s}{D}\approx\frac{s}{2D}\ \ (\text{radians}).$$
+
+Reading $s$ against $D$ gives a lever arm of $2D$: the doubling from the reflection and the long arm make a $0.01$ mm shift on a $1$ m scale resolve $5\ \mu$rad. **Worked check:** the reading changes by $5$ mm with the scale $50$ mm from the mirror: $2\phi=\arctan0.1=5.71^\circ$, so $\phi=\mathbf{2.86^\circ}=0.0498$ rad (the small-angle form $s/2D=0.050$ rad agrees to 0.3 %). With $T$, $L$ and $J$ the shear modulus follows from $G=TL/J\phi$.
+
 ## Worked example
 > [!example]- 🔬 Illustrative steel shaft, $r=2.5$ mm, $L=300$ mm, $500$ g on a $50$ mm arm
 > $T=0.5(9.81)(0.050)=0.245$ N·m $=245$ N·mm. $J=\pi(2.5)^4/2=61.4$ mm⁴.

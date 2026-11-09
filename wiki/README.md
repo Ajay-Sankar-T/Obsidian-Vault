@@ -9,7 +9,7 @@ A static, offline learning site generated from the vault's notes. Open `index.ht
 - **Foldable callouts.** Obsidian callouts written as `> [!question]- Title` fold closed (`+` opens them) and become tappable flaps on the site: predict-first prompts, traps, analogies, worked examples and quiz answers hide until you open them.
 - **Play with it**: interactive explorers on the relevant notes (damping, free and driven oscillations, pendulum phase portraits, orbits, divergence and curl, time constants, Mohr's circle, beam deflection, column buckling, series approximations, Bessel/Legendre, resonance, lumped cooling, GSP vs VCG auctions).
 - **Practice**: tutorial and assignment notes with the hint, solution, result and trap hidden behind flaps; mark a problem solved and it gets a stamp.
-- **How to solve**: "I see this kind of problem, what do I use?" cards for every course (108 entries).
+- **How to solve**: "I see this kind of problem, what do I use?" cards for every course (144 entries).
 - **Link map**: every note is a pin on a cork board, every link a red thread; backlinks and related notes on each page; plus the stand-alone simulations from the vault.
 - Progress (read pages, solved problems, ticked checklists, recent pages) is stored in the browser's local storage on this device. There are no points or streaks.
 
