@@ -64,6 +64,7 @@ flowchart TD
 - [[Assignment 4 - Series Solutions - Solutions]] ← Frobenius notes and Legendre equation
 - [[Assignment 6 - Bessel Functions - Solutions]] ← Bessel notes (items 7–11) plus items 12–14
 - [[Assignment 7 - Sturm-Liouville Problems - Solutions]] ← [[Sturm-Liouville Problems]] and the orthogonality theme of [[Inner Product Spaces and Orthogonal Functions]]
+- Revision for Assignments 6–7: [[Assignments 6-10 - Formula Bank]] (§1–§2) · [[Assignments 6-10 - How to Solve]] (§2–§3) · [[DE Question Bank 1 - Bessel Functions and Sturm-Liouville]]
 
 ## Corrections to the lecture slides
 The checks in `Tools/de_core.py` found these slide errors (details in each note):

@@ -64,7 +64,7 @@ SHELVES = [("Foundations: maths, physics, mechanics, drawing", ["de", "ph", "em"
            ("Machines, design and manufacture", ["kdoms", "mdes", "camd", "mfg"]), ("Heat and fluids", ["fm", "ht", "fte"]),
            ("Measurement, control and electrical", ["mic", "ee", "pl"]), ("Across subjects", ["xd", "ml", "ent"])]
 UNIT_NAMES = {"de": {"Intro": "First-order ODEs", "2nd Order DE": "Second-order ODEs", "Series Solutions of DE": "Series solutions",
-                     "Special Functions": "Special functions", "PDEs": "Partial differential equations", "Problems": "Assignments"},
+                     "Special Functions": "Special functions", "PDEs": "Partial differential equations", "Problems": "Assignment revision"},
               "kdoms": {"Foundations": "Mechanism basics", "Velocity-Acceleration-Bank": "Velocity and acceleration", "Synthesis-Formula-Bank": "Mechanism synthesis", "Formula-Bank": "Gears", "Cams-Flywheels-Balancing": "Cams, flywheels and balancing"},
               "ml": {"ML": "Machine learning", "WebOps": "Web basics"}}
 UNIT_ORDER = {"de": ["Intro", "2nd Order DE", "Series Solutions of DE", "Special Functions", "PDEs", "Problems"],
@@ -205,6 +205,8 @@ def classify(n):
         return "ref"
     if title.endswith("- MOC") or title.endswith(" MOC"):
         return "moc"
+    if re.search(r"Formula Bank$|How to Solve$|- Question Bank$", title):
+        return "concept"          # reference pages and bank hubs: not solved-problem notes even if the title says "Assignments"
     if any(p.startswith("Tutorial") for p in parts[:-1]) or re.search(r"\bQ\d|^A-Q|^B-Q|Tutorial|Assignment|Solved Problems|solution|Problem-|Question Bank \d|Mock Paper \d|Past Paper", title):
         return "problem"
     return "concept"
@@ -514,7 +516,9 @@ ICON = {
     "search": '<svg viewBox="0 0 24 24"><path d="M10 3a7 7 0 1 0 4.4 12.4l4.6 4.6 1.4-1.4-4.6-4.6A7 7 0 0 0 10 3Zm0 2a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z"/></svg>',
 }
 ICON["menu"] = '<svg class="i" viewBox="0 0 24 24"><path d="M4 6h16v2H4V6Zm0 5h16v2H4v-2Zm0 5h16v2H4v-2Z"/></svg>'
-ICON["sun"] = '<svg class="i" viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0-5h-1v3h2V2h-1Zm0 17h-1v3h2v-3h-1ZM2 11v2h3v-2H2Zm17 0v2h3v-2h-3ZM5.6 4.2 4.2 5.6l2.1 2.1 1.4-1.4-2.1-2.1Zm12.1 12.1-1.4 1.4 2.1 2.1 1.4-1.4-2.1-2.1ZM4.2 18.4l1.4 1.4 2.1-2.1-1.4-1.4-2.1 2.1ZM16.3 6.3l1.4 1.4 2.1-2.1-1.4-1.4-2.1 2.1Z"/></svg>'
+ICON["panell"] = '<svg class="i" viewBox="0 0 24 24"><path d="M3 5h18v14H3V5Zm2 2v10h3V7H5Zm5 0v10h9V7h-9Z"/></svg>'
+ICON["panel"] = '<svg class="i" viewBox="0 0 24 24"><path d="M3 5h18v14H3V5Zm2 2v10h9V7H5Zm11 0v10h3V7h-3Z"/></svg>'
+ICON["sun"] ='<svg class="i" viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0-5h-1v3h2V2h-1Zm0 17h-1v3h2v-3h-1ZM2 11v2h3v-2H2Zm17 0v2h3v-2h-3ZM5.6 4.2 4.2 5.6l2.1 2.1 1.4-1.4-2.1-2.1Zm12.1 12.1-1.4 1.4 2.1 2.1 1.4-1.4-2.1-2.1ZM4.2 18.4l1.4 1.4 2.1-2.1-1.4-1.4-2.1 2.1ZM16.3 6.3l1.4 1.4 2.1-2.1-1.4-1.4-2.1 2.1Z"/></svg>'
 NAV = [("learn", "Library", "index.html"), ("practice", "Practice", "practice.html"), ("solve", "How to solve", "solve.html"), ("graph", "Link map", "graph.html")]
 
 
@@ -532,13 +536,13 @@ def shell(title, body, root, page, slug="", course="", scripts=(), katex=False, 
     return f"""<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#4a2f20"><meta name="description" content="Course notes, worked problems and interactive explorers, bound as a notebook"><link rel="icon" href="{root}assets/Favicons/Alya.png" type="image/png"><link rel="apple-touch-icon" href="{root}assets/Favicons/Alya.png"><link rel="manifest" href="{root}manifest.webmanifest">
 <title>{esc(title)} · Engineering Notebook</title>
-<script>try{{var t=localStorage.getItem('wiki.theme');if(!t&&matchMedia('(prefers-color-scheme: dark)').matches)t='dark';if(t)document.documentElement.dataset.theme=t}}catch(e){{}}</script>
+<script>document.documentElement.dataset.theme='dark';try{{if(localStorage.getItem('wiki.toc')==='0')document.documentElement.classList.add('no-toc');if(localStorage.getItem('wiki.tree')==='0')document.documentElement.classList.add('no-tree')}}catch(e){{}}</script>
 <link rel="stylesheet" href="{root}assets/style.css">{kcss}
 </head><body data-root="{root}" data-page="{page}" data-slug="{slug}" data-course="{course}">
 <header class="top"><button class="key key-menu" id="menuBtn" type="button" aria-label="Open contents" aria-expanded="false">{ICON["menu"]}</button>
 <a class="plate" href="{root}index.html"><span class="plate-mark">EN</span><span class="plate-t">Engineering Notebook</span></a>
 <nav class="tabs" aria-label="Sections">{tabs}</nav>
-<div class="top-r"><button class="search-key" id="openSearch" type="button" aria-label="Search the notebook">{ICON["search"]}<span>Search the notebook</span><kbd>/</kbd></button><button class="key" id="themeBtn" type="button" aria-label="Switch between day and night desk"></button></div></header>
+<div class="top-r"><button class="search-key" id="openSearch" type="button" aria-label="Search the notebook">{ICON["search"]}<span>Search the notebook</span><kbd>/</kbd></button><button class="key key-tree" id="treeBtn" type="button" aria-label="Hide the left-hand contents" title="Show or hide the contents" aria-pressed="true">{ICON["panell"]}</button><button class="key key-toc" id="tocBtn" type="button" aria-label="Hide the right-hand outline" title="Show or hide the outline" aria-pressed="true" hidden>{ICON["panel"]}</button></div></header>
 <div class="thread" id="thread"></div>
 <div class="frame"><aside class="tree" id="tree" aria-label="Contents"></aside>
 <main class="content">{cb}<div class="paper{" wide" if wide else ""}">{body}</div></main></div>

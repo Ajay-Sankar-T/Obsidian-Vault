@@ -624,3 +624,17 @@ details.callout.fold[open]>summary{border-bottom:1px dashed color-mix(in srgb,va
 .shelf-h::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--rule),transparent)}
 .shelf-h+.bookcase{--bh:196px}
 @media (max-width:700px){.stats{gap:6px}.stats span{font-size:11.5px;padding:5px 10px}.stats b{font-size:13.5px}.shelf-h{margin-top:16px;font-size:11px}.shelf-h+.bookcase{--bh:164px}}
+
+/* right-hand outline toggle (dark only site) */
+.key-toc[hidden]{display:none}
+html.no-toc .key-toc{opacity:.55}
+html.no-toc .paper:has(.toc){display:block;max-width:1000px}
+html.no-toc .paper .toc{display:none}
+@media (max-width:1180px){.key-toc{display:none}}
+
+/* left-hand contents toggle (desktop only) */
+body:not(.has-tree) .key-tree{display:none}
+html.no-tree .key-tree{opacity:.55}
+html.no-tree body.has-tree .frame{grid-template-columns:minmax(0,1fr)}
+html.no-tree body.has-tree .tree{display:none}
+@media (max-width:1000px){.key-tree{display:none}}

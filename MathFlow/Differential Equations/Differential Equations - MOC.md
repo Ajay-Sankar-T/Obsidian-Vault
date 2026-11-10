@@ -14,6 +14,7 @@ This is the top-level index for the Differential Equations part of the vault. Th
 4. [[Special Functions - MOC|Special Functions: Legendre, Gamma, Bessel and Sturm–Liouville]] (Lectures 18–29)
 5. [[PDEs - MOC|Partial Differential Equations: first-order PDEs, wave, heat and Laplace equations]] (Lectures 30–37)
 6. [[Problems - MOC|Problem Sets and Solutions]]
+7. [[Assignments 6-10 - Formula Bank|Revision pack for Assignments 6–10]]: formula bank, [[Assignments 6-10 - How to Solve|how to solve]], [[Assignments 6-10 - Question Bank|question bank]]
 
 ## Lecture Slides (MA2102)
 - [[Lecture-1.pdf]]

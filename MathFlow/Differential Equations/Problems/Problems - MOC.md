@@ -27,3 +27,13 @@ All ten sheets now have solution notes. Verification and figure scripts: Assignm
 | 8 First-order PDEs, canonical forms | [[Formation of PDEs - Eliminating Constants and Functions]] · [[Lagrange's Method for Quasi-linear PDEs]] · [[Cauchy Problem for First Order PDEs]] · [[Complete, General and Singular Integrals]] · [[Classification of Second Order PDEs]] · [[Canonical Forms of Second Order PDEs]] |
 | 9 D'Alembert, wave, heat | [[D'Alembert's Solution of the Wave Equation]] · [[Separation of Variables]] · [[Wave Equation on a Finite Interval]] · [[Heat Equation - Separation of Variables]] |
 | 10 Laplace | [[Laplace Equation on Rectangles and Strips]] · [[Laplace Equation in Polar Coordinates]] · [[Separation of Variables]] |
+
+## Revision pack for Assignments 6–10
+
+Bessel functions, Sturm–Liouville problems, first- and second-order PDEs, wave, heat and Laplace equations, in three layers:
+
+- [[Assignments 6-10 - Formula Bank]] — every formula and its conditions, in the order of the sheets, plus boundary-condition and mode tables and the errors that cost marks
+- [[Assignments 6-10 - How to Solve]] — "what is this problem and what do I do?" table for every problem type, with one recipe and one worked example per family and 30-second checks
+- [[Assignments 6-10 - Question Bank]] — about 90 new questions (none from the sheets), in three parts with hints and solutions: [[DE Question Bank 1 - Bessel Functions and Sturm-Liouville]], [[DE Question Bank 2 - First-Order PDEs and Canonical Forms]], [[DE Question Bank 3 - Wave, Heat and Laplace Equations]]
+
+Verification and figures: `Tools/de_a610_bank.py`, `Tools/de_a610_bank_pdes.py`, `Tools/de_a610_figs.py` (figures `A610-*.png` in `Problems/assets/`).

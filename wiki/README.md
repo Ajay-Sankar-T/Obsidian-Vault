@@ -3,7 +3,7 @@
 A static, offline learning site generated from the vault's notes. Open `index.html` in a browser; nothing needs a server.
 
 ## What you get
-- **A notebook on a desk.** Leather top bar with brass keys, wood-grain desk, ruled paper pages with binder holes, a bookshelf of cloth-bound course books on the home page, taped sticky-note callouts, and brushed-metal panels for the explorers. Day desk and night desk (the sun/moon key).
+- **A notebook on a desk.** Leather top bar with brass keys, wood-grain desk, ruled paper pages with binder holes, a bookshelf of cloth-bound course books on the home page, taped sticky-note callouts, and brushed-metal panels for the explorers. The site is dark only; a key in the top bar hides or shows the "On this page" outline on the right (remembered per browser).
 - **Easy navigation.** A contents tree (chapters fold open, your place is highlighted, read pages are ticked) sits beside every course and note; on a phone it slides in from the menu key. Breadcrumbs on every page, a bottom tab bar on phones (Library, Practice, Solve, Link map, Search), "On this page" outline, previous/next page, a reading thread under the top bar, a back-to-top key, and Search (`/` or Ctrl+K) that lists your recently opened pages before you type.
 - **Library and courses.** Each course is a book on the shelf with a progress bar; opening it shows a table of contents. *Study mode* turns a note into one page at a time; *Mark as read* ticks it off.
 - **Foldable callouts.** Obsidian callouts written as `> [!question]- Title` fold closed (`+` opens them) and become tappable flaps on the site: predict-first prompts, traps, analogies, worked examples and quiz answers hide until you open them.

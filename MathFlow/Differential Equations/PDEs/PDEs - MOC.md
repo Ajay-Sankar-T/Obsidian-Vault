@@ -58,6 +58,7 @@ flowchart TD
 - [[Assignment 8 - First Order PDEs and Canonical Forms - Solutions]] — formation, Lagrange, Cauchy problems, classification, canonical forms
 - [[Assignment 9 - D'Alembert, Wave and Heat Equations - Solutions]]
 - [[Assignment 10 - Laplace Equations - Solutions]]
+- Revision for Assignments 8–10: [[Assignments 6-10 - Formula Bank]] (§3–§8) · [[Assignments 6-10 - How to Solve]] (§4–§8) · [[DE Question Bank 2 - First-Order PDEs and Canonical Forms]] · [[DE Question Bank 3 - Wave, Heat and Laplace Equations]]
 
 Verification scripts and figures: `Tools/de_a8_first_order.py`, `de_a8_second_order.py`, `de_a8_solutions_check.py`, `de_a9_a10.py`, `de_pde_figs.py`.
 

@@ -22,16 +22,31 @@
     S.last = slug; save();
   }
 
-  /* ------------------------------------------------------------------ theme */
-  var tb = $("#themeBtn");
-  function themeIcon() { if (tb) tb.textContent = document.documentElement.dataset.theme === "dark" ? "☀" : "☾"; }
-  if (tb) tb.addEventListener("click", function () {
-    var t = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
-    document.documentElement.dataset.theme = t; try { localStorage.setItem("wiki.theme", t); } catch (e) {}
-    themeIcon(); if (window.__remermaid) window.__remermaid();
-    document.dispatchEvent(new Event("themechange"));
+  /* ------------------------------------------------------------------ right-hand outline toggle (the site is dark only) */
+  var lb = $("#treeBtn");
+  if (lb) lb.addEventListener("click", function () {
+    var hide = !document.documentElement.classList.contains("no-tree");
+    document.documentElement.classList.toggle("no-tree", hide);
+    try { localStorage.setItem("wiki.tree", hide ? "0" : "1"); } catch (e) {}
+    lb.setAttribute("aria-pressed", hide ? "false" : "true");
+    lb.setAttribute("aria-label", hide ? "Show the left-hand contents" : "Hide the left-hand contents");
   });
-  themeIcon();
+  var tb = $("#tocBtn");
+  if (tb && $(".toc")) {
+    tb.hidden = false;
+    var syncToc = function () {
+      var hidden = document.documentElement.classList.contains("no-toc");
+      tb.setAttribute("aria-pressed", hidden ? "false" : "true");
+      tb.setAttribute("aria-label", hidden ? "Show the right-hand outline" : "Hide the right-hand outline");
+    };
+    tb.addEventListener("click", function () {
+      var hide = !document.documentElement.classList.contains("no-toc");
+      document.documentElement.classList.toggle("no-toc", hide);
+      try { localStorage.setItem("wiki.toc", hide ? "0" : "1"); } catch (e) {}
+      syncToc();
+    });
+    syncToc();
+  }
 
   /* ------------------------------------------------------------------ contents tree and drawer */
   var tree = $("#tree"), menuBtn = $("#menuBtn"), scrim = $("#scrim");
