@@ -1,13 +1,13 @@
 ---
 tags: [synthesis, cross-domain, gears, transformers, impedance, power]
-up: "[[Cross-Domain Synthesis/Cross-Domain Synthesis - MOC]]"
+up: "[[Cross-Domain Synthesis - MOC]]"
 ---
 
 # Gears, Transformers and Reflected Impedance
 
-← up: [[Cross-Domain Synthesis/Cross-Domain Synthesis - MOC|Cross-Domain Synthesis MOC]]
+← up: [[Cross-Domain Synthesis - MOC|Cross-Domain Synthesis MOC]]
 
-A gear pair and an ideal transformer are the same device: a **lossless two-port that trades one half of a power product for the other at a fixed ratio**. Using the force-voltage dictionary already fixed in [[Cross-Domain Synthesis/The Mechanical-Electrical Analogy (Impedance Analogy)|The Mechanical-Electrical Analogy]] (effort ↔ voltage, flow ↔ current), torque plays the role of voltage and angular speed the role of current.
+A gear pair and an ideal transformer are the same device: a **lossless two-port that trades one half of a power product for the other at a fixed ratio**. Using the force-voltage dictionary already fixed in [[The Mechanical-Electrical Analogy (Impedance Analogy)|The Mechanical-Electrical Analogy]] (effort ↔ voltage, flow ↔ current), torque plays the role of voltage and angular speed the role of current.
 
 ## The dictionary
 
@@ -22,7 +22,7 @@ A gear pair and an ideal transformer are the same device: a **lossless two-port 
 | external mesh reverses sense | dot convention / winding sense |
 | friction, tooth losses | copper and core loss |
 
-Gear side: speed ratio from [[KDoMs/Formula-Bank/Gear Formula Bank|Gear Formula Bank]] §10, $n_A/n_B=N_B/N_A$; the power statement is the epicyclic relation $M_1\omega_1+M_2\omega_2+M_3\omega_3=0$ of §12 specialised to two members. Transformer side: [[10 Single Phase Transformers|Week 10]], $a=N_1/N_2\approx V_1/V_2\approx I_2/I_1$.
+Gear side: speed ratio from [[Gear Formula Bank|Gear Formula Bank]] §10, $n_A/n_B=N_B/N_A$; the power statement is the epicyclic relation $M_1\omega_1+M_2\omega_2+M_3\omega_3=0$ of §12 specialised to two members. Transformer side: [[10 Single Phase Transformers|Week 10]], $a=N_1/N_2\approx V_1/V_2\approx I_2/I_1$.
 
 ```mermaid
 flowchart LR
@@ -49,7 +49,7 @@ With a motor of rotor inertia $J_m$ and torque $T_m$ driving a load $J_L$ throug
 
 $$\alpha_L=\frac{nT_m}{n^2J_m+J_L}.$$
 
-Setting $\partial\alpha_L/\partial n=0$ gives $n^2J_m=J_L$, i.e. $J_L/n^2=J_m$: **the reflected load inertia equals the rotor inertia**. This is the same stationarity condition as [[Cross-Domain Synthesis/Energy Methods - A Unified View|maximum power transfer]], $Z_L=Z_{\rm Th}^{*}$: a transformer or gear is the knob that makes the reflected load match the source. The gear ratio is chosen, not the load.
+Setting $\partial\alpha_L/\partial n=0$ gives $n^2J_m=J_L$, i.e. $J_L/n^2=J_m$: **the reflected load inertia equals the rotor inertia**. This is the same stationarity condition as [[Energy Methods - A Unified View|maximum power transfer]], $Z_L=Z_{\rm Th}^{*}$: a transformer or gear is the knob that makes the reflected load match the source. The gear ratio is chosen, not the load.
 
 ## The motor sits between: a gyrator
 
@@ -57,7 +57,7 @@ Setting $\partial\alpha_L/\partial n=0$ gives $n^2J_m=J_L$, i.e. $J_L/n^2=J_m$: 
 
 > electrical source $(V,I)$ → **gyrator** (motor) → $(T,\omega)$ → **transformer-like** (gears) → shaft → load
 
-The shaft in the middle is a torsional spring of stiffness $GJ/L$ ([[Strength of materials/03 Torsion/Torsion of Circular Shafts|Torsion of Circular Shafts]]) and carries power $P=T\omega$ ([[Strength of materials/03 Torsion/Power Transmission by Shafts|Power Transmission by Shafts]]), the mechanical twin of $P=VI$.
+The shaft in the middle is a torsional spring of stiffness $GJ/L$ ([[Torsion of Circular Shafts|Torsion of Circular Shafts]]) and carries power $P=T\omega$ ([[Power Transmission by Shafts|Power Transmission by Shafts]]), the mechanical twin of $P=VI$.
 
 ## Common traps
 
@@ -66,10 +66,10 @@ The shaft in the middle is a torsional spring of stiffness $GJ/L$ ([[Strength of
 - Treating the gear ratio like a free design parameter in a drive train: the matching condition above fixes the optimum.
 
 ## Related
-- [[KDoMs/KDoMs - MOC|KDoMs MOC]]
+- [[KDoMs - MOC|KDoMs MOC]]
 - [[10 Single Phase Transformers|Week 10 — Single Phase Transformers]]
 - [[12 DC Machines|Week 12 — DC Machines]]
-- [[Cross-Domain Synthesis/The Mechanical-Electrical Analogy (Impedance Analogy)|The Mechanical-Electrical Analogy]]
+- [[The Mechanical-Electrical Analogy (Impedance Analogy)|The Mechanical-Electrical Analogy]]
 
 ## Cross-domain links
 - [[Introduction to Machine Design - MOC]] — spur-gear design uses the torque-speed relations through the gear train.

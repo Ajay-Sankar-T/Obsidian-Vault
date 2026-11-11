@@ -7,13 +7,13 @@ graphify-out/
 .claude/
 
 # heavy reference books / large PDFs (>10 MB)
-mech stuff/KDoMs/Book/
-mech stuff/Engineering Mechanics/*.pdf
-mech stuff/Fluid Mechanics/Book/
-mech stuff/Strength of materials/Book/
-mech stuff/Physics Lab/Grating_Mercury_Wavelengths.pdf
+Mechanical Engineering/KDoMs/Resources/Book/
+Mechanical Engineering/Engineering Mechanics/Resources/*.pdf
+Mechanical Engineering/Fluid Mechanics/Resources/Book/
+Mechanical Engineering/Strength of materials/Resources/Book/
+Mechanical Engineering/Physics Lab/Resources/Grating_Mercury_Wavelengths.pdf
 Chemistry/atkins-physical-chemistry.pdf
-Entrepreneurship/Class Notes/inclusive innovations iitm aug 2026.pdf
+Entrepreneurship/Resources/Class Notes/inclusive innovations iitm aug 2026.pdf
 
 # wiki site build tools
 wiki/_build/node_modules/

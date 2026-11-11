@@ -14,7 +14,9 @@
   var KEY = "wiki.progress.v1";
   function load() { try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { return {}; } }
   var S = load();
-  S.done = S.done || {}; S.solved = S.solved || {}; S.tasks = S.tasks || {}; S.recent = S.recent || [];
+  S.done = S.done || {}; S.solved = S.solved || {}; S.tasks = S.tasks || {}; S.recent = S.recent || []; S.weak = S.weak || {};
+  var CARDS_KEY = "wiki.cards.v1";
+  function cardState() { try { return JSON.parse(localStorage.getItem(CARDS_KEY)) || {}; } catch (e) { return {}; } }
   function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
   function markDone(slug) { var first = !S.done[slug]; S.done[slug] = Date.now(); save(); return first; }
   function pushRecent(slug) {
@@ -51,7 +53,7 @@
   /* ------------------------------------------------------------------ contents tree and drawer */
   var tree = $("#tree"), menuBtn = $("#menuBtn"), scrim = $("#scrim");
   function lessonLabel(u, s) { return u.name === "Overview" ? "Course overview" : (W.notes[s] || ["?"])[0]; }
-  function tl(s, c, label) { return "<a class='tl" + (s === SLUG ? " on" : "") + (S.done[s] ? " done" : "") + "' href='" + noteUrl(s) + "' style='--c:" + c.color + "'>" + esc(label) + "</a>"; }
+  function tl(s, c, label) { return "<a class='tl" + (s === SLUG ? " on" : "") + (S.done[s] ? " done" : "") + (S.weak[s] ? " weak" : "") + "' href='" + noteUrl(s) + "' style='--c:" + c.color + "'>" + esc(label) + "</a>"; }
   function buildTree() {
     if (!tree) return;
     var c = (PAGE === "note" || PAGE === "course") ? courseById(COURSE) : null, h = "";
@@ -85,7 +87,21 @@
   (function () { var cur = tree && $(".tl.on", tree); if (cur && window.innerWidth > 1000) tree.scrollTop = Math.max(0, cur.offsetTop - tree.clientHeight / 3); })();
 
   /* ------------------------------------------------------------------ search */
-  var searchEl = $("#search"), qEl = $("#q"), resEl = $("#results"), sel = 0, hits = [];
+  var searchEl = $("#search"), qEl = $("#q"), resEl = $("#results"), sfEl = $("#sfilters"), sel = 0, hits = [], fcourse = "all";
+  function buildChips() {
+    if (!sfEl || sfEl.dataset.built) return; sfEl.dataset.built = "1";
+    sfEl.innerHTML = "<button type='button' class='sf on' data-c='all'>All</button>" + W.courses.filter(function (c) { return c.units.length; }).map(function (c) { return "<button type='button' class='sf' data-c='" + c.id + "' style='--c:" + c.color + "'>" + esc(c.title) + "</button>"; }).join("");
+    sfEl.addEventListener("click", function (e) {
+      var b = e.target.closest(".sf"); if (!b) return; fcourse = b.dataset.c;
+      $$(".sf", sfEl).forEach(function (x) { x.classList.toggle("on", x === b); }); run(); qEl.focus();
+    });
+  }
+  function fuzzy(title, q) {   // every letter of the query appears in order in the title
+    var s = title.toLowerCase(), j = 0, first = -1, gaps = 0, last = -1;
+    q = q.replace(/\s+/g, "");
+    for (var i = 0; i < s.length && j < q.length; i++) { if (s[i] === q[j]) { if (first < 0) first = i; if (last >= 0) gaps += i - last - 1; last = i; j++; } }
+    return j === q.length && q.length >= 3 ? 40 - gaps - first : 0;
+  }
   function ensureIndex(cb) {
     if (window.WIKI_SEARCH) return cb();
     var s = document.createElement("script"); s.src = ROOT + "assets/search.js"; s.onload = cb; document.head.appendChild(s);
@@ -97,7 +113,7 @@
   }
   function openSearch(term) {
     if (!searchEl) return; drawer(false);
-    searchEl.hidden = false; qEl.value = typeof term === "string" ? term : ""; resEl.innerHTML = ""; qEl.focus(); ensureIndex(function () { run(); });
+    searchEl.hidden = false; buildChips(); qEl.value = typeof term === "string" ? term : ""; resEl.innerHTML = ""; qEl.focus(); ensureIndex(function () { run(); });
   }
   function closeSearch() { if (searchEl) searchEl.hidden = true; }
   function run() {
@@ -106,6 +122,7 @@
     if (!window.WIKI_SEARCH) return;
     var toks = q.split(/\s+/); hits = [];
     window.WIKI_SEARCH.forEach(function (d) {
+      if (fcourse !== "all" && d.c !== fcourse) return;
       var t = d.t.toLowerCase(), h = d.h.join(" ").toLowerCase(), x = d.x.toLowerCase(), score = 0, ok = true;
       for (var i = 0; i < toks.length; i++) {
         var k = toks[i], s = 0;
@@ -116,8 +133,9 @@
       }
       if (ok) hits.push({ d: d, score: score });
     });
+    if (!hits.length) window.WIKI_SEARCH.forEach(function (d) { if (fcourse !== "all" && d.c !== fcourse) return; var f = fuzzy(d.t, q); if (f > 0) hits.push({ d: d, score: f, fz: 1 }); });
     hits.sort(function (a, b) { return b.score - a.score; }); hits = hits.slice(0, 30); sel = 0;
-    resEl.innerHTML = hits.map(function (h, i) {
+    resEl.innerHTML = (hits.length && hits[0].fz ? "<div class='res-hint'>No exact match. Closest titles:</div>" : "") + hits.map(function (h, i) {
       var d = h.d, x = d.x, p = x.toLowerCase().indexOf(toks[0]), snip = "";
       if (p >= 0) { var a = Math.max(0, p - 40), seg = x.slice(a, a + 140); snip = esc(seg).replace(new RegExp("(" + toks[0].replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")", "ig"), "<mark>$1</mark>"); }
       return "<a class='res" + (i ? "" : " sel") + "' style='--c:" + colorOf(d.c) + "' href='" + noteUrl(d.s) + "'><b>" + esc(d.t) + "</b><small>" + esc(W.titles[d.c] || "") + (snip ? " · …" + snip + "…" : "") + "</small></a>";
@@ -161,11 +179,24 @@
       var el = $(".book[data-course='" + c.id + "'] .bar i"); if (!el) return;
       var p = courseProgress(c); el.style.width = p.total ? (100 * p.done / p.total) + "%" : "0";
     });
-    var cont = $("#continue"), last = S.last && W.notes[S.last];
+    var tdy = $("#today"), last = S.last && W.notes[S.last];
     var first = (W.courses.filter(function (c) { return !c.upcoming && c.units.length; })[0] || {});
-    if (cont) {
-      if (last) cont.innerHTML = "<small>Pick up where you left off</small><h3>" + esc(W.notes[S.last][0]) + "</h3><a class='btn' href='" + noteUrl(S.last) + "'>Continue reading</a>";
-      else cont.innerHTML = "<small>New here?</small><h3>Start with " + esc(first.title || "the first book") + "</h3><a class='btn' href='course/" + (first.id || "") + ".html'>Open the book</a>";
+    if (tdy) {
+      var allL = [], doneL = 0;
+      W.courses.forEach(function (c) { var p = courseProgress(c); allL = allL.concat(p.all); doneL += p.done; });
+      var pct = allL.length ? Math.round(100 * doneL / allL.length) : 0;
+      var cs0 = cardState(), now = Date.now(), seen = 0, due = 0;
+      (W.cards || []).forEach(function (cd) { var st = cs0[cd[0]]; if (st) { seen++; if (st[1] <= now) due++; } });
+      var fresh = (W.cards || []).length - seen;
+      var weak = Object.keys(S.weak).filter(function (s) { return W.notes[s]; }).sort(function (a, b) { return S.weak[b] - S.weak[a]; });
+      var h = "<div class='today-h'>Today</div><div class='today-top'><div class='ring' style='--p:" + pct + "'><b>" + pct + "%</b><span>read</span></div><div class='today-main'>";
+      if (last) h += "<small>Pick up where you left off</small><a class='today-cont' href='" + noteUrl(S.last) + "'>" + esc(W.notes[S.last][0]) + "</a>";
+      else h += "<small>New here?</small><a class='today-cont' href='course/" + (first.id || "") + ".html'>Start with " + esc(first.title || "the first book") + "</a>";
+      h += "</div></div><div class='today-rows'>" +
+        "<a class='today-row' href='" + ROOT + "review.html'><b>" + due + "</b><span>cards due</span><small>" + fresh + " new</small></a>" +
+        "<a class='today-row" + (weak.length ? "" : " off") + "' href='" + (weak.length ? noteUrl(weak[0]) : "#") + "'><b>" + weak.length + "</b><span>flagged to revise</span></a></div>";
+      if (weak.length) h += "<div class='today-list'>" + weak.slice(0, 4).map(function (s) { return "<a style='--c:" + colorOf(W.notes[s][1]) + "' href='" + noteUrl(s) + "'>" + esc(W.notes[s][0]) + "</a>"; }).join("") + "</div>";
+      tdy.innerHTML = h;
     }
     var rc = $("#recent"), rh = $("#recentH"), rec = S.recent.filter(function (s) { return W.notes[s]; }).slice(0, 6);
     if (rc && rec.length) {
@@ -198,6 +229,27 @@
       var t = $(".tl.on", tree || document); if (t) t.classList.toggle("done", d);
     }
     if (md) { md.addEventListener("click", function () { if (S.done[SLUG]) { delete S.done[SLUG]; save(); } else markDone(SLUG); paintDone(); }); paintDone(); }
+    var mw = $("#markWeak");
+    function paintWeak() {
+      if (!mw) return; var w = !!S.weak[SLUG];
+      mw.textContent = w ? "Flagged ⚑ revise" : "Revise later"; mw.setAttribute("aria-pressed", w ? "true" : "false"); mw.classList.toggle("on", w);
+      var t = $(".tl.on", tree || document); if (t) t.classList.toggle("weak", w);
+    }
+    if (mw) { mw.addEventListener("click", function () { if (S.weak[SLUG]) delete S.weak[SLUG]; else S.weak[SLUG] = Date.now(); save(); paintWeak(); }); paintWeak(); }
+
+    // tap a figure to open it full size; scroll or pinch to look closer (small text in wide figures is unreadable on a phone)
+    $$(".body img").forEach(function (im) {
+      im.addEventListener("click", function () {
+        var z = document.createElement("div"); z.className = "zoom";
+        z.innerHTML = "<button type='button' aria-label='Close figure'>✕</button>";
+        var big = document.createElement("img"); big.alt = im.alt || "Figure"; big.src = im.src; z.appendChild(big);
+        document.body.appendChild(z);
+        var close = function () { z.remove(); document.removeEventListener("keydown", onk); };
+        var onk = function (e) { if (e.key === "Escape") close(); };
+        z.addEventListener("click", function (e) { if (e.target.tagName !== "IMG") close(); });
+        document.addEventListener("keydown", onk);
+      });
+    });
 
     // inline formulas wider than the page scroll sideways instead of stretching the layout
     function fitMath() {

@@ -30,46 +30,41 @@ ASSETS = WIKI / "assets"
 # --------------------------------------------------------------------------------------------- scope
 EXCL_DIRS = {"wiki", ".git", ".obsidian", ".claude", "graphify-out", "Templates", "Excalidraw", "Applications", "Clubs & Projects",
              "Chemistry", "Life sciences", "node_modules", "__pycache__"}
-EXCL_PREFIX = ("Entrepreneurship/Solution",)
+EXCL_PREFIX = ("Entrepreneurship/Problems",)
 EXCL_FILES = {"CLAUDE.md", "LLM Wiki Guide.md", "Wiki Maintenance Log.md", "Home.md"}
 STRIP_SECTIONS = re.compile(r"^(MOC Maintenance Rules|Study Log|Course Completion Checklist|Maintenance)\b", re.I)
 
 COURSES = [
     # id, title, code, colour, dark shade, root prefix, blurb
     ("de", "Differential Equations", "MA2020", "#7a5a9a", "#4f3a6b", "MathFlow/Differential Equations", "ODEs, series solutions, Bessel and Legendre, Sturm–Liouville"),
-    ("som", "Strength of Materials", "AM2200", "#4f7a52", "#335636", "mech stuff/Strength of materials", "Stress, torsion, bending, deflection, buckling, energy methods"),
-    ("ph", "Physics I", "PH1010", "#7c8a3a", "#566225", "mech stuff/Physics", "Newton's laws, oscillations, phase space, Lagrangian mechanics, orbits, vector calculus"),
-    ("em", "Engineering Mechanics", "AM1100", "#8c6a3f", "#654a28", "mech stuff/Engineering Mechanics", "Statics, friction, virtual work, particle and rigid-body dynamics, vibration"),
-    ("ed", "Engineering Drawing", "ME1480", "#8a8f55", "#62663a", "mech stuff/Engineering drawing", "Sheet sizes, scales, lettering, lines, dimensioning, first-angle projection"),
-    ("pl", "Physics Laboratory I", "PH1030", "#9a6fb0", "#6d4a80", "mech stuff/Physics Lab", "Nine experiments, error analysis and uncertainty"),
-    ("aml", "Applied Mechanics Lab", "AM2540", "#4f8fa8", "#336479", "mech stuff/Fluid Mechanics Lab", "Beam deflection, buckling, tensile tests and torsion"),
-    ("fm", "Fluid Mechanics", "AM2530", "#3f6d99", "#284a6e", "mech stuff/Fluid Mechanics", "Statics, kinematics, control volumes, dimensional analysis, Bernoulli"),
-    ("kdoms", "Kinematics & Dynamics of Machinery", "ME2201", "#b8692f", "#84451a", "mech stuff/KDoMs", "Velocity and acceleration, mechanism synthesis, gears"),
+    ("som", "Strength of Materials", "AM2200", "#4f7a52", "#335636", "Mechanical Engineering/Strength of materials", "Stress, torsion, bending, deflection, buckling, energy methods"),
+    ("ph", "Physics I", "PH1010", "#7c8a3a", "#566225", "Mechanical Engineering/Physics", "Newton's laws, oscillations, phase space, Lagrangian mechanics, orbits, vector calculus"),
+    ("em", "Engineering Mechanics", "AM1100", "#8c6a3f", "#654a28", "Mechanical Engineering/Engineering Mechanics", "Statics, friction, virtual work, particle and rigid-body dynamics, vibration"),
+    ("ed", "Engineering Drawing", "ME1480", "#8a8f55", "#62663a", "Mechanical Engineering/Engineering drawing", "Sheet sizes, scales, lettering, lines, dimensioning, first-angle projection"),
+    ("pl", "Physics Laboratory I", "PH1030", "#9a6fb0", "#6d4a80", "Mechanical Engineering/Physics Lab", "Nine experiments, error analysis and uncertainty"),
+    ("aml", "Applied Mechanics Lab", "AM2540", "#4f8fa8", "#336479", "Mechanical Engineering/Applied Mechanics Lab", "Beam deflection, buckling, tensile tests and torsion"),
+    ("fm", "Fluid Mechanics", "AM2530", "#3f6d99", "#284a6e", "Mechanical Engineering/Fluid Mechanics", "Statics, kinematics, control volumes, dimensional analysis, Bernoulli"),
+    ("kdoms", "Kinematics & Dynamics of Machinery", "ME2201", "#b8692f", "#84451a", "Mechanical Engineering/KDoMs", "Velocity and acceleration, mechanism synthesis, gears"),
     ("ee", "Basic Electrical Engineering", "EE1100", "#b8962f", "#86691a", "Basic Electrical Engineering", "Circuits, phasors, transients, resonance, transformers, machines"),
     ("xd", "Cross-Domain Connections", "", "#a54540", "#752c28", "Cross-Domain Synthesis", "Where the same mathematics appears in different subjects"),
     ("ml", "Computing", "", "#38558a", "#243a63", "CS stuff", "Machine-learning formula sheet, web basics"),
     ("ent", "Entrepreneurship", "", "#a8607e", "#794159", "Entrepreneurship", "Innovation course: slides, auctions and pricing"),
-    ("fte", "Foundations of Thermal Engineering", "ME2102 / ME3105", "#3a8579", "#255a52", "mech stuff/Foundations of Thermal Engineering", "Exergy, cycles, refrigeration, combustion, turbomachines"),
-    ("ht", "Heat Transfer", "ME3101", "#bd5a35", "#8a3a1d", "mech stuff/Heat transfer", "Conduction, convection, radiation, heat exchangers"),
-    ("mat", "Materials and Design", "ME2200", "#6a68a3", "#4a487a", "mech stuff/Materials and design", "Crystal structure, failure theories, fatigue, phase diagrams"),
-    ("mfg", "Manufacturing Technology", "ME2302 / ME3305", "#7a7d80", "#55575a", "mech stuff/Manufacturing Technology", "Casting, forming, machining, additive, metrology"),
-    ("mic", "Measurements, Instrumentation and Control", "ME2400", "#3f8794", "#2a606a", "mech stuff/Measurements and instrumentation", "Sensors, signal conditioning, feedback control"),
-    ("mdes", "Introduction to Machine Design", "ME3203", "#a8814c", "#785a30", "mech stuff/Introduction to Machine Design", "Shafts, bearings, gears, springs, bolts"),
-    ("camd", "Computer Aided Machine Drawing", "ME3283", "#6f8294", "#4b5c6b", "mech stuff/Computer Aided Machine Drawing", "Sections, fasteners, assemblies, tolerances"),
-    ("cur", "Mechanical Engineering Curriculum", "", "#77716a", "#55504a", "mech stuff/Mechanical Engineering Curriculum - MOC.md", "Semester map"),
+    ("fte", "Foundations of Thermal Engineering", "ME2102 / ME3105", "#3a8579", "#255a52", "Mechanical Engineering/Foundations of Thermal Engineering", "Exergy, cycles, refrigeration, combustion, turbomachines"),
+    ("ht", "Heat Transfer", "ME3101", "#bd5a35", "#8a3a1d", "Mechanical Engineering/Heat transfer", "Conduction, convection, radiation, heat exchangers"),
+    ("mat", "Materials and Design", "ME2200", "#6a68a3", "#4a487a", "Mechanical Engineering/Materials and design", "Crystal structure, failure theories, fatigue, phase diagrams"),
+    ("mfg", "Manufacturing Technology", "ME2302 / ME3305", "#7a7d80", "#55575a", "Mechanical Engineering/Manufacturing Technology", "Casting, forming, machining, additive, metrology"),
+    ("mic", "Measurements, Instrumentation and Control", "ME2400", "#3f8794", "#2a606a", "Mechanical Engineering/Measurements and instrumentation", "Sensors, signal conditioning, feedback control"),
+    ("mdes", "Introduction to Machine Design", "ME3203", "#a8814c", "#785a30", "Mechanical Engineering/Introduction to Machine Design", "Shafts, bearings, gears, springs, bolts"),
+    ("camd", "Computer Aided Machine Drawing", "ME3283", "#6f8294", "#4b5c6b", "Mechanical Engineering/Computer Aided Machine Drawing", "Sections, fasteners, assemblies, tolerances"),
+    ("cur", "Mechanical Engineering Curriculum", "", "#77716a", "#55504a", "Mechanical Engineering/Mechanical Engineering Curriculum - MOC.md", "Semester map"),
 ]
 ACTIVE = ["de", "ph", "em", "ed", "som", "fm", "aml", "pl", "kdoms", "mdes", "mat", "fte", "ht", "mfg", "mic", "camd", "ee", "xd", "ml", "ent"]
 UPCOMING = []
 SHELVES = [("Foundations: maths, physics, mechanics, drawing", ["de", "ph", "em", "ed"]), ("Solids and materials", ["som", "mat", "aml"]),
            ("Machines, design and manufacture", ["kdoms", "mdes", "camd", "mfg"]), ("Heat and fluids", ["fm", "ht", "fte"]),
            ("Measurement, control and electrical", ["mic", "ee", "pl"]), ("Across subjects", ["xd", "ml", "ent"])]
-UNIT_NAMES = {"de": {"Intro": "First-order ODEs", "2nd Order DE": "Second-order ODEs", "Series Solutions of DE": "Series solutions",
-                     "Special Functions": "Special functions", "PDEs": "Partial differential equations", "Problems": "Assignment revision"},
-              "kdoms": {"Foundations": "Mechanism basics", "Velocity-Acceleration-Bank": "Velocity and acceleration", "Synthesis-Formula-Bank": "Mechanism synthesis", "Formula-Bank": "Gears", "Cams-Flywheels-Balancing": "Cams, flywheels and balancing"},
-              "ml": {"ML": "Machine learning", "WebOps": "Web basics"}}
-UNIT_ORDER = {"de": ["Intro", "2nd Order DE", "Series Solutions of DE", "Special Functions", "PDEs", "Problems"],
-              "kdoms": ["Foundations", "Velocity-Acceleration-Bank", "Synthesis-Formula-Bank", "Formula-Bank", "Cams-Flywheels-Balancing"],
-              "ee": ["", "AC Transients", "RLC Circuits - Responses", "Transformers and Induction Machines"], "em": ["Statics", "Dynamics"]}
+UNIT_NAMES = {"ml": {"ML": "Machine learning", "WebOps": "Web basics"}}      # folders are named "NN Topic"; the number prefix is stripped
+UNIT_ORDER = {}                                                              # numbered folders sort themselves; Problems, Resources and Revision follow
 DEFAULT_UNIT = {"ee": "Weekly lessons", "xd": "Connections", "ent": "Class notes", "ed": "Drawing standards", "pl": "Experiments and skills", "aml": "Experiments"}
 
 # interactive widgets attached to notes (by note file name without .md)
@@ -93,13 +88,17 @@ WIDGETS = {
     "orbit": ["Kepler's Laws and Orbits"],
     "vfield": ["Divergence Theorem and Flux"],
     "fourbar": ["Grashof Criterion and Four-Bar Inversions"],
+    "heat": ["Heat Equation - Separation of Variables"],
+    "dalembert": ["D'Alembert's Solution of the Wave Equation", "Wave Equation on a Finite Interval"],
+    "laplace": ["Laplace Equation in Polar Coordinates"],
 }
 WIDGET_OF = {name: w for w, names in WIDGETS.items() for name in names}
 WIDGET_TITLE = {"oscillator": "Damping explorer", "decay": "Time-constant explorer", "lumped": "Lumped-capacitance cooling", "mohr": "Mohr's circle explorer",
                 "beam": "Beam deflection explorer", "euler": "Column buckling calculator", "series": "Series approximation explorer",
                 "special": "Special-function explorer", "resonance": "Resonance explorer", "auction": "GSP vs VCG auction explorer",
                 "freeosc": "Free-oscillation explorer", "driven": "Driven-oscillator explorer", "phase": "Pendulum phase-portrait explorer",
-                "orbit": "Orbit explorer", "vfield": "Divergence and curl explorer", "fourbar": "Four-bar explorer"}
+                "orbit": "Orbit explorer", "vfield": "Divergence and curl explorer", "fourbar": "Four-bar explorer",
+                "heat": "Heat-equation mode explorer", "dalembert": "Travelling-wave and reflection explorer", "laplace": "Laplace-in-a-disk explorer"}
 
 # --------------------------------------------------------------------------------------------- helpers
 def slugify(s):
@@ -476,7 +475,7 @@ def wrap_steps(body, n):
         if idx == 0 or not m:
             secs.append(f'<section class="step intro">{p}</section>')
         else:
-            title = re.sub(r"<[^>]+>", "", m.group(2))
+            title = re.sub(r"\d+", "", re.sub(r"<[^>]+>", "", m.group(2))).strip()   # math placeholders would otherwise expand into the attribute
             prob = n.kind == "problem" and re.search(r"(Q\d|Problem \d)", title)
             cls = "step prob" if prob else "step"
             extra = f' data-q="{n.slug}#{m.group(1)}"' if prob else ""
@@ -519,7 +518,8 @@ ICON["menu"] = '<svg class="i" viewBox="0 0 24 24"><path d="M4 6h16v2H4V6Zm0 5h1
 ICON["panell"] = '<svg class="i" viewBox="0 0 24 24"><path d="M3 5h18v14H3V5Zm2 2v10h3V7H5Zm5 0v10h9V7h-9Z"/></svg>'
 ICON["panel"] = '<svg class="i" viewBox="0 0 24 24"><path d="M3 5h18v14H3V5Zm2 2v10h9V7H5Zm11 0v10h3V7h-3Z"/></svg>'
 ICON["sun"] ='<svg class="i" viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0-5h-1v3h2V2h-1Zm0 17h-1v3h2v-3h-1ZM2 11v2h3v-2H2Zm17 0v2h3v-2h-3ZM5.6 4.2 4.2 5.6l2.1 2.1 1.4-1.4-2.1-2.1Zm12.1 12.1-1.4 1.4 2.1 2.1 1.4-1.4-2.1-2.1ZM4.2 18.4l1.4 1.4 2.1-2.1-1.4-1.4-2.1 2.1ZM16.3 6.3l1.4 1.4 2.1-2.1-1.4-1.4-2.1 2.1Z"/></svg>'
-NAV = [("learn", "Library", "index.html"), ("practice", "Practice", "practice.html"), ("solve", "How to solve", "solve.html"), ("graph", "Link map", "graph.html")]
+ICON["review"] = '<svg viewBox="0 0 24 24"><path d="M7 3h10a2 2 0 0 1 2 2v11H5V5a2 2 0 0 1 2-2Zm-2 15h14v1a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-1Zm4.5-9.5v2h5v-2h-5Zm0 3.5v2h3v-2h-3Z"/></svg>'
+NAV = [("learn", "Library", "index.html"), ("review", "Review", "review.html"), ("practice", "Practice", "practice.html"), ("solve", "How to solve", "solve.html"), ("graph", "Link map", "graph.html")]
 
 
 def shell(title, body, root, page, slug="", course="", scripts=(), katex=False, mermaid=False, crumbs=(), wide=False):
@@ -534,10 +534,10 @@ def shell(title, body, root, page, slug="", course="", scripts=(), katex=False, 
         parts = [f'<a href="{root}{h}">{esc(t)}</a>' if h else f"<span>{esc(t)}</span>" for t, h in crumbs]
         cb = '<nav class="crumbbar" aria-label="Breadcrumb">' + "<i>›</i>".join(parts) + "</nav>"
     return f"""<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#4a2f20"><meta name="description" content="Course notes, worked problems and interactive explorers, bound as a notebook"><link rel="icon" href="{root}assets/Favicons/Alya.png" type="image/png"><link rel="apple-touch-icon" href="{root}assets/Favicons/Alya.png"><link rel="manifest" href="{root}manifest.webmanifest">
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#16171a"><meta name="description" content="Course notes, worked problems and interactive explorers, bound as a notebook"><link rel="icon" href="{root}assets/Favicons/Alya.png" type="image/png"><link rel="apple-touch-icon" href="{root}assets/Favicons/Alya.png"><link rel="manifest" href="{root}manifest.webmanifest">
 <title>{esc(title)} · Engineering Notebook</title>
 <script>document.documentElement.dataset.theme='dark';try{{if(localStorage.getItem('wiki.toc')==='0')document.documentElement.classList.add('no-toc');if(localStorage.getItem('wiki.tree')==='0')document.documentElement.classList.add('no-tree')}}catch(e){{}}</script>
-<link rel="stylesheet" href="{root}assets/style.css">{kcss}
+<link rel="stylesheet" href="{root}assets/style.css"><link rel="stylesheet" href="{root}assets/theme.css">{kcss}
 </head><body data-root="{root}" data-page="{page}" data-slug="{slug}" data-course="{course}">
 <header class="top"><button class="key key-menu" id="menuBtn" type="button" aria-label="Open contents" aria-expanded="false">{ICON["menu"]}</button>
 <a class="plate" href="{root}index.html"><span class="plate-mark">EN</span><span class="plate-t">Engineering Notebook</span></a>
@@ -549,7 +549,7 @@ def shell(title, body, root, page, slug="", course="", scripts=(), katex=False, 
 <div class="scrim" id="scrim"></div>
 <nav class="dock" aria-label="Sections">{dock}</nav>
 <button class="key totop" id="toTop" type="button" aria-label="Back to top">↑</button>
-<div class="search" id="search" hidden><div class="search-box"><div class="search-h"><span>Find in the notebook</span><button id="closeSearch" type="button" aria-label="Close search">×</button></div><input id="q" type="search" placeholder="Title, heading or any word…" autocomplete="off"><div id="results"></div></div></div>
+<div class="search" id="search" hidden><div class="search-box"><div class="search-h"><span>Find in the notebook</span><button id="closeSearch" type="button" aria-label="Close search">×</button></div><input id="q" type="search" placeholder="Title, heading or any word…" autocomplete="off"><div class="sfilters" id="sfilters"></div><div id="results"></div></div></div>
 <script src="{root}assets/data.js"></script>{mer}
 <script src="{root}assets/app.js"></script>{extra}
 </body></html>"""
@@ -663,6 +663,13 @@ def main():
             shutil.rmtree(d)
         d.mkdir(parents=True, exist_ok=True)
     search = []
+    deck = []
+
+    def card_html(h, slug):
+        """a question or answer lifted out of a note page, with its links and images made valid from the site root"""
+        h = re.sub(r'href="#([^"]*)"', lambda m: f'href="n/{slug}.html#{m.group(1)}"', h)
+        h = re.sub(r'href="([a-z0-9-]+\.html)', r'href="n/\1', h)
+        return h.replace('src="../', 'src="').replace('href="../', 'href="')
     for n in notes:
         c = cobj.get(n.cid)
         color = cmap[n.cid][3]
@@ -684,6 +691,7 @@ def main():
         if lesson:
             actions += '<button class="btn" id="startLesson" type="button">Study mode</button>'
         actions += '<button class="btn btn-ghost" id="markDone" type="button">Mark as read</button>' if n.kind in ("concept", "moc") else ""
+        actions += '<button class="btn btn-ghost btn-flag" id="markWeak" type="button" aria-pressed="false">Revise later</button>' if n.kind != "ref" else ""
         # pager
         pager = ""
         if n.slug in path_of:
@@ -717,6 +725,11 @@ def main():
 <div class="actions">{actions}</div>{problem_hint}
 <div class="body" id="body">{steps}</div>{done_bar}{pager}{related}</article>{tochtml}"""
         page = finalize(page, math_html)
+        for qm in re.finditer(r'<details class="callout callout-question fold"[^>]*>\s*<summary[^>]*>(.*?)</summary>(.*?)</details>', page, re.S):
+            qh, ah = qm.group(1).strip(), qm.group(2).strip()
+            if not ah or not re.sub(r"<[^>]+>|\s", "", qh):
+                continue
+            deck.append(dict(s=n.slug, c=n.cid, n=n.title, q=card_html(qh, n.slug), a=card_html(ah, n.slug)))
         text = plain_text(n.html)
         search.append(dict(s=n.slug, t=n.title, c=n.cid, h=[t for lv, i, t in n.toc][:20], x=text[:6000]))
         out = shell(n.title, page, "../", "note", slug=n.slug, course=n.cid, scripts=(["widgets.js"] if wk else []), katex=has_math, mermaid=mer, crumbs=crumb_list)
@@ -774,9 +787,10 @@ def main():
     sims.sort()
     sims_html = ('<h2 class="sec"><span class="tape">Workshop</span>Stand-alone simulations</h2><p class="lead">Interactive explorers from the notes; each opens in a new tab.</p><div class="plates">'
                  + "".join(f'<a class="plate-card" href="assets/sims/{urllib.parse.quote(f)}" target="_blank" rel="noopener"><span>{esc(t)}</span><small>interactive</small></a>' for t, f in sims) + "</div>") if sims else ""
-    home = f"""<section class="hero"><div><h1>Engineering Notebook</h1><p>Course notes, worked problems and interactive explorers, bound in one place. Take a book from the shelf, or search for any topic.</p>
+    home = f"""<section class="hero"><div class="hero-l"><h1>Engineering Notebook</h1><p>Course notes, worked problems and interactive explorers, bound in one place. Take a book from the shelf, or search for any topic.</p>
+<div class="hero-actions"><a class="btn" href="review.html">Start a review</a><a class="btn btn-ghost" href="solve.html">How to solve</a></div>
 <div class="recent-h" id="recentH" hidden>Recently opened</div><div class="recent" id="recent"></div></div>
-<div class="ribbon" id="continue"></div></section>
+<aside class="today" id="today" aria-label="Today"><div class="ribbon" id="continue"></div></aside></section>
 <div class="stats"><span><b>{len(notes)}</b> notes</span><span><b>{sum(1 for n in notes if n.kind == 'concept')}</b> concepts</span><span><b>{sum(1 for n in notes if n.kind == 'problem')}</b> solved problems</span><span><b>{len(set(WIDGET_OF.values()))}</b> explorers</span><span><b>{len([c for c in ACTIVE])}</b> books</span></div>
 <h2 class="sec"><span class="tape">Shelf</span>Your courses</h2>{"".join('<h3 class="shelf-h">' + gt + '</h3><div class="bookcase"><div class="shelf">' + "".join(book(c) for c in ids if c in ACTIVE) + '</div></div>' for gt, ids in SHELVES)}
 {("<h2 class=\"sec\"><span class=\"tape\">Coming up</span>Planned courses</h2><div class=\"bookcase\"><div class=\"shelf\">" + "".join(book(c) for c in UPCOMING) + "</div></div>") if UPCOMING else ""}
@@ -814,6 +828,25 @@ def main():
 <div class="howto"><b>How to attack a problem</b><ol><li>Say what is asked and what is given.</li><li>Choose the principle before calculating.</li><li>Solve symbolically, then plug in numbers.</li><li>Check units and a limiting case.</li></ol></div>
 <div class="filters"><input id="sf" type="search" placeholder="Filter, e.g. beam, bessel, rectifier…" autocomplete="off"></div><div class="filters">{chips}</div>{cards}"""
     (WIKI / "practice.html").write_text(shell("Practice", practice, "", "practice", crumbs=[("Library", "index.html"), ("Practice", None)]), encoding="utf-8")
+
+    # ---------------------------------------------------------------- review: flashcards and self-test from the question callouts
+    import hashlib
+    seen_ids = set()
+    for d in deck:
+        qp, ap = re.sub(r"<[^>]+>", "", d["q"]), re.sub(r"<[^>]+>", "", d["a"]).strip()
+        d["i"] = hashlib.md5((d["s"] + qp).encode("utf-8")).hexdigest()[:8]
+        if d["i"] in seen_ids:
+            d["i"] = hashlib.md5((d["s"] + qp + d["a"][:40]).encode("utf-8")).hexdigest()[:8]
+        seen_ids.add(d["i"])
+        mm = re.match(r"^\(([a-e])\)", ap)
+        if mm and re.search(r"\(a\).*\(b\)", qp):
+            d["m"] = mm.group(1)
+    (ASSETS / "cards.js").write_text("window.WIKI_CARDS=" + json.dumps(deck, ensure_ascii=False, separators=(",", ":")) + ";", encoding="utf-8")
+    nmcq = sum(1 for d in deck if d.get("m"))
+    review = f"""<h1 class="pg-title">Review</h1><p class="lead">{len(deck)} questions lifted from your notes. Flip a card, say how it went, and the ones you miss come back sooner. Your schedule stays in this browser.</p>
+<div id="rv" class="rv" data-total="{len(deck)}" data-mcq="{nmcq}"><noscript>Review needs JavaScript.</noscript></div>"""
+    (WIKI / "review.html").write_text(shell("Review", review, "", "review", katex=True, scripts=["cards.js", "review.js"], crumbs=[("Library", "index.html"), ("Review", None)]), encoding="utf-8")
+    print("review cards:", len(deck), "multiple-choice:", nmcq)
 
     # ---------------------------------------------------------------- how to solve (problem-type tables)
     entries = []
@@ -889,7 +922,8 @@ def main():
     # ---------------------------------------------------------------- data files
     meta = {n.slug: [n.title, n.cid, n.kind, getattr(n, "nsteps", 0), getattr(n, "nprob", 0)] for n in notes}
     data = dict(courses=courses_out, notes=meta, colors={c[0]: [c[3], c[4]] for c in COURSES}, titles={c[0]: c[1] for c in COURSES},
-                graph=graph, back={k: sorted(v) for k, v in back.items()}, links={n.slug: sorted(n.links) for n in notes})
+                graph=graph, back={k: sorted(v) for k, v in back.items()}, links={n.slug: sorted(n.links) for n in notes},
+                cards=[[d["i"], d["c"]] for d in deck])
     (ASSETS / "data.js").write_text("window.WIKI=" + json.dumps(data, ensure_ascii=False, separators=(",", ":")) + ";", encoding="utf-8")
     (ASSETS / "search.js").write_text("window.WIKI_SEARCH=" + json.dumps(search, ensure_ascii=False, separators=(",", ":")) + ";", encoding="utf-8")
 

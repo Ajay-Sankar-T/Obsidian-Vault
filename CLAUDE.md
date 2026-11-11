@@ -58,7 +58,9 @@ The goal is a connected mental model that gets more useful each revisit — not 
 
 ## Conventions seen in the existing vault
 
-- Fluid Mechanics uses numbered topic folders (`01 Dimensionless Numbers`, `06`, `07`, `08`, …), a `Tools/` folder for verification/plot scripts, and an `assets/` folder for generated figures named `FM-*.png`. Follow the same pattern for other subjects (`<Subject>/Tools/`, `<Subject>/assets/`).
+- **Course layout (one pattern for every subject).** Inside a course folder: numbered topic folders (`01 Dimensionless Numbers`, `02 …`) holding concept and method notes; `Problems/` for tutorials, assignments and solved questions; `Revision/` for formula banks, how-to-solve guides, question banks and mock papers; `Resources/` for PDFs, books, slides and manuals; `assets/` for generated figures; `Tools/` for verification and plot scripts. Create only the folders a course needs. The site builder turns each numbered folder into a chapter and strips the number.
+- Top-level subject folders: `MathFlow/` (maths), `Mechanical Engineering/` (all mechanical, physics and mechanics courses; it was called `mech stuff`), `Basic Electrical Engineering/`, `Cross-Domain Synthesis/`, `Entrepreneurship/` (`Problems/` is private and not published), `CS stuff/`.
+- Link notes by basename (`[[Note]]`), never by folder path, so a note can move without breaking links. Figures are named with a short course prefix (`FM-*.png`, `A610-*.png`).
 - Generated visuals are stored in the subject's `assets/` folder and embedded from the note.
 
 ## graphify

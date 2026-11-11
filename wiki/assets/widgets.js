@@ -393,6 +393,68 @@
     up();
   };
 
+  /* ---------- PDE explorers */
+  W.heat = function (root) {
+    var f = frame(root, "A rod with both ends held at 0. Each sine mode decays as e^(−n²s): the n-th mode dies n² times faster than the first, so every start shape relaxes to the same single half-sine. Slide s to watch the sharp features go first.");
+    var shape = select(f.ctrl, "Initial temperature", ["Uniform block (1)", "Triangle (peak 1)", "Parabola 4x(1−x)", "Hot patch 0.4 < x < 0.6"], up);
+    var ss = slider(f.ctrl, "Time s = t/τ₁", 0, 2, 0.005, 0.02, "", up), ns = slider(f.ctrl, "Modes kept N", 1, 60, 1, 25, "", up); f.ctrl.appendChild(f.out);
+    function coef(k, n) {
+      var P = Math.PI;
+      if (k === 0) return n % 2 ? 4 / (n * P) : 0;
+      if (k === 1) return 8 / (n * n * P * P) * Math.sin(n * P / 2);
+      if (k === 2) return n % 2 ? 32 / Math.pow(n * P, 3) : 0;
+      return 2 * (Math.cos(0.4 * n * P) - Math.cos(0.6 * n * P)) / (n * P);
+    }
+    function u(k, s, N, x) { var v = 0, n; for (n = 1; n <= N; n++) v += coef(k, n) * Math.exp(-n * n * s) * Math.sin(n * Math.PI * x); return v; }
+    function up() {
+      var k = shape.get(), s = ss.get(), N = ns.get(), now = sample(function (x) { return u(k, s, N, x); }, 0, 1, 300), init = sample(function (x) { return u(k, 0, 60, x); }, 0, 1, 300);
+      var ym = Math.max(1.2, Math.max.apply(null, init.map(function (p) { return p[1]; })) * 1.1);
+      draw(f, { xmin: 0, xmax: 1, ymin: -0.2, ymax: ym, xlabel: "position x/L", ylabel: "temperature u" }, [{ hline: 0, color: css("--line"), width: 1.5 }, { pts: init, color: css("--muted"), dash: [5, 5], width: 1.6 }, { pts: now, color: css("--orange"), fillTo: 0 }]);
+      var mx = Math.max.apply(null, now.map(function (p) { return p[1]; })), b1 = coef(k, 1) * Math.exp(-s);
+      out(f, ["hottest point: <b>" + fmt(mx, 3) + "</b>", "mode 1 has kept <b>" + fmt(Math.exp(-s) * 100, 1) + " %</b> of its size, mode 2 only <b>" + fmt(Math.exp(-4 * s) * 100, 1) + " %</b>, mode 3 <b>" + fmt(Math.exp(-9 * s) * 100, 1) + " %</b>", s > 0.8 ? "now a pure half-sine, decaying with τ₁ = L²/(π²c²)" : s < 0.01 ? "initial shape, with " + N + " modes" + (N < 60 && k !== 2 ? " (ripples are the Gibbs overshoot)" : "") : "higher modes are fading"]);
+    }
+    up();
+  };
+
+  W.dalembert = function (root) {
+    var f = frame(root, "d'Alembert: u = ½[f(x−ct) + f(x+ct)]. The starting pulse splits into two half-height copies moving apart. At a fixed wall the mirror image (odd extension) arrives inverted; at a free end the image is even and the pulse comes back upright.");
+    var bc = select(f.ctrl, "Left end x = 0", ["No wall (infinite string)", "Fixed wall: u = 0", "Free end: u_x = 0"], up), ts = slider(f.ctrl, "Time t", 0, 8, 0.02, 0, "s", up), ws = slider(f.ctrl, "Pulse width", 0.3, 1.5, 0.05, 0.6, "", up); f.ctrl.appendChild(f.out);
+    var X0 = 3.5;
+    function up() {
+      var m = bc.get(), t = ts.get(), w = ws.get();
+      var F = function (x) { return Math.exp(-Math.pow((x - X0) / w, 2)); };
+      var E = function (x) { return (m === 0 || x >= 0) ? F(x) : (m === 1 ? -F(-x) : F(-x)); };   // odd or even extension about the wall
+      var R = function (x) { return 0.5 * (E(x - t) + E(x + t)); };
+      var pts = sample(R, 0, 10, 500);
+      var dash = [{ pts: sample(function (x) { return 0.5 * E(x - t); }, 0, 10, 300), color: css("--blue"), dash: [4, 4], width: 1.5 }, { pts: sample(function (x) { return 0.5 * E(x + t); }, 0, 10, 300), color: css("--red"), dash: [4, 4], width: 1.5 }];
+      draw(f, { xmin: 0, xmax: 10, ymin: -1.1, ymax: 1.1, xlabel: "position x", ylabel: "displacement u" }, [{ hline: 0, color: css("--line"), width: 1.5 }].concat(dash, [{ pts: pts, color: css("--green"), fillTo: 0 }]));
+      var wallT = X0;
+      out(f, ["c = 1: each half-pulse travels <b>" + fmt(t, 2) + "</b> units", m === 0 ? "blue ½f(x−ct) goes right, red ½f(x+ct) goes left" : "the pulse reaches the wall at t = <b>" + fmt(wallT, 1) + "</b>", m === 1 ? "after reflection the pulse is inverted" : m === 2 ? "after reflection the pulse keeps its sign" : "peak height now <b>" + fmt(Math.max.apply(null, pts.map(function (p) { return p[1]; })), 2) + "</b>"]);
+    }
+    up();
+  };
+
+  W.laplace = function (root) {
+    var f = frame(root, "Laplace's equation in a disk: the boundary harmonic aₖcos kθ + bₖsin kθ is multiplied by rᵏ inside. Move inward and sharp features of the boundary data are smoothed out; at the centre only the average survives (the mean value property).");
+    var shape = select(f.ctrl, "Boundary temperature g(θ)", ["Square wave ±1", "Sawtooth θ/π", "Heated arc |θ| < 60°"], up), rs = slider(f.ctrl, "Radius r (boundary = 1)", 0, 0.99, 0.01, 0.6, "", up); f.ctrl.appendChild(f.out);
+    var NK = 150;
+    function parts(k, j) {   // returns [a_j, b_j]
+      var P = Math.PI;
+      if (k === 0) return [0, j % 2 ? 4 / (P * j) : 0];
+      if (k === 1) return [0, 2 * (j % 2 ? 1 : -1) / (P * j)];
+      return [2 * Math.sin(j * P / 3) / (j * P), 0];
+    }
+    function a0(k) { return k === 2 ? 1 / 3 : 0; }
+    function u(k, r, th) { var v = a0(k), j, p; for (j = 1; j <= NK; j++) { p = parts(k, j); v += Math.pow(r, j) * (p[0] * Math.cos(j * th) + p[1] * Math.sin(j * th)); } return v; }
+    function up() {
+      var k = shape.get(), r = rs.get(), bd = sample(function (t) { return u(k, 0.9995, t); }, -Math.PI, Math.PI, 400), inn = sample(function (t) { return u(k, r, t); }, -Math.PI, Math.PI, 400);
+      draw(f, { xmin: -Math.PI, xmax: Math.PI, ymin: -1.3, ymax: 1.3, xlabel: "angle θ (rad)", ylabel: "temperature", xticks: 6 }, [{ hline: 0, color: css("--line"), width: 1.5 }, { pts: bd, color: css("--muted"), dash: [5, 5], width: 1.6 }, { pts: inn, color: css("--purple"), fillTo: 0 }]);
+      var vs = inn.map(function (p) { return p[1]; });
+      out(f, ["at r = <b>" + fmt(r, 2) + "</b>: max <b>" + fmt(Math.max.apply(null, vs), 3) + "</b>, min <b>" + fmt(Math.min.apply(null, vs), 3) + "</b>", "centre value = average of g = <b>" + fmt(a0(k), 3) + "</b>", "mode k is scaled by r<sup>k</sup>: k = 5 keeps " + fmt(100 * Math.pow(r, 5), 1) + " %"]);
+    }
+    up();
+  };
+
   function init(rootEl) {
     Array.prototype.forEach.call((rootEl || document).querySelectorAll(".widget[data-widget]:not([data-init])"), function (el) {
       el.dataset.init = "1"; var fn = W[el.dataset.widget]; if (fn) { try { fn(el); } catch (e) { el.innerHTML = "<p class='w-note'>Widget failed: " + e.message + "</p>"; } }

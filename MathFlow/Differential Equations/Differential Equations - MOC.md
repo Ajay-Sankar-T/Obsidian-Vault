@@ -69,7 +69,7 @@ Lecture → note map: Lectures 1–3 [[First Order ODEs - MOC]] · 4–11 [[2nd 
 
 ## Cross-Domain Synthesis
 
-Differential equations provide the shared language behind RLC circuits, beam deflection, buckling, damping, and stability. See [[Cross-Domain Synthesis/Cross-Domain Synthesis - MOC|Cross-Domain Synthesis]] for the explicit bridges.
+Differential equations provide the shared language behind RLC circuits, beam deflection, buckling, damping, and stability. See [[Cross-Domain Synthesis - MOC|Cross-Domain Synthesis]] for the explicit bridges.
 
 ## Study Log
 

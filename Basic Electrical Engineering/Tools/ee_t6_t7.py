@@ -452,8 +452,8 @@ if __name__ == "__main__":
             print(f"  {k}: {v}")
     if HAVE_FIG:
         here = os.path.dirname(os.path.abspath(__file__))
-        OUT6 = os.path.join(here, "..", "Tutorial 6 on OP-AMP", "assets")
-        OUT7 = os.path.join(here, "..", "Tutorial 7 on Transformer", "assets")
+        OUT6 = os.path.join(here, "..", "Problems", "Tutorial 6 on OP-AMP", "assets")
+        OUT7 = os.path.join(here, "..", "Problems", "Tutorial 7 on Transformer", "assets")
         os.makedirs(OUT6, exist_ok=True); os.makedirs(OUT7, exist_ok=True)
         for fn in (fig_q1, fig_q2_q3, fig_q4_q5, fig_q6, fig_q7_q8, fig_q9, fig_q10_q12, fig_t7):
             fn(); print("figure", fn.__name__)

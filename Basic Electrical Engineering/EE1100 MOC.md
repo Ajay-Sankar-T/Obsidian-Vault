@@ -89,7 +89,7 @@ Interactive animations: [Three-phase revolving field](revolving%20field%20animat
 
 ## Cross-domain synthesis
 
-The same RLC/impedance/resonance machinery reappears — in different notation — in [[Strength of materials/Strength of Materials - MOC|Strength of Materials]] (buckling, energy methods, stress transformation) and in [[2nd Order ODEs - MOC|Differential Equations]]. See [[Cross-Domain Synthesis/Cross-Domain Synthesis - MOC|Cross-Domain Synthesis]] for the eleven explicit connections. Newest EE-relevant ones: [[Cross-Domain Synthesis/Gears, Transformers and Reflected Impedance|Gears, Transformers and Reflected Impedance]] (Weeks 10 and 12), [[Cross-Domain Synthesis/Rotating Vectors - Phasors, Velocity Polygons and Complex Kinematics|Rotating Vectors]] (Week 5 phasors), and [[Cross-Domain Synthesis/Conservation Laws and Flow Networks|Conservation Laws and Flow Networks]] (KCL/KVL beyond circuits).
+The same RLC/impedance/resonance machinery reappears — in different notation — in [[Strength of Materials - MOC|Strength of Materials]] (buckling, energy methods, stress transformation) and in [[2nd Order ODEs - MOC|Differential Equations]]. See [[Cross-Domain Synthesis - MOC|Cross-Domain Synthesis]] for the eleven explicit connections. Newest EE-relevant ones: [[Gears, Transformers and Reflected Impedance|Gears, Transformers and Reflected Impedance]] (Weeks 10 and 12), [[Rotating Vectors - Phasors, Velocity Polygons and Complex Kinematics|Rotating Vectors]] (Week 5 phasors), and [[Conservation Laws and Flow Networks|Conservation Laws and Flow Networks]] (KCL/KVL beyond circuits).
 
 ## Study log
 

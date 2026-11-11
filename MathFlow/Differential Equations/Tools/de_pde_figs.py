@@ -6,7 +6,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.patches import Circle
 
-OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "PDEs", "assets")
+OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "05 Partial Differential Equations", "assets")
 os.makedirs(OUT, exist_ok=True)
 PI = np.pi
 HYP, PAR, ELL = "#e8a33d", "#555555", "#3d7be8"

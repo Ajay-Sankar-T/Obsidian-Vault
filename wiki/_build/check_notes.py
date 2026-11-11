@@ -1,5 +1,5 @@
 """Check every [[wikilink]] / ![[image]] in the given vault folders resolves to a real file somewhere in the vault.
-usage: python check_notes.py "mech stuff/Physics Lab" "mech stuff/Fluid Mechanics Lab" ..."""
+usage: python check_notes.py "Mechanical Engineering/Physics Lab" "Mechanical Engineering/Applied Mechanics Lab" ..."""
 import os
 import re
 import sys
