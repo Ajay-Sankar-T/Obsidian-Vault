@@ -16,12 +16,15 @@
     return { get: function () { return +inp.value; }, set: function (v) { inp.value = v; upd(); }, row: row };
   }
   function select(box, label, opts, onchange) {
-    var row = h("div", "w-row"), s = h("select"); s.innerHTML = opts.map(function (o, i) { return "<option value='" + i + "'>" + o + "</option>"; }).join("");
-    row.innerHTML = "<label><span>" + label + "</span></label>"; row.appendChild(s); s.addEventListener("change", onchange); box.appendChild(row);
+    var row = h("div", "w-row"), s = h("select"), id = "s" + Math.random().toString(36).slice(2, 8); s.id = id;
+    s.innerHTML = opts.map(function (o, i) { return "<option value='" + i + "'>" + o + "</option>"; }).join("");
+    row.innerHTML = "<label for='" + id + "'><span>" + label + "</span></label>"; row.appendChild(s); s.addEventListener("change", onchange); box.appendChild(row);
     return { get: function () { return +s.value; }, row: row };
   }
   function frame(root, note) {
     var plot = h("div", "w-plot"), ctrl = h("div", "w-ctrl"), cv = h("canvas");
+    var wrap = root.closest && root.closest(".widget-wrap"), ttl = wrap && wrap.querySelector(".widget-h");
+    cv.setAttribute("role", "img"); cv.setAttribute("aria-label", (ttl ? ttl.textContent : "Interactive") + " plot");
     cv.width = PW * DPR; cv.height = PH * DPR; cv.style.aspectRatio = PW + "/" + PH; plot.appendChild(cv);
     var out = h("div", "w-out"); root.appendChild(plot); root.appendChild(ctrl);
     var n = h("p", "w-note", note); root.appendChild(n);
@@ -35,7 +38,7 @@
     var X = function (x) { return m.l + (cfg.logx ? (Math.log10(x) - Math.log10(cfg.xmin)) / (Math.log10(cfg.xmax) - Math.log10(cfg.xmin)) : (x - cfg.xmin) / (cfg.xmax - cfg.xmin)) * w; };
     var Y = function (y) { return m.t + hh - (y - cfg.ymin) / (cfg.ymax - cfg.ymin) * hh; };
     var line = css("--line"), muted = css("--muted"), text = css("--text");
-    ctx.font = "700 12px Nunito,sans-serif"; ctx.lineWidth = 1; ctx.strokeStyle = line; ctx.fillStyle = muted; ctx.textAlign = "center";
+    ctx.font = "700 12px system-ui,sans-serif"; ctx.lineWidth = 1; ctx.strokeStyle = line; ctx.fillStyle = muted; ctx.textAlign = "center";
     var nx = cfg.xticks || 6, ny = cfg.yticks || 5, i, v;
     // round tick values: a step of 1, 2 or 5 times a power of ten
     function nice(lo, hi, n) {
@@ -63,7 +66,7 @@
       if (s.fillTo != null && s.pts) { ctx.globalAlpha = 0.12; ctx.lineTo(X(s.pts[s.pts.length - 1][0]), Y(s.fillTo)); ctx.lineTo(X(s.pts[0][0]), Y(s.fillTo)); ctx.fill(); ctx.globalAlpha = 1; }
       ctx.setLineDash([]);
       (s.dots || []).forEach(function (p) { ctx.beginPath(); ctx.arc(X(p[0]), Y(p[1]), s.r || 5, 0, 7); ctx.fill(); });
-      if (s.label) { ctx.fillStyle = s.color || text; ctx.textAlign = "left"; ctx.font = "800 12px Nunito,sans-serif"; ctx.fillText(s.label[2], X(s.label[0]) + 6, Y(s.label[1]) - 6); }
+      if (s.label) { ctx.fillStyle = s.color || text; ctx.textAlign = "left"; ctx.font = "800 12px system-ui,sans-serif"; ctx.fillText(s.label[2], X(s.label[0]) + 6, Y(s.label[1]) - 6); }
     });
     ctx.restore();
   }

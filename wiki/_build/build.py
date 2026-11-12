@@ -507,49 +507,80 @@ def finalize(html_text, math_html):
 
 
 # --------------------------------------------------------------------------------------------- page shell
-ICON = {
-    "learn": '<svg viewBox="0 0 24 24"><path d="M12 3 2 8l10 5 8-4v6h2V8L12 3Zm-6 9.6V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-3.4l-6 3-6-3Z"/></svg>',
-    "practice": '<svg viewBox="0 0 24 24"><path d="M7 4h2v16H7V4Zm8 0h2v16h-2V4ZM3 9h2v6H3V9Zm16 0h2v6h-2V9ZM9 11h6v2H9v-2Z"/></svg>',
-    "solve": '<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm3.8 6.2-2.1 5.5-5.5 2.1 2.1-5.5 5.5-2.1ZM12 11a1 1 0 1 0 0 2 1 1 0 0 0 0-2Z"/></svg>',
-    "graph": '<svg viewBox="0 0 24 24"><path d="M6 3a3 3 0 0 0-1 5.8v6.4a3 3 0 1 0 2 0V13l6-2.2A3 3 0 1 0 12.4 9 3 3 0 0 0 9 11.3L7 12V8.8A3 3 0 0 0 6 3Zm0 2a1 1 0 1 1 0 2 1 1 0 0 1 0-2Zm12 2a1 1 0 1 1 0 2 1 1 0 0 1 0-2ZM6 17a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/></svg>',
-    "search": '<svg viewBox="0 0 24 24"><path d="M10 3a7 7 0 1 0 4.4 12.4l4.6 4.6 1.4-1.4-4.6-4.6A7 7 0 0 0 10 3Zm0 2a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z"/></svg>',
+# Portraits from wiki/waifu/ are decoration only (a greeter on the home page, a face on each review card); they are not tied to subjects.
+def course_tag(code, title):
+    m = re.match(r"[A-Za-z]+", code or "")
+    if m:
+        return m.group(0)[:2].upper()
+    words = [w for w in re.split(r"\W+", title) if w and w[0].isalpha()]
+    return ("".join(w[0] for w in words[:2]) or title[:1]).upper()
+
+
+def tile(c, cls="tile"):
+    return f'<span class="{cls}" style="--c:{c["color"]}" aria-hidden="true">{esc(c["tag"])}</span>'
+
+
+def make_portraits():
+    """wiki/waifu/* -> assets/waifu/<slug>.webp (192 px, square crop); returns [[slug, display name], ...]"""
+    out = ASSETS / "waifu"
+    if out.exists():
+        shutil.rmtree(out)
+    out.mkdir(parents=True, exist_ok=True)
+    try:
+        from PIL import Image
+    except ImportError:
+        print("Pillow missing: portraits skipped")
+        return []
+    names = []
+    for src in sorted((WIKI / "waifu").glob("*"), key=lambda x: x.name.lower()):
+        if src.suffix.lower() not in (".png", ".jpg", ".jpeg", ".webp"):
+            continue
+        slug = re.sub(r"[^a-z0-9]+", "-", src.stem.lower()).strip("-")
+        im = Image.open(src).convert("RGBA")
+        w, h = im.size
+        s = min(w, h)
+        im = im.crop(((w - s) // 2, (h - s) // 2, (w - s) // 2 + s, (h - s) // 2 + s)).resize((192, 192), Image.LANCZOS)
+        flat = Image.new("RGB", im.size, (255, 240, 247))
+        flat.paste(im, mask=im.split()[3])
+        flat.save(out / f"{slug}.webp", "WEBP", quality=86, method=6)
+        names.append([slug, src.stem[:1].upper() + src.stem[1:]])
+    return names
+
+
+ICO = {
+    "search": '<svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>',
+    "menu": '<svg class="i" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>',
+    "theme": '<svg class="i" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>',
 }
-ICON["menu"] = '<svg class="i" viewBox="0 0 24 24"><path d="M4 6h16v2H4V6Zm0 5h16v2H4v-2Zm0 5h16v2H4v-2Z"/></svg>'
-ICON["panell"] = '<svg class="i" viewBox="0 0 24 24"><path d="M3 5h18v14H3V5Zm2 2v10h3V7H5Zm5 0v10h9V7h-9Z"/></svg>'
-ICON["panel"] = '<svg class="i" viewBox="0 0 24 24"><path d="M3 5h18v14H3V5Zm2 2v10h9V7H5Zm11 0v10h3V7h-3Z"/></svg>'
-ICON["sun"] ='<svg class="i" viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0-5h-1v3h2V2h-1Zm0 17h-1v3h2v-3h-1ZM2 11v2h3v-2H2Zm17 0v2h3v-2h-3ZM5.6 4.2 4.2 5.6l2.1 2.1 1.4-1.4-2.1-2.1Zm12.1 12.1-1.4 1.4 2.1 2.1 1.4-1.4-2.1-2.1ZM4.2 18.4l1.4 1.4 2.1-2.1-1.4-1.4-2.1 2.1ZM16.3 6.3l1.4 1.4 2.1-2.1-1.4-1.4-2.1 2.1Z"/></svg>'
-ICON["review"] = '<svg viewBox="0 0 24 24"><path d="M7 3h10a2 2 0 0 1 2 2v11H5V5a2 2 0 0 1 2-2Zm-2 15h14v1a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-1Zm4.5-9.5v2h5v-2h-5Zm0 3.5v2h3v-2h-3Z"/></svg>'
-NAV = [("learn", "Library", "index.html"), ("review", "Review", "review.html"), ("practice", "Practice", "practice.html"), ("solve", "How to solve", "solve.html"), ("graph", "Link map", "graph.html")]
+NAV = [("home", "Library", "index.html"), ("review", "Review", "review.html"), ("practice", "Practice", "practice.html"),
+       ("solve", "How to solve", "solve.html"), ("graph", "Link map", "graph.html")]
 
 
-def shell(title, body, root, page, slug="", course="", scripts=(), katex=False, mermaid=False, crumbs=(), wide=False):
-    tabs = "".join(f'<a class="tab{" on" if page == k else ""}" href="{root}{href}">{label}</a>' for k, label, href in NAV)
-    dock = "".join(f'<a class="{"on" if page == k else ""}" href="{root}{href}">{ICON[k]}<span>{label if k != "solve" else "Solve"}</span></a>' for k, label, href in NAV)
-    dock += f'<button id="openSearchDock" type="button" aria-label="Search">{ICON["search"]}<span>Search</span></button>'
+def shell(title, body, root, page, slug="", course="", scripts=(), katex=False, mermaid=False, crumbs=()):
+    nav = "".join('<a href="%s%s"%s>%s</a>' % (root, href, ' aria-current="page"' if page == k else "", label) for k, label, href in NAV)
     kcss = f'<link rel="stylesheet" href="{root}assets/vendor/katex.min.css">' if katex else ""
     extra = "".join(f'<script src="{root}assets/{s}"></script>' for s in scripts)
     mer = f'<script src="{root}assets/vendor/mermaid.min.js"></script>' if mermaid else ""
     cb = ""
     if crumbs:
-        parts = [f'<a href="{root}{h}">{esc(t)}</a>' if h else f"<span>{esc(t)}</span>" for t, h in crumbs]
-        cb = '<nav class="crumbbar" aria-label="Breadcrumb">' + "<i>›</i>".join(parts) + "</nav>"
+        parts = [f'<a href="{root}{h}">{esc(t)}</a>' if h else f'<span aria-current="page">{esc(t)}</span>' for t, h in crumbs]
+        cb = '<nav class="crumbs" aria-label="Breadcrumb">' + "<i>/</i>".join(parts) + "</nav>"
     return f"""<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#16171a"><meta name="description" content="Course notes, worked problems and interactive explorers, bound as a notebook"><link rel="icon" href="{root}assets/Favicons/Alya.png" type="image/png"><link rel="apple-touch-icon" href="{root}assets/Favicons/Alya.png"><link rel="manifest" href="{root}manifest.webmanifest">
-<title>{esc(title)} · Engineering Notebook</title>
-<script>document.documentElement.dataset.theme='dark';try{{if(localStorage.getItem('wiki.toc')==='0')document.documentElement.classList.add('no-toc');if(localStorage.getItem('wiki.tree')==='0')document.documentElement.classList.add('no-tree')}}catch(e){{}}</script>
-<link rel="stylesheet" href="{root}assets/style.css"><link rel="stylesheet" href="{root}assets/theme.css">{kcss}
-</head><body data-root="{root}" data-page="{page}" data-slug="{slug}" data-course="{course}">
-<header class="top"><button class="key key-menu" id="menuBtn" type="button" aria-label="Open contents" aria-expanded="false">{ICON["menu"]}</button>
-<a class="plate" href="{root}index.html"><span class="plate-mark">EN</span><span class="plate-t">Engineering Notebook</span></a>
-<nav class="tabs" aria-label="Sections">{tabs}</nav>
-<div class="top-r"><button class="search-key" id="openSearch" type="button" aria-label="Search the notebook">{ICON["search"]}<span>Search the notebook</span><kbd>/</kbd></button><button class="key key-tree" id="treeBtn" type="button" aria-label="Hide the left-hand contents" title="Show or hide the contents" aria-pressed="true">{ICON["panell"]}</button><button class="key key-toc" id="tocBtn" type="button" aria-label="Hide the right-hand outline" title="Show or hide the outline" aria-pressed="true" hidden>{ICON["panel"]}</button></div></header>
-<div class="thread" id="thread"></div>
-<div class="frame"><aside class="tree" id="tree" aria-label="Contents"></aside>
-<main class="content">{cb}<div class="paper{" wide" if wide else ""}">{body}</div></main></div>
+<html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="light dark"><meta name="theme-color" content="#fff0f7" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#1b1522" media="(prefers-color-scheme: dark)"><meta name="description" content="Course notes, worked problems, flashcards and interactive explorers"><link rel="icon" href="{root}assets/Favicons/Alya.png" type="image/png"><link rel="apple-touch-icon" href="{root}assets/Favicons/Alya.png"><link rel="manifest" href="{root}manifest.webmanifest">
+<title>{esc(title)} · Engineering Notes</title>
+<script>(function(){{var d=document.documentElement;try{{var t=localStorage.getItem('wiki.theme');if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';d.dataset.theme=t;if(localStorage.getItem('wiki.side')==='0')d.classList.add('no-side')}}catch(e){{}}}})()</script>
+<link rel="stylesheet" href="{root}assets/site.css">{kcss}
+</head><body class="{"has-side" if page in ("note", "course") else ""}" data-root="{root}" data-page="{page}" data-slug="{slug}" data-course="{course}">
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="top-in"><button class="ib menu" id="menuBtn" type="button" aria-label="Open contents" aria-expanded="false">{ICO["menu"]}</button>
+<a class="brand" href="{root}index.html"><i></i>Engineering Notes</a>
+<nav class="nav" aria-label="Sections">{nav}</nav>
+<div class="top-r"><button class="find" id="openSearch" type="button" aria-label="Search notes">{ICO["search"]}<span>Search</span><kbd>/</kbd></button><button class="ib" id="themeBtn" type="button" aria-label="Switch between light and dark theme">{ICO["theme"]}</button></div></div><div class="progress" id="thread"></div></header>
+<div class="shell"><aside class="side" id="side" aria-label="Contents"></aside>
+<main class="main" id="main">{cb}{body}</main></div>
 <div class="scrim" id="scrim"></div>
-<nav class="dock" aria-label="Sections">{dock}</nav>
-<button class="key totop" id="toTop" type="button" aria-label="Back to top">↑</button>
-<div class="search" id="search" hidden><div class="search-box"><div class="search-h"><span>Find in the notebook</span><button id="closeSearch" type="button" aria-label="Close search">×</button></div><input id="q" type="search" placeholder="Title, heading or any word…" autocomplete="off"><div class="sfilters" id="sfilters"></div><div id="results"></div></div></div>
+<button class="totop" id="toTop" type="button" aria-label="Back to top">↑</button>
+<div class="sd" id="search" hidden role="dialog" aria-modal="true" aria-label="Search notes"><div class="sd-box"><div class="sd-head"><input id="q" type="search" placeholder="Search titles, headings and text…" autocomplete="off" aria-label="Search"><select id="sc" aria-label="Limit to a course"><option value="all">All courses</option></select><button class="ib" id="closeSearch" type="button" aria-label="Close search">✕</button></div><div class="sd-res" id="results"></div><div class="sd-foot"><span><kbd>↑</kbd> <kbd>↓</kbd> move</span><span><kbd>Enter</kbd> open</span><span><kbd>Esc</kbd> close</span></div></div></div>
 <script src="{root}assets/data.js"></script>{mer}
 <script src="{root}assets/app.js"></script>{extra}
 </body></html>"""
@@ -558,6 +589,7 @@ def shell(title, body, root, page, slug="", course="", scripts=(), katex=False, 
 # --------------------------------------------------------------------------------------------- main build
 def main():
     (HERE / "math_errors.txt").unlink(missing_ok=True)
+    portraits = make_portraits()
     notes, files = scan()
     for n in notes:
         n.kind = classify(n)
@@ -645,7 +677,7 @@ def main():
             if sm:
                 syllabus = [re.sub(r"[:.]$", "", t).strip() for t in re.findall(r"^\s*\d+\.\s+\*\*(.+?)\*\*", sm.group(1), re.M)]
         moc = next((n for n in cn if n.kind == "moc"), None)
-        courses_out.append(dict(id=cid, title=title, code=code, color=color, dark=dark, blurb=blurb, moc=moc.slug if moc else None,
+        courses_out.append(dict(id=cid, tag=course_tag(code, title), title=title, code=code, color=color, dark=dark, blurb=blurb, moc=moc.slug if moc else None,
                                 units=[dict(name=u[1], lessons=[x.slug for x in ls]) for u, ls in ulist],
                                 problems=[n.slug for n in sorted(cn, key=lambda x: x.title) if n.kind == "problem"],
                                 upcoming=cid in UPCOMING, syllabus=syllabus))
@@ -676,7 +708,7 @@ def main():
         body = n.html
         wk = WIDGET_OF.get(n.base)
         if wk:
-            marker = f'<div class="widget-wrap"><h3 class="widget-h">{WIDGET_TITLE[wk]}</h3><div class="widget" data-widget="{wk}"></div></div>'
+            marker = f'<div class="widget-wrap"><div class="widget-h">{WIDGET_TITLE[wk]}</div><div class="widget" data-widget="{wk}"></div></div>'
             m = re.search(r'<h2 id="', body)
             body = (body[:m.start()] + marker + body[m.start():]) if m else body + marker
         steps = wrap_steps(body, n)
@@ -684,46 +716,49 @@ def main():
         lesson = n.kind == "concept" and n.base not in ("Course Details",) and nsteps >= 2
         has_math = "\ue000" in n.html
         mer = 'class="mermaid"' in n.html
-        # header chips
-        chips = "".join(f'<span class="chip">{esc(t)}</span>' for t in n.tags[:5])
+        tags = "".join(f"<span>{esc(t)}</span>" for t in n.tags[:5])
         crumb_list = [("Library", "index.html"), (cmap[n.cid][1], f"course/{n.cid}.html")] + ([(n.unit, None)] if n.unit and n.unit not in ("Lessons", "Overview") else [])
+        unit_txt = f" · {esc(n.unit)}" if n.unit and n.unit not in ("Lessons", "Overview") else ""
+        words = len(re.findall(r"[A-Za-z]{2,}", re.sub(r"\$[^$]*\$", " ", n.body)))
+        mins = max(1, round(words / 190))
+        eyebrow = f'<p class="eyebrow"><a href="../course/{n.cid}.html">{esc(cmap[n.cid][1])}</a>{unit_txt}<span class="rt"> · {mins} min read</span></p>'
         actions = ""
         if lesson:
-            actions += '<button class="btn" id="startLesson" type="button">Study mode</button>'
-        actions += '<button class="btn btn-ghost" id="markDone" type="button">Mark as read</button>' if n.kind in ("concept", "moc") else ""
-        actions += '<button class="btn btn-ghost btn-flag" id="markWeak" type="button" aria-pressed="false">Revise later</button>' if n.kind != "ref" else ""
+            actions += '<button class="btn btn-primary" id="startLesson" type="button">Study mode</button>'
+        if n.kind in ("concept", "moc"):
+            actions += '<button class="btn" id="markDone" type="button">Mark as read</button>'
+        if n.kind != "ref":
+            actions += '<button class="btn" id="markWeak" type="button" aria-pressed="false">Revise later</button>'
         # pager
         pager = ""
         if n.slug in path_of:
             cid, i, seq = path_of[n.slug]
-            prv = f'<a class="pg" href="{seq[i-1]}.html"><small>Previous page</small>{esc(by_slug[seq[i-1]].title)}</a>' if i > 0 else "<span></span>"
-            nxt = f'<a class="pg pg-next" href="{seq[i+1]}.html"><small>Next page</small>{esc(by_slug[seq[i+1]].title)}</a>' if i + 1 < len(seq) else "<span></span>"
-            pager = f'<nav class="pager">{prv}{nxt}</nav>'
+            prv = f'<a class="pg" href="{seq[i-1]}.html"><small>Previous</small>{esc(by_slug[seq[i-1]].title)}</a>' if i > 0 else "<span></span>"
+            nxt = f'<a class="pg pg-next" href="{seq[i+1]}.html"><small>Next</small>{esc(by_slug[seq[i+1]].title)}</a>' if i + 1 < len(seq) else "<span></span>"
+            pager = f'<nav class="pager" aria-label="Previous and next">{prv}{nxt}</nav>'
         # related
         outs = sorted((s for s in n.links if s in by_slug and s != n.slug), key=lambda s: by_slug[s].title)
         ins = sorted((s for s in back[n.slug] if s not in n.links), key=lambda s: by_slug[s].title)
         def card(s):
             t = by_slug[s]
-            return f'<a class="rel" href="{s}.html" style="--c:{cmap[t.cid][3]}"><span class="dot"></span><span>{esc(t.title)}<small>{esc(cmap[t.cid][1])}</small></span></a>'
+            return f'<a class="rel" href="{s}.html" title="{esc(cmap[t.cid][1])}"><span class="dot" style="--c:{cmap[t.cid][3]}"></span>{esc(t.title)}</a>'
         related = ""
         if outs:
             related += f'<h3>Links to</h3><div class="rels">{"".join(card(s) for s in outs[:18])}</div>'
         if ins:
             related += f'<h3>Linked from</h3><div class="rels">{"".join(card(s) for s in ins[:18])}</div>'
-        related = f'<section class="related"><h2>Related notes</h2>{related}<canvas id="miniGraph" width="640" height="320" aria-label="Connections"></canvas></section>' if (outs or ins) else ""
+        related = f'<section class="related"><h2>Related notes</h2>{related}<canvas id="miniGraph" width="640" height="320" role="img" aria-label="Map of the notes linked to this one"></canvas></section>' if (outs or ins) else ""
         toc = [(lv, i, t) for lv, i, t in n.toc if lv == 2]
         tochtml = ""
         if len(toc) >= 3:
-            tochtml = '<aside class="toc"><b>On this page</b>' + "".join(f'<a href="#{i}">{esc(t)}</a>' for lv, i, t in toc[:14]) + "</aside>"
+            tochtml = '<aside class="toc" aria-label="On this page"><b>On this page</b>' + "".join(f'<a href="#{i}">{esc(t)}</a>' for lv, i, t in toc[:14]) + "</aside>"
         problem_hint = ""
         if n.kind == "problem" and 'class="step prob"' in steps:
             problem_hint = ('<div class="howto"><b>How to attack a problem</b><ol><li>Say what is asked and what is given.</li><li>Pick the principle <em>before</em> calculating (open the hint).</li>'
-                            '<li>Solve symbolically, then plug in numbers.</li><li>Check units and a limiting case.</li><li>Be honest: mark it solved only if you could redo it.</li></ol></div>')
-        done_bar = ""
-        page = f"""<article class="note" data-kind="{n.kind}" style="--c:{color};--cd:{cmap[n.cid][4]}">
-<h1>{esc(n.h1 if n.h1 else n.title)}</h1><div class="chips">{chips}</div>
-<div class="actions">{actions}</div>{problem_hint}
-<div class="body" id="body">{steps}</div>{done_bar}{pager}{related}</article>{tochtml}"""
+                            '<li>Solve symbolically, then plug in numbers.</li><li>Check units and a limiting case.</li><li>Mark it solved only if you could redo it.</li></ol></div>')
+        page = f"""<div class="note-grid{"" if tochtml else " no-toc"}"><article class="note" data-kind="{n.kind}" style="--c:{color}">
+<header class="nh">{eyebrow}<h1>{esc(n.h1 if n.h1 else n.title)}</h1>{f'<p class="tags">{tags}</p>' if tags else ""}<div class="actions">{actions}</div></header>
+{problem_hint}<div class="body" id="body">{steps}</div>{pager}{related}</article>{tochtml}</div>"""
         page = finalize(page, math_html)
         for qm in re.finditer(r'<details class="callout callout-question fold"[^>]*>\s*<summary[^>]*>(.*?)</summary>(.*?)</details>', page, re.S):
             qh, ah = qm.group(1).strip(), qm.group(2).strip()
@@ -742,61 +777,63 @@ def main():
 
     # ---------------------------------------------------------------- course pages
     for c in courses_out:
-        cm = cmap[c["id"]]
         unit_html = []
         k = 0
+        nlessons = sum(len(u["lessons"]) for u in c["units"])
         for ui, u in enumerate(c["units"]):
             rows = []
             for li, sl in enumerate(u["lessons"]):
                 k += 1
                 ttl = "Course overview" if u["name"] == "Overview" else by_slug[sl].title
-                rows.append(f'<li><a class="node" data-slug="{sl}" href="../n/{sl}.html"><span class="no">{k:02d}</span><span class="lbl">{esc(ttl)}</span><i class="lead"></i><span class="mark"></span></a></li>')
-            guide = f'<a class="unit-guide" href="../n/{c["moc"]}.html">Course map</a>' if c["moc"] and c["moc"] not in u["lessons"] else ""
-            unit_html.append(f'<section class="unit"><div class="unit-h"><span class="tape">Chapter {ui + 1}</span><h2>{esc(u["name"])}</h2>{guide}</div><ol class="toc-list">{"".join(rows)}</ol></section>')
+                rows.append(f'<li><a class="node" data-slug="{sl}" href="../n/{sl}.html"><span class="no">{k:02d}</span><span class="lbl">{esc(ttl)}</span><span class="chk"></span></a></li>')
+            guide = f'<a href="../n/{c["moc"]}.html">Course map</a>' if c["moc"] and c["moc"] not in u["lessons"] else ""
+            unit_html.append(f'<section class="chap"><h2><span class="n">{ui + 1:02d}</span>{esc(u["name"])}{guide}</h2><ol class="lessons">{"".join(rows)}</ol></section>')
         if c["syllabus"]:
-            soon = "".join(f'<li><span class="node locked"><span class="no">{i + 1:02d}</span><span class="lbl">{esc(t)}</span><i class="lead"></i><span class="mark"></span></span></li>' for i, t in enumerate(c["syllabus"]))
-            unit_html.append(f'<section class="unit"><div class="unit-h"><span class="tape">Planned</span><h2>Syllabus topics</h2></div><ol class="toc-list">{soon}</ol></section>')
+            soon = "".join(f'<li><span class="node"><span class="no">{i + 1:02d}</span><span class="lbl">{esc(t)}</span></span></li>' for i, t in enumerate(c["syllabus"]))
+            unit_html.append(f'<section class="chap"><h2>Planned topics</h2><ol class="lessons">{soon}</ol></section>')
         probs = ""
         if c["problems"]:
-            probs = '<section class="unit-more"><div class="unit-h"><span class="tape">Problems</span><h2>Practice sets</h2></div><div class="pgrid">' + "".join(
-                f'<a class="pcard" data-slug="{sl}" href="../n/{sl}.html" style="--c:{c["color"]}"><span class="dot"></span><span>{esc(by_slug[sl].title)}<small>{qcount(by_slug[sl])}</small></span></a>'
+            probs = '<section class="chap"><h2>Practice sets</h2><div class="lessons">' + "".join(
+                f'<a class="node" data-prob="{sl}" href="../n/{sl}.html"><span class="no">·</span><span class="lbl">{esc(by_slug[sl].title)} <small>{qcount(by_slug[sl])}</small></span><span class="chk"></span></a>'
                 for sl in c["problems"]) + "</div></section>"
-        head = (f'<div class="cover" style="--c:{c["color"]};--cd:{c["dark"]}"><div><small>{esc(c["code"]) or "COURSE"}</small><h1>{esc(c["title"])}</h1><p>{esc(c["blurb"])}</p></div>'
-                f'<div class="stat" data-course="{c["id"]}"><b>0%</b>read</div></div>')
-        body = head + ('<p class="upnote">Upcoming course: this is a syllabus-based map; chapters will appear as notes are written.</p>' if c["upcoming"] else "") + "".join(unit_html) + probs
+        head = (f'<header class="chead" style="--c:{c["color"]}">{tile(c, "tile tile-l")}<div><p class="eyebrow">{esc(c["code"]) or "Course"}</p><h1>{esc(c["title"])}</h1><p class="sub">{esc(c["blurb"])}</p>'
+                f'<div class="cprog"><span class="bar" style="--c:{c["color"]}"><i id="cbar"></i></span><span id="cp" data-total="{nlessons}">0 of {nlessons} read</span></div></div></header>')
+        body = '<div class="page">' + head + ('<p class="sub">Upcoming course: a syllabus map for now; chapters appear as notes are written.</p>' if c["upcoming"] else "") + "".join(unit_html) + probs + "</div>"
         (WIKI / "course" / f'{c["id"]}.html').write_text(shell(c["title"], body, "../", "course", course=c["id"], crumbs=[("Library", "index.html"), (c["title"], None)]), encoding="utf-8")
 
     # ---------------------------------------------------------------- home
-    def book(cid):
+    def card_course(cid):
         c = cobj.get(cid)
         if not c:
             return ""
         nl = sum(len(u["lessons"]) for u in c["units"])
         sub = "syllabus map only" if c["upcoming"] else f"{nl} page" + ("s" if nl != 1 else "")
-        bar = "" if c["upcoming"] else '<span class="bar"><i></i></span>'
-        return (f'<a class="book{" soon" if c["upcoming"] else ""}" data-course="{cid}" href="course/{cid}.html" style="--c:{c["color"]};--cd:{c["dark"]}">'
-                f'<span class="book-code">{esc(c["code"]) or "Notes"}</span><span class="book-t">{esc(c["title"])}</span><span class="book-n">{sub}</span>{bar}</a>')
+        meta = f'{esc(c["code"])} · {sub}' if c["code"] else sub
+        return (f'<a class="ccard" data-course="{cid}" href="course/{cid}.html" style="--c:{c["color"]}">{tile(c)}'
+                f'<span class="cc-t">{esc(c["title"])}</span><span class="cc-m">{meta}</span><span class="bar"><i></i></span></a>')
     sims = []
     for rels in files.values():
         for rel in rels:
             if rel.endswith(".html"):
-                t = (VAULT / rel).read_text(encoding="utf-8", errors="replace")
-                tm = re.search(r"<title>(.*?)</title>", t, re.S)
+                tx = (VAULT / rel).read_text(encoding="utf-8", errors="replace")
+                tm = re.search(r"<title>(.*?)</title>", tx, re.S)
                 title = (tm.group(1).strip() if tm else Path(rel).stem.replace("-", " ").replace("_", " ")).strip()
                 sims.append((title, Path(rel).name))
     sims.sort()
-    sims_html = ('<h2 class="sec"><span class="tape">Workshop</span>Stand-alone simulations</h2><p class="lead">Interactive explorers from the notes; each opens in a new tab.</p><div class="plates">'
-                 + "".join(f'<a class="plate-card" href="assets/sims/{urllib.parse.quote(f)}" target="_blank" rel="noopener"><span>{esc(t)}</span><small>interactive</small></a>' for t, f in sims) + "</div>") if sims else ""
-    home = f"""<section class="hero"><div class="hero-l"><h1>Engineering Notebook</h1><p>Course notes, worked problems and interactive explorers, bound in one place. Take a book from the shelf, or search for any topic.</p>
-<div class="hero-actions"><a class="btn" href="review.html">Start a review</a><a class="btn btn-ghost" href="solve.html">How to solve</a></div>
-<div class="recent-h" id="recentH" hidden>Recently opened</div><div class="recent" id="recent"></div></div>
-<aside class="today" id="today" aria-label="Today"><div class="ribbon" id="continue"></div></aside></section>
-<div class="stats"><span><b>{len(notes)}</b> notes</span><span><b>{sum(1 for n in notes if n.kind == 'concept')}</b> concepts</span><span><b>{sum(1 for n in notes if n.kind == 'problem')}</b> solved problems</span><span><b>{len(set(WIDGET_OF.values()))}</b> explorers</span><span><b>{len([c for c in ACTIVE])}</b> books</span></div>
-<h2 class="sec"><span class="tape">Shelf</span>Your courses</h2>{"".join('<h3 class="shelf-h">' + gt + '</h3><div class="bookcase"><div class="shelf">' + "".join(book(c) for c in ids if c in ACTIVE) + '</div></div>' for gt, ids in SHELVES)}
-{("<h2 class=\"sec\"><span class=\"tape\">Coming up</span>Planned courses</h2><div class=\"bookcase\"><div class=\"shelf\">" + "".join(book(c) for c in UPCOMING) + "</div></div>") if UPCOMING else ""}
-{sims_html}
-<p class="foot"><a href="n/{next((n.slug for n in notes if n.base == 'Mechanical Engineering Curriculum - MOC'), '')}.html">Curriculum map</a> · {len(notes)} notes · progress is saved in this browser only</p>"""
-    (WIKI / "index.html").write_text(shell("Library", home, "", "learn"), encoding="utf-8")
+    sims_html = ('<h2 class="grp">Stand-alone simulations</h2><div class="sims">'
+                 + "".join(f'<a href="assets/sims/{urllib.parse.quote(f)}" target="_blank" rel="noopener"><span>{esc(t)}</span><small>opens in a new tab</small></a>' for t, f in sims) + "</div>") if sims else ""
+    ncon = sum(1 for n in notes if n.kind == "concept")
+    nprb = sum(1 for n in notes if n.kind == "problem")
+    shelves = "".join(f'<h2 class="grp">{esc(gt)}</h2><div class="cgrid">' + "".join(card_course(c) for c in ids if c in ACTIVE) + "</div>" for gt, ids in SHELVES)
+    upc = ('<h2 class="grp">Planned courses</h2><div class="cgrid">' + "".join(card_course(c) for c in UPCOMING) + "</div>") if UPCOMING else ""
+    cmoc = next((n.slug for n in notes if n.base == "Mechanical Engineering Curriculum - MOC"), "")
+    home = f"""<div class="page wide"><section class="hello"><div><h1>Engineering Notes</h1>
+<p class="sub">{len(notes)} notes across {len(ACTIVE)} courses: {ncon} concepts, {nprb} worked problems, {len(deck)} review questions and {len(set(WIDGET_OF.values()))} interactive explorers.</p>
+<button class="bigfind" id="openSearch2" type="button" data-open-search>{ICO["search"]}<span>Search every note…</span><kbd>/</kbd></button>
+<div class="glance" id="glance"></div></div><figure class="portrait" id="portrait" hidden></figure></section>
+{shelves}{upc}{sims_html}
+<p class="foot">{f'<a href="n/{cmoc}.html">Curriculum map</a> · ' if cmoc else ""}Progress is saved in this browser only.</p></div>"""
+    (WIKI / "index.html").write_text(shell("Library", home, "", "home"), encoding="utf-8")
 
     # ---------------------------------------------------------------- practice page
     plist = []
@@ -808,8 +845,8 @@ def main():
             m = re.search(r"([A-Z]-)?Q\d+[*′']?(?:\s*[–-]\s*Q?\d+)?|Problem \d+", H.unescape(t))
             return m.group(0) if m else f"Part {k}"
         qs = "".join(f'<a href="n/{p.slug}.html#{i}" data-q="{p.slug}#{i}">{esc(qlabel(t, k))}</a>' for k, (t, i) in enumerate(p.qs, 1))
-        return (f'<div class="pcard pcard-q" data-slug="{p.slug}" data-course="{c["id"]}" style="--c:{c["color"]}"><span class="dot"></span>'
-                f'<div class="pbody"><a class="pt" href="n/{p.slug}.html">{esc(p.title)}</a><small>{qcount(p)}</small>{f"<div class=qs>{qs}</div>" if len(p.qs) > 1 else ""}</div></div>')
+        return (f'<div class="prow pcard" data-slug="{p.slug}" data-course="{c["id"]}"><a class="pt" href="n/{p.slug}.html">{esc(p.title)}</a><small>{qcount(p)}</small>'
+                f'{f"<div class=qs>{qs}</div>" if len(p.qs) > 1 else ""}</div>')
     groups = []
     for c in courses_out:
         if not c["problems"]:
@@ -819,14 +856,12 @@ def main():
             p = by_slug[s]
             folder = posixpath.basename(posixpath.dirname(p.rel))
             by_folder.setdefault(re.sub(r"^\d+\s*[-–.]\s*|^\d+\s+", "", folder), []).append(p)
-        inner = "".join(f'<h3>{esc(f)}</h3><div class="pgrid">{"".join(pcard(c, p) for p in sorted(ps, key=lambda x: x.title))}</div>' if len(by_folder) > 1 else
-                        f'<div class="pgrid">{"".join(pcard(c, p) for p in sorted(ps, key=lambda x: x.title))}</div>' for f, ps in sorted(by_folder.items()))
-        groups.append(f'<section class="pgroup" data-course="{c["id"]}" style="--c:{c["color"]}"><h2 class="sec">{esc(c["title"])}</h2>{inner}</section>')
-    cards = "".join(groups)
-    chips = '<button class="fchip on" data-f="all">All</button>' + "".join(f'<button class="fchip" data-f="{c["id"]}" style="--c:{c["color"]}">{esc(c["title"])}</button>' for c in courses_out if c["problems"])
-    practice = f"""<h1 class="pg-title">Practice</h1><p class="lead">Read the problem, open only the hint, try it on paper, then lift the flap for the solution and mark yourself honestly. Problems you solve get a stamp.</p>
-<div class="howto"><b>How to attack a problem</b><ol><li>Say what is asked and what is given.</li><li>Choose the principle before calculating.</li><li>Solve symbolically, then plug in numbers.</li><li>Check units and a limiting case.</li></ol></div>
-<div class="filters"><input id="sf" type="search" placeholder="Filter, e.g. beam, bessel, rectifier…" autocomplete="off"></div><div class="filters">{chips}</div>{cards}"""
+        inner = "".join((f'<h3>{esc(f)}</h3>' if len(by_folder) > 1 else "") + f'<div class="plist">{"".join(pcard(c, p) for p in sorted(ps, key=lambda x: x.title))}</div>' for f, ps in sorted(by_folder.items()))
+        groups.append(f'<section class="pgroup" data-course="{c["id"]}"><h2>{tile(c)}{esc(c["title"])}</h2>{inner}</section>')
+    copts = '<option value="all">All courses</option>' + "".join(f'<option value="{c["id"]}">{esc(c["title"])}</option>' for c in courses_out if c["problems"])
+    practice = f"""<div class="page"><h1>Practice</h1><p class="sub">Read the problem, open only the hint, try it on paper, then open the solution and mark yourself honestly.</p>
+<div class="tools"><input id="sf" type="search" placeholder="Filter, e.g. beam, bessel, rectifier…" autocomplete="off" aria-label="Filter problems"><select id="cf" aria-label="Course">{copts}</select></div>
+{"".join(groups)}</div>"""
     (WIKI / "practice.html").write_text(shell("Practice", practice, "", "practice", crumbs=[("Library", "index.html"), ("Practice", None)]), encoding="utf-8")
 
     # ---------------------------------------------------------------- review: flashcards and self-test from the question callouts
@@ -843,8 +878,8 @@ def main():
             d["m"] = mm.group(1)
     (ASSETS / "cards.js").write_text("window.WIKI_CARDS=" + json.dumps(deck, ensure_ascii=False, separators=(",", ":")) + ";", encoding="utf-8")
     nmcq = sum(1 for d in deck if d.get("m"))
-    review = f"""<h1 class="pg-title">Review</h1><p class="lead">{len(deck)} questions lifted from your notes. Flip a card, say how it went, and the ones you miss come back sooner. Your schedule stays in this browser.</p>
-<div id="rv" class="rv" data-total="{len(deck)}" data-mcq="{nmcq}"><noscript>Review needs JavaScript.</noscript></div>"""
+    review = f"""<div class="page"><h1>Review</h1><p class="sub">{len(deck)} questions taken from the notes. Flip a card, say how it went, and the ones you miss come back sooner. The schedule stays in this browser.</p>
+<div id="rv" data-total="{len(deck)}" data-mcq="{nmcq}"><noscript>Review needs JavaScript.</noscript></div></div>"""
     (WIKI / "review.html").write_text(shell("Review", review, "", "review", katex=True, scripts=["cards.js", "review.js"], crumbs=[("Library", "index.html"), ("Review", None)]), encoding="utf-8")
     print("review cards:", len(deck), "multiple-choice:", nmcq)
 
@@ -895,11 +930,11 @@ def main():
     order_c = [c[0] for c in COURSES]
     entries.sort(key=lambda e: order_c.index(e["c"]))
     solve_cards = "".join(
-        f'<details class="scard" data-course="{e["c"]}" style="--c:{cmap[e["c"]][3]}"><summary><span class="dot"></span><span class="sp">{e["p"]}</span><small>{esc(cmap[e["c"]][1])}</small></summary><div class="sm"><b>Use</b> {e["m"]}{f'<a class="src" href="n/{e["s"]}.html">Open note →</a>' if e["s"] else ""}</div></details>' for e in entries)
-    schips = '<button class="fchip on" data-f="all">All</button>' + "".join(f'<button class="fchip" data-f="{cid}" style="--c:{cmap[cid][3]}">{esc(cmap[cid][1])}</button>' for cid in dict.fromkeys(e["c"] for e in entries))
-    solve = f"""<h1 class="pg-title">How to solve</h1><p class="lead">“I see this kind of problem — what do I use?” Type a keyword or filter by course; open a card for the method.</p>
-<div class="filters"><input id="sf" type="search" placeholder="Filter, e.g. beam, resonance, eigenvalue…" autocomplete="off"></div><div class="filters">{schips}</div>
-<div class="scards">{solve_cards}</div>"""
+        f'<details class="scard" data-course="{e["c"]}"><summary><span class="sp">{e["p"]}</span><small>{esc(cmap[e["c"]][1])}</small></summary><div class="sm"><b>Use</b> {e["m"]}{f'<a class="src" href="n/{e["s"]}.html">Open the note →</a>' if e["s"] else ""}</div></details>' for e in entries)
+    sopts = '<option value="all">All courses</option>' + "".join(f'<option value="{cid}">{esc(cmap[cid][1])}</option>' for cid in dict.fromkeys(e["c"] for e in entries))
+    solve = f"""<div class="page"><h1>How to solve</h1><p class="sub">“I see this kind of problem. What do I use?” Type a keyword or pick a course, then open a row for the method.</p>
+<div class="tools"><input id="sf" type="search" placeholder="Filter, e.g. beam, resonance, eigenvalue…" autocomplete="off" aria-label="Filter methods"><select id="cf" aria-label="Course">{sopts}</select></div>
+<div class="scards">{solve_cards}</div></div>"""
     math_html = math_html + render_math(len(math_html))   # math added by the how-to-solve entries
     solve_html = finalize(solve, math_html)
     (WIKI / "solve.html").write_text(shell("How to solve", solve_html, "", "solve", katex=True, crumbs=[("Library", "index.html"), ("How to solve", None)]), encoding="utf-8")
@@ -915,15 +950,15 @@ def main():
     for a, b in edges:
         deg[a] += 1; deg[b] += 1
     graph = dict(n=[[n.slug, n.title, n.cid, deg[i]] for i, n in enumerate(notes)], l=[list(e) for e in sorted(edges)])
-    legend = "".join(f'<span class="lg" style="--c:{c[3]}"><i></i>{esc(c[1])}</span>' for c in COURSES if any(n.cid == c[0] for n in notes))
-    gbody = f'<h1 class="pg-title">Link map</h1><p class="lead">Every note is a pin and every link between notes a thread. Drag to pan, scroll or pinch to zoom; tap a pin to see its name, tap again to open it.</p><div class="legend">{legend}</div><div class="gwrap"><canvas id="graph"></canvas><div id="gtip"></div></div>'
-    (WIKI / "graph.html").write_text(shell("Link map", gbody, "", "graph", wide=True, crumbs=[("Library", "index.html"), ("Link map", None)]), encoding="utf-8")
+    legend = "".join(f'<span><i class="dot" style="--c:{c[3]}"></i>{esc(c[1])}</span>' for c in COURSES if any(n.cid == c[0] for n in notes))
+    gbody = f'<div class="page wide"><h1>Link map</h1><p class="sub">Every note is a dot and every link between notes a line. Drag to pan, scroll or pinch to zoom, tap a dot to see its name and tap again to open it.</p><div class="legend">{legend}</div><div class="gwrap"><canvas id="graph" role="img" aria-label="Network of linked notes"></canvas><div id="gtip"></div></div></div>'
+    (WIKI / "graph.html").write_text(shell("Link map", gbody, "", "graph", crumbs=[("Library", "index.html"), ("Link map", None)]), encoding="utf-8")
 
     # ---------------------------------------------------------------- data files
     meta = {n.slug: [n.title, n.cid, n.kind, getattr(n, "nsteps", 0), getattr(n, "nprob", 0)] for n in notes}
     data = dict(courses=courses_out, notes=meta, colors={c[0]: [c[3], c[4]] for c in COURSES}, titles={c[0]: c[1] for c in COURSES},
                 graph=graph, back={k: sorted(v) for k, v in back.items()}, links={n.slug: sorted(n.links) for n in notes},
-                cards=[[d["i"], d["c"]] for d in deck])
+                cards=[[d["i"], d["c"]] for d in deck], portraits=portraits)
     (ASSETS / "data.js").write_text("window.WIKI=" + json.dumps(data, ensure_ascii=False, separators=(",", ":")) + ";", encoding="utf-8")
     (ASSETS / "search.js").write_text("window.WIKI_SEARCH=" + json.dumps(search, ensure_ascii=False, separators=(",", ":")) + ";", encoding="utf-8")
 
@@ -947,10 +982,7 @@ def main():
     for f in (nm / "katex/dist/fonts").glob("*.woff2"):
         shutil.copy2(f, vend / "fonts" / f.name)
     shutil.copy2(nm / "mermaid/dist/mermaid.min.js", vend / "mermaid.min.js")
-    nun = nm / "@fontsource-variable/nunito/files"
-    for f in ("nunito-latin-wght-normal.woff2", "nunito-latin-ext-wght-normal.woff2"):
-        if (nun / f).exists():
-            shutil.copy2(nun / f, vend / "fonts" / f)
+    print("portraits:", len(portraits))
     print(f"notes: {len(notes)}  math snippets: {len(MATH)}  images: {len(R.used_imgs)}  how-to-solve entries: {len(entries)}  graph edges: {len(edges)}")
     by_kind = {}
     for n in notes:
