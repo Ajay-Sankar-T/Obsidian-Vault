@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Saathi Log · AcadBuddy Desk</title>
+<meta name="description" content="A cozy maintenance desk for the Saathi AcadBuddy programme: pairs, check-ins, tasks and stipends.">
+<link rel="icon" href="assets/lila-wave.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Fredoka:wght@500;600;700&family=Nunito:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="confetti" aria-hidden="true"></canvas>
+
+<div class="app">
+  <aside class="side" aria-label="Main navigation">
+    <a class="brand" href="#/today" aria-label="Saathi Log home">
+      <img src="assets/lila-wave.png" alt="" width="52" height="52">
+      <span><b>Saathi Log</b><small>AcadBuddy desk</small></span>
+    </a>
+    <nav id="nav">
+      <a href="#/today" data-route="today"><i>🏡</i><span>Today</span></a>
+      <a href="#/pairs" data-route="pairs"><i>🧸</i><span>Buddies</span></a>
+      <a href="#/journal" data-route="journal"><i>📒</i><span>Journal</span></a>
+      <a href="#/board" data-route="board"><i>🧺</i><span>Chores</span></a>
+      <a href="#/stipend" data-route="stipend"><i>🪙</i><span>Stipend</span></a>
+      <a href="#/handbook" data-route="handbook"><i>🌿</i><span>Handbook</span></a>
+    </nav>
+    <div class="side-foot">
+      <button class="btn small ghost" data-action="palette" title="Command palette (Ctrl/⌘ + K)">⌘K · quick actions</button>
+      <button class="btn small ghost" data-action="theme" id="themeBtn">🌙 Night study</button>
+      <img class="peek" src="assets/sparky-arms.png" alt="" width="190">
+    </div>
+  </aside>
+  <main id="view" tabindex="-1"></main>
+</div>
+
+<div id="overlay" class="overlay" hidden></div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script src="app.js"></script>
+</body>
+</html>
