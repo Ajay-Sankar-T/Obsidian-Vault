@@ -10,6 +10,8 @@ aliases: [Navier-Stokes exact solutions, Poiseuille flow, Couette flow, Hagen-Po
 
 ← up: [[Fluid Mechanics - MOC|Fluid Mechanics MOC]] · builds on: [[Viscosity and Newton's Law of Viscosity]], [[Pipe Flow and Losses - Formula Bank]] · worked problems: [[Viscous Flow and Exact Solutions - Solved Problems]]
 
+Concept notes (explained step by step): [[Stress in a Moving Fluid]], [[Newtonian Constitutive Relation]], [[Navier-Stokes Equations]], [[Boundary Conditions in Fluid Flow]], [[Nondimensionalisation and the Reynolds Number]], [[Plane Couette Flow]], [[Plane Poiseuille Flow]], [[Hagen-Poiseuille Flow]]
+
 Numbers in the solved problems are recomputed in `Tools/fm_gps9_10.py`.
 
 ## 1. The recipe for a unidirectional flow

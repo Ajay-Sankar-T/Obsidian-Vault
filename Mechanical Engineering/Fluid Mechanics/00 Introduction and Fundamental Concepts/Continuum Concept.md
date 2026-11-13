@@ -22,3 +22,7 @@ The differential forms of the conservation laws — the [[Conservation of Mass (
 ## Related
 - [[Knudsen Number|Knudsen Number]]
 - [[Lagrangian and Eulerian Descriptions|Lagrangian and Eulerian Descriptions]]
+
+## See also (concept notes)
+
+- [[Density, Specific Weight and Compressibility]] — density as the continuum limit.

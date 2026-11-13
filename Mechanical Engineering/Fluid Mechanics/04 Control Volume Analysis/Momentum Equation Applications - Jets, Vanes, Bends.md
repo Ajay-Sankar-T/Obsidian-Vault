@@ -41,3 +41,8 @@ plus any pressure, weight, and support forces acting on the bend.
 
 ## See also
 - [[Incompressible Inviscid Flow and Bernoulli - Formula Bank]] — nozzle and Venturi flow combine Bernoulli with this momentum balance.
+
+## See also (concept notes)
+
+- [[Moving and Accelerating Control Volumes]] — jets on moving vanes and rockets.
+- [[Angular Momentum Principle]] — sprinklers, pumps and turbines.

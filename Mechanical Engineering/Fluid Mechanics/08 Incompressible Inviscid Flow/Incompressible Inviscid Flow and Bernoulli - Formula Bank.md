@@ -10,6 +10,8 @@ aliases: [Bernoulli equation formulas, Euler equations, Pitot tube, stagnation p
 
 ← up: [[Fluid Mechanics - MOC|Fluid Mechanics MOC]] · builds on: [[Differential Mass Conservation and Fluid Kinematics - Formula Bank|Differential kinematics]], [[Linear Momentum Equation|Linear momentum]], [[Ideal Fluid|Ideal fluid]] · worked problems: [[Incompressible Inviscid Flow and Bernoulli - Solved Problems|Solved Problems]]
 
+Concept notes (explained step by step): [[Euler's Equations of Fluid Motion]], [[Bernoulli Equation]], [[Static, Stagnation and Dynamic Pressure]], [[Pitot Tube and Pressure Measurement]]
+
 Equation numbers are White's. Items marked ✓ are recomputed in `Tools/fm_core.py`. Items marked † are standard practice, not stated in White's text.
 
 > [!abstract] Contents

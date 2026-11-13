@@ -37,3 +37,8 @@ The power-law exponent $n$ here is the direct fluid-mechanics cousin of the nonl
 ## Related
 - [[Viscosity and Newton's Law of Viscosity|Viscosity and Newton's Law of Viscosity]]
 - [[Deborah Number|Deborah Number]]
+
+## See also (concept notes)
+
+- [[Newtonian Constitutive Relation]] — the full 3-D tensor form of the Newtonian law.
+- [[Navier-Stokes Equations]] — what the law leads to.

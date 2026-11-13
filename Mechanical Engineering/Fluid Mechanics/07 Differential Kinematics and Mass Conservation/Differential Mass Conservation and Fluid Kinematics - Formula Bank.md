@@ -10,6 +10,8 @@ aliases: [continuity equation differential form, vorticity formulas, stream func
 
 ← up: [[Fluid Mechanics - MOC|Fluid Mechanics MOC]] · builds on: [[Material Derivative and Fluid Acceleration|Material derivative]], [[Conservation of Mass (Continuity Equation)|Integral continuity]] · worked problems: [[Differential Mass Conservation and Fluid Kinematics - Solved Problems|Solved Problems]]
 
+Concept notes (explained step by step): [[Differential Continuity Equation]], [[Motion of a Fluid Element]], [[Vorticity and Circulation]], [[Rotational and Irrotational Flow]]
+
 Equation numbers are White's. Items marked ✓ are verified symbolically in `Tools/fm_core.py`. Sign convention for $\psi$ and $\phi$ is White's (§3).
 
 > [!abstract] Contents

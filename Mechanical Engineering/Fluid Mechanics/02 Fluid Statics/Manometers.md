@@ -34,3 +34,8 @@ $$\boxed{P=\rho gh}$$
 ## Related
 - [[Pressure and the Hydrostatic Equation|Pressure and the Hydrostatic Equation]]
 - [[Absolute, Gauge and Vacuum Pressure|Absolute, Gauge and Vacuum Pressure]]
+
+## See also (concept notes)
+
+- [[Pitot Tube and Pressure Measurement]] — a differential manometer across a Pitot-static probe measures velocity.
+- [[Surface Tension and Capillarity]] — meniscus error in small-bore tubes.

@@ -10,6 +10,8 @@ aliases: [Pi theorem formulas, dimensionless groups, model laws]
 
 ← up: [[Fluid Mechanics - MOC|Fluid Mechanics MOC]] · concept note: [[Buckingham Pi Theorem|Buckingham π Theorem]] · worked problems: [[Dimensional Analysis and Similitude - Solved Problems|Solved Problems]] · tools: `Tools/fm_core.py` (Pi-group solver), `Tools/fm_viz.py`
 
+Concept notes (explained step by step): [[Important Dimensionless Groups]], [[Flow Similarity and Model Studies]]
+
 Equation numbers are White's. Everything marked ✓ is re-derived or recomputed in `fm_core.check()`.
 
 > [!abstract] Contents

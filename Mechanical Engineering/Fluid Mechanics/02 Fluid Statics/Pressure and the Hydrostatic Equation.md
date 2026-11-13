@@ -37,3 +37,8 @@ The equivalent height of a column of the fluid whose weight-per-area produces th
 - [[Absolute, Gauge and Vacuum Pressure|Absolute, Gauge and Vacuum Pressure]]
 - [[Manometers|Manometers]]
 - [[Hydrostatic Force on Plane Surfaces and Centre of Pressure|Hydrostatic Force on Plane Surfaces and Centre of Pressure]]
+
+## See also (concept notes)
+
+- [[Euler's Equations of Fluid Motion]] — the hydrostatic equation with an acceleration, $\nabla p=\rho(\mathbf g-\mathbf a)$.
+- [[Vapour Pressure and Cavitation]] — what happens when the absolute pressure falls to $p_v$.

@@ -137,3 +137,8 @@ The Buckingham π theorem's core move — replace $n$ raw parameters governing a
 - [[Deborah Number|Deborah Number]]
 - [[The Universal Second-Order Linear System|Cross-Domain: damping ratio ζ as a dimensionless group]]
 - [[Euler Buckling of Columns|Cross-Domain: slenderness ratio as a dimensionless group]]
+
+## See also (concept notes)
+
+- [[Important Dimensionless Groups]] — what each named group means as a force ratio.
+- [[Flow Similarity and Model Studies]] — using matched groups in model tests.

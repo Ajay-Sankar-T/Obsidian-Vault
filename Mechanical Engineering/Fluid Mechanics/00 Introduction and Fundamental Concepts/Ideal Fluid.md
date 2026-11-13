@@ -20,3 +20,8 @@ Away from solid boundaries and in regions of the flow where velocity gradients a
 ## Related
 - [[Viscosity and Newton's Law of Viscosity|Viscosity and Newton's Law of Viscosity]]
 - [[Linear Momentum Equation|Linear Momentum Equation]]
+
+## See also (concept notes)
+
+- [[Euler's Equations of Fluid Motion]] and [[Bernoulli Equation]] — the equations of an ideal fluid.
+- [[Boundary Conditions in Fluid Flow]] — an ideal fluid keeps only no-penetration at a wall.

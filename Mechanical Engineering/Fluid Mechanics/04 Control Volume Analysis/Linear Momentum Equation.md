@@ -38,3 +38,8 @@ See [[Momentum Equation Applications - Jets, Vanes, Bends|Momentum Equation Appl
 ## Related
 - [[Momentum Equation Applications - Jets, Vanes, Bends|Momentum Equation Applications — Jets, Vanes, Bends]]
 - [[Reynolds Transport Theorem|Reynolds Transport Theorem]]
+
+## See also (concept notes)
+
+- [[Moving and Accelerating Control Volumes]] — relative velocity and the inertial term when the CV moves.
+- [[Angular Momentum Principle]] — the torque version of the same balance.

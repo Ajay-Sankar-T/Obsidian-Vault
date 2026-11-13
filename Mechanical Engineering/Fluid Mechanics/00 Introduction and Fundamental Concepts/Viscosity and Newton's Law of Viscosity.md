@@ -31,7 +31,7 @@ Fluids that obey the linear relation $\tau\propto du/dy$, with $\mu$ constant fo
 
 $$\nu = \frac{\mu}{\rho}$$
 
-units m²/s — appears naturally in the [[Knudsen Number|Reynolds number]] and diffusion-like terms in the full Navier-Stokes equations (not derived in this vault yet, but the natural next topic after [[Linear Momentum Equation|Linear Momentum Equation]]).
+units m²/s — appears naturally in the [[Nondimensionalisation and the Reynolds Number|Reynolds number]] and in the diffusion-like term of the [[Navier-Stokes Equations|Navier-Stokes equations]]; the full 3-D form of Newton's law is the [[Newtonian Constitutive Relation|Newtonian constitutive relation]], and the stress it feeds is described in [[Stress in a Moving Fluid|Stress in a Moving Fluid]].
 
 ## Related
 - [[Newtonian and Non-Newtonian Fluids|Newtonian and Non-Newtonian Fluids]]

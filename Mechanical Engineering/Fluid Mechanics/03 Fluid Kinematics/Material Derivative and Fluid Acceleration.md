@@ -57,3 +57,7 @@ The split "local change + convective change" is structurally the chain rule appl
 ## Related
 - [[Lagrangian and Eulerian Descriptions|Lagrangian and Eulerian Descriptions]]
 - [[Streamlines, Pathlines, Streaklines and Timelines|Streamlines, Pathlines, Streaklines and Timelines]]
+
+## See also (concept notes)
+
+- [[Differential Continuity Equation]], [[Motion of a Fluid Element]] and [[Euler's Equations of Fluid Motion]] — the next steps.

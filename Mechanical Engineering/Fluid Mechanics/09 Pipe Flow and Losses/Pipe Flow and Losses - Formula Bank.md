@@ -10,6 +10,8 @@ aliases: [Darcy-Weisbach, Moody chart, Colebrook equation, Haaland equation, min
 
 ← up: [[Fluid Mechanics - MOC|Fluid Mechanics MOC]] · builds on: [[Incompressible Inviscid Flow and Bernoulli - Formula Bank]] · worked problems: [[Pipe Flow and Losses - Solved Problems]]
 
+Concept notes (explained step by step): [[Laminar and Turbulent Flow]], [[Energy Equation with Head Loss]], [[Darcy-Weisbach Equation and Friction Factor]], [[Moody Chart]], [[Minor Losses]], [[Pipe Systems and the Three Problems]]
+
 Numbers quoted in the solved problems are recomputed in `Tools/fm_pipe.py`.
 
 ## 1. Energy equation with losses
