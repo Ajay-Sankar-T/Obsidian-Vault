@@ -3,6 +3,11 @@ KDoMs/Book/Ghosh and Mallik.pdf
 __pycache__/
 *.pyc
 
+# Course packs and other bulky reference documents stay local.
+*.pdf
+*.PDF
+Basic Electrical Engineering/Resources/drive-download-20261117T004429Z-1-001.zip
+
 graphify-out/
 .claude/
 

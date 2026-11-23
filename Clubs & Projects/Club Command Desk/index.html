@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#263329">
+  <title>Club Command Desk</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#dashboard" aria-label="Club Command Desk home"><span class="crest">✦</span><span><b>Club Command Desk</b><small>Campus field book</small></span></a>
+    <div class="dateblock" id="today"></div>
+    <button class="primary" data-open="task">+ New task</button>
+  </header>
+  <main class="desk">
+    <aside class="rail">
+      <nav aria-label="Main navigation">
+        <button class="nav active" data-view="dashboard">⌂ <span>My desk</span></button>
+        <button class="nav" data-view="tasks">☑ <span>Tasks</span><i id="taskCount"></i></button>
+        <button class="nav" data-view="calendar">◷ <span>Events</span></button>
+        <button class="nav" data-view="projects">▰ <span>Groups</span></button>
+        <button class="nav" data-view="notes">▤ <span>Meeting log</span></button>
+        <button class="nav" data-view="contacts">☏ <span>Contacts</span></button>
+      </nav>
+      <div class="rail-foot">
+        <button class="nav" data-view="archive">↥ <span>Backup & restore</span></button>
+        <p>Everything stays on this device.</p>
+      </div>
+    </aside>
+
+    <section class="folio">
+      <div class="folio-head"><p class="eyebrow" id="viewEyebrow">WORKING LEDGER</p><h1 id="viewTitle">My desk</h1><div id="viewActions"></div></div>
+      <div id="dashboard" class="view active"></div>
+      <div id="tasks" class="view"></div>
+      <div id="calendar" class="view"></div>
+      <div id="projects" class="view"></div>
+      <div id="notes" class="view"></div>
+      <div id="contacts" class="view"></div>
+      <div id="archive" class="view"></div>
+    </section>
+  </main>
+
+  <dialog id="editor">
+    <form method="dialog" id="editorForm">
+      <header><div><p class="eyebrow" id="formKicker">NEW ENTRY</p><h2 id="formTitle">Add task</h2></div><button class="icon" type="button" data-close aria-label="Close">×</button></header>
+      <div id="formFields" class="form-grid"></div>
+      <footer><button type="button" data-close class="button">Cancel</button><button type="submit" class="primary">Save entry</button></footer>
+    </form>
+  </dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
