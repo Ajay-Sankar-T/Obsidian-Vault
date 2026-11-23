@@ -13,12 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Mechanical Engineering/Mechanical Engineering Curriculum - MOC.md",
+                "file": "Mechanical Engineering/Foundations of Thermal Engineering/Foundations of Thermal Engineering - MOC.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Mechanical Engineering Curriculum - MOC"
+              "title": "Foundations of Thermal Engineering - MOC"
+            }
+          },
+          {
+            "id": "85272dc85ce96ec5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Mechanical Engineering/Foundations of Thermal Engineering/01 Exergy and Power Cycles/Exergy and Reversible Work.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Exergy and Reversible Work"
             }
           }
         ]
@@ -255,6 +269,9 @@
   },
   "active": "1d1276ffbffb388c",
   "lastOpenFiles": [
+    "Mechanical Engineering/Foundations of Thermal Engineering/01 Exergy and Power Cycles/Exergy and Reversible Work.md",
+    "Mechanical Engineering/Foundations of Thermal Engineering/Foundations of Thermal Engineering - MOC.md",
+    "Mechanical Engineering/Mechanical Engineering Curriculum - MOC.md",
     "Mechanical Engineering/ME25B_curriculum.pdf",
     "Mechanical Engineering/Materials and design/Course Details.md",
     "Mechanical Engineering/Foundations of Thermal Engineering/Course Details.md",
@@ -264,9 +281,7 @@
     "Clubs & Projects/Cardiovascular Biomechanics/2.pdf",
     "Clubs & Projects/Cardiovascular Biomechanics/3.PDF",
     "graphify-out/GRAPH_REPORT.md",
-    "Mechanical Engineering/Mechanical Engineering Curriculum - MOC.md",
     "Clubs & Projects/Cardiovascular Biomechanics",
-    "Mechanical Engineering/Foundations of Thermal Engineering/Foundations of Thermal Engineering - MOC.md",
     "Life sciences/Course Details.md",
     "Mechanical Engineering/Measurements and instrumentation/Measurements, Instrumentation and Control - MOC.md",
     "Mechanical Engineering/Measurements and instrumentation/Resources/Books/Instrumentation-and-Control-Systems.pdf",

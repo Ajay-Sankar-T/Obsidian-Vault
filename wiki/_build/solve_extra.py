@@ -54,7 +54,7 @@ SOLVE_EXTRA = [
     ("ee", "Poor power factor", "Add a capacitor to cancel the reactive power: [[Power Factor Correction]]."),
     ("ee", "Resonance, Q and bandwidth", "$\\omega_0=1/\\sqrt{LC}$, $Q=\\omega_0L/R$, BW $=\\omega_0/Q$: [[Frequency Response and Resonance Curves]], [[Series vs Parallel RLC - Key Distinctions]]."),
     ("ee", "Design a filter", "Choose the topology, then the cut-off $f_c=1/2\\pi RC$ (or the band): [[Filter Theory]]."),
-    ("ee", "Rectifier ripple and smoothing capacitor", "Ripple $\\approx I/(fC)$: [[A-Q7 - Ripple, Ripple Factor and Form Factor]]."),
+    ("ee", "Rectifier ripple and smoothing capacitor", "Ripple $\\approx I/(fC)$: [[T5-A-Q7 - Ripple, Ripple Factor and Form Factor]]."),
     ("ee", "Three-phase load", "Per-phase analysis; star: $V_L=\\sqrt3V_{ph}$, delta: $I_L=\\sqrt3I_{ph}$: [[09 Three Phase Circuits and Power Measurement]]."),
     ("ee", "Transformer problem", "Turns ratio and reflected impedance: [[10 Single Phase Transformers]]."),
     # ---- KDoMs

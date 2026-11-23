@@ -2,89 +2,290 @@
 <html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="light dark"><meta name="theme-color" content="#fff0f7" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#1b1522" media="(prefers-color-scheme: dark)"><meta name="description" content="Course notes, worked problems, flashcards and interactive explorers"><link rel="icon" href="../assets/Favicons/Alya.png" type="image/png"><link rel="apple-touch-icon" href="../assets/Favicons/Alya.png"><link rel="manifest" href="../manifest.webmanifest">
 <title>Problems - MOC · Engineering Notes</title>
 <script>(function(){var d=document.documentElement;try{var t=localStorage.getItem('wiki.theme');if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';d.dataset.theme=t;if(localStorage.getItem('wiki.side')==='0')d.classList.add('no-side')}catch(e){}})()</script>
-<link rel="stylesheet" href="../assets/site.css">
-</head><body class="has-side" data-root="../" data-page="note" data-slug="problems-moc" data-course="de">
+<link rel="stylesheet" href="../assets/site.css"><link rel="stylesheet" href="../assets/vendor/katex.min.css">
+</head><body class="has-side" data-root="../" data-page="note" data-slug="problems-moc" data-course="ee">
 <a class="skip" href="#main">Skip to content</a>
 <header class="top"><div class="top-in"><button class="ib menu" id="menuBtn" type="button" aria-label="Open contents" aria-expanded="false"><svg class="i" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
 <a class="brand" href="../index.html"><i></i>Engineering Notes</a>
 <nav class="nav" aria-label="Sections"><a href="../index.html">Library</a><a href="../review.html">Review</a><a href="../practice.html">Practice</a><a href="../solve.html">How to solve</a><a href="../graph.html">Link map</a></nav>
 <div class="top-r"><button class="find" id="openSearch" type="button" aria-label="Search notes"><svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Search</span><kbd>/</kbd></button><button class="ib" id="themeBtn" type="button" aria-label="Switch between light and dark theme"><svg class="i" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg></button></div></div><div class="progress" id="thread"></div></header>
 <div class="shell"><aside class="side" id="side" aria-label="Contents"></aside>
-<main class="main" id="main"><nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">Library</a><i>/</i><a href="../course/de.html">Differential Equations</a><i>/</i><span aria-current="page">Problems</span></nav><div class="note-grid no-toc"><article class="note" data-kind="moc" style="--c:#7a5a9a">
-<header class="nh"><p class="eyebrow"><a href="../course/de.html">Differential Equations</a> · Problems<span class="rt"> · 3 min read</span></p><h1>Problems - MOC</h1><div class="actions"><button class="btn" id="markDone" type="button">Mark as read</button><button class="btn" id="markWeak" type="button" aria-pressed="false">Revise later</button></div></header>
-<div class="body" id="body"><section class="step intro"><p>Solutions to the MA 2102 (IIT Madras) problem sheets, linked to the theory notes in <a href="../n/first-order-odes-moc.html">First Order ODEs - MOC</a>, <a href="../n/2nd-order-odes-moc.html">2nd Order ODEs - MOC</a>, <a href="../n/series-solutions-moc.html">Series Solutions - MOC</a>, <a href="../n/special-functions-moc.html">Special Functions - MOC</a> and <a href="../n/pdes-moc.html">PDEs - MOC</a>.</p>
-<ul>
-<li><a href="../n/assignment-1-first-order-odes-solutions.html">Assignment 1 - First Order ODEs - Solutions</a></li>
-<li><a href="../n/assignment-2-second-order-odes-solutions.html">Assignment 2 - Second Order ODEs - Solutions</a></li>
-<li><a href="../n/assignment-3-cauchy-euler-and-higher-order-odes-solutions.html">Assignment 3 - Cauchy-Euler and Higher Order ODEs - Solutions</a></li>
-<li><a href="../n/assignment-4-series-solutions-solutions.html">Assignment 4 - Series Solutions - Solutions</a></li>
-<li><a href="../n/assignment-5-legendre-polynomials-and-functions-solutions.html">Assignment 5 - Legendre Polynomials and Functions - Solutions</a></li>
-<li><a href="../n/assignment-6-bessel-functions-solutions.html">Assignment 6 - Bessel Functions - Solutions</a></li>
-<li><a href="../n/assignment-7-sturm-liouville-problems-solutions.html">Assignment 7 - Sturm-Liouville Problems - Solutions</a></li>
-<li><a href="../n/assignment-8-first-order-pdes-and-canonical-forms-solutions.html">Assignment 8 - First Order PDEs and Canonical Forms - Solutions</a></li>
-<li><a href="../n/assignment-9-dalembert-wave-and-heat-equations-solutions.html">Assignment 9 - D&#x27;Alembert, Wave and Heat Equations - Solutions</a></li>
-<li><a href="../n/assignment-10-laplace-equations-solutions.html">Assignment 10 - Laplace Equations - Solutions</a></li>
-</ul>
-<p>All ten sheets now have solution notes. Verification and figure scripts: Assignments 6–7 <code>Tools/de_a6a7.py</code>; Assignments 8–10 <code>Tools/de_a8_first_order.py</code>, <code>de_a8_second_order.py</code>, <code>de_a8_solutions_check.py</code>, <code>de_a9_a10.py</code>, <code>de_pde_figs.py</code>.</p>
-</section><section class="step" data-title="Which concept notes each sheet draws on"><h2 id="which-concept-notes-each-sheet-draws-on">Which concept notes each sheet draws on</h2>
+<main class="main" id="main"><nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">Library</a><i>/</i><a href="../course/ee.html">Basic Electrical Engineering</a><i>/</i><span aria-current="page">Problems</span></nav><div class="note-grid"><article class="note" data-kind="moc" style="--c:#b8962f">
+<header class="nh"><p class="eyebrow"><a href="../course/ee.html">Basic Electrical Engineering</a> · Problems<span class="rt"> · 3 min read</span></p><h1>EE1100 Problems: Map of Content</h1><p class="tags"><span>EE1100</span><span>tutorial</span></p><div class="actions"><button class="btn" id="markDone" type="button">Mark as read</button><button class="btn" id="markWeak" type="button" aria-pressed="false">Revise later</button></div></header>
+<div class="body" id="body"><section class="step intro"><p>← up: <a href="../n/ee1100-moc.html">EE1100 MOC</a> · tutorial sheets: <code>Resources/Tutorial Sheets/</code> · scripts: <code>Tools/</code></p>
+<p>All eight tutorial sheets are solved, <strong>one note per question</strong>, each following the same pattern: <em>what is tested → given → principle and why it applies → diagram → solution → result → check → trap → concepts used</em>. Every tutorial folder has an index (<code>Tutorial N - Title</code>), a theory note (or notes) that explains the ideas before the questions use them, and an <code>assets/</code> folder with the redrawn circuits, waveforms, phasor diagrams and response plots.</p>
+</section><section class="step" data-title="The eight tutorials"><h2 id="the-eight-tutorials">The eight tutorials</h2>
 <table>
 <thead>
 <tr>
+<th>#</th>
+<th>Tutorial</th>
+<th>Weeks</th>
+<th>Questions</th>
+<th>Theory note(s)</th>
 <th>Sheet</th>
-<th>Concept notes</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>1 First order</td>
-<td><a href="../n/isoclines.html">Isoclines</a> · <a href="../n/exact-differential-equations.html">Exact Differential Equations</a> · <a href="../n/integrating-factors.html">Integrating Factors</a> · <a href="../n/linear-differential-equations.html">Linear Differential Equations</a> · <a href="../n/bernoulli-differential-equations.html">Bernoulli Differential Equations</a></td>
+<td>1</td>
+<td><a href="../n/tutorial-1-circuit-laws-and-theorems.html">Tutorial 1 - Circuit Laws and Theorems</a></td>
+<td>1–3</td>
+<td>14</td>
+<td><a href="../n/theory-circuit-laws-and-network-theorems.html">Theory - Circuit Laws and Network Theorems</a></td>
+<td><span class="ghost" title="kept in the vault, not published on the site">Tutorial 1_Circuit Laws and Theorems</span></td>
 </tr>
 <tr>
-<td>2 Second order</td>
-<td><a href="../n/linear-independence-and-the-wronskian.html">Linear Independence and the Wronskian</a> · <a href="../n/abels-formula.html">Abel&#x27;s Formula</a> · <a href="../n/reduction-of-order.html">Reduction of Order</a> · <a href="../n/2nd-order-linear-ode-with-constant-coefficients.html">2nd Order Linear ODE with Constant Coefficients</a> · <a href="../n/undetermined-coefficients.html">Undetermined Coefficients</a> · <a href="../n/variation-of-parameters.html">Variation of Parameters</a></td>
+<td>2</td>
+<td><a href="../n/tutorial-2-transient-analysis-of-dc-circuits.html">Tutorial 2 - Transient Analysis of DC Circuits</a></td>
+<td>4</td>
+<td>12</td>
+<td><a href="../n/theory-transients-in-rl-rc-and-rlc-circuits.html">Theory - Transients in RL, RC and RLC Circuits</a></td>
+<td><span class="ghost" title="kept in the vault, not published on the site">Tutorial 2 on Transient and steady state analysis of DC circuits</span></td>
 </tr>
 <tr>
-<td>3 Cauchy–Euler, higher order</td>
-<td><a href="../n/cauchy-euler-equations.html">Cauchy-Euler Equations</a> · <a href="../n/non-homogeneous-cauchy-euler-equations.html">Non-homogeneous Cauchy-Euler Equations</a> · <a href="../n/higher-order-homogeneous-odes.html">Higher Order Homogeneous ODEs</a></td>
+<td>3</td>
+<td><a href="../n/tutorial-3-ac-circuit-analysis.html">Tutorial 3 - AC Circuit Analysis</a></td>
+<td>5–7</td>
+<td>12</td>
+<td>seven atomic notes in <code>Theory/</code> (<a href="../n/phasors-and-complex-algebra.html">Phasors and Complex Algebra</a>, <a href="../n/impedance-and-series-parallel-ac-circuits.html">Impedance and Series-Parallel AC Circuits</a>, <a href="../n/ac-power-and-power-factor.html">AC Power and Power Factor</a>, …)</td>
+<td><span class="ghost" title="kept in the vault, not published on the site">Tutorial 3 on Analysis of AC Circuits</span></td>
 </tr>
 <tr>
-<td>4 Series solutions</td>
-<td><a href="../n/power-series-method.html">Power Series Method</a> · <a href="../n/radius-of-convergence-of-series-solutions.html">Radius of Convergence of Series Solutions</a> · <a href="../n/regular-and-irregular-singular-points.html">Regular and Irregular Singular Points</a> · <a href="../n/frobenius-method-indicial-equation-and-three-cases.html">Frobenius Method - Indicial Equation and Three Cases</a> · <a href="../n/frobenius-method-worked-examples.html">Frobenius Method - Worked Examples</a></td>
+<td>4</td>
+<td><a href="../n/tutorial-4-resonance-filter-and-three-phase-circuits.html">Tutorial 4 - Resonance, Filter and Three-Phase Circuits</a></td>
+<td>8–9</td>
+<td>12</td>
+<td><a href="../n/theory-resonance-and-passive-filters.html">Theory - Resonance and Passive Filters</a>, <a href="../n/theory-three-phase-circuits.html">Theory - Three-Phase Circuits</a></td>
+<td><span class="ghost" title="kept in the vault, not published on the site">Tutorial 4  on Resonance and  Three phase Circuits</span></td>
 </tr>
 <tr>
-<td>5 Legendre</td>
-<td><a href="../n/legendre-polynomials-and-rodrigues-formula.html">Legendre Polynomials and Rodrigues&#x27; Formula</a> · <a href="../n/generating-function-of-legendre-polynomials.html">Generating Function of Legendre Polynomials</a> · <a href="../n/orthogonality-and-norm-of-legendre-polynomials.html">Orthogonality and Norm of Legendre Polynomials</a> · <a href="../n/legendre-series-and-fourier-legendre-expansions.html">Legendre Series and Fourier-Legendre Expansions</a> · <a href="../n/legendre-recurrence-relations-and-integrals.html">Legendre Recurrence Relations and Integrals</a> · <a href="../n/gamma-function.html">Gamma Function</a></td>
+<td>5</td>
+<td><a href="../n/tutorial-5-diode-circuits-and-applications.html">Tutorial 5 - Diode Circuits and Applications</a></td>
+<td>diodes</td>
+<td>21 (A1–A9, B1–B12)</td>
+<td><a href="../n/theory-diode-models-and-circuit-analysis.html">Theory - Diode Models and Circuit Analysis</a></td>
+<td><span class="ghost" title="kept in the vault, not published on the site">Tutorial 5 on Diode Circuits and Applications</span></td>
 </tr>
 <tr>
-<td>6 Bessel</td>
-<td><a href="../n/bessels-equation-and-bessel-functions-of-the-first-kind.html">Bessel&#x27;s Equation and Bessel Functions of the First Kind</a> · <a href="../n/bessel-functions-of-the-second-kind-and-general-solution.html">Bessel Functions of the Second Kind and General Solution</a> · <a href="../n/bessel-function-properties-and-recurrence-relations.html">Bessel Function Properties and Recurrence Relations</a> · <a href="../n/bessel-generating-function.html">Bessel Generating Function</a> · <a href="../n/reducing-equations-to-bessel-form.html">Reducing Equations to Bessel Form</a> · <a href="../n/fourier-bessel-series.html">Fourier-Bessel Series</a></td>
+<td>6</td>
+<td><a href="../n/tutorial-6-operational-amplifiers.html">Tutorial 6 - Operational Amplifiers</a></td>
+<td>op-amps</td>
+<td>12</td>
+<td><a href="../n/theory-operational-amplifiers.html">Theory - Operational Amplifiers</a></td>
+<td><span class="ghost" title="kept in the vault, not published on the site">Tutorial 6 on OP-AMP</span></td>
 </tr>
 <tr>
-<td>7 Sturm–Liouville</td>
-<td><a href="../n/sturm-liouville-problems.html">Sturm-Liouville Problems</a> · <a href="../n/inner-product-spaces-and-orthogonal-functions.html">Inner Product Spaces and Orthogonal Functions</a> (the orthogonality framework) · <a href="../n/orthogonality-and-norm-of-legendre-polynomials.html">Orthogonality and Norm of Legendre Polynomials</a> (a worked singular S–L problem) · <a href="../n/fourier-bessel-series.html">Fourier-Bessel Series</a></td>
+<td>7</td>
+<td><a href="../n/tutorial-7-transformers.html">Tutorial 7 - Transformers</a></td>
+<td>10</td>
+<td>10</td>
+<td><a href="../n/10-single-phase-transformers.html">10 Single Phase Transformers</a>, <a href="../n/transformer-voltage-regulation-and-efficiency.html">Transformer Voltage Regulation and Efficiency</a></td>
+<td><span class="ghost" title="kept in the vault, not published on the site">Tutorial 7 on Transformer</span></td>
 </tr>
 <tr>
-<td>8 First-order PDEs, canonical forms</td>
-<td><a href="../n/formation-of-pdes-eliminating-constants-and-functions.html">Formation of PDEs - Eliminating Constants and Functions</a> · <a href="../n/lagranges-method-for-quasi-linear-pdes.html">Lagrange&#x27;s Method for Quasi-linear PDEs</a> · <a href="../n/cauchy-problem-for-first-order-pdes.html">Cauchy Problem for First Order PDEs</a> · <a href="../n/complete-general-and-singular-integrals.html">Complete, General and Singular Integrals</a> · <a href="../n/classification-of-second-order-pdes.html">Classification of Second Order PDEs</a> · <a href="../n/canonical-forms-of-second-order-pdes.html">Canonical Forms of Second Order PDEs</a></td>
-</tr>
-<tr>
-<td>9 D'Alembert, wave, heat</td>
-<td><a href="../n/dalemberts-solution-of-the-wave-equation.html">D&#x27;Alembert&#x27;s Solution of the Wave Equation</a> · <a href="../n/separation-of-variables.html">Separation of Variables</a> · <a href="../n/wave-equation-on-a-finite-interval.html">Wave Equation on a Finite Interval</a> · <a href="../n/heat-equation-separation-of-variables.html">Heat Equation - Separation of Variables</a></td>
-</tr>
-<tr>
-<td>10 Laplace</td>
-<td><a href="../n/laplace-equation-on-rectangles-and-strips.html">Laplace Equation on Rectangles and Strips</a> · <a href="../n/laplace-equation-in-polar-coordinates.html">Laplace Equation in Polar Coordinates</a> · <a href="../n/separation-of-variables.html">Separation of Variables</a></td>
+<td>8</td>
+<td><a href="../n/tutorial-8-induction-machines.html">Tutorial 8 - Induction Machines</a></td>
+<td>11</td>
+<td>11</td>
+<td><a href="../n/theory-three-phase-induction-machines.html">Theory - Three-Phase Induction Machines</a></td>
+<td><span class="ghost" title="kept in the vault, not published on the site">Tutorial 8 on Induction Machine new</span></td>
 </tr>
 </tbody>
 </table>
-</section><section class="step" data-title="Revision pack for Assignments 6–10"><h2 id="revision-pack-for-assignments-610">Revision pack for Assignments 6–10</h2>
-<p>Bessel functions, Sturm–Liouville problems, first- and second-order PDEs, wave, heat and Laplace equations, in three layers:</p>
+</section><section class="step" data-title="Folder layout"><h2 id="folder-layout">Folder layout</h2>
+<pre><code>Problems/
+  Problems - MOC.md                         this page
+  Tutorial N - &lt;title&gt;/
+    Tutorial N - &lt;title&gt;.md                 index: question table, concept map, pattern recognition, exam hints
+    Theory - &lt;topic&gt;.md                     the explained theory the questions rely on
+    TN-Qk - &lt;short title&gt;.md                one solved question (T5 uses T5-A-Qk / T5-B-Qk)
+    assets/                                 redrawn circuits, waveforms, phasor diagrams, plots
+Tools/                                      ee_t1_t4_t8.py, ee_t6_t7.py (numbers), ee_figs_*.py (figures), ee_draw.py (schematic helpers)</code></pre>
+<p>Notes are linked by basename, so a note can move without breaking links; renamed notes keep their old names as <code>aliases</code>.</p>
+</section><section class="step" data-title="Concept coverage"><h2 id="concept-coverage">Concept coverage</h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Where it is explained</th>
+<th>Problems that use it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KCL, KVL, series/parallel, dividers</td>
+<td><a href="../n/theory-circuit-laws-and-network-theorems.html">Theory - Circuit Laws and Network Theorems</a></td>
+<td>T1 Q1–Q3, Q7, Q13</td>
+</tr>
+<tr>
+<td>nodal, mesh, supernode, supermesh</td>
+<td>same</td>
+<td>T1 Q7, Q11, Q12, Q14; T3 Q9, Q11</td>
+</tr>
+<tr>
+<td>superposition</td>
+<td>same</td>
+<td>T1 Q6</td>
+</tr>
+<tr>
+<td>Thevenin / Norton, maximum power</td>
+<td>same; <a href="../n/thevenin-norton-and-maximum-power-transfer-ac.html">Thevenin, Norton and Maximum Power Transfer (AC)</a></td>
+<td>T1 Q5, Q8–Q10; T3 Q11, Q12; T8 Q5, Q11</td>
+</tr>
+<tr>
+<td>star–delta</td>
+<td>same; <a href="../n/theory-three-phase-circuits.html">Theory - Three-Phase Circuits</a></td>
+<td>T1 Q13, Q14; T4 Q9–Q12</td>
+</tr>
+<tr>
+<td><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span></span></span></span> and <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal">L</span></span></span></span> laws, DC steady state, energy</td>
+<td><a href="../n/theory-transients-in-rl-rc-and-rlc-circuits.html">Theory - Transients in RL, RC and RLC Circuits</a></td>
+<td>T2 Q1–Q4</td>
+</tr>
+<tr>
+<td>first-order switching</td>
+<td>same</td>
+<td>T2 Q4–Q6, Q8, Q9</td>
+</tr>
+<tr>
+<td>second-order RLC, damping</td>
+<td>same; <a href="../n/rlc-circuits-responses.html">RLC Circuits - Responses</a></td>
+<td>T2 Q7, Q10–Q12</td>
+</tr>
+<tr>
+<td>rms, phasors, impedance</td>
+<td><a href="../n/sinusoidal-waveforms-rms-and-average-value.html">Sinusoidal Waveforms, RMS and Average Value</a>, <a href="../n/phasors-and-complex-algebra.html">Phasors and Complex Algebra</a>, <a href="../n/impedance-and-series-parallel-ac-circuits.html">Impedance and Series-Parallel AC Circuits</a></td>
+<td>T3 Q1–Q7, Q9, Q10</td>
+</tr>
+<tr>
+<td>complex power, power factor</td>
+<td><a href="../n/ac-power-and-power-factor.html">AC Power and Power Factor</a>, <a href="../n/power-factor-correction.html">Power Factor Correction</a></td>
+<td>T3 Q5, Q8, Q10, Q12; T4 Q9–Q11</td>
+</tr>
+<tr>
+<td>resonance, <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">Q</span></span></span></span>, bandwidth, filters</td>
+<td><a href="../n/theory-resonance-and-passive-filters.html">Theory - Resonance and Passive Filters</a></td>
+<td>T4 Q1–Q8</td>
+</tr>
+<tr>
+<td>three-phase star/delta, power</td>
+<td><a href="../n/theory-three-phase-circuits.html">Theory - Three-Phase Circuits</a></td>
+<td>T4 Q9–Q12</td>
+</tr>
+<tr>
+<td>diode models, rectifiers, clippers</td>
+<td><a href="../n/theory-diode-models-and-circuit-analysis.html">Theory - Diode Models and Circuit Analysis</a></td>
+<td>T5</td>
+</tr>
+<tr>
+<td>ideal op-amp circuits</td>
+<td><a href="../n/theory-operational-amplifiers.html">Theory - Operational Amplifiers</a></td>
+<td>T6</td>
+</tr>
+<tr>
+<td>transformer equivalent circuit, regulation, efficiency</td>
+<td><a href="../n/10-single-phase-transformers.html">10 Single Phase Transformers</a>, <a href="../n/transformer-voltage-regulation-and-efficiency.html">Transformer Voltage Regulation and Efficiency</a></td>
+<td>T7</td>
+</tr>
+<tr>
+<td>revolving field, slip, torque–slip, equivalent circuit</td>
+<td><a href="../n/theory-three-phase-induction-machines.html">Theory - Three-Phase Induction Machines</a></td>
+<td>T8</td>
+</tr>
+</tbody>
+</table>
+</section><section class="step" data-title="Verification"><h2 id="verification">Verification</h2>
+<p>Every number in tutorials 1–4 and 8 is recomputed by <code>Tools/ee_t1_t4_t8.py</code> (183 comparisons with the printed answers: 175 agree, 8 differ and each is explained in the note); tutorials 6 and 7 by <code>Tools/ee_t6_t7.py</code>. Circuits and plots are redrawn by <code>Tools/ee_figs_t1.py</code>, <code>ee_figs_t2.py</code>, <code>ee_figs_t3_t4.py</code>, <code>ee_figs_t8.py</code> (shared helpers in <code>ee_draw.py</code>).</p>
+</section><section class="step" data-title="Where the printed sheet answers differ from a direct calculation"><h2 id="where-the-printed-sheet-answers-differ-from-a-direct-calculation">Where the printed sheet answers differ from a direct calculation</h2>
+<p>These are not errors in the notes: each is shown in the question note with the computation.</p>
+<table>
+<thead>
+<tr>
+<th>Tutorial</th>
+<th>Question</th>
+<th>Printed</th>
+<th>Computed</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Q3</td>
+<td><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.2222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">−</span><span class="mord">6</span></span></span></span> V</td>
+<td><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">−</span><span class="mord">12</span></span></span></span> V</td>
+<td>contradicts the sheet's own <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0785em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">−</span><span class="mord">2</span></span></span></span> A and <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">24</span></span></span></span> W</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Q6</td>
+<td>10.4 V</td>
+<td>10.33 V</td>
+<td>rounding</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Q8</td>
+<td><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">o</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord">1.3</span><span class="mspace"> </span><span class="mord text"><span class="mord">ms</span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">25.6</span></span></span></span> V</td>
+<td>15.2 V</td>
+<td>output decays with <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.1132em;">τ</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2.5</span></span></span></span> ms</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Q9</td>
+<td><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.07153em;">C</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord">1.3</span><span class="mspace"> </span><span class="mord text"><span class="mord">ms</span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">70.0</span></span></span></span> V</td>
+<td>78.99 V</td>
+<td><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.1132em;">τ</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0.833</span></span></span></span> ms</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Q7</td>
+<td>figure and text values differ</td>
+<td>text solved</td>
+<td>answer matches the text</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Q12</td>
+<td><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">Q</span></span></span></span>, <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span></span></span></span> entries swapped; "23.32 W each"</td>
+<td><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">−</span><span class="mord">13.73</span></span></span></span> VAr/15.85 VA (source 1); each source delivers 37.5 W</td>
+<td>bookkeeping</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Q6</td>
+<td><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">ω</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1818</span></span></span></span></td>
+<td>1618</td>
+<td>typo</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Q9</td>
+<td><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">Q</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2857.8</span></span></span></span> VAr</td>
+<td>3300 VAr</td>
+<td><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord">/2</span></span></span></span> used</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Q10</td>
+<td>"line currents" 8.8 A</td>
+<td>line 15.24 A, phase 8.8 A</td>
+<td>phase currents printed</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Q10</td>
+<td><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">η</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8056em;vertical-align:-0.0556em;"></span><span class="mord">89.6</span><span class="mspace"> </span><span class="mord">%</span></span></span></span></td>
+<td>90.2 % (89.7 % with full-<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0785em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> copper loss)</td>
+<td>loss bookkeeping</td>
+</tr>
+</tbody>
+</table>
+</section><section class="step" data-title="Related"><h2 id="related">Related</h2>
 <ul>
-<li><a href="../n/assignments-6-10-formula-bank.html">Assignments 6-10 - Formula Bank</a> — every formula and its conditions, in the order of the sheets, plus boundary-condition and mode tables and the errors that cost marks</li>
-<li><a href="../n/assignments-6-10-how-to-solve.html">Assignments 6-10 - How to Solve</a> — "what is this problem and what do I do?" table for every problem type, with one recipe and one worked example per family and 30-second checks</li>
-<li><a href="../n/assignments-6-10-question-bank.html">Assignments 6-10 - Question Bank</a> — about 90 new questions (none from the sheets), in three parts with hints and solutions: <a href="../n/de-question-bank-1-bessel-functions-and-sturm-liouville.html">DE Question Bank 1 - Bessel Functions and Sturm-Liouville</a>, <a href="../n/de-question-bank-2-first-order-pdes-and-canonical-forms.html">DE Question Bank 2 - First-Order PDEs and Canonical Forms</a>, <a href="../n/de-question-bank-3-wave-heat-and-laplace-equations.html">DE Question Bank 3 - Wave, Heat and Laplace Equations</a></li>
-</ul>
-<p>Verification and figures: <code>Tools/de_a610_bank.py</code>, <code>Tools/de_a610_bank_pdes.py</code>, <code>Tools/de_a610_figs.py</code> (figures <code>A610-*.png</code> in <code>Problems/assets/</code>).</p></section></div><section class="related"><h2>Related notes</h2><h3>Links to</h3><div class="rels"><a class="rel" href="2nd-order-linear-ode-with-constant-coefficients.html" title="Differential Equations"><span class="dot" style="--c:#7a5a9a"></span>2nd Order Linear ODE with Constant Coefficients</a><a class="rel" href="2nd-order-odes-moc.html" title="Differential Equations"><span class="dot" style="--c:#7a5a9a"></span>2nd Order ODEs - MOC</a><a class="rel" href="abels-formula.html" title="Differential Equations"><span class="dot" style="--c:#7a5a9a"></span>Abel&#x27;s Formula</a><a class="rel" href="assignment-1-first-order-odes-solutions.html" title="Differential Equations"><span class="dot" style="--c:#7a5a9a"></span>Assignment 1 - First Order ODEs - Solutions</a><a class="rel" href="assignment-10-laplace-equations-solutions.html" title="Differential Equations"><span class="dot" style="--c:#7a5a9a"></span>Assignment 10 - Laplace Equations - Solutions</a><a class="rel" href="assignment-2-second-order-odes-solutions.html" title="Differential Equations"><span class="dot" style="--c:#7a5a9a"></span>Assignment 2 - Second Order ODEs - Solutions</a><a class="rel" href="assignment-3-cauchy-euler-and-higher-order-odes-solutions.html" title="Differential Equations"><span class="dot" style="--c:#7a5a9a"></span>Assignment 3 - Cauchy-Euler and Higher Order ODEs - Solutions</a><a class="rel" href="assignment-4-series-solutions-solutions.html" title="Differential Equations"><span class="dot" style="--c:#7a5a9a"></span>Assignment 4 - Series Solutions - Solutions</a><a class="rel" href="assignment-5-legendre-polynomials-and-functions-solutions.html" title="Differential Equations"><span class="dot" style="--c:#7a5a9a"></span>Assignment 5 - Legendre Polynomials and Functions - Solutions</a><a class="rel" href="assignment-6-bessel-functions-solutions.html" title="Differential Equations"><span class="dot" style="--c:#7a5a9a"></span>Assignment 6 - Bessel Functions - Solutions</a><a class="rel" href="assignment-7-sturm-liouville-problems-solutions.html" title="Differential Equations"><span class="dot" style="--c:#7a5a9a"></span>Assignment 7 - Sturm-Liouville Problems - Solutions</a><a class="rel" href="assignment-8-first-order-pdes-and-canonical-forms-solutions.html" title="Differential Equations"><span class="dot" style="--c:#7a5a9a"></span>Assignment 8 - First Order PDEs and Canonical Forms - Solutions</a><a class="rel" href="assignment-9-dalembert-wave-and-heat-equations-solutions.html" title="Differential Equations"><span class="dot" style="--c:#7a5a9a"></span>Assignment 9 - D&#x27;Alembert, Wave and Heat Equations - Solutions</a><a class="rel" href="assignments-6-10-formula-bank.html" title="Differential Equations"><span class="dot" style="--c:#7a5a9a"></span>Assignments 6-10 - Formula Bank</a><a class="rel" href="assignments-6-10-how-to-solve.html" title="Differential Equations"><span class="dot" style="--c:#7a5a9a"></span>Assignments 6-10 - How to Solve</a><a class="rel" href="assignments-6-10-question-bank.html" title="Differential Equations"><span class="dot" style="--c:#7a5a9a"></span>Assignments 6-10 - Question Bank</a><a class="rel" href="bernoulli-differential-equations.html" title="Differential Equations"><span class="dot" style="--c:#7a5a9a"></span>Bernoulli Differential Equations</a><a class="rel" href="bessel-function-properties-and-recurrence-relations.html" title="Differential Equations"><span class="dot" style="--c:#7a5a9a"></span>Bessel Function Properties and Recurrence Relations</a></div><h3>Linked from</h3><div class="rels"><a class="rel" href="differential-equations-moc.html" title="Differential Equations"><span class="dot" style="--c:#7a5a9a"></span>Differential Equations - MOC</a></div><canvas id="miniGraph" width="640" height="320" role="img" aria-label="Map of the notes linked to this one"></canvas></section></article></div></main></div>
+<li><a href="../n/ee1100-moc.html">EE1100 MOC</a> · <a href="../n/concepts.html">Concepts</a> · <span class="ghost">Wiki Maintenance Log</span></li>
+</ul></section></div><section class="related"><h2>Related notes</h2><h3>Links to</h3><div class="rels"><a class="rel" href="10-single-phase-transformers.html" title="Basic Electrical Engineering"><span class="dot" style="--c:#b8962f"></span>10 Single Phase Transformers</a><a class="rel" href="ac-power-and-power-factor.html" title="Basic Electrical Engineering"><span class="dot" style="--c:#b8962f"></span>AC Power and Power Factor</a><a class="rel" href="concepts.html" title="Basic Electrical Engineering"><span class="dot" style="--c:#b8962f"></span>Concepts</a><a class="rel" href="ee1100-moc.html" title="Basic Electrical Engineering"><span class="dot" style="--c:#b8962f"></span>EE1100 MOC</a><a class="rel" href="impedance-and-series-parallel-ac-circuits.html" title="Basic Electrical Engineering"><span class="dot" style="--c:#b8962f"></span>Impedance and Series-Parallel AC Circuits</a><a class="rel" href="phasors-and-complex-algebra.html" title="Basic Electrical Engineering"><span class="dot" style="--c:#b8962f"></span>Phasors and Complex Algebra</a><a class="rel" href="power-factor-correction.html" title="Basic Electrical Engineering"><span class="dot" style="--c:#b8962f"></span>Power Factor Correction</a><a class="rel" href="rlc-circuits-responses.html" title="Basic Electrical Engineering"><span class="dot" style="--c:#b8962f"></span>RLC Circuits - Responses</a><a class="rel" href="sinusoidal-waveforms-rms-and-average-value.html" title="Basic Electrical Engineering"><span class="dot" style="--c:#b8962f"></span>Sinusoidal Waveforms, RMS and Average Value</a><a class="rel" href="theory-circuit-laws-and-network-theorems.html" title="Basic Electrical Engineering"><span class="dot" style="--c:#b8962f"></span>Theory - Circuit Laws and Network Theorems</a><a class="rel" href="theory-diode-models-and-circuit-analysis.html" title="Basic Electrical Engineering"><span class="dot" style="--c:#b8962f"></span>Theory - Diode Models and Circuit Analysis</a><a class="rel" href="theory-operational-amplifiers.html" title="Basic Electrical Engineering"><span class="dot" style="--c:#b8962f"></span>Theory - Operational Amplifiers</a><a class="rel" href="theory-resonance-and-passive-filters.html" title="Basic Electrical Engineering"><span class="dot" style="--c:#b8962f"></span>Theory - Resonance and Passive Filters</a><a class="rel" href="theory-three-phase-circuits.html" title="Basic Electrical Engineering"><span class="dot" style="--c:#b8962f"></span>Theory - Three-Phase Circuits</a><a class="rel" href="theory-three-phase-induction-machines.html" title="Basic Electrical Engineering"><span class="dot" style="--c:#b8962f"></span>Theory - Three-Phase Induction Machines</a><a class="rel" href="theory-transients-in-rl-rc-and-rlc-circuits.html" title="Basic Electrical Engineering"><span class="dot" style="--c:#b8962f"></span>Theory - Transients in RL, RC and RLC Circuits</a><a class="rel" href="thevenin-norton-and-maximum-power-transfer-ac.html" title="Basic Electrical Engineering"><span class="dot" style="--c:#b8962f"></span>Thevenin, Norton and Maximum Power Transfer (AC)</a><a class="rel" href="transformer-voltage-regulation-and-efficiency.html" title="Basic Electrical Engineering"><span class="dot" style="--c:#b8962f"></span>Transformer Voltage Regulation and Efficiency</a></div><h3>Linked from</h3><div class="rels"><a class="rel" href="assignment-1-first-order-odes-solutions.html" title="Differential Equations"><span class="dot" style="--c:#7a5a9a"></span>Assignment 1 - First Order ODEs - Solutions</a><a class="rel" href="assignment-10-laplace-equations-solutions.html" title="Differential Equations"><span class="dot" style="--c:#7a5a9a"></span>Assignment 10 - Laplace Equations - Solutions</a><a class="rel" href="assignment-2-second-order-odes-solutions.html" title="Differential Equations"><span class="dot" style="--c:#7a5a9a"></span>Assignment 2 - Second Order ODEs - Solutions</a><a class="rel" href="assignment-3-cauchy-euler-and-higher-order-odes-solutions.html" title="Differential Equations"><span class="dot" style="--c:#7a5a9a"></span>Assignment 3 - Cauchy-Euler and Higher Order ODEs - Solutions</a><a class="rel" href="assignment-4-series-solutions-solutions.html" title="Differential Equations"><span class="dot" style="--c:#7a5a9a"></span>Assignment 4 - Series Solutions - Solutions</a><a class="rel" href="assignment-5-legendre-polynomials-and-functions-solutions.html" title="Differential Equations"><span class="dot" style="--c:#7a5a9a"></span>Assignment 5 - Legendre Polynomials and Functions - Solutions</a><a class="rel" href="assignment-6-bessel-functions-solutions.html" title="Differential Equations"><span class="dot" style="--c:#7a5a9a"></span>Assignment 6 - Bessel Functions - Solutions</a><a class="rel" href="assignment-7-sturm-liouville-problems-solutions.html" title="Differential Equations"><span class="dot" style="--c:#7a5a9a"></span>Assignment 7 - Sturm-Liouville Problems - Solutions</a><a class="rel" href="assignment-8-first-order-pdes-and-canonical-forms-solutions.html" title="Differential Equations"><span class="dot" style="--c:#7a5a9a"></span>Assignment 8 - First Order PDEs and Canonical Forms - Solutions</a><a class="rel" href="assignment-9-dalembert-wave-and-heat-equations-solutions.html" title="Differential Equations"><span class="dot" style="--c:#7a5a9a"></span>Assignment 9 - D&#x27;Alembert, Wave and Heat Equations - Solutions</a><a class="rel" href="assignments-6-10-formula-bank.html" title="Differential Equations"><span class="dot" style="--c:#7a5a9a"></span>Assignments 6-10 - Formula Bank</a><a class="rel" href="assignments-6-10-how-to-solve.html" title="Differential Equations"><span class="dot" style="--c:#7a5a9a"></span>Assignments 6-10 - How to Solve</a><a class="rel" href="assignments-6-10-question-bank.html" title="Differential Equations"><span class="dot" style="--c:#7a5a9a"></span>Assignments 6-10 - Question Bank</a><a class="rel" href="differential-equations-moc.html" title="Differential Equations"><span class="dot" style="--c:#7a5a9a"></span>Differential Equations - MOC</a><a class="rel" href="t8-q11-equivalent-circuit-and-starting-of-an-induction-motor.html" title="Basic Electrical Engineering"><span class="dot" style="--c:#b8962f"></span>T8-Q11 - Equivalent Circuit and Starting of an Induction Motor</a></div><canvas id="miniGraph" width="640" height="320" role="img" aria-label="Map of the notes linked to this one"></canvas></section></article><aside class="toc" aria-label="On this page"><b>On this page</b><a href="#the-eight-tutorials">The eight tutorials</a><a href="#folder-layout">Folder layout</a><a href="#concept-coverage">Concept coverage</a><a href="#verification">Verification</a><a href="#where-the-printed-sheet-answers-differ-from-a-direct-calculation">Where the printed sheet answers differ from a direct calculation</a><a href="#related">Related</a></aside></div></main></div>
 <div class="scrim" id="scrim"></div>
 <button class="totop" id="toTop" type="button" aria-label="Back to top">↑</button>
 <div class="sd" id="search" hidden role="dialog" aria-modal="true" aria-label="Search notes"><div class="sd-box"><div class="sd-head"><input id="q" type="search" placeholder="Search titles, headings and text…" autocomplete="off" aria-label="Search"><select id="sc" aria-label="Limit to a course"><option value="all">All courses</option></select><button class="ib" id="closeSearch" type="button" aria-label="Close search">✕</button></div><div class="sd-res" id="results"></div><div class="sd-foot"><span><kbd>↑</kbd> <kbd>↓</kbd> move</span><span><kbd>Enter</kbd> open</span><span><kbd>Esc</kbd> close</span></div></div></div>
