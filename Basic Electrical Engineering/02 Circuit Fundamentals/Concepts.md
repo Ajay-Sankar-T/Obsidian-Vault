@@ -85,7 +85,7 @@ Four shortcuts that avoid solving the *whole* circuit when you only care about o
 
 - **Superposition:** the response (voltage or current) due to several independent sources acting together equals the sum of the responses to each source acting alone (all *other* independent sources killed — voltage sources shorted, current sources opened).
 - **Thevenin's theorem:** any linear two-terminal network reduces to a single voltage source V_th in series with a resistance R_th. V_th = open-circuit voltage at the terminals; R_th = resistance seen at the terminals with all independent sources killed (or R_th = V_th / I_sc if dependent sources are present).
-- **Norton's theorem:** the dual of Thevenin — a current source I_N in parallel with R_N. I_N = short-circuit current at the terminals; R_N = R_th (they're the same resistance, just a different equivalent form). V_th = I_N × R_N always.
+- **Norton's theorem:** the dual of Thevenin — a current source I_N in parallel with R_N. I_N = short-circuit current at the terminals; R_N = R_th (they're the same resistance, just a different equivalent form). $V_th = I_N × R_N$ always.x
 - **Maximum power transfer theorem:** a load draws maximum power from a network when R_load = R_th (DC), or Z_load = Z_th* — the complex conjugate — in AC. Under this condition P_max = V_th² / (4·R_th).
 
 ```mermaid

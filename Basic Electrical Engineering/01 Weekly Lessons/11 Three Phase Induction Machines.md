@@ -48,3 +48,6 @@ Modeled like a transformer ([[10 Single Phase Transformers|Week 10]]) with the r
 - [[Concepts|Concepts glossary]]
 - [[09 Three Phase Circuits and Power Measurement|Week 9 — Three Phase Circuits]]
 - [[12 DC Machines|Week 12 — DC Machines]]
+
+## Tutorial problems
+- [[Tutorial 8 - Induction Machines]] (all 11 questions) · theory: [[Theory - Three-Phase Induction Machines]]

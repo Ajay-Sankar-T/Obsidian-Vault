@@ -4,63 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "4ef65aa4f2ed15a7",
+        "id": "78c03205908841d0",
         "type": "tabs",
         "children": [
           {
-            "id": "153817388f017eb4",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "MathFlow/Differential Equations/MA2102-Lecture-Slides/Lecture-12.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "Lecture-12"
-            }
-          },
-          {
-            "id": "0cf9cd25112bb9c6",
+            "id": "1d1276ffbffb388c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MathFlow/Differential Equations/2nd Order DE/Non-homogeneous Cauchy-Euler Equations.md",
+                "file": "Mechanical Engineering/Mechanical Engineering Curriculum - MOC.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Non-homogeneous Cauchy-Euler Equations"
-            }
-          },
-          {
-            "id": "cacd3957fc8946af",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "mech stuff/Physics/Physics I - MOC.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Physics I - MOC"
-            }
-          },
-          {
-            "id": "ce2429de2663250f",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "mech stuff/Strength of materials/Tutorials/AM2200_2026_Tutorial 9.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "AM2200_2026_Tutorial 9"
+              "title": "Mechanical Engineering Curriculum - MOC"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -132,7 +93,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "right": {
     "id": "9764893094b8dfd2",
@@ -210,20 +171,71 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Untitled 3.base",
+                "file": "Basic Electrical Engineering/Resources/Tutorial Solutios/Solution Tutorial 4 Resonance n Filter and Three-phase Systems.pdf",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Untitled 3"
+              "title": "Outline"
+            }
+          },
+          {
+            "id": "13b69e75b7810ab6",
+            "type": "leaf",
+            "state": {
+              "type": "Timer",
+              "state": {},
+              "icon": "alarm-clock",
+              "title": "Timer"
+            }
+          },
+          {
+            "id": "fb49b2fa8111a123",
+            "type": "leaf",
+            "state": {
+              "type": "timer-view",
+              "state": {},
+              "icon": "timer",
+              "title": "Timer"
+            }
+          },
+          {
+            "id": "d0a1856444257160",
+            "type": "leaf",
+            "state": {
+              "type": "Timer",
+              "state": {},
+              "icon": "alarm-clock",
+              "title": "Timer"
+            }
+          },
+          {
+            "id": "8dc185f17ee06156",
+            "type": "leaf",
+            "state": {
+              "type": "Timer",
+              "state": {},
+              "icon": "alarm-clock",
+              "title": "Timer"
+            }
+          },
+          {
+            "id": "226a73c11212c025",
+            "type": "leaf",
+            "state": {
+              "type": "Timer",
+              "state": {},
+              "icon": "alarm-clock",
+              "title": "Timer"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 300,
+    "width": 200,
     "collapsed": true
   },
   "left-ribbon": {
@@ -236,57 +248,58 @@
       "templates:Insert template": true,
       "command-palette:Open command palette": true,
       "bases:Create new base": true,
-      "obsidian-excalidraw-plugin:New drawing": false
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "timer:Open timer": false,
+      "pomodoro-timer:Toggle timer panel": false
     }
   },
-  "active": "cacd3957fc8946af",
+  "active": "1d1276ffbffb388c",
   "lastOpenFiles": [
-    "wiki/_build/_math_out.json",
-    "wiki/_build/_math_in.json",
-    "wiki/assets/sedR2dvgA",
-    "mech stuff/Engineering Mechanics/Dynamics/Vibration of Particles and Rigid Bodies.md",
-    "mech stuff/Engineering Mechanics/Dynamics/Mass Moments of Inertia.md",
-    "mech stuff/Engineering Mechanics/Dynamics/Plane Kinetics of Rigid Bodies.md",
-    "mech stuff/Engineering Mechanics/Dynamics/Plane Kinematics of Rigid Bodies.md",
-    "mech stuff/Engineering Mechanics/Dynamics/Impact and Systems of Particles.md",
-    "mech stuff/Engineering Mechanics/Dynamics/Kinetics of Particles - Work-Energy and Impulse-Momentum.md",
-    "mech stuff/Engineering Mechanics/Dynamics/Particle Kinematics - Rectilinear and Curvilinear Motion.md",
-    "mech stuff/Engineering Mechanics/Statics/Virtual Work and Potential Energy Stability.md",
-    "mech stuff/Engineering Mechanics/Statics/Friction in Machines - Belts, Screws and Wedges.md",
-    "mech stuff/Engineering Mechanics/Statics/Dry Friction.md",
-    "mech stuff/Engineering Mechanics/Statics/Distributed Loads and Equivalent Point Loads.md",
-    "mech stuff/Engineering Mechanics/Statics/Frames and Machines.md",
-    "mech stuff/Engineering Mechanics/Statics/Plane Trusses - Method of Joints and Sections.md",
-    "mech stuff/Engineering Mechanics/Statics/Free-Body Diagrams and Equilibrium of Rigid Bodies.md",
-    "mech stuff/Engineering Mechanics/Statics/Moments, Couples and Equivalent Force Systems.md",
-    "mech stuff/Engineering Mechanics/Statics/Force Systems and Resultants.md",
-    "mech stuff/Engineering Mechanics/Dynamics",
-    "mech stuff/Engineering Mechanics/Statics",
-    "mech stuff/Engineering Mechanics/Engineering Mechanics - MOC.md",
-    "mech stuff/Engineering Mechanics/Vibration of Particles and Rigid Bodies.md",
-    "mech stuff/Engineering Mechanics/Mass Moments of Inertia.md",
-    "mech stuff/Engineering Mechanics/Plane Kinetics of Rigid Bodies.md",
-    "mech stuff/Engineering Mechanics/Plane Kinematics of Rigid Bodies.md",
-    "mech stuff/Engineering Mechanics/Impact and Systems of Particles.md",
-    "mech stuff/Engineering Mechanics/Kinetics of Particles - Work-Energy and Impulse-Momentum.md",
-    "mech stuff/Engineering Mechanics/Particle Kinematics - Rectilinear and Curvilinear Motion.md",
-    "mech stuff/Engineering Mechanics/Virtual Work and Potential Energy Stability.md",
-    "mech stuff/Engineering Mechanics/Plane Trusses - Method of Joints and Sections.md.tmp.33008.da75cab0d647",
-    "mech stuff/Engineering Mechanics/Plane Trusses - Method of Joints and Sections.md.tmp.33008.5e5da71deed0",
-    "mech stuff/Engineering Mechanics/Free-Body Diagrams and Equilibrium of Rigid Bodies.md.tmp.33008.c23a9e9f5ce6",
-    "mech stuff/Engineering Mechanics/Force Systems and Resultants.md.tmp.33008.1b5dce277a21",
-    "mech stuff/Engineering Mechanics/Meriam_Kraige_Engg_Mech_Statics_7thEdition.pdf",
-    "mech stuff/Engineering Mechanics/assets/EM-force-system.png",
-    "mech stuff/Engineering Mechanics/assets/EM-energy-block.png",
-    "mech stuff/Engineering Mechanics/assets/EM-bounce.png",
-    "mech stuff/Engineering Mechanics/assets/EM-belt-friction.png",
-    "MathFlow/Calculus/Multivariable Calculus/MA1101- Notes.pdf",
-    "mech stuff/Physics Lab/assets/PL-young-wood.png",
-    "mech stuff/Physics Lab/assets/PL-stefan.png",
-    "mech stuff/Physics Lab/assets/PL-coil-field.png",
-    "mech stuff/Physics Lab/assets/PL-transistor.png",
-    "mech stuff/Physics Lab/assets/PL-newton-rings.png",
-    "mech stuff/Physics Lab/assets/PL-ultrasonic.png",
+    "Mechanical Engineering/ME25B_curriculum.pdf",
+    "Mechanical Engineering/Materials and design/Course Details.md",
+    "Mechanical Engineering/Foundations of Thermal Engineering/Course Details.md",
+    "Mechanical Engineering/Foundations of Thermal Engineering/01 Exergy and Power Cycles/Brayton Cycle - Intercooling, Reheat and Regeneration.md",
+    "Mechanical Engineering/Manufacturing Technology/01 Casting/Casting - Solidification Time and Riser Design.md",
+    "Mechanical Engineering/Manufacturing Technology/Course Details.md",
+    "Clubs & Projects/Cardiovascular Biomechanics/2.pdf",
+    "Clubs & Projects/Cardiovascular Biomechanics/3.PDF",
+    "graphify-out/GRAPH_REPORT.md",
+    "Mechanical Engineering/Mechanical Engineering Curriculum - MOC.md",
+    "Clubs & Projects/Cardiovascular Biomechanics",
+    "Mechanical Engineering/Foundations of Thermal Engineering/Foundations of Thermal Engineering - MOC.md",
+    "Life sciences/Course Details.md",
+    "Mechanical Engineering/Measurements and instrumentation/Measurements, Instrumentation and Control - MOC.md",
+    "Mechanical Engineering/Measurements and instrumentation/Resources/Books/Instrumentation-and-Control-Systems.pdf",
+    "Mechanical Engineering/Measurements and instrumentation/Resources/Books/Unconfirmed 647671.crdownload",
+    "Mechanical Engineering/Measurements and instrumentation/Resources/Books",
+    "Mechanical Engineering/Measurements and instrumentation/Resources/New folder",
+    "Mechanical Engineering/Measurements and instrumentation/Resources",
+    "Mechanical Engineering/Measurements and instrumentation/New folder",
+    "Mechanical Engineering/Manufacturing Technology/Manufacturing Technology - MOC.md",
+    "Mechanical Engineering/Materials and design/Materials and Design - MOC.md",
+    "Mechanical Engineering/Strength of materials/Problems/Tutorial 7 - Bending and Shear Stresses/Tutorial 7 - Bending and Shear Stresses.md",
+    "Mechanical Engineering/Strength of materials/Problems/Tutorial 6 - Torsional Members/Tutorial 6 - Torsional Members.md",
+    "Mechanical Engineering/Strength of materials/Problems/Tutorial 4 - Stress-Strain Relationship/Elongation Under Self-Weight and End Load.md",
+    "Mechanical Engineering/Strength of materials/Problems/Tutorial 4 - Stress-Strain Relationship/Composite Members under Axial Load.md",
+    "Basic Electrical Engineering/EE1100 MOC.md",
+    "wiki/assets/img/T1-Q10-power-curve.png",
+    "wiki/assets/img/T1-Q10-circuit.png",
+    "wiki/assets/img/T1-Q1-circuit.png",
+    "Basic Electrical Engineering/Problems/Problems - MOC.md",
+    "Basic Electrical Engineering/Problems/Tutorial 7 - Transformers/assets/T7-Q6-circuit.png",
+    "Basic Electrical Engineering/Problems/Tutorial 7 - Transformers/assets/T7-Q8-Q9-plots.png",
+    "Basic Electrical Engineering/Problems/Tutorial 7 - Transformers/assets/T7-Q7-circuit.png",
+    "Basic Electrical Engineering/Problems/Tutorial 7 - Transformers/Tutorial 7 - Transformers.md",
+    "Basic Electrical Engineering/Problems/Tutorial 7 - Transformers/T7-Q9 - Efficiency and Regulation from Tests.md",
+    "Basic Electrical Engineering/Problems/Tutorial 7 - Transformers/T7-Q8 - Voltage Regulation at Full Load.md",
+    "Basic Electrical Engineering/Problems/Tutorial 7 - Transformers/T7-Q7 - OC and SC Test Parameters.md",
+    "Basic Electrical Engineering/Problems/Tutorial 7 - Transformers/T7-Q6 - Equivalent Circuit on the LT Side.md",
+    "Basic Electrical Engineering/Problems/Tutorial 7 - Transformers/T7-Q5 - Secondary Voltage Under Load.md",
+    "Basic Electrical Engineering/Problems/Tutorial 7 - Transformers/T7-Q4 - Referred Impedances and Short-Circuit Voltage.md",
+    "Basic Electrical Engineering/Problems/Tutorial 6 - Operational Amplifiers/assets/T6-Q9-circuit.png",
+    "Basic Electrical Engineering/Problems/Tutorial 6 - Operational Amplifiers/assets/T6-Q8-circuit.png",
+    "Basic Electrical Engineering/Problems/Tutorial 6 - Operational Amplifiers/assets/T6-Q6-integrator.png",
+    "Basic Electrical Engineering/Problems/Tutorial 6 - Operational Amplifiers/assets/T6-Q4-Q5-circuits.png",
     "Untitled.canvas",
     "Untitled 1.canvas",
     "Untitled 2.canvas"

@@ -48,3 +48,6 @@ When a circuit has *both* an L and a C, one differential equation isn't enough �
 ## Related
 - [[Concepts|Concepts glossary]]
 - [[06 Sinusoidal Steady-State Analysis|Week 6 — Sinusoidal Steady-State Analysis]] (same C, L — now under AC forcing instead of a DC step)
+
+## Tutorial problems
+- [[Tutorial 2 - Transient Analysis of DC Circuits]] (all 12 questions) · theory: [[Theory - Transients in RL, RC and RLC Circuits]]

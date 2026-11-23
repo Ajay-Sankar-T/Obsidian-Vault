@@ -51,3 +51,6 @@ flowchart TD
 - [[Concepts|Concepts glossary]]
 - [[02 Methods of Circuit Analysis|Week 2 — Methods of Circuit Analysis]]
 - [[07 AC Circuit Analysis and Network Theorems|Week 7 — AC Circuit Analysis and Network Theorems]]
+
+## Tutorial problems
+- [[Tutorial 1 - Circuit Laws and Theorems]] (Q5, Q6, Q8–Q10, Q13: superposition, Thevenin/Norton, maximum power, star–delta)

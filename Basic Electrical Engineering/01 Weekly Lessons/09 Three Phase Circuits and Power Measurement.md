@@ -40,3 +40,6 @@ Two wattmeters, connected with their current coils in two of the three lines and
 - [[Concepts|Concepts glossary]]
 - [[06 Sinusoidal Steady-State Analysis|Week 6 — AC Power]]
 - [[11 Three Phase Induction Machines|Week 11 — Three Phase Induction Machines]]
+
+## Tutorial problems
+- [[Tutorial 4 - Resonance, Filter and Three-Phase Circuits]] (Q9–Q12: star, delta, power) · theory: [[Theory - Three-Phase Circuits]]

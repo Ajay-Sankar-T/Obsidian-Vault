@@ -37,14 +37,14 @@ Semester-by-semester map of the core programme, taken from `ME25B_curriculum.pdf
 | — | Entrepreneurship | 3-0-0-0-6 → 9 | ✅ [[Entrepreneurship - MOC]] |
 
 ## Semester 4
-| Code       | Course                               | L-T-E-P-O → C  | Vault                                                  |                   |
-| ---------- | ------------------------------------ | -------------- | ------------------------------------------------------ | ----------------- |
-| ME2102     | Foundations of Thermal Engineering-1 | 2-1-0-0-4 → 7  | ✅ [[Foundations of Thermal Engineering - MOC]]        |                   |
-| ME2200     | Materials and Design                 | 3-1-0-0-6 → 10 | ✅ [[Materials and Design - MOC]]                      |                   |
-| ME2302     | Manufacturing Technology-I           | 3-1-0-1-6 → 11 | ✅ [[Manufacturing Technology - MOC]]                  |                   |
-| ME2400     | Measurements and Instrumentation     | 3-0-0-2-6 → 11 | ✅ [[Measurements, Instrumentation and Control - MOC]] |                   |
-| ME3481     | Mechanical Engineering Lab 1         | 0-0-0-3-0 → 3  | ⬜ folder `Mechanical engineering lab/` is empty        |                   |
-| MA, BT1010 | Mathematics elective; Life Sciences  |                | [[Life sciences/Course Details\|BT1010 syllabus]]                       |
+| Code       | Course                               | L-T-E-P-O → C  | Vault                                                 |     |
+| ---------- | ------------------------------------ | -------------- | ----------------------------------------------------- | --- |
+| ME2102     | Foundations of Thermal Engineering-1 | 2-1-0-0-4 → 7  | ✅ [[Foundations of Thermal Engineering - MOC]]        |     |
+| ME2200     | Materials and Design                 | 3-1-0-0-6 → 10 | ✅ [[Materials and Design - MOC]]                      |     |
+| ME2302     | Manufacturing Technology-I           | 3-1-0-1-6 → 11 | ✅ [[Manufacturing Technology - MOC]]                  |     |
+| ME2400     | Measurements and Instrumentation     | 3-0-0-2-6 → 11 | ✅ [[Measurements, Instrumentation and Control - MOC]] |     |
+| ME3481     | Mechanical Engineering Lab 1         | 0-0-0-3-0 → 3  | ⬜ folder `Mechanical engineering lab/` is empty       |     |
+| MA, BT1010 | Mathematics elective; Life Sciences  |                | [[Life sciences/Course Details\|BT1010 syllabus]]     |     |
 
 ## Semester 5
 | Code | Course | L-T-E-P-O → C | Vault |

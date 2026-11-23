@@ -51,3 +51,6 @@ See [[Concepts#Kirchhoff's Laws|Kirchhoff's Laws]] for the full statement and di
 ## Related
 - [[Concepts|Concepts glossary]]
 - [[02 Methods of Circuit Analysis|Week 2 — Methods of Circuit Analysis]]
+
+## Tutorial problems
+- [[Tutorial 1 - Circuit Laws and Theorems]] (Q1–Q3, Q7, Q13: laws, dividers, reduction) · theory: [[Theory - Circuit Laws and Network Theorems]]

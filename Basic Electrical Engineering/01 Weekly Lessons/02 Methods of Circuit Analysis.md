@@ -41,3 +41,6 @@ Nodal is usually less work when the circuit has few nodes but many branches (lot
 - [[Concepts|Concepts glossary]]
 - [[03 DC Network Theorems|Week 3 — DC Network Theorems]]
 - [[07 AC Circuit Analysis and Network Theorems|Week 7 — AC Circuit Analysis]] (identical procedure, phasor arithmetic)
+
+## Tutorial problems
+- [[Tutorial 1 - Circuit Laws and Theorems]] (Q7, Q11, Q12, Q14: mesh, nodal, supernode, supermesh)

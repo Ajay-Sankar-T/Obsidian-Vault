@@ -18,6 +18,8 @@ Different energy sources and major processes involving energy utilisation Exergy
 
 NIL
 
+https://www.youtube.com/playlist?list=PLwdnzlV3ogoVJnW1S9GgOKYj5heOzl1dn
+
 ++
 
 ###### Description

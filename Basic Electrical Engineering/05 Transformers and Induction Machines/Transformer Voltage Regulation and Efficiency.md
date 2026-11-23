@@ -4,7 +4,7 @@ tags: [EE1100, concept, transformer, voltage-regulation, efficiency]
 source: "[[Lecture 39 Transformer- Voltage Regulation and Efficiency.pdf]]"
 ---
 
-Related: [[10 Single Phase Transformers]] (equivalent circuit, [[10 Single Phase Transformers#OC and SC tests|OC and SC tests]]) · [[EE1100 MOC]] · tested in [[Tutorial 7 on Transformer]] (Q8–Q10) · animation: [Parallel flux lines](transformer-current-flux-animation.html)
+Related: [[10 Single Phase Transformers]] (equivalent circuit, [[10 Single Phase Transformers#OC and SC tests|OC and SC tests]]) · [[EE1100 MOC]] · tested in [[Tutorial 7 - Transformers]] (Q8–Q10) · animation: [Parallel flux lines](transformer-current-flux-animation.html)
 
 ## What it is
 Two numbers characterise the **performance** of a transformer: how much the secondary voltage sags under load (**voltage regulation**) and how much of the input power reaches the load (**efficiency**).

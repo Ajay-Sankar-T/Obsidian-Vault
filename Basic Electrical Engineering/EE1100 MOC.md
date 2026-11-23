@@ -42,40 +42,40 @@ See [[Concepts]] for the full glossary (laws, theorems, quantities, with diagram
 
 ## Tutorials
 
-- [[Tutorial 1 - Circuit Laws and Theorems|Tutorial 1 — Circuit Laws and Theorems]] (Weeks 1–3)
-- [[Tutorial 2 - Transient Analysis of DC Circuits|Tutorial 2 — Transient Analysis of DC Circuits]] (Week 4)
-- [[Tutorial 3 - AC Circuit Analysis|Tutorial 3 — AC Circuit Analysis]] (Weeks 5–7) — Q1–Q12, split into atomic notes:
-  - [[Sinusoidal Waveforms, RMS and Average Value|Sinusoidal Waveforms, RMS and Average Value]]
-  - [[Phasors and Complex Algebra|Phasors and Complex Algebra]]
-  - [[Impedance and Series-Parallel AC Circuits|Impedance and Series-Parallel AC Circuits]]
-  - [[AC Power and Power Factor|AC Power and Power Factor]]
-  - [[Nodal and Mesh Analysis (AC)|Nodal and Mesh Analysis (AC)]]
-  - [[Thevenin, Norton and Maximum Power Transfer (AC)|Thevenin, Norton and Maximum Power Transfer (AC)]]
-  - [[Power Factor Correction|Power Factor Correction]]
-- [[Q1 - Series RLC Resonance|Tutorial 4 — Resonance, Filter and Three-Phase Circuits]] (Resonance, Filter, and 3-Phase):
-  - [[Q1 - Series RLC Resonance|Q1 - Series RLC Resonance]]
-  - [[Q2 - Parallel RLC Resonance|Q2 - Parallel RLC Resonance]]
-  - [[Q3 - Series RLC Parameters|Q3 - Series RLC Parameters]]
-  - [[Q4-Q5 - RC Filter Design|Q4 & Q5 - RC Filter Design]]
-  - [[Q6-Q7 - Band Filters|Q6 & Q7 - Band Filters]]
-  - [[Q8 - FM Receiver BPF|Q8 - FM Receiver BPF]]
-  - [[Q9 - Balanced Delta Load|Q9 - Balanced Delta Load]]
-  - [[Q10 - Delta Load Power|Q10 - Delta Load Power]]
-  - [[Q11 - Star Connection Impedance|Q11 - Star Connection Impedance]]
-  - [[Q12 - Star Load Voltage and Current|Q12 - Star Load Voltage and Current]]
-- [[Tutorial 5 on Diode Circuits and Applications|Tutorial 5 — Diode Circuits and Applications]] — Part A (theory, rectifiers, ripple, filter design: A-Q1…A-Q9) and Part B (circuit problems B-Q1…B-Q12), one note per question, with [[Theory - Diode Models and Circuit Analysis|theory]]
-- [[Tutorial 6 on OP-AMP|Tutorial 6 — Operational Amplifiers]] — twelve questions (gain, summer, difference amplifier, integrator, photodiode, non-ideal follower, design problems), with the models in [[Theory - Operational Amplifiers]]
-- [[Tutorial 7 on Transformer|Tutorial 7 — Transformers]] — ten questions: EMF equation, referred impedances, equivalent circuit, OC/SC tests, voltage regulation, efficiency
-- [[AC Transients|AC Transients]] — the bridge between Tutorial 2 (DC transients) and Tutorial 3 (AC steady state):
+All eight tutorial sheets are solved, one note per question, with the theory explained first: see [[Problems - MOC]] for the full map, the concept-coverage table and the list of printed answers that differ from a direct calculation.
+
+| # | Tutorial | Weeks | Qs | Theory |
+|---|---|---|---|---|
+| 1 | [[Tutorial 1 - Circuit Laws and Theorems|Circuit Laws and Theorems]] | 1–3 | 14 | [[Theory - Circuit Laws and Network Theorems]] |
+| 2 | [[Tutorial 2 - Transient Analysis of DC Circuits|Transient Analysis of DC Circuits]] | 4 | 12 | [[Theory - Transients in RL, RC and RLC Circuits]] |
+| 3 | [[Tutorial 3 - AC Circuit Analysis|AC Circuit Analysis]] | 5–7 | 12 | [[Phasors and Complex Algebra]], [[Impedance and Series-Parallel AC Circuits]], [[AC Power and Power Factor]], [[Nodal and Mesh Analysis (AC)]], [[Thevenin, Norton and Maximum Power Transfer (AC)]], [[Power Factor Correction]], [[Sinusoidal Waveforms, RMS and Average Value]] |
+| 4 | [[Tutorial 4 - Resonance, Filter and Three-Phase Circuits|Resonance, Filter and Three-Phase Circuits]] | 8–9 | 12 | [[Theory - Resonance and Passive Filters]], [[Theory - Three-Phase Circuits]] |
+| 5 | [[Tutorial 5 - Diode Circuits and Applications|Diode Circuits and Applications]] | diodes | 21 | [[Theory - Diode Models and Circuit Analysis]] |
+| 6 | [[Tutorial 6 - Operational Amplifiers|Operational Amplifiers]] | op-amps | 12 | [[Theory - Operational Amplifiers]] |
+| 7 | [[Tutorial 7 - Transformers|Transformers]] | 10 | 10 | [[10 Single Phase Transformers]] |
+| 8 | [[Tutorial 8 - Induction Machines|Induction Machines]] | 11 | 11 | [[Theory - Three-Phase Induction Machines]] |
+
+Building blocks that came out of solving the tutorials: [[Voltage Divider Rule]], [[Series-Parallel Resistance Reduction]].
+
+Companion notes that bridge the tutorials:
+- [[AC Transients|AC Transients]]: the bridge between Tutorial 2 (DC transients) and Tutorial 3 (AC steady state):
   - [[First-Order AC Transients (RC and RL)|First-Order AC Transients (RC and RL)]]
   - [[Second-Order AC Transients (Series and Parallel RLC)|Second-Order AC Transients (Series and Parallel RLC)]]
-- [[RLC Circuits - Responses|RLC Circuits — Responses]] — series vs parallel, DC vs AC, step vs steady-state, all with plotted graphs:
+- [[RLC Circuits - Responses|RLC Circuits — Responses]]: series vs parallel, DC vs AC, step vs steady-state, all with plotted graphs:
   - [[Series RLC Natural Response - Damping Cases|Series RLC Natural Response — Damping Cases]]
   - [[Parallel RLC Natural Response - Damping Cases|Parallel RLC Natural Response — Damping Cases]]
   - [[Series vs Parallel RLC - Key Distinctions|Series vs Parallel RLC — Key Distinctions]]
   - [[DC Step Response of RLC Circuits|DC Step Response of RLC Circuits]]
   - [[AC Transient and Steady-State Response of RLC Circuits|AC Transient and Steady-State Response of RLC Circuits]]
   - [[Frequency Response and Resonance Curves|Frequency Response and Resonance Curves]]
+
+### Exam / revision map
+- **Network theorems and two-terminal reduction** (Tutorial 1 Q5, Q8–Q10; Tutorial 3 Q11, Q12): remove the load, $V_{oc}$ then $R_{th}$, finish in one line; conjugate match for AC maximum power.
+- **Switching circuits** (Tutorial 2): initial condition from $v_C$ or $i_L$, $\tau$ from the *new* circuit; second-order by $R$ against $2\sqrt{L/C}$.
+- **Phasor questions** (Tutorial 3): peak versus rms, lead versus lag, sign of $Q$.
+- **Resonance and filters** (Tutorial 4 Q1–Q8): $\omega_0,\ Q,\ BW$, exact band edges at low $Q$, $-20$ dB design.
+- **Three-phase** (Tutorial 4 Q9–Q12): which of $V$ or $I$ carries the $\sqrt3$ in star and delta.
+- **Machines** (Tutorial 7, 8): equivalent circuit, power flow ($P_g:P_{cu2}:P_{mech}=1:s:1-s$), $s_m=r_2'/Z_k$.
 
 ## Transformers and induction machines (Lectures 35–41)
 

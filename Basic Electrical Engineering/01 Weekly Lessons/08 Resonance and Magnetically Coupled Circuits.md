@@ -43,3 +43,6 @@ Coupling energy: for two coupled coils, total stored energy is W = ½L₁i₁² 
 - [[Concepts#RC/RL Transients and Time Constant|RC/RL Transients]] (the time-domain twin — same ζ, ω_n)
 - [[Frequency Response and Resonance Curves|Plotted resonance curves for different R, and the |Z| vs frequency graphs for series/parallel]]
 - [[10 Single Phase Transformers|Week 10 — Single Phase Transformers]]
+
+## Tutorial problems
+- [[Tutorial 4 - Resonance, Filter and Three-Phase Circuits]] (Q1–Q8: resonance, $Q$, filters) · theory: [[Theory - Resonance and Passive Filters]]

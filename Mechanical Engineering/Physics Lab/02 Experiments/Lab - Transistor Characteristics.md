@@ -65,7 +65,7 @@ flowchart LR
 > $I_{CEO}=(1+\beta)I_{CBO}$: the reverse leakage of the collector junction is amplified by the transistor action.
 
 ## Connections
-- **Cross-domain:** [[A-Q1 - Formation of the p-n Junction]], [[A-Q3 - V-I Characteristics of a p-n Diode]] and [[A-Q4 - Bias, Cut-in Voltage, Saturation Current and Resistance]] (the input curve *is* a diode curve); [[Series-Parallel Resistance Reduction]] (load lines).
+- **Cross-domain:** [[T5-A-Q1 - Formation of the p-n Junction]], [[T5-A-Q3 - V-I Characteristics of a p-n Diode]] and [[T5-A-Q4 - Bias, Cut-in Voltage, Saturation Current and Resistance]] (the input curve *is* a diode curve); [[Series-Parallel Resistance Reduction]] (load lines).
 - **Errors:** [[Error Analysis - Uncertainty and Propagation]] (slopes from graphs: fit a line over the chosen region).
 
 ## Self-check
